@@ -1,0 +1,29 @@
+{
+  "short_name": "Legion HQ",
+  "name": "The Fifth Trooper: Legion HQ",
+  "description": "An unofficial tool and resource for Fantasy Flight Games: Star Wars: Legion.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "64x64 32x32 24x24 16x16"
+    },
+    {
+      "src": "/favicon192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0e232d",
+  "background_color": "#243c47",
+  "scope": "/"
+}
