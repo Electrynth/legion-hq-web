@@ -1,7 +1,29 @@
 import React from 'react';
 import { Typography, Divider } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
-import posts from './posts';
+
+const posts = [
+  {
+    "title": "Save Button completed",
+    "date": "28 May 2020",
+    "body": "If logged in, lists can be created or updated."
+  },
+  {
+    "title": "URL Export completed",
+    "date": "27 May 2020",
+    "body": "URL export is complete-ish but requires more testing with loadout+counterpart and upgrades that add a slot."
+  },
+  {
+    "title": "Login enabled and Discord integration",
+    "date": "25 May 2020",
+    "body": "Lists from the Heroku app can now be accessed. Small Discord widget that has invite to Legion Discord added."
+  },
+  {
+    "title": "Link posted on Heroku app",
+    "date": "24 May 2020",
+    "body": "The goal is to get more people to start testing the main new stuff like Counterparts and Loadout."
+  }
+]
 
 function Post({ title, date, body }) {
   return (
@@ -36,7 +58,7 @@ function News() {
         <ul>
           <li>Cards page (card database viewer thing)</li>
           <li>Print List feature</li>
-          <li>Save/Fork/Delete List features</li>
+          <li>Fork/Delete List features</li>
           <li>List template implementation</li>
         </ul>
       </Alert>
