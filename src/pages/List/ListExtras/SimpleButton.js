@@ -1,15 +1,23 @@
 import React from 'react';
 import Chip from '@material-ui/core/Chip';
 
-function SimpleButton({ isDisabled, icon, label, handleClick }) {
+function SimpleButton({
+  timeout, timeoutMessage = 'success', isDisabled, icon, label, handleClick
+}) {
+  const [isTimedout, setIsTimedout] = React.useState(false);
+  const onClick = timeout ? () => {
+    handleClick();
+    setIsTimedout(true);
+    setTimeout(() => setIsTimedout(false), timeout);
+  } : handleClick;
   return (
     <Chip
       clickable
-      disabled={isDisabled}
+      disabled={isDisabled ? isDisabled : isTimedout}
       variant="outlined"
       icon={icon}
-      label={label}
-      onClick={handleClick}
+      label={isTimedout ? timeoutMessage : label}
+      onClick={onClick}
       style={{ marginRight: 4, marginBottom: 4 }}
     />
   );
