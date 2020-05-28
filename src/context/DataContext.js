@@ -8,6 +8,7 @@ import {
   ViewModule as CardsIcon,
   Announcement as NewsIcon
 } from '@material-ui/icons';
+import ErrorFallback from 'common/ErrorFallback';
 import FactionIcon from 'common/FactionIcon';
 import auth0Client from 'utility/Auth';
 import urls from 'constants/urls';
@@ -82,7 +83,9 @@ export function DataProvider({ children }) {
   const history = useHistory();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [auth, setAuth] = useState();
+  const [error, setError] = useState();
   const [userId, setUserId] = useState();
+  const [message, setMessage] = useState();
   const [userLists, setUserLists] = useState([]);
   const [userSettings, setUserSettings] = useState(initializeLocalSettings());
 
@@ -121,9 +124,15 @@ export function DataProvider({ children }) {
       httpClient.get(`${urls.api}/users?email=${email}`)
         .then(response => {
           if (response.data.length > 0) setUserId(response.data[0].userId);
-          else console.log('No users found with that email address.');
+          else {
+            setError('Login failure');
+            setMessage(`No users found with the email address ${email}`);
+          }
         })
-        .catch(error => console.log(error));
+        .catch(e => {
+          setError(e);
+          setMessage(`Failed to find user with email address ${email}`);
+        });
     }
   }
   const goToPage = (newRoute) => history.push(newRoute);
@@ -131,16 +140,23 @@ export function DataProvider({ children }) {
     if (userId) {
       httpClient.get(`${urls.api}/lists?userId=${userId}`)
         .then(response => setUserLists(response.data))
-        .catch(error => console.log(error));
+        .catch(e => {
+          setError(e);
+          setMessage(`Failed to fetch lists for user ${userId}`);
+        });
     } else setUserLists([]);
   }
   const deleteUserList = (listId) => {
     if (listId) {
       httpClient.delete(`${urls.api}/lists/${listId}`)
         .then(response => fetchUserLists(userId))
-        .catch(error => console.log(error));
+        .catch(e => {
+          setError(e);
+          setMessage(`Failed to delete list ${listId} for user ${userId}`);
+        });
     }
   }
+  if (error) return <ErrorFallback error={error} message={message} />;
   return (
     <DataContext.Provider
       value={{
