@@ -64,6 +64,8 @@ function TextCardHeader({ card, handleClick }) {
     return <CounterpartCardHeader card={card} handleClick={handleClick} />;
   } else if (card.cardType === 'command') {
     return <CommandCardHeader card={card} handleClick={handleClick} />;
+  } else if (card.cardType === 'battle') {
+    return <BattleCardHeader card={card} handleClick={handleClick} />;
   } else {
     return null;
   }
@@ -78,6 +80,8 @@ function TextCardContent({ card, chipSize }) {
     return <CounterpartCardContent card={card} chipSize={chipSize} />;
   } else if (card.cardType === 'command') {
     return <CommandCardContent card={card} chipSize={chipSize} />;
+  } else if (card.cardType === 'battle') {
+    return <BattleCardContent card={card} chipSize={chipSize} />;
   } else {
     return null;
   }
@@ -102,6 +106,23 @@ function CounterpartCardHeader({ card, handleClick }) {
       avatar={avatar}
       title={`${isUnique ? '• ' : ''}${displayName ? displayName : cardName}`}
       subheader={capitalizeFirstLetters(card.cardSubtype)}
+      action={action}
+      style={{ padding: 8 }}
+    />
+  );
+}
+
+function BattleCardHeader({ card, handleClick }) {
+  const { cardName, cardType } = card;
+  const action = (
+    <IconButton size="medium" onClick={handleClick} style={{ margin: 8 }}>
+      <AddIcon />
+    </IconButton>
+  );
+  return (
+    <CardHeader
+      title={cardName}
+      subheader={capitalizeFirstLetters(cardType + ' Card')}
       action={action}
       style={{ padding: 8 }}
     />
@@ -227,6 +248,23 @@ function CommandCardContent({ card, chipSize }) {
         <div style={{ flexGrow: 1 }} />
         <Typography variant="body1" style={{ marginRight: 16 }}>
           {cardSubtype}
+        </Typography>
+      </ReverseWrapper>
+    </CardContent>
+  );
+}
+
+function BattleCardContent({ card, chipSize }) {
+  const { cardSubtype } = card;
+  return (
+    <CardContent style={{ padding: 8, textAlign: 'right' }}>
+      <ReverseWrapper>
+        <Typography variant="body2" color="textSecondary">
+          Type
+        </Typography>
+        <div style={{ flexGrow: 1 }} />
+        <Typography variant="body1" style={{ marginRight: 16 }}>
+          {capitalizeFirstLetters(cardSubtype)}
         </Typography>
       </ReverseWrapper>
     </CardContent>
