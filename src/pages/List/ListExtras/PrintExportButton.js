@@ -45,7 +45,7 @@ class PrintList extends React.Component {
           <div>
             {commands.map((line, i) => {
               if (line.includes('Commands:')) {
-                return <b key="commands header">Commands</b>;
+                return <b key="commands header">Command Hand</b>;
               }
               return <div key={`${line}_${i}`}>{line}</div>;
             })}
