@@ -33,6 +33,8 @@ function countPoints(list) {
     unit.totalUnitCost *= unit.count;
     list.pointTotal += unit.totalUnitCost;
     if (unit.counterpart) {
+      const counterpartCard = cards[unit.counterpart.counterpartId];
+      unit.counterpart.totalUnitCost = counterpartCard.cost;
       unit.counterpart.upgradesEquipped.forEach(upgradeId => {
         if (upgradeId) {
           const upgradeCard = cards[upgradeId];
