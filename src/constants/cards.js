@@ -4100,11 +4100,11 @@ const cards = JSON.parse(JSON.stringify({
 	"jr": {
 		"id": "jr",
 		"cardSubtype": "1",
-		"cardName": "Fear, Surprise, and Intimidation",
+		"cardName": "Fear, Surprise, Intimidation",
 		"cardType": "command",
 		"commander": "Count Dooku",
 		"faction": "separatists",
-		"imageName": "Fear, Surprise, and Intimidation.jpeg",
+		"imageName": "Fear, Surprise, Intimidation.jpeg",
 		"keywords": ["Arsenal", "Relentless", "Versatile"]
 	},
 	"js": {
