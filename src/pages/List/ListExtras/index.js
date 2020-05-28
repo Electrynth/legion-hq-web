@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Clear as ClearIcon,
   Save as SaveIcon,
-  Delete as DeleteIcon,
   CallSplit as ForkIcon
 } from '@material-ui/icons';
+import DataContext from 'context/DataContext'
 import ListContext from 'context/ListContext';
 import LinkButton from './LinkButton';
 import QRButton from './QRButton';
@@ -14,10 +14,13 @@ import PrintExportButton from './PrintExportButton';
 import SimpleButton from './SimpleButton';
 
 function ListExtras() {
+  const { userId } = useContext(DataContext);
   const {
     currentList,
-    handleClearList
-  } = React.useContext(ListContext);
+    listSaveMessage,
+    handleClearList,
+    handleListSave
+  } = useContext(ListContext);
   return (
     <div
       style={{
@@ -32,27 +35,23 @@ function ListExtras() {
       <TextExportButton currentList={currentList} />
       <PrintExportButton currentList={currentList} />
       <SimpleButton
-        isDisabled={true}
+        timeout={3000}
+        timeoutMessage={listSaveMessage}
+        isDisabled={!Boolean(userId)}
         icon={<SaveIcon />}
         label="Save List"
-        handleClick={() => console.log('saved')}
+        handleClick={() => handleListSave(currentList)}
       />
       <SimpleButton
-        isDisabled={true}
+        isDisabled={!Boolean(currentList.listId)}
         icon={<ForkIcon />}
         label="Fork List"
-        handleClick={() => console.log('forked')}
+        handleClick={() => handleListSave(currentList)}
       />
       <SimpleButton
         icon={<ClearIcon />}
         label="Clear List"
         handleClick={handleClearList}
-      />
-      <SimpleButton
-        isDisabled={true}
-        icon={<DeleteIcon />}
-        label="Delete List"
-        handleClick={() => console.log('deleted')}
       />
     </div>
   );

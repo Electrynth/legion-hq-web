@@ -9,6 +9,7 @@ import ListCommands from './ListCommands';
 import ListObjectives from './ListObjectives';
 import ListExtras from './ListExtras';
 import ListDisplay from './ListDisplay';
+import ListId from './ListId';
 import CardSelector from './CardSelector';
 
 function ListLayout() {
@@ -43,6 +44,7 @@ function ListLayout() {
       </div>
       <Divider style={{ marginBottom: 4 }} />
       <ListExtras />
+      <ListId />
       <div style={{ marginTop: 24 }} />
     </Grid>
   );

@@ -39,13 +39,14 @@ function isValidListId(listId) {
 export function ListProvider({
   width, children, slug, listHash, storedLists, updateStoredList
 }) {
-  const { userSettings } = useContext(DataContext);
+  const { userId, userSettings } = useContext(DataContext);
   const [stackSize, setStackSize] = useState(1);
   const [isApplyToAll, setIsApplyToAll] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState();
   const [message, setMessage] = useState();
+  const [listSaveMessage, setListSaveMessage] = useState();
   const [currentList, setCurrentList] = useState();
   const [leftPaneWidth, setLeftPaneWidth] = useState(0);
   const [rightPaneWidth, setRightPaneWidth] = useState(0);
@@ -201,6 +202,32 @@ export function ListProvider({
     setModalContent(cardId);
     setIsModalOpen(true);
   }
+  const handleListSave = (list) => {
+    if (!userId) return;
+    const { _id, listId, ...rest } = list;
+    if (listId) {
+      Axios.put(`${urls.api}/lists/${listId}`, currentList).then(response => {
+        const newList = response.data;
+        setCurrentList(newList);
+        setListSaveMessage('List Updated!');
+      }).catch(e => {
+        setError(e);
+        setMessage(`Failed to update list ${listId}`);
+      });
+    } else {
+      Axios.post(`${urls.api}/lists`, { userId, ...rest }).then(response => {
+        const { listId } = response.data;
+        setCurrentList({ ...currentList, listId });
+        setListSaveMessage('List Created!')
+      }).catch(e => {
+        setError(e);
+        setMessage(`Failed to create list for user ${userId}`);
+      });
+    }
+  }
+  const handleListFork = (listId) => {
+
+  }
   const unitProps = {
     getEligibleUnitsToAdd,
     getEquippableUpgrades,
@@ -233,7 +260,8 @@ export function ListProvider({
     handleChangeTitle,
     handleChangeMode,
     handleIncrementStackSize,
-    handleDecrementStackSize
+    handleDecrementStackSize,
+    handleListSave
   };
   const modalProps = {
     handleOpenModal,
@@ -251,6 +279,9 @@ export function ListProvider({
     setLeftPaneWidth,
     setRightPaneWidth
   };
+  const messageProps = {
+    listSaveMessage
+  };
   if (error) return <ErrorFallback error={error} message={message} />;
   if (status === 'loading') return <LoadingWidget />;
   if (status === 'idle') {
@@ -263,7 +294,8 @@ export function ListProvider({
           ...battleProps,
           ...listProps,
           ...modalProps,
-          ...viewProps
+          ...viewProps,
+          ...messageProps
         }}
       >
         {children}
