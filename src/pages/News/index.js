@@ -57,8 +57,8 @@ function News() {
         Key features before to be completed before deployment:
         <ul>
           <li>Cards page (card database viewer thing)</li>
-          <li>Print List feature</li>
-          <li>Fork/Delete List features</li>
+          <li>Print List button</li>
+          <li>Fork List button</li>
           <li>List template implementation</li>
         </ul>
       </Alert>
