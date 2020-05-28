@@ -30,8 +30,8 @@ function countPoints(list) {
         }
       }
     });
-
-    list.pointTotal += unit.totalUnitCost * unit.count;
+    unit.totalUnitCost *= unit.count;
+    list.pointTotal += unit.totalUnitCost;
     if (unit.counterpart) {
       unit.counterpart.upgradesEquipped.forEach(upgradeId => {
         if (upgradeId) {
