@@ -254,6 +254,7 @@ export function ListProvider({
   if (error) return <ErrorFallback error={error} message={message} />;
   if (status === 'loading') return <LoadingWidget />;
   if (status === 'idle') {
+    console.log(currentList);
     return (
       <ListContext.Provider
         value={{

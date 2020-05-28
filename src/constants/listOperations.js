@@ -30,8 +30,15 @@ function countPoints(list) {
         }
       }
     });
+
     list.pointTotal += unit.totalUnitCost * unit.count;
     if (unit.counterpart) {
+      unit.counterpart.upgradesEquipped.forEach(upgradeId => {
+        if (upgradeId) {
+          const upgradeCard = cards[upgradeId];
+          unit.counterpart.totalUnitCost += upgradeCard.cost;
+        }
+      });
       list.pointTotal += unit.counterpart.totalUnitCost;
       list.uniques.push(unit.counterpart.counterpartId);
     }
@@ -783,7 +790,138 @@ function unequipUpgrade(list, action, unitIndex, upgradeIndex) {
   return list;
 }
 
+function processUnitSegment(segment) {
+  const unitSegment = segment.slice(0, 3);
+  let loadoutSegment; let upgradeSegment = segment.slice(3);
+  if (upgradeSegment.includes('_')) {
+    loadoutSegment = upgradeSegment.split('_')[1];
+    upgradeSegment = upgradeSegment.split('_')[0]
+  }
+  const unitCount = Number.parseInt(unitSegment.charAt(0));
+  const unitId = unitSegment.charAt(1) + unitSegment.charAt(2);
+  const unitCard = cards[unitId];
+  const newUnit = {
+    unitId,
+    count: unitCount,
+    hasUniques: unitCard.isUnique,
+    totalUnitCost: unitCard.cost * unitCount,
+    unitObjectString: unitId,
+    upgradesEquipped: [],
+    loadoutUpgrades: [],
+    additionalUpgradeSlots: []
+  };
+  let upgradeIndex = 0;
+  for (let i = 0; i < upgradeSegment.length; i++) {
+    if (upgradeSegment.charAt(i) === '0') {
+      newUnit.upgradesEquipped[upgradeIndex] = null;
+      upgradeIndex++;
+    } else {
+      const upgradeId = upgradeSegment.charAt(i) + upgradeSegment.charAt(i + 1);
+      const upgradeCard = cards[upgradeId];
+      newUnit.upgradesEquipped[upgradeIndex] = upgradeId;
+      newUnit.unitObjectString += upgradeId;
+      if ('additionalUpgradeSlots' in upgradeCard) {
+        newUnit.additionalUpgradeSlots = [upgradeCard.additionalUpgradeSlots[0]];
+        newUnit.upgradesEquipped.push(null);
+      }
+      i++;
+      upgradeIndex++;
+    }
+  }
+  let loadoutIndex = 0;
+  for (let i = 0; loadoutSegment && i < loadoutSegment.length; i++) {
+    if (loadoutSegment.charAt(i) === '0') {
+      newUnit.loadoutUpgrades[loadoutIndex] = null;
+      loadoutIndex++;
+    } else {
+      const upgradeId = loadoutSegment.charAt(i) + loadoutSegment.charAt(i + 1);
+      newUnit.loadoutUpgrades[loadoutIndex] = upgradeId;
+      // const upgradeCard = cards[upgradeId];
+      // if ('additionalUpgradeSlots' in upgradeCard) {
+      //   newUnit.additionalUpgradeSlots = [upgradeCard.additionalUpgradeSlots[0]];
+      //   newUnit.loadoutUpgrades.push(null);
+      // }
+      i++;
+      loadoutIndex++;
+    }
+  }
+  return newUnit;
+}
+
+function segmentToUnitObject(unitIndex, segment) {
+  let unit; let counterpart;
+  if (segment.includes('+')) {
+    unit = processUnitSegment(segment.split('+')[0]);
+    counterpart = processUnitSegment(segment.split('+')[1]);
+    const {
+      unitId,
+      hasUniques,
+      totalUnitCost,
+      unitObjectString,
+      upgradesEquipped,
+      loadoutUpgrades,
+      additionalUpgradeSlots
+    } = counterpart;
+    unit.counterpart = {
+      count: 1,
+      counterpartId: unitId,
+      hasUniques,
+      totalUnitCost,
+      unitObjectString,
+      upgradesEquipped,
+      loadoutUpgrades,
+      additionalUpgradeSlots
+    };
+  } else unit = processUnitSegment(segment);
+  return unit;
+}
+
 function convertHashToList(faction, url) {
+  let list = JSON.parse(JSON.stringify(listTemplate));
+  list.faction = faction;
+  const segments = url.split(',');
+  const unitSegments = [];
+  const otherSegments = [];
+  try {
+    segments.forEach(segment => {
+      if (segment.length > 2) unitSegments.push(segment);
+      else otherSegments.push(segment);
+    })
+  } catch (e) {
+    console.log(e);
+    return false;
+  }
+  try {
+    list.units = unitSegments.map((segment, i) => segmentToUnitObject(i, segment));
+    list.units.forEach(unit => {
+      list.unitObjectStrings.push(unit.unitObjectString);
+    });
+  } catch (e) {
+    console.log(e);
+    return false;
+  }
+  try {
+    otherSegments.forEach(cardId => {
+      // if (cardId.includes('*')) {}
+      const card = cards[cardId];
+      if (card.cardType === 'command') {
+        list.commandCards.push(cardId);
+      } else if (card.cardSubtype === 'objective') {
+        list.objectiveCards.push(cardId);
+      } else if (card.cardSubtype === 'deployment') {
+        list.deploymentCards.push(cardId);
+      } else if (card.cardSubtype === 'condition') {
+        list.conditionCards.push(cardId);
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    return false;
+  }
+  return consolidate(list);
+}
+
+function convertHashToList2(faction, url) {
   let list = JSON.parse(JSON.stringify(listTemplate));
   list.faction = faction;
   const segments = url.split(',');
@@ -809,6 +947,7 @@ function convertHashToList(faction, url) {
       if (unitCard.cardType !== 'unit') throw Error('Unit ID is not a unit.');
       if (list.uniques.includes(unitId)) throw Error('Uniqueness violation.');
       list = addUnit(list, unitId, unitCount);
+
       let loadoutSegment = '';
       let upgradeSegment = unitSegment.slice(3);
       if (upgradeSegment.includes('_')) {
@@ -884,7 +1023,8 @@ function convertHashToList(faction, url) {
         }
       }
     });
-    return list;
+    console.log('hash list:', list);
+    return consolidate(list);
   } catch (e) {
     console.log(e);
     return false;
