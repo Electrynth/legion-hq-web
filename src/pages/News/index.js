@@ -4,9 +4,9 @@ import Alert from '@material-ui/lab/Alert';
 
 const posts = [
   {
-    "title": "Save Button completed",
+    "title": "Save + Fork button completed",
     "date": "28 May 2020",
-    "body": "If logged in, lists can be created or updated."
+    "body": "If logged in, lists can be created, updated, or forked."
   },
   {
     "title": "URL Export completed",
@@ -50,15 +50,13 @@ function News() {
         display: 'flex',
         flexFlow: 'column nowrap',
         alignItems: 'stretch',
-        padding: '8px 24px'
+        padding: '8px 32px'
       }}
     >
       <Alert variant="filled" severity="info" style={{ marginBottom: 16 }}>
         Key features before to be completed before deployment:
         <ul>
           <li>Cards page (card database viewer thing)</li>
-          <li>Print List button</li>
-          <li>Fork List button</li>
           <li>List template implementation</li>
         </ul>
       </Alert>
