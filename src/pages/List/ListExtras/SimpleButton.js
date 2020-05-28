@@ -2,7 +2,7 @@ import React from 'react';
 import Chip from '@material-ui/core/Chip';
 
 function SimpleButton({
-  timeout, timeoutMessage = 'success', isDisabled, icon, label, handleClick
+  timeout, timeoutMessage = 'Processing...', isDisabled, icon, label, handleClick
 }) {
   const [isTimedout, setIsTimedout] = React.useState(false);
   const onClick = timeout ? () => {

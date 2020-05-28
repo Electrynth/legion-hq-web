@@ -19,7 +19,8 @@ function ListExtras() {
     currentList,
     listSaveMessage,
     handleClearList,
-    handleListSave
+    handleListSave,
+    handleListFork
   } = useContext(ListContext);
   return (
     <div
@@ -36,7 +37,7 @@ function ListExtras() {
       <PrintExportButton currentList={currentList} />
       <SimpleButton
         timeout={3000}
-        timeoutMessage={listSaveMessage}
+        timeoutMessage={listSaveMessage ? listSaveMessage : 'Saving...'}
         isDisabled={!Boolean(userId)}
         icon={<SaveIcon />}
         label="Save List"
@@ -46,7 +47,7 @@ function ListExtras() {
         isDisabled={!Boolean(currentList.listId)}
         icon={<ForkIcon />}
         label="Fork List"
-        handleClick={() => handleListSave(currentList)}
+        handleClick={() => handleListFork(currentList)}
       />
       <SimpleButton
         icon={<ClearIcon />}
