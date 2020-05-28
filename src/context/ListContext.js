@@ -126,9 +126,11 @@ export function ListProvider({
     if (stackSize > 1) { setStackSize(stackSize - 1); }
   }
   const handleToggleIsApplyToAll = () => setIsApplyToAll(!isApplyToAll);
+  console.log('list template', listTemplate);
   const handleClearList = () => {
     setCardPaneFilter({ action: 'DISPLAY' });
-    setCurrentList({ ...listTemplate, faction: currentList.faction });
+    const newList = JSON.parse(JSON.stringify(listTemplate));
+    setCurrentList({ ...newList, faction: currentList.faction });
   }
   const handleChangeTitle = title => setCurrentList({ ...changeListTitle(currentList, title) });
   const handleChangeMode = () => setCurrentList({ ...toggleListMode(currentList) });
