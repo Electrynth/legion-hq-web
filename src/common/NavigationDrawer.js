@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-  Typography,
   SwipeableDrawer,
   Divider,
   List,
@@ -13,11 +12,7 @@ import DataContext from 'context/DataContext';
 
 function NavDrawerLink({ selected, icon, text, handleClick }) {
   return (
-    <ListItem
-      button
-      selected={selected}
-      onClick={handleClick}
-    >
+    <ListItem button selected={selected} onClick={handleClick}>
       <ListItemIcon>
         {icon}
       </ListItemIcon>
