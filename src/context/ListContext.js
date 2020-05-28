@@ -39,7 +39,7 @@ function isValidListId(listId) {
 export function ListProvider({
   width, children, slug, listHash, storedLists, updateStoredList
 }) {
-  const { userId, userSettings } = useContext(DataContext);
+  const { userId, userSettings, goToPage } = useContext(DataContext);
   const [stackSize, setStackSize] = useState(1);
   const [isApplyToAll, setIsApplyToAll] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -215,7 +215,7 @@ export function ListProvider({
         setMessage(`Failed to update list ${listId}`);
       });
     } else {
-      Axios.post(`${urls.api}/lists`, { userId, ...rest }).then(response => {
+      Axios.post(`${urls.api}/lists`, { ...rest, userId }).then(response => {
         const { listId } = response.data;
         setCurrentList({ ...currentList, listId });
         setListSaveMessage('List Created!')
@@ -225,8 +225,18 @@ export function ListProvider({
       });
     }
   }
-  const handleListFork = (listId) => {
-
+  const handleListFork = (list) => {
+    if (!userId) return;
+    const { _id, listId, ...rest } = list;
+    if (!listId) return;
+    const forkedList = { ...rest, title: list.title + ' fork' };
+    Axios.post(`${urls.api}/lists`, { ...forkedList, userId }).then(response => {
+      const newList = response.data;
+      goToPage(`/list/${newList.listId}`);
+    }).catch(e => {
+      setError(e);
+      setMessage(`Failed to fork list ${listId} for user ${userId}`);
+    });
   }
   const unitProps = {
     getEligibleUnitsToAdd,
@@ -261,7 +271,8 @@ export function ListProvider({
     handleChangeMode,
     handleIncrementStackSize,
     handleDecrementStackSize,
-    handleListSave
+    handleListSave,
+    handleListFork
   };
   const modalProps = {
     handleOpenModal,
