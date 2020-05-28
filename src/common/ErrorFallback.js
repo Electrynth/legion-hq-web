@@ -2,8 +2,7 @@ import React from 'react';
 import { Container, Grid, Typography, Divider } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab';
 
-function ErrorFallback(props) {
-  const { error, componentStack } = props;
+function ErrorFallback({ error, componentStack }) {
   return (
     <Container>
       <Grid container justify="center">
