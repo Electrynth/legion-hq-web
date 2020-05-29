@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { Grid, Divider } from '@material-ui/core';
+import DataContext from 'context/DataContext';
 import ListContext from 'context/ListContext';
 import CardModal from 'common/CardModal';
+import themes from 'constants/themes';
 import ListHeader from './ListHeader';
 import RankSelector from './RankSelector';
 import ListUnits from './ListUnits';
@@ -13,6 +15,9 @@ import ListId from './ListId';
 import CardSelector from './CardSelector';
 
 function ListLayout() {
+  const { userSettings } = useContext(DataContext);
+  const { themeColor } = userSettings;
+  const palette = themes.palettes[themeColor]
   const {
     width,
     leftPaneWidth,
@@ -30,12 +35,22 @@ function ListLayout() {
     height: `calc(100vh - ${isMobile ? '125px' : '75px'})`
   };
 
+  const stickyStyles = {
+    top: 0,
+    zIndex: 1,
+    position: '-webkit-sticky',
+    position: 'sticky',
+    backgroundColor: palette ? palette.background.default : ''
+  };
+
   const builderPane = leftPaneWidth > 0 && (
     <Grid item xs={leftPaneWidth} style={paneStyles}>
       <div id="list-content">
-        <ListHeader />
-        <div style={{ marginTop: 8 }} />
-        <RankSelector />
+        <div style={stickyStyles}>
+          <ListHeader />
+          <div style={{ marginTop: 8 }} />
+          <RankSelector />
+        </div>
         <ListUnits />
         <Divider style={{ marginBottom: 4 }} />
         <ListCommands />

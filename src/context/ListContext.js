@@ -126,7 +126,6 @@ export function ListProvider({
     if (stackSize > 1) { setStackSize(stackSize - 1); }
   }
   const handleToggleIsApplyToAll = () => setIsApplyToAll(!isApplyToAll);
-  console.log('list template', listTemplate);
   const handleClearList = () => {
     setCardPaneFilter({ action: 'DISPLAY' });
     const newList = JSON.parse(JSON.stringify(listTemplate));
