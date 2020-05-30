@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
+  useMediaQuery,
   Chip,
   AppBar,
   Tabs,
@@ -8,6 +9,7 @@ import {
   Typography,
   TextField
 } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import { Description as TextIcon } from '@material-ui/icons';
 import {
   generateStandardText,
@@ -78,6 +80,7 @@ function DialogContent({
 }
 
 function TextExportButton({ currentList }) {
+  const theme = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [textType, setTextType] = useState(0);
   const [listText, setListText] = useState('');
@@ -86,6 +89,7 @@ function TextExportButton({ currentList }) {
   useEffect(() => {
     setListText(generateListText(textType, currentList));
   }, [currentList, isOpen, textType]);
+  const isFullscreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <div style={{ marginRight: 4, marginBottom: 4 }}>
       <Chip
@@ -96,8 +100,10 @@ function TextExportButton({ currentList }) {
         onClick={() => setIsOpen(true)}
       />
       <DialogModal
+        isFullWidth={true}
+        isMobile={isFullscreen}
         isOpen={isOpen}
-        actions={<ClipboardButton content={listText} />}
+        actions={<ClipboardButton variant="contained" content={listText} />}
         content={
           <DialogContent
             currentList={currentList}

@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Button,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -7,17 +8,32 @@ import {
 } from '@material-ui/core';
 
 function DialogModal({
-  isOpen, isMobile, title, content, actions, handleClose
+  isOpen, isMobile, isFullWidth = false, title, content, actions, handleClose
 }) {
   const dialogStyle = title ? {} : { padding: 0 };
   return (
-    <Dialog fullScreen={isMobile} open={isOpen} onClose={handleClose}>
+    <Dialog
+      fullWidth={isFullWidth}
+      open={isOpen}
+      fullScreen={isMobile}
+      onClose={handleClose}
+    >
       {title && <DialogTitle>{title}</DialogTitle>}
       <DialogContent style={dialogStyle}>
         {content}
       </DialogContent>
       <DialogActions>
-        {actions}
+        {isMobile ? (
+          <DialogActions>
+            {actions}
+            <Button
+              size="large"
+              onClick={handleClose}
+            >
+              Go Back
+            </Button>
+          </DialogActions>
+        ) : actions}
       </DialogActions>
     </Dialog>
   );
