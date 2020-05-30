@@ -4,6 +4,7 @@ import DataContext from 'context/DataContext';
 import ErrorFallback from 'common/ErrorFallback';
 import LoadingWidget from 'common/LoadingWidget';
 import factions from 'constants/factions';
+import cards from 'constants/cards';
 import urls from 'constants/urls';
 import {
   convertHashToList,
@@ -134,10 +135,40 @@ export function ListProvider({
   const handleChangeTitle = title => setCurrentList({ ...changeListTitle(currentList, title) });
   const handleChangeMode = () => setCurrentList({ ...toggleListMode(currentList) });
   const handleEquipUpgrade = (action, unitIndex, upgradeIndex, upgradeId, isApplyToAll) => {
-    setCardPaneFilter({ action: 'DISPLAY' });
+    const unit = currentList.units[unitIndex];
+    let applyFilter; let nextAvailIndex; let nextAvailType;
+    if (isApplyToAll || unit.count === 1) {
+      for (let i = upgradeIndex + 1; i < unit.upgradesEquipped.length; i++) {
+        const id = unit.upgradesEquipped[i];
+        const unitCard = cards[unit.unitId];
+        if (id) continue;
+        nextAvailIndex = i;
+        nextAvailType = unitCard.upgradeBar[i] ?
+                        unitCard.upgradeBar[i] :
+                        unit.additionalUpgradeSlots[i - (unitCard.upgradeBar.length + 1)];
+        break;
+      }
+      if (nextAvailIndex && nextAvailType) {
+        applyFilter = (newUpgradesEquipped, newAdditionalUpgradeSlots) => setCardPaneFilter({
+          action: 'UNIT_UPGRADE',
+          unitIndex,
+          upgradeIndex: nextAvailIndex,
+          upgradeType: nextAvailType,
+          hasUniques: unit.hasUniques,
+          unitId: unit.unitId,
+          upgradesEquipped: newUpgradesEquipped,
+          additionalUpgradeSlots: newAdditionalUpgradeSlots
+        });
+      }
+    }
+    // else applyFilter = () => setCardPaneFilter({ action: 'DISPLAY' })
     const newList = equipUpgrade(
       currentList, action, unitIndex, upgradeIndex, upgradeId, isApplyToAll
     );
+    if (applyFilter && newList.units[unitIndex]) {
+      const newUnit = newList.units[unitIndex];
+      applyFilter(newUnit.upgradesEquipped, newUnit.additionalUpgradeSlots);
+    } else setCardPaneFilter({ action: 'DISPLAY' });
     setCurrentList({ ...newList });
   };
   const handleUnequipUpgrade = (action, unitIndex, upgradeIndex) => {

@@ -175,15 +175,7 @@ function generateTournamentText(
 }
 
 // • × •
-// TEST 1 copy
-// 594/800 (7 activations)
-// Commanders:
-//  - Count Dooku (205): Force Choke (5), Force Push (10), Saber Throw (5), Strict Orders (5) = 230
-// Corps:
-//  - 4× Battle Droids (36): E-5C Trooper (18), Battle Droid (6) = 240
-//  - 2× Battle Droids (36): E-5s Trooper (20), Battle Droid (6) = 124
-//
-// •Fear, Surprise, and Intimidation, •Ambush, ••Double the Fall, ••Push, •••You Disappoint Me, •••Assault, ••••Standing Orders
+
 function generateStandardText(list) {
   let header = list.title ? list.title : 'Untitled';
   let points = `\n${list.pointTotal}/${legionModes[list.mode].maxPoints}`;

@@ -189,7 +189,7 @@ function CardSelector() {
       </div>
     );
   } else {
-    header = <Title title={`${action} is invalid.`} />;
+    header = <Title title={`${action} is an invalid action.`} />;
   }
   return (
     <Fade unmountOnExit exit={false} in={cardPaneFilter.action !== 'DISPLAY'}>

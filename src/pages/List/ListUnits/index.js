@@ -26,8 +26,9 @@ function ListUnits() {
     let counterpartUnit;
     let addCounterpartHandler;
     let removeCounterpartHandler;
-    const zoomUpgradeHandlers = [];
     const addUpgradeHandlers = [];
+    const zoomUpgradeHandlers = [];
+    const swapUpgradeHandlers = [];
     const deleteUpgradeHandlers = [];
     const changeLoadoutHandlers = [];
     const deleteLoadoutHandlers = [];
@@ -37,8 +38,9 @@ function ListUnits() {
         action: 'COUNTERPART', unitIndex, counterpartId
       });
     } else if (counterpartId && currentList.uniques.includes(counterpartId)) {
-      const cZoomUpgradeHandlers = [];
       const cAddUpgradeHandlers = [];
+      const cSwapUpgradeHandlers = [];
+      const cZoomUpgradeHandlers = [];
       const cDeleteUpgradeHandlers = [];
       const cChangeLoadoutHandlers = [];
       const cDeleteLoadoutHandlers = [];
@@ -49,6 +51,12 @@ function ListUnits() {
         const upgradeType = counterpartCard.upgradeBar[upgradeIndex];
         if (upgradeId) {
           cZoomUpgradeHandlers.push(() => handleCardZoom(upgradeId));
+          cSwapUpgradeHandlers.push(() => setCardPaneFilter({
+            action: 'COUNTERPART_UPGRADE',
+            upgradeType, unitIndex, upgradeIndex, counterpartId,
+            upgradesEquipped: counterpart.upgradesEquipped,
+            additionalUpgradeSlots: []
+          }));
           cAddUpgradeHandlers.push(undefined);
           cDeleteUpgradeHandlers.push(() => handleUnequipUpgrade(
             'COUNTERPART_UPGRADE', unitIndex, upgradeIndex
@@ -74,6 +82,7 @@ function ListUnits() {
           }
         } else {
           cZoomUpgradeHandlers.push(undefined);
+          cSwapUpgradeHandlers.push(undefined);
           cAddUpgradeHandlers.push(() => setCardPaneFilter({
             action: 'COUNTERPART_UPGRADE',
             upgradeType, unitIndex, upgradeIndex, counterpartId,
@@ -96,6 +105,7 @@ function ListUnits() {
           handleCardZoom={() => handleCardZoom(counterpartId)}
           handleRemoveCounterpart={removeCounterpartHandler}
           zoomUpgradeHandlers={cZoomUpgradeHandlers}
+          swapUpgradeHandlers={cSwapUpgradeHandlers}
           addUpgradeHandlers={cAddUpgradeHandlers}
           deleteUpgradeHandlers={cDeleteUpgradeHandlers}
           changeLoadoutHandlers={cChangeLoadoutHandlers}
@@ -109,6 +119,14 @@ function ListUnits() {
       if (upgradeId) {
         zoomUpgradeHandlers.push(() => handleCardZoom(upgradeId));
         addUpgradeHandlers.push(undefined);
+        swapUpgradeHandlers.push(() => setCardPaneFilter({
+          action: 'UNIT_UPGRADE',
+          upgradeType, unitIndex, upgradeIndex,
+          hasUniques: unit.hasUniques,
+          unitId: unitCard.id,
+          upgradesEquipped: unit.upgradesEquipped,
+          additionalUpgradeSlots: unit.additionalUpgradeSlots
+        }));
         deleteUpgradeHandlers.push(() => handleUnequipUpgrade(
           'UNIT_UPGRADE', unitIndex, upgradeIndex
         ));
@@ -135,6 +153,7 @@ function ListUnits() {
         }
       } else {
         zoomUpgradeHandlers.push(undefined);
+        swapUpgradeHandlers.push(undefined);
         addUpgradeHandlers.push(() => setCardPaneFilter({
           action: 'UNIT_UPGRADE',
           upgradeType, unitIndex, upgradeIndex,
@@ -166,6 +185,7 @@ function ListUnits() {
           addCounterpartHandler={addCounterpartHandler}
           removeCounterpartHandler={removeCounterpartHandler}
           zoomUpgradeHandlers={zoomUpgradeHandlers}
+          swapUpgradeHandlers={swapUpgradeHandlers}
           addUpgradeHandlers={addUpgradeHandlers}
           deleteUpgradeHandlers={deleteUpgradeHandlers}
           changeLoadoutHandlers={changeLoadoutHandlers}

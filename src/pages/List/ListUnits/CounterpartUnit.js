@@ -39,6 +39,7 @@ function CounterpartUnit({
   handleCardZoom,
   handleRemoveCounterpart,
   zoomUpgradeHandlers,
+  swapUpgradeHandlers,
   addUpgradeHandlers,
   deleteUpgradeHandlers,
   changeLoadoutHandlers,
@@ -64,6 +65,7 @@ function CounterpartUnit({
       totalUpgradeBar={counterpartCard.upgradeBar}
       loadoutUpgrades={counterpart.loadoutUpgrades}
       zoomUpgradeHandlers={zoomUpgradeHandlers}
+      swapUpgradeHandlers={swapUpgradeHandlers}
       addUpgradeHandlers={addUpgradeHandlers}
       deleteUpgradeHandlers={deleteUpgradeHandlers}
       changeLoadoutHandlers={changeLoadoutHandlers}

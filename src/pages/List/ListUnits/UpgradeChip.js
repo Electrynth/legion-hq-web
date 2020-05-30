@@ -1,23 +1,30 @@
 import React from 'react';
-import { Divider, Chip, IconButton, Icon, Typography } from '@material-ui/core';
+import { Divider, Chip, Button, IconButton, Icon, Typography } from '@material-ui/core';
 import { Clear as ClearIcon } from '@material-ui/icons';
 import CardIcon from 'common/CardIcon';
 import cards from 'constants/cards';
 import loadoutIcon from 'static/loadout.png';
 
-function UpgradeLabel({ card, handleChangeLoadout }) {
+function UpgradeLabel({ card, handleSwapUpgrade, handleChangeLoadout }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <Typography variant="body2">
-        {`${card.displayName ?
-          card.displayName :
-          card.cardName} (${card.cost})`}
-      </Typography>
+      <Button
+        disableRipple
+        size="small"
+        onClick={handleSwapUpgrade}
+        style={{ textTransform: 'none' }}
+      >
+        <Typography variant="body2">
+          {`${card.displayName ?
+            card.displayName :
+            card.cardName} (${card.cost})`}
+        </Typography>
+      </Button>
       {Boolean(handleChangeLoadout) && (
         <IconButton
           size="small"
           onClick={handleChangeLoadout}
-          style={{ marginLeft: 4, width: 26, height: 26 }}
+          style={{ zIndex: 1, marginLeft: 4, width: 26, height: 26 }}
         >
           <Icon>
             <img
@@ -78,6 +85,7 @@ function UpgradeChip({
   upgradeId,
   loadoutId,
   handleClick,
+  handleSwap,
   handleDelete,
   handleChangeLoadout,
   handleDeleteLoadout
@@ -101,6 +109,7 @@ function UpgradeChip({
       ) : (
         <UpgradeLabel
           card={{ ...upgradeCard, cost: upgradeCard.cost + pointDelta }}
+          handleSwapUpgrade={handleSwap}
           handleChangeLoadout={handleChangeLoadout}
         />
       )}

@@ -44,6 +44,7 @@ function ListUnit({
   addCounterpartHandler,
   removeCounterpartHandler,
   zoomUpgradeHandlers,
+  swapUpgradeHandlers,
   addUpgradeHandlers,
   deleteUpgradeHandlers,
   changeLoadoutHandlers,
@@ -59,12 +60,7 @@ function ListUnit({
     />
   );
   const name = <CardName key="name" id={unitCard.id} />;
-  const points = (
-    <UnitPoints
-      key="points"
-      unit={unit}
-    />
-  );
+  const points = <UnitPoints key="points" unit={unit} />;
   const actions = (
     <UnitActions
       key="actions"
@@ -82,6 +78,7 @@ function ListUnit({
       loadoutUpgrades={unit.loadoutUpgrades}
       addCounterpartHandler={addCounterpartHandler}
       removeCounterpartHandler={removeCounterpartHandler}
+      swapUpgradeHandlers={swapUpgradeHandlers}
       zoomUpgradeHandlers={zoomUpgradeHandlers}
       addUpgradeHandlers={addUpgradeHandlers}
       deleteUpgradeHandlers={deleteUpgradeHandlers}

@@ -12,6 +12,7 @@ function UnitUpgrades({
   addCounterpartHandler,
   removeCounterpartHandler,
   zoomUpgradeHandlers,
+  swapUpgradeHandlers,
   addUpgradeHandlers,
   deleteUpgradeHandlers,
   changeLoadoutHandlers,
@@ -39,6 +40,7 @@ function UnitUpgrades({
           upgradeInteractions={upgradeInteractions}
           loadoutId={hasLoadout ? loadoutUpgrades[upgradeIndex] : undefined}
           handleClick={zoomUpgradeHandlers[upgradeIndex]}
+          handleSwap={swapUpgradeHandlers[upgradeIndex]}
           handleDelete={deleteUpgradeHandlers[upgradeIndex]}
           handleChangeLoadout={changeLoadoutHandlers[upgradeIndex]}
           handleDeleteLoadout={deleteLoadoutHandlers[upgradeIndex]}
