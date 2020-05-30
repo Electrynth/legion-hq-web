@@ -30,7 +30,7 @@ function ListLayout() {
   const isMobile = width === 'xs' || width === 'sm';
 
   const paneStyles = {
-    padding: 4,
+    padding: '0 2px 2px',
     overflow: 'auto',
     height: `calc(100vh - ${isMobile ? '125px' : '75px'})`
   };
