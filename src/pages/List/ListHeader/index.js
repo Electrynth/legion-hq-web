@@ -33,8 +33,8 @@ function ListHeader() {
   return (
     <div id="list-header" className={classes.container}>
       <Menu
-        anchorEl={anchorEl}
         keepMounted
+        anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleFactionMenuClose}
       >
