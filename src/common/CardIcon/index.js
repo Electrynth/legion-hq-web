@@ -14,17 +14,6 @@ const useStyles = makeStyles(theme => ({
   imageHover: { '&:hover': { cursor: 'pointer' } }
 }));
 
-function LoadingIcon({ width, height }) {
-  return (
-    <Skeleton
-      variant="rect"
-      width={width}
-      height={height}
-      style={{ borderRadius: 25 }}
-    />
-  );
-}
-
 function CardIcon({
   size = 'large',
   cardName,
@@ -33,7 +22,13 @@ function CardIcon({
   handleClick
 }) {
   const classes = useStyles();
-  const placeholder = <LoadingIcon {...classes[size]} />;
+  const placeholder = (
+    <Skeleton
+      variant="rect"
+      className={classes[size]}
+      style={{ borderRadius: 25 }}
+    />
+  );
   return (
     <Img
       decode={false}
