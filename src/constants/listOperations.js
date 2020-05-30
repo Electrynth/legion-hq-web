@@ -92,6 +92,7 @@ function consolidate(list) {
       list = removeCommand(list, i);
     }
   }
+  list.commandCards = sortCommandIds(list.commandCards);
   return countPoints(list);
 }
 
@@ -596,12 +597,6 @@ function removeBattle(list, type, index) {
   return list;
 }
 
-function setCommands(list, commandIds) {
-  list.commandCards = commandIds;
-  list.commandCards = sortCommandIds(list.commandCards);
-  return list;
-}
-
 function removeCommand(list, commandIndex) {
   list.commandCards = deleteItem(list.commandCards, commandIndex);
   return list;
@@ -923,116 +918,6 @@ function convertHashToList(faction, url) {
   return consolidate(list);
 }
 
-function convertHashToList2(faction, url) {
-  let list = JSON.parse(JSON.stringify(listTemplate));
-  list.faction = faction;
-  const segments = url.split(',');
-  const unitSegments = [];
-  const otherSegments = [];
-  try {
-    segments.forEach(segment => {
-      if (segment.length > 2) unitSegments.push(segment);
-      else otherSegments.push(segment);
-    });
-  } catch (e) { return false; }
-  try {
-    unitSegments.forEach((segment, unitIndex) => {
-      let unitSegment; let cSegment;
-      if (segment.includes('+')) { // counterpart
-        unitSegment = segment.split('+')[0];
-        cSegment = segment.split('+')[1];
-      } else unitSegment = segment;
-      const unitCount = Number.parseInt(unitSegment.charAt(0));
-      const unitId = unitSegment.charAt(1) + unitSegment.charAt(2);
-      if (!cards[unitId]) throw Error(`Unit ID ${unitId} not a card.`);
-      const unitCard = cards[unitId];
-      if (unitCard.cardType !== 'unit') throw Error('Unit ID is not a unit.');
-      if (list.uniques.includes(unitId)) throw Error('Uniqueness violation.');
-      list = addUnit(list, unitId, unitCount);
-
-      let loadoutSegment = '';
-      let upgradeSegment = unitSegment.slice(3);
-      if (upgradeSegment.includes('_')) {
-        loadoutSegment = upgradeSegment.split('_')[1];
-        upgradeSegment = upgradeSegment.split('_')[0];
-      }
-      let upgradeIndex = 0;
-      for (let i = 0; i < upgradeSegment.length; i++) {
-        if (upgradeSegment.charAt(i) !== '0') {
-          const upgradeId = `${upgradeSegment.charAt(i)}${upgradeSegment.charAt(i + 1)}`;
-          if (!cards[upgradeId]) throw Error(`Upgrade ID ${upgradeId} not a card.`);
-          const upgradeCard = cards[upgradeId];
-          if (upgradeCard.cardType !== 'upgrade') throw Error('Upgrade ID is not an upgrade.');
-          list = equipUpgrade(
-            list, 'UNIT_UPGRADE', unitIndex, upgradeIndex, upgradeId, true
-          );
-          i++;
-          upgradeIndex++;
-        } else upgradeIndex++;
-      }
-      let loadoutIndex = 0;
-      for (let i = 0; i < loadoutSegment.length; i++) {
-        if (loadoutSegment.charAt(i) !== '0') {
-          const loadoutId = `${loadoutSegment.charAt(i)}${loadoutSegment.charAt(i + 1)}`
-          if (!cards[loadoutId]) throw Error(`(Loadout) Upgrade ID ${loadoutId} not a card.`);
-          const loadoutCard = cards[loadoutId];
-          if (loadoutCard.cardType !== 'upgrade') throw Error('(Loadout) Upgrade ID is not an upgrade.');
-          list = equipUpgrade(
-            list, 'LOADOUT_UPGRADE', unitIndex, loadoutIndex, loadoutId
-          );
-          i++;
-          loadoutIndex++;
-        } else loadoutIndex++;
-      }
-      if (cSegment) {
-        // god i hope there isnt ever a generic counterpart
-        // const cCount = cSegment.charAt(0);
-        const counterpartId = cSegment.charAt(1) + cSegment.charAt(2);
-        list = addCounterpart(list, list.units.length - 1, counterpartId);
-        let cLoadoutSegment = '';
-        let cUpgradeSegment = cSegment.slice(3);
-        if (cUpgradeSegment.includes('_')) {
-          cLoadoutSegment = cUpgradeSegment.split('_')[1];
-          cUpgradeSegment = cUpgradeSegment.split('_')[0];
-        }
-        let upgradeIndex = 0;
-        for (let i = 0; i < cUpgradeSegment.length; i++) {
-          if (cUpgradeSegment.charAt(i) !== '0') {
-            const upgradeId = `${cUpgradeSegment.charAt(i)}${cUpgradeSegment.charAt(i + 1)}`;
-            if (!cards[upgradeId]) throw Error(`Upgrade ID ${upgradeId} not a card.`);
-            const upgradeCard = cards[upgradeId];
-            if (upgradeCard.cardType !== 'upgrade') throw Error('Upgrade ID is not an upgrade.');
-            list = equipUpgrade(
-              list, 'COUNTERPART_UPGRADE', unitIndex, upgradeIndex, upgradeId, true
-            );
-            i++;
-            upgradeIndex++;
-          } else upgradeIndex++;
-        }
-        let loadoutIndex = 0;
-        for (let i = 0; i < cLoadoutSegment.length; i++) {
-          if (cLoadoutSegment.charAt(i) !== '0') {
-            const loadoutId = `${cLoadoutSegment.charAt(i)}${cLoadoutSegment.charAt(i + 1)}`
-            if (!cards[loadoutId]) throw Error(`(Loadout) Upgrade ID ${loadoutId} not a card.`);
-            const loadoutCard = cards[loadoutId];
-            if (loadoutCard.cardType !== 'upgrade') throw Error('(Loadout) Upgrade ID is not an upgrade.');
-            list = equipUpgrade(
-              list, 'COUNTERPART_LOADOUT_UPGRADE', unitIndex, loadoutIndex, loadoutId
-            );
-            i++;
-            loadoutIndex++;
-          } else loadoutIndex++;
-        }
-      }
-    });
-    console.log('hash list:', list);
-    return consolidate(list);
-  } catch (e) {
-    console.log(e);
-    return false;
-  }
-}
-
 export {
   convertHashToList,
   changeListTitle,
@@ -1043,7 +928,6 @@ export {
   addBattle,
   removeBattle,
   addCommand,
-  setCommands,
   removeCommand,
   equipUpgrade,
   unequipUpgrade,
