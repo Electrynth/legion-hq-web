@@ -189,11 +189,70 @@ function generateStandardText(list) {
   let points = `\n${list.pointTotal}/${legionModes[list.mode].maxPoints}`;
   const numActivations = getNumActivations(list)
   points += ` (${numActivations} activation${numActivations === 1 ? '' : 's'})\n`;
+  let commander = '';
+  let counterpart = '';
+  let operative = '';
+  let corps = '';
+  let special = '';
+  let support = '';
+  let heavy = '';
+  const unitLine = (unit) => {
+    const id = unit.unitId ? unit.unitId : unit.counterpartId;
+    const unitCard = cards[id];
+    let line = ' - ';
+    if (unit.count > 1) line += `${unit.count}× `;
+    line += unitCard.displayName ? unitCard.displayName : unitCard.cardName;
+    if (unitCard.cost !== unit.totalUnitCost) {
+      line += ` (${unitCard.cost}): `;
+      unit.upgradesEquipped.forEach((upgradeId, i) => {
+        if (!upgradeId) return;
+        const upgradeCard = cards[upgradeId];
+        if (unit.loadoutUpgrades && unit.loadoutUpgrades[i]) {
+          const loadoutCard = cards[unit.loadoutUpgrades[i]];
+          line += upgradeCard.displayName ? upgradeCard.displayName : upgradeCard.cardName;
+          line += ` (${upgradeCard.cost})/`;
+          line += loadoutCard.displayName ? loadoutCard.displayName : loadoutCard.cardName;
+          line += ` (${loadoutCard.cost}), `;
+        } else {
+          line += upgradeCard.displayName ? upgradeCard.displayName : upgradeCard.cardName;
+          line += ` (${upgradeCard.cost}), `;
+        }
+      });
+      line = line.substring(0, line.length - 2)
+      line += ` = ${unit.totalUnitCost}`;
+    } else line += ` = ${unitCard.cost}`;
+    return line + '\n';
+  }
+  list.units.forEach((unit, i) => {
+    const unitCard = cards[unit.unitId];
+    if (unit.counterpart) counterpart += unitLine(unit.counterpart);
+    if (unitCard.rank === 'commander') commander += unitLine(unit);
+    if (unitCard.rank === 'operative') operative += unitLine(unit);
+    if (unitCard.rank === 'corps') corps += unitLine(unit);
+    if (unitCard.rank === 'special') special += unitLine(unit);
+    if (unitCard.rank === 'support') support += unitLine(unit);
+    if (unitCard.rank === 'heavy') heavy += unitLine(unit);
+  });
   let units = '';
-  let commands = '';
-  const unitRanks = {};
-  Object.keys(ranks).forEach(rank => unitRanks[rank] = []);
-  list.units.forEach(unit => unitRanks[cards[unit.unitId].rank].push(unit));
+  if (commander) units += `Commanders:\n${commander}`;
+  if (counterpart && list.faction === 'empire') units += `Counterparts:\n${counterpart}`;
+  if (operative) units += `Operative:\n${operative}`;
+  if (counterpart && list.faction !== 'empire') units += `Counterparts:\n${counterpart}`;
+  if (corps) units += `Corps:\n${corps}`;
+  if (special) units += `Special Forces:\n${special}`;
+  if (support) units += `Support:\n${support}`;
+  if (heavy) units += `Heavy:\n${heavy}`;
+
+  let commands = '\n';
+  list.commandCards.forEach(id => {
+    const commandCard = cards[id];
+    if (commandCard.cardSubtype === '1') commands += '• ';
+    else if (commandCard.cardSubtype === '2') commands += '•• ';
+    else if (commandCard.cardSubtype === '3') commands += '••• ';
+    else commands += '•••• ';
+    commands += `${commandCard.cardName}, `;
+  });
+  if (commands !== '') commands += '•••• Standing Orders';
   return header + points + units + commands;
 }
 
