@@ -36,10 +36,7 @@ function CardModal({ id, isOpen, handleClose }) {
       </DialogContent>
       {isFullscreen && (
         <DialogActions>
-          <Button
-            size="large"
-            onClick={handleClose}
-          >
+          <Button size="large" onClick={handleClose}>
             Go Back
           </Button>
         </DialogActions>
