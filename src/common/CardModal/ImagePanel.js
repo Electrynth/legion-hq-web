@@ -15,7 +15,7 @@ function ImagePanel({ card }) {
   const { cardType, imageName } = card;
   return (
     <React.Fragment>
-      <ExpansionPanel>
+      <ExpansionPanel defaultExpanded={true}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography>Card Image</Typography>
         </ExpansionPanelSummary>
