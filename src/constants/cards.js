@@ -4654,7 +4654,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 18,
 		"imageName": "Deflector Shields.jpeg",
 		"keywords": ["Shields", "Recharge"],
-		"requirements": [{"cardName": "BX-Series Droid Commandos"}]
+		"requirements": [
+			"OR",
+			{"cardName": "BX-Series Droid Commandos"},
+			{"cardName": "BX-Series Droid Commandos Strike Team"}
+		]
 	},
 	"ld": {
 		"id": "ld",
@@ -4665,7 +4669,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 38,
 		"imageName": "BX-Series Droid Sniper.jpeg",
 		"keywords": ["Lethal", "Pierce", "Immune", "Deflect"],
-		"requirements": [{"cardName": "BX-Series Droid Commandos"}]
+		"requirements": [
+			"OR",
+			{"cardName": "BX-Series Droid Commandos"},
+			{"cardName": "BX-Series Droid Commandos Strike Team"}
+		]
 	},
 	"le": {
 		"id": "le",
@@ -4694,7 +4702,11 @@ const cards = JSON.parse(JSON.stringify({
 			"Lethal",
 			"Pierce"
 		],
-		"requirements": [{"cardName": "ARC Troopers"}]
+		"requirements": [
+			"OR",
+			{"cardName": "ARC Troopers"},
+			{"cardName": "ARC Troopers Strike Team"}
+		]
 	},
 	"lg": {
 		"id": "lg",
@@ -4738,7 +4750,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 6,
 		"imageName": "Vibroswords.jpeg",
 		"keywords": ["Charge"],
-		"requirements": [{"cardName": "BX-Series Droid Commandos"}]
+		"requirements": [
+			"OR",
+			{"cardName": "BX-Series Droid Commandos"},
+			{"cardName": "BX-Series Droid Commandos Strike Team"}
+		]
 	},
 	"lk": {
 		"id": "lk",
