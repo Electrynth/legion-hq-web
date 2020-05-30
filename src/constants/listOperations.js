@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import cards from 'constants/cards';
+import ranks from 'constants/ranks';
 import legionModes from 'constants/legionModes';
 import interactions from 'constants/cardInteractions';
 import listTemplate from 'constants/listTemplate';
@@ -174,8 +175,29 @@ function generateTournamentText(
 }
 
 // • × •
-
+// TEST 1 copy
+// 594/800 (7 activations)
+// Commanders:
+//  - Count Dooku (205): Force Choke (5), Force Push (10), Saber Throw (5), Strict Orders (5) = 230
+// Corps:
+//  - 4× Battle Droids (36): E-5C Trooper (18), Battle Droid (6) = 240
+//  - 2× Battle Droids (36): E-5s Trooper (20), Battle Droid (6) = 124
+//
+// •Fear, Surprise, and Intimidation, •Ambush, ••Double the Fall, ••Push, •••You Disappoint Me, •••Assault, ••••Standing Orders
 function generateStandardText(list) {
+  let header = list.title ? list.title : 'Untitled';
+  let points = `\n${list.pointTotal}/${legionModes[list.mode].maxPoints}`;
+  const numActivations = getNumActivations(list)
+  points += ` (${numActivations} activation${numActivations === 1 ? '' : 's'})\n`;
+  let units = '';
+  let commands = '';
+  const unitRanks = {};
+  Object.keys(ranks).forEach(rank => unitRanks[rank] = []);
+  list.units.forEach(unit => unitRanks[cards[unit.unitId].rank].push(unit));
+  return header + points + units + commands;
+}
+
+function generateMinimalText(list) {
   let header = `${list.pointTotal}/${legionModes[list.mode].maxPoints}`;
   const numActivations = getNumActivations(list)
   header += ` (${numActivations} activation${numActivations === 1 ? '' : 's'})\n`;
@@ -247,34 +269,35 @@ function generateStandardText(list) {
     commands += `${commandCard.cardName}, `;
   });
   if (commands !== '') commands += '•••• Standing Orders';
-  let objectives = '';
-  let deployments = '';
-  let conditions = '';
-  if (list.objectiveCards.length > 0) {
-    objectives += '\nObjectives: ';
-    list.objectiveCards.forEach((id, i) => {
-      const card = cards[id];
-      objectives += `${card.cardName}, `;
-    });
-    objectives = objectives.substring(0, objectives.length - 2);
-  }
-  if (list.deploymentCards.length > 0) {
-    deployments += '\nDeployments: ';
-    list.deploymentCards.forEach((id, i) => {
-      const card = cards[id];
-      deployments += `${card.cardName}, `;
-    });
-    deployments = deployments.substring(0, deployments.length - 2);
-  }
-  if (list.conditionCards.length > 0) {
-    conditions += '\nConditions: ';
-    list.conditionCards.forEach((id, i) => {
-      const card = cards[id];
-      conditions += `${card.cardName}, `;
-    });
-    conditions = conditions.substring(0, conditions.length - 2);
-  }
-  return header + units + commands + objectives + deployments + conditions;
+  // let objectives = '';
+  // let deployments = '';
+  // let conditions = '';
+  // if (list.objectiveCards.length > 0) {
+  //   objectives += '\nObjectives: ';
+  //   list.objectiveCards.forEach((id, i) => {
+  //     const card = cards[id];
+  //     objectives += `${card.cardName}, `;
+  //   });
+  //   objectives = objectives.substring(0, objectives.length - 2);
+  // }
+  // if (list.deploymentCards.length > 0) {
+  //   deployments += '\nDeployments: ';
+  //   list.deploymentCards.forEach((id, i) => {
+  //     const card = cards[id];
+  //     deployments += `${card.cardName}, `;
+  //   });
+  //   deployments = deployments.substring(0, deployments.length - 2);
+  // }
+  // if (list.conditionCards.length > 0) {
+  //   conditions += '\nConditions: ';
+  //   list.conditionCards.forEach((id, i) => {
+  //     const card = cards[id];
+  //     conditions += `${card.cardName}, `;
+  //   });
+  //   conditions = conditions.substring(0, conditions.length - 2);
+  // }
+  // + objectives + deployments + conditions;
+  return header + units + commands;
 }
 
 function deleteItem(items, i) {
@@ -945,5 +968,6 @@ export {
   getEquippableUpgrades,
   getEquippableLoadoutUpgrades,
   generateTournamentText,
-  generateStandardText
+  generateStandardText,
+  generateMinimalText
 };

@@ -11,6 +11,7 @@ import {
 import { Description as TextIcon } from '@material-ui/icons';
 import {
   generateStandardText,
+  generateMinimalText,
   generateTournamentText
 } from 'constants/listOperations';
 import DialogModal from './DialogModal';
@@ -18,7 +19,8 @@ import ClipboardButton from './ClipboardButton';
 
 function generateListText(type, currentList) {
   if (type === 0) return generateStandardText(currentList);
-  else if (type === 1) return generateTournamentText(currentList);
+  else if (type === 1) return generateMinimalText(currentList);
+  else if (type === 2) return generateTournamentText(currentList);
   else return '';
 }
 
@@ -47,13 +49,17 @@ function DialogContent({
           onChange={handleChangeTextType}
         >
           <Tab label="Standard" />
+          <Tab label="Minimal" />
           <Tab label="Tournament" />
         </Tabs>
       </AppBar>
       <TabPanel value="standard" index={0}>
         Standard
       </TabPanel>
-      <TabPanel value="tournament" index={1}>
+      <TabPanel value="minimal" index={1}>
+        Minimal
+      </TabPanel>
+      <TabPanel value="tournament" index={2}>
         Tournament
       </TabPanel>
       <div style={{ marginTop: 16 }} />
