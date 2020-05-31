@@ -103,7 +103,6 @@ export function ListProvider({
       }
     }
     setStackSize(1);
-    setIsApplyToAll(false);
   }, [width, cardPaneFilter]);
   const reorderUnits = (startIndex, endIndex) => {
     function reorder(arr) {
