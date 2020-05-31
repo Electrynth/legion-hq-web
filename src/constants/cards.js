@@ -189,6 +189,26 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": [],
 		"id": "Dk"
 	},
+	"Dl": {
+		"displayName": "",
+    "cardSubtype": "deployment",
+    "cardName": "Hemmed In",
+    "cardType": "battle",
+    "products": [],
+    "imageName": "Hemmed In.jpeg",
+    "keywords": [],
+    "id": "Dl"
+	},
+	"Dm": {
+    "displayName": "",
+    "cardSubtype": "deployment",
+    "cardName": "Danger Close",
+    "cardType": "battle",
+    "products": [],
+    "imageName": "Danger Close.jpeg",
+    "keywords": [],
+    "id": "Dm"
+  },
 	"Oa": {
 		"cardSubtype": "objective",
 		"cardName": "Breakthrough",
@@ -291,9 +311,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Control",
 		"cardType": "battle",
 		"imageName": "Control.jpeg",
-		"keywords": [
-			"Skirmish"
-		],
+		"keywords": ["Skirmish"],
 		"id": "Ok"
 	},
 	"Ol": {
@@ -304,6 +322,15 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": ["Blast", "Suppressive"],
 		"id": "Ol"
 	},
+	"Om": {
+    "cardSubtype": "objective",
+    "cardName": "Payload",
+    "cardType": "battle",
+    "products": [],
+    "imageName": "Payload.jpeg",
+    "keywords": [],
+    "id": "Om"
+  },
 	"aa": {
 		"cardSubtype": "4",
 		"cardName": "Standing Orders",
