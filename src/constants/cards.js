@@ -63,9 +63,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "War Weary",
 		"cardType": "battle",
 		"imageName": "War Weary.jpeg",
-		"keywords": [
-			"Skirmish"
-		],
+		"keywords": [],
 		"id": "Ch"
 	},
 	"Ci": {
@@ -74,9 +72,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Clear Conditions2",
 		"cardType": "battle",
 		"imageName": "Clear Conditions2.jpeg",
-		"keywords": [
-			"Skirmish"
-		],
+		"keywords": ["Skirmish"],
 		"id": "Ci"
 	},
 	"Cj": {
@@ -84,9 +80,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Dawn",
 		"cardType": "battle",
 		"imageName": "Dawn.jpeg",
-		"keywords": [
-			"Skirmish"
-		],
+		"keywords": ["Skirmish"],
 		"id": "Cj"
 	},
 	"Ck": {
@@ -94,20 +88,23 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Improvised Defenses",
 		"cardType": "battle",
 		"imageName": "Improvised Defenses.jpeg",
-		"keywords": [
-			"Skirmish"
-		],
+		"keywords": ["Skirmish"],
 		"id": "Ck"
+	},
+	"Cl": {
+		"cardSubtype": "condition",
+		"cardName": "War Weary2",
+		"cardType": "battle",
+		"imageName": "War Weary2.jpeg",
+		"keywords": ["Skirmish"],
+		"id": "Cl"
 	},
 	"Da": {
 		"cardSubtype": "deployment",
 		"cardName": "Advanced Positions",
 		"cardType": "battle",
 		"imageName": "Advanced Positions.jpeg",
-		"keywords": [
-			"Scout",
-			"Stationary"
-		],
+		"keywords": ["Scout", "Stationary"],
 		"id": "Da"
 	},
 	"Db": {
@@ -156,9 +153,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Faceoff",
 		"cardType": "battle",
 		"imageName": "Faceoff.jpeg",
-		"keywords": [
-			"Skirmish"
-		],
+		"keywords": ["Skirmish"],
 		"id": "Dg"
 	},
 	"Dh": {
@@ -166,9 +161,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Meeting Engagement",
 		"cardType": "battle",
 		"imageName": "Meeting Engagement.jpeg",
-		"keywords": [
-			"Skirmish"
-		],
+		"keywords": ["Skirmish"],
 		"id": "Dh"
 	},
 	"Di": {
@@ -176,9 +169,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Flanking Positions",
 		"cardType": "battle",
 		"imageName": "Flanking Positions.jpeg",
-		"keywords": [
-			"Skirmish"
-		],
+		"keywords": ["Skirmish"],
 		"id": "Di"
 	},
 	"Dj": {
@@ -187,9 +178,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Battle Lines2",
 		"cardType": "battle",
 		"imageName": "Battle Lines2.jpeg",
-		"keywords": [
-			"Skirmish"
-		],
+		"keywords": ["Skirmish"],
 		"id": "Dj"
 	},
 	"Dk": {
@@ -231,9 +220,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Recover the Supplies",
 		"cardType": "battle",
 		"imageName": "Recover the Supplies.jpeg",
-		"keywords": [
-			"Claim"
-		],
+		"keywords": ["Claim"],
 		"id": "Od"
 	},
 	"Oe": {
