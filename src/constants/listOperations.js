@@ -701,6 +701,7 @@ function getEligibleBattlesToAdd(list, type) {
     if (card.cardSubtype !== type) return;
     if (currentCards.includes(id)) return;
     if (currentCards.length > 3) invalidIds.push(id);
+    else if (list.mode !== '500-point mode' && card.keywords.includes('Skirmish')) invalidIds.push(id);
     else validIds.push(id);
   });
   return { validIds, invalidIds };
