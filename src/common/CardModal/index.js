@@ -22,7 +22,7 @@ function CardModal({ id, isOpen, handleClose }) {
   return (
     <Dialog fullScreen={isFullscreen} open={isOpen} onClose={handleClose}>
       <DialogTitle style={{ padding: '16px 16px 0' }}>
-        {card.cardName}
+        {card.displayName ? card.displayName : card.cardName}
       </DialogTitle>
       {card.title && (
         <DialogContentText style={{ padding: '8px 16px', marginBottom: 0 }}>
