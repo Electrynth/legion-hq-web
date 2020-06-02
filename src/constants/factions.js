@@ -1,11 +1,11 @@
-import rebelsWhite from 'static/rebelsWhite.svg';
-import rebelsBlack from 'static/rebelsBlack.svg';
-import empireWhite from 'static/empireWhite.svg';
-import empireBlack from 'static/empireBlack.svg';
-import republicWhite from 'static/republicWhite.svg';
-import republicBlack from 'static/republicBlack.svg';
-import separatistsWhite from 'static/separatistsWhite.svg';
-import separatistsBlack from 'static/separatistsBlack.svg';
+import rebelsWhite from 'assets/factions/rebelsWhite.svg';
+import rebelsBlack from 'assets/factions/rebelsBlack.svg';
+import empireWhite from 'assets/factions/empireWhite.svg';
+import empireBlack from 'assets/factions/empireBlack.svg';
+import republicWhite from 'assets/factions/republicWhite.svg';
+import republicBlack from 'assets/factions/republicBlack.svg';
+import separatistsWhite from 'assets/factions/separatistsWhite.svg';
+import separatistsBlack from 'assets/factions/separatistsBlack.svg';
 
 const factions = {
   rebels: {

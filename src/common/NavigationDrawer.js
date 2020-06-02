@@ -71,6 +71,15 @@ function NavigationDrawer() {
               goToPage('/cards');
             }}
           />
+          <NavDrawerLink
+            text="Stats"
+            selected={pathname === '/stats'}
+            icon={routes['/stats'].icon}
+            handleClick={() => {
+              setIsDrawerOpen(false);
+              goToPage('/stats');
+            }}
+          />
         </List>
         <Divider />
         <List dense={true}>

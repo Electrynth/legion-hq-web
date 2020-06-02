@@ -6,7 +6,8 @@ import {
   Settings as SettingsIcon,
   Info as InfoIcon,
   ViewModule as CardsIcon,
-  Announcement as NewsIcon
+  Announcement as NewsIcon,
+  Casino as DiceIcon
 } from '@material-ui/icons';
 import ErrorFallback from 'common/ErrorFallback';
 import FactionIcon from 'common/FactionIcon';
@@ -35,6 +36,11 @@ const routes = {
     name: 'Cards',
     path: '/cards',
     icon: <CardsIcon style={{ fontSize }} />
+  },
+  '/stats': {
+    name: 'Stats',
+    path: '/stats',
+    icon: <DiceIcon style={{ fontSize }} />
   },
   '/list/rebels': {
     name: 'Rebels',

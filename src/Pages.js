@@ -5,6 +5,7 @@ import listTemplate from 'constants/listTemplate';
 const Home = lazy(() => import('pages/Home'));
 const News = lazy(() => import('pages/News'));
 const Cards = lazy(() => import('pages/Cards'));
+const Stats = lazy(() => import('pages/Stats'));
 const List = lazy(() => import('pages/List'));
 const Settings = lazy(() => import('pages/Settings'));
 const Info = lazy(() => import('pages/Info'));
@@ -28,6 +29,7 @@ function Pages() {
         <Route exact path="/" component={Home} />
         <Route exact path="/news" component={News} />
         <Route path="/cards" component={Cards} />
+        <Route path="/stats" component={Stats} />
         <Route
           path="/list/:slug/:listHash?"
           render={({ match }) => {

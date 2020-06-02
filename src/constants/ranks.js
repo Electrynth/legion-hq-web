@@ -1,9 +1,9 @@
-import commander from 'static/commander.png';
-import operative from 'static/operative.png';
-import corps from 'static/corps.png';
-import special from 'static/special.png';
-import support from 'static/support.png';
-import heavy from 'static/heavy.png';
+import commander from 'assets/rankTypes/commander.png';
+import operative from 'assets/rankTypes/operative.png';
+import corps from 'assets/rankTypes/corps.png';
+import special from 'assets/rankTypes/special.png';
+import support from 'assets/rankTypes/support.png';
+import heavy from 'assets/rankTypes/heavy.png';
 
 const ranks = {
   commander: {

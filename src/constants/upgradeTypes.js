@@ -1,17 +1,17 @@
-import heavyWeapon from 'static/heavy weapon.png';
-import personnel from 'static/personnel.png';
-import force from 'static/force.png';
-import command from 'static/command.png';
-import hardpoint from 'static/hardpoint.png';
-import gear from 'static/gear.png';
-import grenades from 'static/grenades.png';
-import comms from 'static/comms.png';
-import pilot from 'static/pilot.png';
-import training from 'static/training.png';
-import generator from 'static/generator.png';
-import armament from 'static/armament.png';
-import crew from 'static/crew.png';
-import ordnance from 'static/ordnance.png';
+import heavyWeapon from 'assets/upgradeTypes/heavy weapon.png';
+import personnel from 'assets/upgradeTypes/personnel.png';
+import force from 'assets/upgradeTypes/force.png';
+import command from 'assets/upgradeTypes/command.png';
+import hardpoint from 'assets/upgradeTypes/hardpoint.png';
+import gear from 'assets/upgradeTypes/gear.png';
+import grenades from 'assets/upgradeTypes/grenades.png';
+import comms from 'assets/upgradeTypes/comms.png';
+import pilot from 'assets/upgradeTypes/pilot.png';
+import training from 'assets/upgradeTypes/training.png';
+import generator from 'assets/upgradeTypes/generator.png';
+import armament from 'assets/upgradeTypes/armament.png';
+import crew from 'assets/upgradeTypes/crew.png';
+import ordnance from 'assets/upgradeTypes/ordnance.png';
 
 const upgradeTypes = {
   'heavy weapon': {

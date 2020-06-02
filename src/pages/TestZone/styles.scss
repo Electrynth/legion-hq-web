@@ -1,0 +1,45 @@
+// $triwidth: 100px;
+// $sqrt3: 1.732;
+// $tilt: 35.27deg; // atan(1/sqrt(2))
+// $triheight: $triwidth * $sqrt3;
+//
+// .solid {
+//   position: relative;
+//   width: #{$triwidth * 2};
+//   height: #{$triwidth * 2};
+//   animation: spin 16s infinite linear;
+//   transform-style: preserve-3d;
+//
+//   .side {
+//     position: absolute;
+//     left: 0;
+//     bottom: 50%;
+// //    border-bottom: $triheight solid black;
+//     height: $triheight;
+// //    border-left: $triwidth solid transparent;
+// //    border-right: $triwidth solid transparent;
+//     width: $triwidth * 2;
+//     transform-origin: 50% 100%;
+//   }
+//
+//   @for $i from 1 through 8 {
+//     $tilt2: $tilt;
+//     @if $i > 4 {
+//       $tilt2: 180deg - $tilt;
+//     }
+//     .side:nth-child(#{$i}) {
+//       transform:
+//         rotateY(#{$i * 90deg})
+//         translateZ($triwidth)
+//         rotateX($tilt2);
+//       border-bottom-color: #{rgba(random(255),random(255),random(255),0.4)};
+//     }
+//   }
+//
+// }
+
+// @keyframes spin {
+//   0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+//   50% { transform: rotateX(180deg) rotateY(360deg) rotateZ(540deg); }
+//   100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg); }
+// }
