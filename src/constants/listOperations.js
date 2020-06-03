@@ -117,7 +117,30 @@ function generateTournamentText(
       for (let j = 0; j < unit.upgradesEquipped.length; j++) {
         if (unit.upgradesEquipped[j]) {
           const upgradeCard = cards[unit.upgradesEquipped[j]];
-          units += ` - ${upgradeCard.cardName} (${upgradeCard.cost})\n`;
+          if (unit.loadoutUpgrades && unit.loadoutUpgrades[j]) {
+            const loadoutCard = cards[unit.loadoutUpgrades[j]];
+            units += ` - ${upgradeCard.cardName} (${upgradeCard.cost})`;
+            units += `/${loadoutCard.cardName} (${loadoutCard.cost})\n`;
+          } else {
+            units += ` - ${upgradeCard.cardName} (${upgradeCard.cost})\n`;
+          }
+        }
+      }
+      if (unit.counterpart) {
+        const { counterpart } = unit;
+        const counterpartCard = cards[counterpart.counterpartId];
+        units += `${counterpartCard.cardName} (${unit.counterpart.totalUnitCost})\n`;
+        for (let j = 0; j < counterpart.upgradesEquipped.length; j++) {
+          if (counterpart.upgradesEquipped[j]) {
+            const upgradeCard = cards[counterpart.upgradesEquipped[j]];
+            if (counterpart.loadoutUpgrades && counterpart.loadoutUpgrades[j]) {
+              const loadoutCard = cards[counterpart.loadoutUpgrades[j]];
+              units += ` - ${upgradeCard.cardName} (${upgradeCard.cost})`;
+              units += `/${loadoutCard.cardName} (${loadoutCard.cost})\n`;
+            } else {
+              units += ` - ${upgradeCard.cardName} (${upgradeCard.cost})\n`;
+            }
+          }
         }
       }
     } else {
