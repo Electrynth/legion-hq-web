@@ -72,12 +72,12 @@ function NavigationDrawer() {
             }}
           />
           <NavDrawerLink
-            text="Stats"
-            selected={pathname === '/stats'}
-            icon={routes['/stats'].icon}
+            text="Dice Roller"
+            selected={pathname === '/roller'}
+            icon={routes['/roller'].icon}
             handleClick={() => {
               setIsDrawerOpen(false);
-              goToPage('/stats');
+              goToPage('/roller');
             }}
           />
         </List>

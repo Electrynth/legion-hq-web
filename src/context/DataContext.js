@@ -37,9 +37,9 @@ const routes = {
     path: '/cards',
     icon: <CardsIcon style={{ fontSize }} />
   },
-  '/stats': {
-    name: 'Stats',
-    path: '/stats',
+  '/roller': {
+    name: 'Dice Roller',
+    path: '/roller',
     icon: <DiceIcon style={{ fontSize }} />
   },
   '/list/rebels': {

@@ -1,0 +1,4 @@
+@keyframes spinning {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(1440deg) rotateY(1440deg); }
+}

@@ -4,6 +4,11 @@ import Alert from '@material-ui/lab/Alert';
 
 const posts = [
   {
+    "title": "Randomly decided to add a dice roller",
+    "date": "2 June 2020",
+    "body": "Still needs a lot of work but the basics are there. Currently only does attack dice and doesn't count up results."
+  },
+  {
     "title": "Save + Fork button completed",
     "date": "28 May 2020",
     "body": "If logged in, lists can be created, updated, or forked."
