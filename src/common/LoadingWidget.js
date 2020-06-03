@@ -1,6 +1,6 @@
 import React from 'react';
 import Fade from '@material-ui/core/Fade';
-import LoadingIcon from 'static/LoadingIcon.png';
+import LoadingIcon from 'assets/LoadingIcon.png';
 
 function LoadingWidget() {
   return (

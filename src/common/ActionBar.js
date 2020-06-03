@@ -8,10 +8,10 @@ import {
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { Menu as MenuIcon, Search as SearchIcon } from '@material-ui/icons';
 import DataContext from 'context/DataContext';
-import ftLogoLight from 'static/ftLogoLight.png';
-import ftLogoDark from 'static/ftLogoDark.png';
-import lhqLogoLight from 'static/lhqLogoLight.png';
-import lhqLogoDark from 'static/lhqLogoDark.png';
+import ftLogoLight from 'assets/ftLogoLight.png';
+import ftLogoDark from 'assets/ftLogoDark.png';
+import lhqLogoLight from 'assets/lhqLogoLight.png';
+import lhqLogoDark from 'assets/lhqLogoDark.png';
 
 const useStyles = makeStyles(theme => ({
   grow: { flexGrow: 1 },

@@ -3,7 +3,7 @@ import { Divider, Chip, Button, IconButton, Icon, Typography } from '@material-u
 import { Clear as ClearIcon } from '@material-ui/icons';
 import CardIcon from 'common/CardIcon';
 import cards from 'constants/cards';
-import loadoutIcon from 'static/loadout.png';
+import loadoutIcon from 'assets/loadout.png';
 
 function UpgradeLabel({ card, handleSwapUpgrade, handleChangeLoadout }) {
   return (
