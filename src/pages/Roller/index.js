@@ -16,7 +16,8 @@ const useStyles = makeStyles(theme => ({
   column: {
     display: 'flex',
     flexFlow: 'column nowrap',
-    alignItems: 'center'
+    alignItems: 'center',
+    flexGrow: 1
   }
 }));
 

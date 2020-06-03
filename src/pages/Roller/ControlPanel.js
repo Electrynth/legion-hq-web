@@ -17,7 +17,7 @@ function ControlPanel({
   const { red, black, white } = attack;
   const [isDisabled, setIsDisabled] = React.useState(false);
   return (
-    <div style={{ padding: 16, width: 480 }}>
+    <div style={{ padding: 16, width: 'calc(100% + 100px)' }}>
       <div
         style={{
           display: 'flex',
