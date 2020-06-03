@@ -30,7 +30,7 @@ function UpgradeLabel({ card, handleSwapUpgrade, handleChangeLoadout }) {
             <img
               alt="loadout"
               src={loadoutIcon}
-              style={{ width: 14, height: 19, marginBottom: 5 }}
+              style={{ width: 14, height: 19, marginBottom: 1 }}
             />
           </Icon>
         </IconButton>
