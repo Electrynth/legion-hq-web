@@ -4680,7 +4680,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "BX-Series Droid Sniper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 38,
+		"cost": 30,
 		"imageName": "BX-Series Droid Sniper.jpeg",
 		"keywords": ["Lethal", "Pierce", "Immune", "Deflect"],
 		"requirements": [
