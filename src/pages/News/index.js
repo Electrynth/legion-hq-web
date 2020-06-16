@@ -1,8 +1,12 @@
 import React from 'react';
 import { Typography, Divider } from '@material-ui/core';
-import Alert from '@material-ui/lab/Alert';
 
 const posts = [
+  {
+    "title": "Situational Awareness and Ascension Cable upgrades added.",
+    "date": "16 June 2020",
+    "body": "Also added special interaction between Sit. Awareness and unit with a Support rank."
+  },
   {
     "title": "Randomly decided to add a dice roller",
     "date": "2 June 2020",
@@ -58,13 +62,6 @@ function News() {
         padding: '8px 32px'
       }}
     >
-      <Alert variant="filled" severity="info" style={{ marginBottom: 16 }}>
-        Key features before to be completed before deployment:
-        <ul>
-          <li>Cards page (card database viewer thing)</li>
-          <li>List template implementation</li>
-        </ul>
-      </Alert>
       <Typography variant="h4" style={{ marginBottom: 8 }}>
         Website Updates
       </Typography>

@@ -137,17 +137,27 @@ export function ListProvider({
     const unit = currentList.units[unitIndex];
     let applyFilter; let nextAvailIndex; let nextAvailType;
     if (isApplyToAll || unit.count === 1) {
-      for (let i = upgradeIndex + 1; i < unit.upgradesEquipped.length; i++) {
+      let i = (upgradeIndex + 1) % unit.upgradesEquipped.length;
+      let numUpgradesEquipped = 0;
+      // console.log(i, unit.upgradesEquipped.length);
+      while (
+        !nextAvailIndex &&
+        !nextAvailType &&
+        numUpgradesEquipped < unit.upgradesEquipped.length
+      ) {
         const id = unit.upgradesEquipped[i];
         const unitCard = cards[unit.unitId];
-        if (id) continue;
+        if (id) {
+          numUpgradesEquipped++;
+          continue;
+        };
         nextAvailIndex = i;
         nextAvailType = unitCard.upgradeBar[i] ?
                         unitCard.upgradeBar[i] :
                         unit.additionalUpgradeSlots[i - (unitCard.upgradeBar.length + 1)];
-        break;
+        i = (i + 1) % unit.upgradesEquipped.length;
       }
-      if (nextAvailIndex && nextAvailType) {
+      if (nextAvailIndex !== undefined && nextAvailType) {
         applyFilter = (newUpgradesEquipped, newAdditionalUpgradeSlots) => setCardPaneFilter({
           action: 'UNIT_UPGRADE',
           unitIndex,
