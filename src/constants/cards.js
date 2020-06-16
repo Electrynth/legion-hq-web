@@ -5098,7 +5098,20 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "I'm Your Worst Nightmare.jpeg",
 		"keywords": ["Uncanny Luck"],
 		"id": "mg"
-	}
+	},
+	"mh": {
+    "id": "mh",
+    "displayName": "",
+    "cardSubtype": "gear",
+    "cardName": "Ascension Cables",
+    "imageName": "Ascension Cables.jpeg",
+    "isUnique": false,
+    "cardType": "upgrade",
+    "cost": 4,
+    "products": [],
+    "keywords": ["Scale"],
+    "requirements": []
+  }
 }));
 
 export default cards;

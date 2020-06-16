@@ -1,3 +1,5 @@
+import cards from './cards';
+
 function checkUpgradeName(upgrade, value) {
   return upgrade.cardName.includes(value);
 }
@@ -29,6 +31,11 @@ const interactions = {
       // Jyn's Blaster + Jyn Erso
       isConditionMet: (list, unit) => list.uniques.includes('ae'),
       pointDelta: -5
+    },
+    li: {
+      // Situational Awareness + support unit
+      isConditionMet: (list, unit) => cards[unit.unitId].rank === 'support',
+      pointDelta: 4
     }
   },
   eligibility: {
