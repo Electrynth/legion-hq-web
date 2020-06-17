@@ -46,17 +46,8 @@ function Cards() {
     crew: [],
     ordnance: []
   };
-  const commandCards = {
-    '1': [],
-    '2': [],
-    '3': [],
-    '4': []
-  };
-  const battleCards = {
-    objective: [],
-    deployment: [],
-    condition: []
-  };
+  const commandCards = { '1': [], '2': [], '3': [], '4': [] };
+  const battleCards = { objective: [], deployment: [], condition: [] };
   Object.keys(cards).sort((a, b) => {
     const cardA = cards[a];
     const cardB = cards[b];
