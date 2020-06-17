@@ -5111,6 +5111,24 @@ const cards = JSON.parse(JSON.stringify({
     "products": [],
     "keywords": ["Scale"],
     "requirements": []
+  },
+	"mi": {
+    "displayName": "",
+    "cardName": "Aggressive Negotiations",
+    "cardSubtype": "2",
+    "cardType": "command",
+    "commander": "Padme Amidala",
+    "imageName": "Aggressive Negotiations.jpeg",
+    "products": [],
+    "faction": "republic",
+    "keywords": [
+			"Permanent",
+      "Secret Mission",
+      "Reliable",
+			"Divulge",
+      "Infiltrate"
+    ],
+    "id": "mi"
   }
 }));
 
