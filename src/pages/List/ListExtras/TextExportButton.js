@@ -103,7 +103,7 @@ function TextExportButton({ currentList }) {
         isFullWidth={true}
         isMobile={isFullscreen}
         isOpen={isOpen}
-        actions={<ClipboardButton variant="contained" content={listText} />}
+        actions={<ClipboardButton content={listText} />}
         content={
           <DialogContent
             currentList={currentList}
