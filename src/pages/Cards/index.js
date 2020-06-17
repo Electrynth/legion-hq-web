@@ -94,9 +94,6 @@ function Cards() {
       <Alert variant="filled" severity="info" style={{ marginBottom: 8 }}>
         This page is still under construction!
       </Alert>
-      <Alert variant="filled" severity="info" style={{ marginBottom: 8 }}>
-        Feedback or ideas about this page should go to contact@legion-hq.com.
-      </Alert>
       <CardModal
         id={modalContent}
         isOpen={isModalOpen}
