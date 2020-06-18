@@ -3,6 +3,11 @@ import { Typography, Divider } from '@material-ui/core';
 
 const posts = [
   {
+    "title": "List Templates are here",
+    "date": "17 June 2020",
+    "body": "When building a list you can now use a previously saved list as a template."
+  },
+  {
     "title": "Situational Awareness and Ascension Cable upgrades added.",
     "date": "16 June 2020",
     "body": "Also added special interaction between Sit. Awareness and unit with a Support rank."

@@ -4,8 +4,9 @@ import {
   Save as SaveIcon,
   CallSplit as ForkIcon
 } from '@material-ui/icons';
-import DataContext from 'context/DataContext'
+import DataContext from 'context/DataContext';
 import ListContext from 'context/ListContext';
+import TemplateButton from './TemplateButton';
 import LinkButton from './LinkButton';
 import QRButton from './QRButton';
 import ImageExportButton from './ImageExportButton';
@@ -30,6 +31,7 @@ function ListExtras() {
         justifyContent: 'center'
       }}
     >
+      <TemplateButton />
       <LinkButton currentList={currentList} />
       <QRButton currentList={currentList} />
       <ImageExportButton currentList={currentList} />

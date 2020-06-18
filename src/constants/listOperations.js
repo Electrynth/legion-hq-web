@@ -986,9 +986,9 @@ function convertHashToList(faction, url) {
     segments.forEach(segment => {
       if (segment.length > 2) unitSegments.push(segment);
       else otherSegments.push(segment);
-    })
+    });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return false;
   }
   try {
@@ -997,7 +997,7 @@ function convertHashToList(faction, url) {
       list.unitObjectStrings.push(unit.unitObjectString);
     });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return false;
   }
   try {
@@ -1015,10 +1015,32 @@ function convertHashToList(faction, url) {
       }
     });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return false;
   }
   return consolidate(list);
+}
+
+function mergeLists(primaryList, secondaryList) {
+  let unitsToAdd = [];
+  for (let i = 0; i < secondaryList.units.length; i++) {
+    const unit = secondaryList.units[i];
+    if (unit.hasUniques) {
+      if (primaryList.uniques.includes(unit.unitId)) continue;
+      let isValid = true;
+      unit.upgradesEquipped.forEach(upgradeId => {
+        if (upgradeId && primaryList.uniques.includes(upgradeId)) isValid = false;
+      });
+      if (!isValid) continue;
+      unitsToAdd.push(unit);
+    } else if (primaryList.unitObjectStrings.includes(unit.unitObjectString)) {
+      primaryList.units[i].count += unit.count;
+    } else {
+      unitsToAdd.push(unit);
+    }
+  }
+  unitsToAdd.forEach(unitToAdd => primaryList.units.push(unitToAdd));
+  return consolidate(primaryList);
 }
 
 export {
@@ -1042,6 +1064,7 @@ export {
   unequipCounterpartLoadoutUpgrade,
   incrementUnit,
   decrementUnit,
+  mergeLists,
   getEligibleBattlesToAdd,
   getEligibleCommandsToAdd,
   getEligibleUnitsToAdd,

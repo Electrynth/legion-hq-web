@@ -7,6 +7,7 @@ import factions from 'constants/factions';
 import cards from 'constants/cards';
 import urls from 'constants/urls';
 import {
+  mergeLists,
   convertHashToList,
   toggleListMode,
   changeListTitle,
@@ -232,6 +233,10 @@ export function ListProvider({
     const newList = decrementUnit(currentList, index);
     setCurrentList({ ...newList });
   }
+  const handleMergeList = (listToMerge) => {
+    const newList = mergeLists(currentList, listToMerge);
+    setCurrentList({ ...newList });
+  }
   const handleOpenModal = () => {
     setIsModalOpen(true);
   }
@@ -313,7 +318,8 @@ export function ListProvider({
     handleIncrementStackSize,
     handleDecrementStackSize,
     handleListSave,
-    handleListFork
+    handleListFork,
+    handleMergeList
   };
   const modalProps = {
     handleOpenModal,
@@ -337,7 +343,7 @@ export function ListProvider({
   if (error) return <ErrorFallback error={error} message={message} />;
   if (status === 'loading') return <LoadingWidget />;
   if (status === 'idle') {
-    console.log(currentList);
+    // console.log(currentList);
     return (
       <ListContext.Provider
         value={{
