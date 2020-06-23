@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Grid, Typography, Container, Fade } from '@material-ui/core';
 import LoginButton from './LoginButton';
@@ -15,8 +15,10 @@ import lhqLogoDark from 'assets/lhqLogoDark.png';
 function Home() {
   const {
     auth,
+    userId,
     userLists,
     userSettings,
+    fetchUserLists,
     deleteUserList
   } = useContext(DataContext);
   const listChips = {};
@@ -28,6 +30,9 @@ function Home() {
       }
     });
   }
+  useEffect(() => {
+    if (userId) fetchUserLists(userId);
+  }, [userId, fetchUserLists]);
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <Fade in={true}>

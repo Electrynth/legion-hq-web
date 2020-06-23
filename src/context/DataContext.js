@@ -173,6 +173,7 @@ export function DataProvider({ children }) {
         userLists,
         userSettings,
         goToPage,
+        fetchUserLists,
         setUserLists,
         setUserSettingsValue,
         setIsDrawerOpen,
