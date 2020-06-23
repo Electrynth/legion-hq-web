@@ -6,6 +6,32 @@ import cards from 'constants/cards';
 import loadoutIcon from 'assets/loadout.png';
 
 function UpgradeLabel({ card, handleSwapUpgrade, handleChangeLoadout }) {
+  if (handleChangeLoadout) {
+    return (
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Typography variant="body2">
+          {`${card.displayName ?
+            card.displayName :
+            card.cardName} (${card.cost})`}
+        </Typography>
+        {Boolean(handleChangeLoadout) && (
+          <IconButton
+            size="small"
+            onClick={handleChangeLoadout}
+            style={{ zIndex: 1, marginLeft: 4, width: 26, height: 26 }}
+          >
+            <Icon>
+              <img
+                alt="loadout"
+                src={loadoutIcon}
+                style={{ width: 14, height: 19, marginBottom: 1 }}
+              />
+            </Icon>
+          </IconButton>
+        )}
+      </div>
+    );
+  }
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <Button
