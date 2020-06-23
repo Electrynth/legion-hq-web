@@ -4186,7 +4186,7 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Phase I Clone Captain.jpeg",
 		"keywords": ["Leader"],
 		"requirements": [{"cardName": "Phase I Clone Troopers"}],
-		"additionalUpgradeSlots": ["gear"],
+		"additionalUpgradeSlots": ["training"],
 		"id": "jx"
 	},
 	"jy": {
