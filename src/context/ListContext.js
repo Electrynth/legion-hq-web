@@ -71,7 +71,7 @@ export function ListProvider({
         .then(response => {
           if (response.data.length > 0) {
             let loadedList = response.data[0];
-            let oldCounterparts = ['lw'];
+            let oldCounterparts = ['lw', 'ji', 'jj'];
             loadedList.units = loadedList.units.filter(unit => {
               return !oldCounterparts.includes(unit.unitId)
             });
