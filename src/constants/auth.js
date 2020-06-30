@@ -14,8 +14,8 @@ const auth = {
     returnTo: 'http://localhost:3000'
   },
   prod: {
-    redirectUri: 'https://d37xhki8rk4762.cloudfront.net/callback',
-    returnTo: 'https://d37xhki8rk4762.cloudfront.net'
+    redirectUri: 'https://legionhq.thefifthtrooper.com/callback',
+    returnTo: 'https://legionhq.thefifthtrooper.com'
   }
 };
 
