@@ -3,6 +3,11 @@ import { Typography, Divider } from '@material-ui/core';
 
 const posts = [
   {
+    "title": "Move to The Fifth Trooper subdomain",
+    "date": "30 June 2020",
+    "body": "Completed move to legionhq.thefifthtrooper.com. Dash was removed from name."
+  },
+  {
     "title": "List Templates are here",
     "date": "17 June 2020",
     "body": "When building a list you can now use a previously saved list as a template."
