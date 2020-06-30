@@ -10,6 +10,8 @@
 
 # production
 /build
+/ssl
+webServer.js
 
 # misc
 .DS_Store
