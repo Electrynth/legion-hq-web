@@ -69,8 +69,17 @@ export function ListProvider({
       setStatus('loading');
       httpClient.get(`${urls.api}/lists/${slug}`)
         .then(response => {
-          if (response.data.length > 0) setCurrentList(response.data[0]);
-          else setError(`List ${slug} not found.`);
+          if (response.data.length > 0) {
+            let loadedList = response.data[0];
+            let oldCounterparts = ['lw'];
+            loadedList.units = loadedList.units.filter(unit => {
+              return !oldCounterparts.includes(unit.unitId)
+            });
+            loadedList.uniques = loadedList.uniques.filter(id => {
+              return !oldCounterparts.includes(id);
+            });
+            setCurrentList(loadedList);
+          } else setError(`List ${slug} not found.`);
           setStatus('idle');
         })
         .catch(err => {
