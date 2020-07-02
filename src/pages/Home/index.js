@@ -32,7 +32,7 @@ function Home() {
   }
   useEffect(() => {
     if (userId) fetchUserLists(userId);
-  }, [userId, fetchUserLists]);
+  }, [userId]);
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <Fade in={true}>
