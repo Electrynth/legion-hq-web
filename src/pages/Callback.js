@@ -15,11 +15,7 @@ class Callback extends React.Component {
     const { doneAuthenticating } = this.state;
     return (
       <div>
-        {doneAuthenticating ? (
-          <Redirect to="/" />
-        ) : (
-          <LoadingWidget />
-        )}
+        {doneAuthenticating ? <Redirect to="/" /> : <LoadingWidget />}
       </div>
     );
   }
