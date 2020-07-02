@@ -108,7 +108,7 @@ export function DataProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    if (auth && auth.isAuthenticated()) fetchUserId(auth.getEmail());
+    if (auth && auth.isAuthenticated() && !userId) fetchUserId(auth.getEmail());
   }, [auth]);
 
   useEffect(() => {
@@ -123,22 +123,6 @@ export function DataProvider({ children }) {
       };
       window.localStorage.setItem('settings', JSON.stringify(newSettings));
       setUserSettings(newSettings)
-    }
-  }
-  const fetchUserId = (email) => {
-    if (email) {
-      httpClient.get(`${urls.api}/users?email=${email}`)
-        .then(response => {
-          if (response.data.length > 0) setUserId(response.data[0].userId);
-          else {
-            setError('Login failure');
-            setMessage(`No users found with the email address ${email}`);
-          }
-        })
-        .catch(e => {
-          setError(e);
-          setMessage(`Failed to find user with email address ${email}`);
-        });
     }
   }
   const goToPage = (newRoute) => history.push(newRoute);
@@ -159,6 +143,22 @@ export function DataProvider({ children }) {
         .catch(e => {
           setError(e);
           setMessage(`Failed to delete list ${listId} for user ${userId}`);
+        });
+    }
+  }
+  const fetchUserId = (email) => {
+    if (email) {
+      httpClient.get(`${urls.api}/users?email=${email}`)
+        .then(response => {
+          if (response.data.length > 0) setUserId(response.data[0].userId);
+          else {
+            setError('Login failure');
+            setMessage(`No users found with the email address ${email}`);
+          }
+        })
+        .catch(e => {
+          setError(e);
+          setMessage(`Failed to find user with email address ${email}`);
         });
     }
   }
