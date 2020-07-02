@@ -8,6 +8,7 @@ const Cards = lazy(() => import('pages/Cards'));
 const Roller = lazy(() => import('pages/Roller'));
 const List = lazy(() => import('pages/List'));
 const Settings = lazy(() => import('pages/Settings'));
+const Callback = lazy(() => import('pages/Callback'));
 const Info = lazy(() => import('pages/Info'));
 
 function Pages() {
@@ -47,6 +48,7 @@ function Pages() {
         />
         <Route path="/settings" component={Settings} />
         <Route path="/info" component={Info} />
+        <Route path="/callback" component={Callback} />
         <Redirect to="/" />
       </Switch>
     </Suspense>
