@@ -13,6 +13,10 @@ const auth = {
     redirectUri: 'http://localhost:3000/callback',
     returnTo: 'http://localhost:3000'
   },
+  staging: {
+    redirectUri: 'https://d37xhki8rk4762.cloudfront.net/callback',
+    returnTo: 'https://d37xhki8rk4762.cloudfront.net'
+  },
   prod: {
     redirectUri: 'https://legionhq.thefifthtrooper.com/callback',
     returnTo: 'https://legionhq.thefifthtrooper.com'
