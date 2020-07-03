@@ -100,15 +100,22 @@ export function DataProvider({ children }) {
       try {
         await auth0Client.silentAuth();
         setAuth(auth0Client);
+        console.log('Successful silent authentication');
       } catch {
         setAuth(auth0Client);
+        console.log('Failed silent authentication');
       }
     }
     asyncSilentAuth();
   }, []);
 
   useEffect(() => {
-    if (auth && auth.isAuthenticated() && !userId) fetchUserId(auth.getEmail());
+    if (auth && auth.isAuthenticated() && !userId) {
+      console.log('User is authenticated, fetching userId...');
+      fetchUserId(auth.getEmail());
+    } else {
+      console.log('User is currently not authenticated');
+    }
   }, [auth]);
 
   useEffect(() => {
@@ -127,10 +134,13 @@ export function DataProvider({ children }) {
   }
   const goToPage = (newRoute) => history.push(newRoute);
   const fetchUserLists = (userId) => {
+    console.log('Fetching user lists with userId:', userId);
     if (userId) {
       httpClient.get(`${urls.api}/lists?userId=${userId}`)
-        .then(response => setUserLists(response.data))
-        .catch(e => {
+        .then(response => {
+          console.log('Response data:', response.data);
+          setUserLists(response.data);
+        }).catch(e => {
           setError(e);
           setMessage(`Failed to fetch lists for user ${userId}`);
         });
@@ -148,10 +158,13 @@ export function DataProvider({ children }) {
   }
   const fetchUserId = (email) => {
     if (email) {
+      console.log(`Fetching userId with email: ${email}`);
       httpClient.get(`${urls.api}/users?email=${email}`)
         .then(response => {
-          if (response.data.length > 0) setUserId(response.data[0].userId);
-          else {
+          console.log('Response data:', response.data);
+          if (response.data.length > 0) {
+            setUserId(response.data[0].userId);
+          } else {
             setError('Login failure');
             setMessage(`No users found with the email address ${email}`);
           }
@@ -160,6 +173,8 @@ export function DataProvider({ children }) {
           setError(e);
           setMessage(`Failed to find user with email address ${email}`);
         });
+    } else {
+      console.log('Email address is undefined...');
     }
   }
   if (error) return <ErrorFallback error={error} message={message} />;
