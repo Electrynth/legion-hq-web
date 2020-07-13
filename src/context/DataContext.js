@@ -169,8 +169,19 @@ export function DataProvider({ children }) {
           if (response.data.length > 0) {
             setUserId(response.data[0].userId);
           } else {
-            setError('Login failure');
-            setMessage(`No users found with the email address ${email}`);
+            httpClient.post(`${urls.api}/users`, { email })
+            .then(creationResponse => {
+              if (creationResponse.data.length > 0){
+                setUserId(response.data[0].userId)
+              } else {
+                setError('Login failure');
+                setMessage(`Tried and failed to create account with email address ${email}`);
+              }
+            })
+            .catch(e => {
+              setError('Login failure');
+              setMessage(`Failed to create account with email address ${email}`);
+            });
           }
         })
         .catch(e => {
