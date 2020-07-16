@@ -4549,7 +4549,7 @@ const cards = JSON.parse(JSON.stringify({
 		"wounds": 1,
 		"courage": 2,
 		"speed": 2,
-		"imageName": "ARC Troopers.jpeg",
+		"imageName": "ARC Troopers Strike Team.jpeg",
 		"keywords": [
 			"Heavy Weapon Team",
 			"Impervious",
@@ -4739,7 +4739,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Echo",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 42,
+		"cost": 40,
 		"imageName": "Echo.jpeg",
 		"keywords": [],
 		"requirements": [{"cardSubtype": "clone trooper"}]
