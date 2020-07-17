@@ -3199,7 +3199,7 @@ const cards = JSON.parse(JSON.stringify({
 		"courage": 1,
 		"defense": "red",
 		"surges": [],
-		"cardSubtype": "trooper",
+		"cardSubtype": "clone trooper",
 		"cardName": "Phase I Clone Troopers",
 		"isUnique": false,
 		"rank": "corps",
