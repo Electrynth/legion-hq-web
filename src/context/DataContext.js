@@ -9,6 +9,8 @@ import {
   Announcement as NewsIcon,
   Casino as DiceIcon
 } from '@material-ui/icons';
+import { Snackbar } from '@material-ui/core';
+import { AlertTitle, Alert } from '@material-ui/lab';
 import ErrorFallback from 'common/ErrorFallback';
 import FactionIcon from 'common/FactionIcon';
 import auth0Client from 'utility/Auth';
@@ -88,6 +90,7 @@ function initializeLocalSettings() {
 export function DataProvider({ children }) {
   const history = useHistory();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
   const [auth, setAuth] = useState();
   const [error, setError] = useState();
   const [userId, setUserId] = useState();
@@ -148,7 +151,8 @@ export function DataProvider({ children }) {
           setUserLists(response.data);
         }).catch(e => {
           setError(e);
-          setMessage(`Failed to fetch lists for user ${userId}`);
+          setMessage(`Failed to fetch lists for user ${userId}.`);
+          setIsAlertOpen(true);
         });
     } else setUserLists([]);
   }
@@ -158,7 +162,8 @@ export function DataProvider({ children }) {
         .then(response => fetchUserLists(userId))
         .catch(e => {
           setError(e);
-          setMessage(`Failed to delete list ${listId} for user ${userId}`);
+          setMessage(`Failed to delete list ${listId} for user ${userId}.`);
+          setIsAlertOpen(true);
         });
     }
   }
@@ -175,41 +180,62 @@ export function DataProvider({ children }) {
                 setUserId(response.data[0].userId)
               } else {
                 setError('Login failure');
-                setMessage(`Tried and failed to create account with email address ${email}`);
+                setMessage(`Tried and failed to create account with email address ${email}.`);
+                setIsAlertOpen(true);
               }
             })
             .catch(e => {
               setError('Login failure');
-              setMessage(`Failed to create account with email address ${email}`);
+              setMessage(`Failed to create account with email address ${email}.`);
+              setIsAlertOpen(true);
             });
           }
         })
         .catch(e => {
           setError(e);
-          setMessage(`Failed to find user with email address ${email}`);
+          setMessage(`Failed to find user with email address ${email}.`);
+          setIsAlertOpen(true);
         });
     }
   }
-  if (error) return <ErrorFallback error={error} message={message} />;
+  const handleCloseAlert = () => setIsAlertOpen(false);
+
+  // if (error) return <ErrorFallback error={error} message={message} />;
   return (
-    <DataContext.Provider
-      value={{
-        isDrawerOpen,
-        auth,
-        userId,
-        routes,
-        userLists,
-        userSettings,
-        goToPage,
-        fetchUserLists,
-        setUserLists,
-        setUserSettingsValue,
-        setIsDrawerOpen,
-        deleteUserList
-      }}
-    >
-      {children}
-    </DataContext.Provider>
+    <React.Fragment>
+      <DataContext.Provider
+        value={{
+          isDrawerOpen,
+          auth,
+          userId,
+          routes,
+          userLists,
+          userSettings,
+          goToPage,
+          fetchUserLists,
+          setUserLists,
+          setUserSettingsValue,
+          setIsDrawerOpen,
+          deleteUserList
+        }}
+      >
+        {children}
+      </DataContext.Provider>
+      <Snackbar open={isAlertOpen} autoHideDuration={null} onClose={handleCloseAlert}>
+        <Alert onClose={handleCloseAlert} severity="error">
+          <AlertTitle>
+            Something went wrong!
+          </AlertTitle>
+          <strong>
+            {error && error.toString()}
+          </strong>
+          <br />
+          {message}
+          <br />
+          Issues can be emailed to <a href="mailto:contact@legion-hq.com">contact@legion-hq.com</a>.
+        </Alert>
+      </Snackbar>
+    </React.Fragment>
   );
 };
 
