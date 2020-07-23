@@ -5129,7 +5129,22 @@ const cards = JSON.parse(JSON.stringify({
       "Infiltrate"
     ],
     "id": "mi"
-  }
+  },
+	"mj": {
+		"id": "mj",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Dioxis Mine Saboteur",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 28,
+		"imageName": "Dioxis Mine Saboteur.jpeg",
+		"keywords": ["Arm", "Detonate", "Dioxis Mine", "Blast", "Poison"],
+		"requirements": [
+			"OR",
+			{"cardName": "BX-Series Droid Commandos"},
+			{"cardName": "BX-Series Droid Commandos Strike Team"}
+		]
+	},
 }));
 
 export default cards;
