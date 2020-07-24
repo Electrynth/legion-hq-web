@@ -983,8 +983,14 @@ function convertHashToList(faction, url) {
   const unitSegments = [];
   const otherSegments = [];
   try {
+    let oldCounterparts = ['lw', 'ji', 'jj'];
     segments.forEach(segment => {
-      if (segment.length > 2) unitSegments.push(segment);
+      let hasOldCounterpart = false;
+      oldCounterparts.forEach(id => {
+        if (segment.includes(`1${id}`)) hasOldCounterpart = true;
+      });
+      if (hasOldCounterpart) return;
+      else if (segment.length > 2) unitSegments.push(segment);
       else otherSegments.push(segment);
     });
   } catch (e) {
