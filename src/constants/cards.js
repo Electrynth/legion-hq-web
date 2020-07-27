@@ -2909,6 +2909,7 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": [
 			"AI",
 			"Armor",
+			"Arsenal",
 			"Barrage",
 			"Hover",
 			"Weak Point",
@@ -5145,6 +5146,121 @@ const cards = JSON.parse(JSON.stringify({
 			{"cardName": "BX-Series Droid Commandos Strike Team"}
 		]
 	},
+	"mk": {
+		"cardType": "unit",
+		"displayName": "",
+		"cardSubtype": "trooper",
+		"cardName": "Mandalorian Resistance",
+		"isUnique": false,
+		"rank": "special",
+		"imageName": "Mandalorian Resistance.jpeg",
+		"cost": 72,
+		"products": [],
+		"faction": "rebels",
+		"keywords": [
+			"Jump",
+			"Impervious",
+			"Nimble"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"training",
+			"comms",
+			"gear",
+			"armament",
+			"grenades"
+		],
+		"id": "mk"
+	},
+	"ml": {
+		"cardType": "unit",
+		"displayName": "Clan Wren",
+		"cardSubtype": "trooper",
+		"cardName": "Mandalorian Resistance Clan Wren",
+		"isUnique": true,
+		"rank": "special",
+		"imageName": "Mandalorian Resistance Clan Wren.jpeg",
+		"cost": 72,
+		"products": [],
+		"faction": "rebels",
+		"keywords": [
+			"Equip",
+			"Jump",
+			"Impervious",
+			"Nimble",
+			"Retinue"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"heavy weapon",
+			"training",
+			"comms",
+			"gear",
+			"armament",
+			"grenades"
+		],
+		"id": "ml"
+	},
+	"mm": {
+		"id": "mm",
+		"cardSubtype": "armament",
+		"cardName": "Jetpack Rockets",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 8,
+		"imageName": "Jetpack Rockets.jpeg",
+		"keywords": ["Blast", "Impact"],
+		"requirements": [
+			"OR",
+			{"cardName": "Mandalorian Resistance"},
+			{"cardName": "Mandalorian Resistance Clan Wren"}
+		]
+	},
+	"mn": {
+		"id": "mn",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Beskad Duelist",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 28,
+		"imageName": "Beskad Duelist.jpeg",
+		"keywords": ["Duelist", "Pierce", "Immune"],
+		"requirements": [
+			"OR",
+			{"cardName": "Mandalorian Resistance"},
+			{"cardName": "Mandalorian Resistance Clan Wren"}
+		]
+	},
+	"mo": {
+		"id": "mo",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Ursa Wren",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 38,
+		"imageName": "Ursa Wren.jpeg",
+		"keywords": ["Dauntless", "Leader", "Long Shot"],
+		"requirements": [
+			"OR",
+			{"cardName": "Mandalorian Resistance"},
+			{"cardName": "Mandalorian Resistance Clan Wren"}
+		]
+	},
+	"mp": {
+		"id": "mp",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Tristan Wren",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 38,
+		"imageName": "Tristan Wren.jpeg",
+		"keywords": ["Lethal", "Suppressive"],
+		"requirements": [
+			"OR",
+			{"cardName": "Mandalorian Resistance"},
+			{"cardName": "Mandalorian Resistance Clan Wren"}
+		]
+	}
 }));
 
 export default cards;
