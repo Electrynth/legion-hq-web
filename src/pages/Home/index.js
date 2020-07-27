@@ -1,6 +1,15 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { Grid, Typography, Container, Fade } from '@material-ui/core';
+import {
+  Grid,
+  Typography,
+  Container,
+  Fade,
+  Button,
+  Collapse,
+  Divider
+} from '@material-ui/core';
+import { Announcement as NewsIcon } from '@material-ui/icons';
 import LoginButton from './LoginButton';
 import ListChip from './ListChip';
 import FactionChip from './FactionChip';
@@ -12,8 +21,27 @@ import ftLogoDark from 'assets/ftLogoDark.png';
 import lhqLogoLight from 'assets/lhqLogoLight.png';
 import lhqLogoDark from 'assets/lhqLogoDark.png';
 
+function Post({ title, date, body }) {
+  return (
+    <div>
+      <Divider />
+      <Typography variant="h6">
+        {title}
+      </Typography>
+      <Typography variant="caption" color="textSecondary">
+        {date}
+      </Typography>
+      <Typography variant="body2">
+        {body}
+      </Typography>
+      <Divider />
+    </div>
+  );
+}
+
 function Home() {
   const {
+    newsPosts,
     auth,
     userId,
     userLists,
@@ -22,6 +50,7 @@ function Home() {
     deleteUserList
   } = useContext(DataContext);
   const listChips = {};
+  const [isNewsOpen, setIsNewsOpen] = useState(false);
   Object.keys(factions).forEach(faction => listChips[faction] = []);
   if (userLists) {
     userLists.forEach(userList => {
@@ -63,6 +92,23 @@ function Home() {
               <Typography variant="subtitle1">
                 An unofficial list building tool and resource for Fantasy Flight Games: Star Wars: Legion.
               </Typography>
+            </Grid>
+            <Grid item>
+              <Button size="small" onClick={() => setIsNewsOpen(!isNewsOpen)}>
+                <NewsIcon fontSize="small" style={{ marginRight: 4 }} />
+                Latest news
+              </Button>
+            </Grid>
+            <Grid item>
+              {newsPosts.length > 0 && (
+                <Collapse in={isNewsOpen}>
+                  <Post
+                    title={newsPosts[0].title}
+                    date={newsPosts[0].date}
+                    body={newsPosts[0].body}
+                  />
+                </Collapse>
+              )}
             </Grid>
             <Grid item>
               <div style={{ height: 10 }} />
