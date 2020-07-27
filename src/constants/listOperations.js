@@ -987,7 +987,7 @@ function convertHashToList(faction, url) {
     segments.forEach(segment => {
       let hasOldCounterpart = false;
       oldCounterparts.forEach(id => {
-        if (segment.includes(`1${id}`)) hasOldCounterpart = true;
+        if (segment === `1${id}`) hasOldCounterpart = true;
       });
       if (hasOldCounterpart) return;
       else if (segment.length > 2) unitSegments.push(segment);
