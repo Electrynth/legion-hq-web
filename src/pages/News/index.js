@@ -3,6 +3,11 @@ import { Typography, Divider } from '@material-ui/core';
 
 const posts = [
   {
+    "title": "Added Mandalorian Resistance expansion",
+    "date": "27 July 2020",
+    "body": "Will add the Equip keyword functionality at a later date."
+  },
+  {
     "title": "Move to The Fifth Trooper subdomain",
     "date": "30 June 2020",
     "body": "Completed move to legionhq.thefifthtrooper.com. Dash was removed from name."
