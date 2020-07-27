@@ -1,4 +1,6 @@
 const keywords = {
+  "Equip": "These units must be equipped to this card.",
+  "Retinue": "At the start of the Activation Phase, if you are at range 1-2 of X, gain 1 aim or dodge token.",
   "Long Shot": "While attacking, spend up to X aim tokens to increase this weapon's maximum range by 1 for each aim tkoen spent.",
   "Small": "While defending, when determining line of sight, cover, and range, ignore this mini.",
   "Marksman": "While attacking, you can spend aim tokens to improve attack die results.",
