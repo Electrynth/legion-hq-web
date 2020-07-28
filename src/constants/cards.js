@@ -4636,7 +4636,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "BX-Series Droid Commandos Strike Team",
 		"isUnique": false,
 		"rank": "special",
-		"cost": 22,
+		"cost": 20,
 		"defense": "red",
 		"surges": [],
 		"speed": 2,
@@ -5180,7 +5180,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "special",
 		"imageName": "Mandalorian Resistance Clan Wren.jpeg",
-		"cost": 72,
+		"cost": 34,
 		"products": [],
 		"faction": "rebels",
 		"keywords": [
