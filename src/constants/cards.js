@@ -4642,7 +4642,7 @@ const cards = JSON.parse(JSON.stringify({
 		"speed": 2,
 		"wounds": 1,
 		"courage": 2,
-		"imageName": "BX-Series Droid Commandos.jpeg",
+		"imageName": "BX-Series Droid Commandos Strike Team.jpeg",
 		"keywords": [
 			"AI",
 			"Heavy Weapon Team",
