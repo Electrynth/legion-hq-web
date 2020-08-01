@@ -5260,7 +5260,88 @@ const cards = JSON.parse(JSON.stringify({
 			{"cardName": "Mandalorian Resistance"},
 			{"cardName": "Mandalorian Resistance Clan Wren"}
 		]
-	}
+	},
+	"mq": {
+		"id": "mq",
+		"cardSubtype": "personnel",
+		"cardName": "T-Series Tactical Droid",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 18,
+		"imageName": "T-Series Tactical Droid.jpeg",
+		"keywords": ["AI", "Reliable", "Leader", "Sidearm"],
+		"requirements": [{"cardSubtype": "droid trooper"}]
+	},
+	"mr": {
+		"id": "mr",
+		"cardSubtype": "gear",
+		"cardName": "Portable Scanner",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 6,
+		"imageName": "Portable Scanner.jpeg",
+		"keywords": ["Take Cover"],
+		"requirements": []
+	},
+	"ms": {
+		"id": "ms",
+		"cardSubtype": "training",
+		"cardName": "Offensive Stance",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Offensive Stance.jpeg",
+		"keywords": [],
+		"requirements": [{"force": true}]
+	},
+	"mt": {
+		"id": "mt",
+    "displayName": "",
+    "cardName": "Synchronized Offensive",
+    "cardSubtype": "1",
+    "cardType": "command",
+    "commander": "",
+    "imageName": "Synchronized Offensive.jpeg",
+    "products": [],
+    "faction": "republic",
+    "keywords": []
+  },
+	"mu": {
+		"id": "mu",
+    "displayName": "",
+    "cardName": "Mechanized Incursion",
+    "cardSubtype": "1",
+    "cardType": "command",
+    "commander": "",
+    "imageName": "Mechanized Incursion.jpeg",
+    "products": [],
+    "faction": "separatists",
+    "keywords": []
+  },
+	"mv": {
+		"id": "mv",
+    "displayName": "",
+    "cardName": "Hero of the Clone Wars",
+    "cardSubtype": "3",
+    "cardType": "command",
+    "commander": "Anakin Skywalker",
+    "imageName": "Hero of the Clone Wars.jpeg",
+    "products": [],
+    "faction": "republic",
+    "keywords": ["Permanent", "Exemplar", "Reliable"]
+  },
+	"mw": {
+		"id": "mw",
+    "displayName": "",
+    "cardName": "Duel of the Fates",
+    "cardSubtype": "1",
+    "cardType": "command",
+    "commander": "Maul",
+    "imageName": "Duel of the Fates.jpeg",
+    "products": [],
+    "faction": "separatists",
+    "keywords": ["Disengage"]
+  }
 }));
 
 export default cards;

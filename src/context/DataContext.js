@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Added cards from GenCon",
+    "date": "1 August 2020",
+    "body": "Anakin and Maul have not been revealed, but their command cards are viewable in the Cards page. The other upgrade cards and command cards from the GenCon stream and article are available."
+  },
+  {
     "title": "Added Mandalorian Resistance expansion",
     "date": "27 July 2020",
     "body": "Will add the Equip keyword functionality at a later date."

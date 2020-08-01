@@ -23,8 +23,7 @@ import lhqLogoDark from 'assets/lhqLogoDark.png';
 
 function Post({ title, date, body }) {
   return (
-    <div>
-      <Divider />
+    <div style={{ maxWidth: 400 }}>
       <Typography variant="h6">
         {title}
       </Typography>
@@ -34,7 +33,6 @@ function Post({ title, date, body }) {
       <Typography variant="body2">
         {body}
       </Typography>
-      <Divider />
     </div>
   );
 }
