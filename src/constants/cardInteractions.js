@@ -1,7 +1,15 @@
 import cards from './cards';
 
-function checkUpgradeName(upgrade, value) {
-  return upgrade.cardName.includes(value);
+function checkUpgradeName(upgrade, values) {
+  if (Array.isArray(values)) {
+    let isConditionMet = false;
+    values.forEach(value => {
+      if (upgrade.cardName.includes(value)) isConditionMet = true;
+    });
+    return isConditionMet;
+  } else {
+    return upgrade.cardName.includes(values);
+  }
 }
 
 function checkUpgradeType(upgrade, value) {
@@ -42,7 +50,7 @@ const interactions = {
     gx: {
       // B1 Battle droids + Electrobinoculars
       conditionFunction: (upgrade) => checkUpgradeType(upgrade, 'gear'),
-      resultFunction: (upgrade) => checkUpgradeName(upgrade, 'Electrobinoculars')
+      resultFunction: (upgrade) => checkUpgradeName(upgrade, ['Electrobinoculars', 'Portable Scanner'])
     }
   }
 };
