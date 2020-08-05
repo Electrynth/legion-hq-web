@@ -5060,9 +5060,13 @@ const cards = JSON.parse(JSON.stringify({
 		"requirements": [
 			"AND",
 			[
-				"AND",
-				{"rank": "corps"},
-				{"cardSubtype": "trooper"}
+				"OR",
+				[
+					"AND",
+					{"rank": "corps"},
+					{"cardSubtype": "trooper"}
+				],
+				{"cardName": "Imperial Special Forces Inferno Squad"}
 			],
 			{"faction": "empire"}
 		]
@@ -5081,9 +5085,13 @@ const cards = JSON.parse(JSON.stringify({
 		"requirements": [
 			"AND",
 			[
-				"AND",
-				{"rank": "corps"},
-				{"cardSubtype": "trooper"}
+				"OR",
+				[
+					"AND",
+					{"rank": "corps"},
+					{"cardSubtype": "trooper"}
+				],
+				{"cardName": "Imperial Special Forces Inferno Squad"}
 			],
 			{"faction": "empire"}
 		]
