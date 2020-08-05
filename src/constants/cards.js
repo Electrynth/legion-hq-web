@@ -5066,7 +5066,11 @@ const cards = JSON.parse(JSON.stringify({
 					{"rank": "corps"},
 					{"cardSubtype": "trooper"}
 				],
-				{"cardName": "Imperial Special Forces Inferno Squad"}
+				[
+					"OR",
+					{"cardName": "Imperial Special Forces"},
+					{"cardName": "Imperial Special Forces Inferno Squad"}
+				]
 			],
 			{"faction": "empire"}
 		]
@@ -5091,7 +5095,11 @@ const cards = JSON.parse(JSON.stringify({
 					{"rank": "corps"},
 					{"cardSubtype": "trooper"}
 				],
-				{"cardName": "Imperial Special Forces Inferno Squad"}
+				[
+					"OR",
+					{"cardName": "Imperial Special Forces"},
+					{"cardName": "Imperial Special Forces Inferno Squad"}
+				]
 			],
 			{"faction": "empire"}
 		]
@@ -5361,6 +5369,7 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"upgradeBar": [
 			"heavy weapon",
+			"training",
 			"training",
 			"comms",
 			"gear",
