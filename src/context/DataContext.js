@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Add Inferno Squad expansion",
+    "date": "5 August 2020",
+    "body": "Added Imp Special Forces cards."
+  },
+  {
     "title": "Added cards from GenCon",
     "date": "1 August 2020",
     "body": "Anakin and Maul have not been revealed, but their command cards are viewable in the Cards page. The other upgrade cards and command cards from the GenCon stream and article are available."

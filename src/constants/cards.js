@@ -5240,11 +5240,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 38,
 		"imageName": "Ursa Wren.jpeg",
 		"keywords": ["Dauntless", "Leader", "Long Shot"],
-		"requirements": [
-			"OR",
-			{"cardName": "Mandalorian Resistance"},
-			{"cardName": "Mandalorian Resistance Clan Wren"}
-		]
+		"requirements": [{"cardName": "Mandalorian Resistance"}]
 	},
 	"mp": {
 		"id": "mp",
@@ -5255,11 +5251,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 38,
 		"imageName": "Tristan Wren.jpeg",
 		"keywords": ["Lethal", "Suppressive"],
-		"requirements": [
-			"OR",
-			{"cardName": "Mandalorian Resistance"},
-			{"cardName": "Mandalorian Resistance Clan Wren"}
-		]
+		"requirements": [{"cardName": "Mandalorian Resistance"}]
 	},
 	"mq": {
 		"id": "mq",
@@ -5341,7 +5333,103 @@ const cards = JSON.parse(JSON.stringify({
     "products": [],
     "faction": "separatists",
     "keywords": ["Disengage"]
-  }
+  },
+	"mx": {
+		"id": "mx",
+		"cardType": "unit",
+		"displayName": "",
+		"cardSubtype": "trooper",
+		"cardName": "Imperial Special Forces",
+		"isUnique": false,
+		"rank": "special",
+		"imageName": "Imperial Special Forces.jpeg",
+		"cost": 68,
+		"products": [],
+		"faction": "empire",
+		"keywords": [
+			"Infiltrate",
+			"Marksman",
+			"Reliable"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"training",
+			"comms",
+			"gear",
+			"grenades"
+		]
+	},
+	"my": {
+		"id": "my",
+		"cardType": "unit",
+		"displayName": "Inferno Squad",
+		"cardSubtype": "trooper",
+		"cardName": "Imperial Special Forces Inferno Squad",
+		"isUnique": true,
+		"rank": "special",
+		"imageName": "Imperial Special Forces Inferno Squad.jpeg",
+		"cost": 34,
+		"products": [],
+		"faction": "empire",
+		"keywords": [
+			"Equip",
+			"Infiltrate",
+			"Marksman",
+			"Reliable",
+			"Retinue"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"heavy weapon",
+			"training",
+			"training",
+			"comms",
+			"gear",
+			"grenades"
+		]
+	},
+	"mz": {
+		"id": "mz",
+		"cardSubtype": "heavy weapon",
+		"displayName": "T-21 Trooper",
+		"cardName": "T-21 Special Forces Trooper",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 29,
+		"imageName": "T-21 Special Forces Trooper.jpeg",
+		"keywords": ["Critical"],
+		"requirements": [{"cardName": "Imperial Special Forces"}]
+	},
+	"na": {
+		"id": "na",
+		"cardType": "unit",
+		"displayName": "",
+		"cardSubtype": "trooper",
+		"cardName": "Anakin Skywalker",
+		"isUnique": true,
+		"rank": "commander",
+		"imageName": "Anakin Skywalker.jpeg",
+		"cost": 160,
+		"products": [],
+		"faction": "republic",
+		"keywords": [],
+		"upgradeBar": []
+	},
+	"nb": {
+		"id": "nb",
+		"cardType": "unit",
+		"displayName": "",
+		"cardSubtype": "trooper",
+		"cardName": "Maul",
+		"isUnique": true,
+		"rank": "operative",
+		"imageName": "Maul.jpeg",
+		"cost": 160,
+		"products": [],
+		"faction": "separatists",
+		"keywords": [],
+		"upgradeBar": []
+	},
 }));
 
 export default cards;
