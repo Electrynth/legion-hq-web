@@ -181,10 +181,10 @@ export function DataProvider({ children }) {
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (userId) {
-        console.log(`Fetching lists for userId: ${userId}`);
+        // console.log(`Fetching lists for userId: ${userId}`);
         fetchUserLists(userId);
       } else if (auth && auth.isAuthenticated() && !userId) {
-        console.log(`Logging in user with email: ${auth.getEmail()}`);
+        // console.log(`Logging in user with email: ${auth.getEmail()}`);
         fetchUserId(auth.getEmail());
       }
     }, 5000);

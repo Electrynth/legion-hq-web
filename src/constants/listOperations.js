@@ -49,6 +49,24 @@ function countPoints(list) {
   return list;
 }
 
+function rehashList(list) {
+  const unitObjectStrings = [];
+  for (let i = 0; i < list.units.length; i++) {
+    const unit = list.units[i];
+    const unitCard = cards[unit.unitId];
+    let unitObjectString = unitCard.id;
+    for (let j = 0; j < unit.upgradesEquipped.length; j++) {
+      const upgradeId = unit.upgradesEquipped[j];
+      if (upgradeId) {
+        unitObjectString += upgradeId;
+      }
+    }
+    unitObjectStrings.push(unitObjectString);
+  }
+  list.unitObjectStrings = unitObjectStrings;
+  return list;
+}
+
 function consolidate(list) {
   list.commanders = [];
   list.uniques = [];
@@ -1050,6 +1068,7 @@ function mergeLists(primaryList, secondaryList) {
 }
 
 export {
+  rehashList,
   convertHashToList,
   changeListTitle,
   toggleListMode,

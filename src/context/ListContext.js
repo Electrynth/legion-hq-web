@@ -7,6 +7,7 @@ import factions from 'constants/factions';
 import cards from 'constants/cards';
 import urls from 'constants/urls';
 import {
+  rehashList,
   mergeLists,
   convertHashToList,
   toggleListMode,
@@ -72,13 +73,17 @@ export function ListProvider({
           if (response.data.length > 0) {
             let loadedList = response.data[0];
             let oldCounterparts = ['lw', 'ji', 'jj'];
+            const oldUnitCount = loadedList.units.length;
             loadedList.units = loadedList.units.filter(unit => {
               return !oldCounterparts.includes(unit.unitId)
             });
-            loadedList.uniques = loadedList.uniques.filter(id => {
-              return !oldCounterparts.includes(id);
-            });
-            setCurrentList(loadedList);
+            const newUnitCount = loadedList.units.length;
+            if (oldUnitCount !== newUnitCount) {
+              loadedList.uniques = loadedList.uniques.filter(id => {
+                return !oldCounterparts.includes(id);
+              });
+            }
+            setCurrentList(rehashList(loadedList));
           } else setError(`List ${slug} not found.`);
           setStatus('idle');
         })
