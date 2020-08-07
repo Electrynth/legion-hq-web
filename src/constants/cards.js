@@ -5241,11 +5241,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 28,
 		"imageName": "Beskad Duelist.jpeg",
 		"keywords": ["Duelist", "Pierce", "Immune"],
-		"requirements": [
-			"OR",
-			{"cardName": "Mandalorian Resistance"},
-			{"cardName": "Mandalorian Resistance Clan Wren"}
-		]
+		"requirements": [{"cardName": "Mandalorian Resistance"}]
 	},
 	"mo": {
 		"id": "mo",
@@ -5256,7 +5252,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 38,
 		"imageName": "Ursa Wren.jpeg",
 		"keywords": ["Dauntless", "Leader", "Long Shot"],
-		"requirements": [{"cardName": "Mandalorian Resistance"}]
+		"requirements": [
+			"OR",
+			{"cardName": "Mandalorian Resistance"},
+			{"cardName": "Mandalorian Resistance Clan Wren"}
+		]
 	},
 	"mp": {
 		"id": "mp",
@@ -5267,7 +5267,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 38,
 		"imageName": "Tristan Wren.jpeg",
 		"keywords": ["Lethal", "Suppressive"],
-		"requirements": [{"cardName": "Mandalorian Resistance"}]
+		"requirements": [
+			"OR",
+			{"cardName": "Mandalorian Resistance"},
+			{"cardName": "Mandalorian Resistance Clan Wren"}
+		]
 	},
 	"mq": {
 		"id": "mq",

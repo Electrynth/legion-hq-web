@@ -237,14 +237,12 @@ export function DataProvider({ children }) {
               if (creationResponse.data.length > 0){
                 setUserId(response.data[0].userId)
               } else {
-                console.log(creationResponse.data);
                 setError('Login failure');
                 setMessage(`Tried and failed to create account with email address ${email}.`);
                 setIsAlertOpen(true);
               }
             })
             .catch(e => {
-              console.log(response.data);
               setError('Login failure');
               setMessage(`Failed to create account with email address ${email}.`);
               setIsAlertOpen(true);
