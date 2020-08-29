@@ -149,6 +149,7 @@ export function DataProvider({ children }) {
   const history = useHistory();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isAlertOpen, setIsAlertOpen] = useState(false);
+  const [isAlertAllowed, setIsAlertAllowed] = useState(true);
   const [auth, setAuth] = useState();
   const [error, setError] = useState();
   const [userId, setUserId] = useState();
@@ -256,7 +257,10 @@ export function DataProvider({ children }) {
         });
     }
   }
-  const handleCloseAlert = () => setIsAlertOpen(false);
+  const handleCloseAlert = () => {
+    setIsAlertOpen(false);
+    setIsAlertAllowed(false);
+  }
 
   // if (error) return <ErrorFallback error={error} message={message} />;
   return (
@@ -280,7 +284,7 @@ export function DataProvider({ children }) {
       >
         {children}
       </DataContext.Provider>
-      <Snackbar open={isAlertOpen} autoHideDuration={null} onClose={handleCloseAlert}>
+      <Snackbar open={isAlertOpen && isAlertAllowed} autoHideDuration={null} onClose={handleCloseAlert}>
         <Alert onClose={handleCloseAlert} severity="error">
           <AlertTitle>
             Something went wrong!
