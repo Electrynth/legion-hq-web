@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import clsx from 'clsx';
 import { ErrorBoundary } from 'react-error-boundary';
 import {
   Grid,
@@ -9,7 +10,11 @@ import {
   Collapse,
   Divider
 } from '@material-ui/core';
-import { Announcement as NewsIcon } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core/styles';
+import {
+  Announcement as NewsIcon,
+  ExpandMore as ExpandMoreIcon
+} from '@material-ui/icons';
 import LoginButton from './LoginButton';
 import ListChip from './ListChip';
 import FactionChip from './FactionChip';
@@ -21,10 +26,21 @@ import ftLogoDark from 'assets/ftLogoDark.png';
 import lhqLogoLight from 'assets/lhqLogoLight.png';
 import lhqLogoDark from 'assets/lhqLogoDark.png';
 
+const useStyles = makeStyles(theme => ({
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    })
+  },
+  expandOpen: { transform: 'rotate(180deg)' },
+}));
+
 function Post({ title, date, body }) {
   return (
     <div style={{ maxWidth: 400 }}>
-      <Typography variant="h6">
+      <Typography variant="body1">
         {title}
       </Typography>
       <Typography variant="caption" color="textSecondary">
@@ -47,8 +63,9 @@ function Home() {
     fetchUserLists,
     deleteUserList
   } = useContext(DataContext);
+  const classes = useStyles();
   const listChips = {};
-  const [isNewsOpen, setIsNewsOpen] = useState(false);
+  const [isNewsOpen, setIsNewsOpen] = useState(true);
   Object.keys(factions).forEach(faction => listChips[faction] = []);
   if (userLists) {
     userLists.forEach(userList => {
@@ -95,6 +112,12 @@ function Home() {
               <Button size="small" onClick={() => setIsNewsOpen(!isNewsOpen)}>
                 <NewsIcon fontSize="small" style={{ marginRight: 4 }} />
                 Latest news
+                <ExpandMoreIcon
+                  fontSize="small"
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: isNewsOpen,
+                  })}
+                />
               </Button>
             </Grid>
             <Grid item>
