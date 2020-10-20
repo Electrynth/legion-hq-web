@@ -5480,7 +5480,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Force Barrier",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 5,
+		"cost": 10,
 		"imageName": "Force Barrier.jpeg",
 		"keywords": [],
 		"requirements": []
