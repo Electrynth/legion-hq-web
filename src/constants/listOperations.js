@@ -802,11 +802,11 @@ function getEquippableUpgrades(
 
     // dynamically add the force affinity
     const { faction } = unitCard;
-    if (faction === 'rebels' || faction === 'republic') {
-      unitCard['light side'] = true;
-    } else if (faction === 'separatists' || faction === 'empire') {
-      unitCard['dark side'] = true;
-    } else if (unitCard.keywords.includes('some keyword hmmm :3c')) {
+    
+    if (faction === 'rebels' || faction === 'republic') unitCard['light side'] = true;
+    else if (faction === 'separatists' || faction === 'empire') unitCard['dark side'] = true;
+
+    if (unitCard.keywords.includes('Tempted')) {
       unitCard['light side'] = true;
       unitCard['dark side'] = true;
     }

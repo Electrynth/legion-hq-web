@@ -2246,8 +2246,7 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": ["High Velocity", "Pierce"],
 		"requirements": [
 			"OR",
-			{"cardName": "Scout Troopers"
-			},
+			{"cardName": "Scout Troopers"},
 			{"cardName": "Scout Troopers Strike Team"}
 		],
 		"id": "em"
@@ -5433,8 +5432,19 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 160,
 		"products": [],
 		"faction": "republic",
-		"keywords": [],
-		"upgradeBar": []
+		"keywords": [
+			"Jump",
+			"Djem So Mastery",
+			"Flawed",
+			"Immune",
+			"Tempted"
+		],
+		"upgradeBar": [
+			"force",
+			"force",
+			"training",
+			"training"
+		]
 	},
 	"nb": {
 		"id": "nb",
@@ -5451,6 +5461,77 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": [],
 		"upgradeBar": []
 	},
+	"nc": {
+		"id": "nc",
+		"displayName": "Defensive/Offensive Stance",
+		"cardSubtype": "training",
+		"cardName": "Defensive Stance",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Defensive Stance.jpeg",
+		"keywords": ["Reconfigure"],
+		"requirements": [{"force": true}]
+	},
+	"nd": {
+		"id": "nd",
+		"displayName": "",
+		"cardSubtype": "force",
+		"cardName": "Force Barrier",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Force Barrier.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
+	"ne": {
+		"id": "ne",
+		"displayName": "",
+		"cardSubtype": "training",
+		"cardName": "Seize the Initiative",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Seize the Initiative.jpeg",
+		"keywords": [],
+		"requirements": [
+			"OR",
+			{"rank": "commander"},
+			{"rank": "operative"}
+		]
+	},
+	"nf": {
+		"id": "nf",
+    "displayName": "",
+    "cardName": "This is Where the Fun Begins",
+    "cardSubtype": "1",
+    "cardType": "command",
+    "commander": "Anakin Skywalker",
+    "imageName": "This is Where the Fun Begins.jpeg",
+    "products": [],
+    "faction": "republic",
+    "keywords": [
+			"Permanent",
+			"Outmaneuver",
+			"Relentless"
+		]
+  },
+	"ng": {
+		"id": "ng",
+    "displayName": "",
+    "cardName": "You Underestimate My Power",
+    "cardSubtype": "2",
+    "cardType": "command",
+    "commander": "Anakin Skywalker",
+    "imageName": "You Underestimate My Power.jpeg",
+    "products": [],
+    "faction": "republic",
+    "keywords": [
+			"Permanent",
+			"Master of the Force"
+		]
+  }
 }));
 
 export default cards;

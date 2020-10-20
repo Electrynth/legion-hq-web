@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Added Anakin Skywalker expansion",
+    "date": "20 October 2020",
+    "body": "All of the cards from the Anakin Skywalker expansion preview have been added. All new mechanics such as the one from the keyword \"Tempted\"work. However, \"Flawed\" cards will come either later today or tomorrow."
+  },
+  {
     "title": "Add Inferno Squad expansion",
     "date": "5 August 2020",
     "body": "Added Imp Special Forces cards."
