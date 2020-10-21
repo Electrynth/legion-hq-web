@@ -1,4 +1,7 @@
 const keywords = {
+  "Djem So Mastery": "While defending, if you spend a dodge token, you gain defensive surge to block: if at least 1 hit or crit result was canceled, the attacker suffers 1 wound",
+  "Flawed": "Add your flaw card to an opponents hand.",
+  "Tempted": "You can equip force upgrades of any alignment.",
   "Equip": "These units must be equipped to this card.",
   "Retinue": "At the start of the Activation Phase, if you are at range 1-2 of X, gain 1 aim or dodge token.",
   "Long Shot": "While attacking, spend up to X aim tokens to increase this weapon's maximum range by 1 for each aim tkoen spent.",

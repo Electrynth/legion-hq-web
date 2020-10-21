@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Fade, Typography, Divider } from '@material-ui/core';
 import ListContext from 'context/ListContext';
 import factions from 'constants/factions';
+import cards from 'constants/cards';
 import CardImage from './CardImage';
 
 function RowDisplay({ unit, faction, handleCardZoom }) {
@@ -17,6 +18,7 @@ function RowDisplay({ unit, faction, handleCardZoom }) {
     justifyContent: 'center'
   };
   // ×
+
   const counter = (
     <div style={counterStyles}>
       <Typography variant={unit.count > 9 ? 'caption' : 'button'}>
@@ -25,6 +27,7 @@ function RowDisplay({ unit, faction, handleCardZoom }) {
     </div>
   );
   const { counterpart } = unit;
+  const { flawId } = unit;
   return (
     <div style={{ display: 'flex', flexFlow: 'column nowrap' }}>
       <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
@@ -61,6 +64,12 @@ function RowDisplay({ unit, faction, handleCardZoom }) {
             }
           } else return null;
         })}
+        {flawId && (
+          <CardImage
+            id={flawId}
+            handleClick={() => handleCardZoom(flawId)}
+          />
+        )}
       </div>
       {counterpart && (
         <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
@@ -126,7 +135,7 @@ function ListDisplay() {
         {currentList.units.map(unit => (
           <div key={unit.unitObjectString}>
             <RowDisplay
-              unit={unit}
+              unit={{ ...unit, flawId: cards[unit.unitId].flaw ? cards[unit.unitId].flaw : undefined }}
               faction={currentList.faction}
               handleCardZoom={handleCardZoom}
             />

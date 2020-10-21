@@ -5,6 +5,7 @@ import CardName from 'common/CardName';
 import UnitPoints from 'common/UnitPoints';
 import UnitActions from './UnitActions';
 import UnitUpgrades from './UnitUpgrades';
+import UnitFlaw from './UnitFlaw';
 
 const useStyles = makeStyles(theme => ({
   unitRow: {
@@ -86,8 +87,9 @@ function ListUnit({
       deleteLoadoutHandlers={deleteLoadoutHandlers}
     />
   );
+  const flaws = unitCard.flaw ? <UnitFlaw key="flaws" flawId={unitCard.flaw} /> : undefined;
   const leftCell = [avatar];
-  const middleCell = [name, upgrades];
+  const middleCell = [name, upgrades, flaws];
   const rightCell = [points, actions];
   return (
     <div className={classes.unitColumn}>

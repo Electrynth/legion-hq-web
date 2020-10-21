@@ -5301,8 +5301,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 5,
-		"imageName": "Offensive Stance.jpeg",
-		"keywords": [],
+		"imageName": "Defensive Stance.jpeg",
+		"keywords": ["Reconfigure"],
 		"requirements": [{"force": true}]
 	},
 	"mt": {
@@ -5432,6 +5432,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 160,
 		"products": [],
 		"faction": "republic",
+		"flaw": "nh",
 		"keywords": [
 			"Jump",
 			"Djem So Mastery",
@@ -5531,7 +5532,17 @@ const cards = JSON.parse(JSON.stringify({
 			"Permanent",
 			"Master of the Force"
 		]
-  }
+  },
+	"nh": {
+		"id": "nh",
+		"displayName": "",
+		"cardName": "Not a Story the Jedi Would Tell",
+		"cardType": "flaw",
+		"commander": "Anakin Skywalker",
+		"imageName": "Not a Story the Jedi Would Tell.jpeg",
+		"products": [],
+		"keywords": []
+	}
 }));
 
 export default cards;

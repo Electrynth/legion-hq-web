@@ -29,7 +29,8 @@ const useStyles = makeStyles(theme => ({
   unit: { width: 210, height: 150 },
   upgrade: { width: 'auto', minWidth: 96, height: 150 },
   command: { width: 150, height: 210 },
-  counterpart: { width: 210, height: 150 }
+  counterpart: { width: 210, height: 150 },
+  flaw: { width: 'auto', height: 150 }
 }));
 
 function CardImage({ id, handleClick, isLoadout = false }) {

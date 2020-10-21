@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Add Anakin Skywalker expansion",
+    "date": "21 October 2020",
+    "body": "New mechanics \"Tempted\" and \"Flaw\" completed."
+  },
+  {
     "title": "Added Anakin Skywalker expansion",
     "date": "20 October 2020",
     "body": "New mechanic \"Tempted\" added. \"Flawed\" card mechanic will be added later today or tomorrow."
