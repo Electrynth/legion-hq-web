@@ -5583,7 +5583,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardType": "unit",
 		"cardSubtype": "droid trooper",
 		"cardName": "DRK-1 Sith Probe Droids",
-		"isUnique": false,
+		"isUnique": true,
 		"rank": "special",
 		"cost": 35,
 		"faction": "separatists",
