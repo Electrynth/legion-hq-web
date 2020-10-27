@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Added Maul Expansion",
+    "date": "27 October 2020",
+    "body": "Contents from Maul preview article added."
+  },
+  {
     "title": "Add Anakin Skywalker expansion",
     "date": "21 October 2020",
     "body": "New mechanics \"Tempted\" and \"Flaw\" completed."

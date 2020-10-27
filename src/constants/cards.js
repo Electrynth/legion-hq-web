@@ -5459,8 +5459,20 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 160,
 		"products": [],
 		"faction": "separatists",
-		"keywords": [],
-		"upgradeBar": []
+		"keywords": [
+			"Jump",
+			"Deflect",
+			"Immune",
+			"Juyo Mastery",
+			"Impact",
+			"Pierce"
+		],
+		"upgradeBar": [
+			"force",
+			"force",
+			"training",
+			"training"
+		]
 	},
 	"nc": {
 		"id": "nc",
@@ -5542,6 +5554,30 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Not a Story the Jedi Would Tell.jpeg",
 		"products": [],
 		"keywords": []
+	},
+	"ni": {
+		"id": "ni",
+    "displayName": "",
+    "cardName": "The Phantom Menace",
+    "cardSubtype": "2",
+    "cardType": "command",
+    "commander": "Maul",
+    "imageName": "The Phantom Menace.jpeg",
+    "products": [],
+    "faction": "separatists",
+    "keywords": ["Divulge", "Infiltrate"]
+  },
+	"nj": {
+		"id": "nj",
+		"displayName": "",
+		"cardName": "At Last",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Maul",
+		"imageName": "At Last.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": ["Jedi Hunter"]
 	}
 }));
 

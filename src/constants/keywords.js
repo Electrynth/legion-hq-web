@@ -1,4 +1,6 @@
 const keywords = {
+  "Observe": "Choose an enemy unit at range 1-3 and in line of sight. It gains 3 observation tokens.",
+  "Juyo Mastery": "While you are wounded, you can perform 1 additional action during your activation. Limit 2 move actions.",
   "Djem So Mastery": "While defending, if you spend a dodge token, you gain defensive surge to block: if at least 1 hit or crit result was canceled, the attacker suffers 1 wound",
   "Flawed": "Add your flaw card to an opponents hand.",
   "Tempted": "You can equip force upgrades of any alignment.",
