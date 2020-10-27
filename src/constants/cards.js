@@ -5571,14 +5571,39 @@ const cards = JSON.parse(JSON.stringify({
 		"id": "nj",
 		"displayName": "",
 		"cardName": "At Last",
-		"cardSubtype": "1",
+		"cardSubtype": "3",
 		"cardType": "command",
 		"commander": "Maul",
 		"imageName": "At Last.jpeg",
 		"products": [],
 		"faction": "separatists",
 		"keywords": ["Jedi Hunter"]
-	}
+	},
+	"nk": {
+		"cardType": "unit",
+		"cardSubtype": "droid trooper",
+		"cardName": "DRK-1 Sith Probe Droids",
+		"isUnique": false,
+		"rank": "special",
+		"cost": 35,
+		"faction": "separatists",
+		"defense": "white",
+		"surges": [],
+		"speed": 2,
+		"wounds": 1,
+		"courage": 1,
+		"imageName": "DRK-1 Sith Probe Droids.jpeg",
+		"detachment": "nb",
+		"keywords": [
+			"Detachment",
+			"Observe",
+			"Hover",
+			"Incognito",
+			"Suppressive"
+		],
+		"upgradeBar": ["comms"],
+		"id": "nk"
+	},
 }));
 
 export default cards;
