@@ -4979,7 +4979,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "B2-HA Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 32,
+		"cost": 30,
 		"imageName": "B2-HA Trooper.jpeg",
 		"keywords": ["Blast", "Cycle", "Impact"],
 		"requirements": [{"cardName": "B2 Super Battle Droids"}],
