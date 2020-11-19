@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Rules Reference 2020 Update",
+    "date": "19 November 2020",
+    "body": "Changes can be accessed by hitting the Show More button and expanding History."
+  },
+  {
     "title": "Added Maul Expansion",
     "date": "27 October 2020",
     "body": "Contents from Maul preview article added."
