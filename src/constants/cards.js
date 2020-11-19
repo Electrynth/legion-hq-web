@@ -2084,7 +2084,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Overcharged Generator",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 4,
+		"cost": 3,
 		"imageName": "Overcharged Generator.jpeg",
 		"keywords": ["Fixed", "Impact"],
 		"requirements": [],
@@ -2095,7 +2095,7 @@ const cards = JSON.parse(JSON.stringify({
 			},
 			{
 				"date": "19 November 2020",
-				"description": "Cost reduced from 7 to 4 points."
+				"description": "Cost reduced from 7 to 3 points."
 			}
 		],
 		"id": "dq"
@@ -2105,7 +2105,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Barrage Generator",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 4,
+		"cost": 3,
 		"imageName": "Barrage Generator.jpeg",
 		"keywords": ["Fixed", "Suppressive"],
 		"requirements": [],
@@ -2116,7 +2116,7 @@ const cards = JSON.parse(JSON.stringify({
 			},
 			{
 				"date": "19 November 2020",
-				"description": "Cost reduced from 7 to 4 points."
+				"description": "Cost reduced from 7 to 3 points."
 			}
 		],
 		"id": "dr"
@@ -2976,7 +2976,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardSubtype": "crew",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 24,
+		"cost": 21,
 		"imageName": "BARC RPS-6 Gunner.jpeg",
 		"keywords": ["Impact"],
 		"history": [
@@ -4024,7 +4024,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "BARC Speeder",
 		"isUnique": false,
 		"rank": "support",
-		"cost": 75,
+		"cost": 60,
 		"faction": "republic",
 		"imageName": "BARC Speeder.jpeg",
 		"keywords": [
@@ -4035,6 +4035,12 @@ const cards = JSON.parse(JSON.stringify({
 			"Fixed"
 		],
 		"upgradeBar": ["crew","comms"],
+		"history": [
+			{
+				"date": "19 November 2020",
+				"description": "Cost reduced from 75 to 60 points."
+			}
+		],
 		"id": "ic"
 	},
 	"id": {
@@ -4042,7 +4048,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "BARC Twin Laser Gunner",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 18,
+		"cost": 15,
 		"imageName": "BARC Twin Laser Gunner.jpeg",
 		"keywords": ["Fixed"],
 		"requirements": [{"cardName": "BARC Speeder"}],
@@ -4962,7 +4968,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Phase II Mortar Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 25,
+		"cost": 20,
 		"imageName": "Phase II Mortar Trooper.jpeg",
 		"keywords": ["Critical", "Suppressive", "Cumbersome"],
 		"requirements": [{"cardName": "Phase II Clone Troopers"}],
