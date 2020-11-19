@@ -2299,10 +2299,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Z-6 Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 22,
+		"cost": 20,
 		"imageName": "Z-6 Trooper.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "Rebel Troopers"}],
+		"history": [
+			{
+				"date": "19 November 2020",
+				"description": "Cost reduced from 22 to 20 points."
+			}
+		],
 		"id": "ed"
 	},
 	"ee": {
@@ -2815,7 +2821,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Wedge Antilles",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 5,
+		"cost": 1,
 		"imageName": "Wedge Antilles.jpeg",
 		"keywords": ["Full Pivot"],
 		"requirements": [
@@ -3469,7 +3475,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Rebel Veteran",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 12,
+		"cost": 9,
 		"imageName": "Rebel Veteran.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "Rebel Veterans"}],
@@ -4391,10 +4397,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "SX-21 Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 20,
+		"cost": 17,
 		"products": [],
 		"imageName": "SX-21 Trooper.jpeg",
 		"keywords": ["Impact"],
+		"history": [
+			{
+				"date": "19 November 2020",
+				"description": "Cost reduced from 20 to 17 points."
+			}
+		],
 		"id": "iz"
 	},
 	"ja": {
