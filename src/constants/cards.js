@@ -4297,7 +4297,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "B1 Security Droid",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 9,
+		"cost": 7,
 		"imageName": "B1 Security Droid.jpeg",
 		"keywords": [],
 		"displayName": "Security Droid",
