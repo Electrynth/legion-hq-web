@@ -2718,7 +2718,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "AT-RT Laser Cannon",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 20,
+		"cost": 10,
 		"imageName": "AT-RT Laser Cannon.jpeg",
 		"keywords": ["Impact", "Fixed"],
 		"requirements": [{"cardName": "AT-RT"}],
