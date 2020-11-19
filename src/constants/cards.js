@@ -3654,7 +3654,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Tauntaun Riders",
 		"isUnique": false,
 		"rank": "support",
-		"cost": 90,
+		"cost": 95,
 		"faction": "rebels",
 		"imageName": "Tauntaun Riders.jpeg",
 		"keywords": [
