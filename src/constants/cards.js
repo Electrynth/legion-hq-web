@@ -1702,6 +1702,12 @@ const cards = JSON.parse(JSON.stringify({
 		"faction": "rebels",
 		"imageName": "Son of Skywalker.jpeg",
 		"keywords": [],
+		"history": [
+		  {
+			"date": "19 November 2020",
+			"description": "Instead of performing 1 additional attack, he may perform an additional attack action even if he already attacked during his activation."
+		  }
+		],
 		"id": "cq"
 	},
 	"cr": {
