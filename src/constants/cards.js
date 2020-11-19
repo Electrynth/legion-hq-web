@@ -846,13 +846,19 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Imperial Officer",
 		"isUnique": false,
 		"rank": "commander",
-		"cost": 50,
+		"cost": 45,
 		"faction": "empire",
 		"imageName": "Imperial Officer.jpeg",
 		"keywords": [
 			"Spotter",
 			"Inspire",
 			"Sharpshooter"
+		],
+		"history": [
+			{
+				"date": "19 November 2020",
+				"description": "Cost reduced from 50 to 45 points."
+			}
 		],
 		"upgradeBar": ["command", "gear"],
 		"id": "ar"
@@ -880,6 +886,12 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"upgradeBar": ["force", "force", "force", "command"],
 		"id": "as",
+		"history": [
+			{
+				"date": "19 November 2020",
+				"description": "Cost reduced from 210 to 200 points."
+			}
+		],
 		"cardType": "unit"
 	},
 	"at": {
@@ -2981,7 +2993,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "DF-90 Mortar Trooper",
 		"isUnique": false,
 		"rank": "corps",
-		"cost": 36,
+		"cost": 38,
 		"faction": "empire",
 		"defense": "red",
 		"surges": [],
@@ -3002,6 +3014,12 @@ const cards = JSON.parse(JSON.stringify({
 			"Fixed"
 		],
 		"upgradeBar": ["comms"],
+		"history": [
+			{
+				"date": "19 November 2020",
+				"description": "Cost increased from 36 to 38 points."
+			}
+		],
 		"id": "ft"
 	},
 	"fu": {
@@ -3667,7 +3685,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Dewback Rider",
 		"isUnique": false,
 		"rank": "support",
-		"cost": 90,
+		"cost": 75,
 		"faction": "empire",
 		"imageName": "Dewback Rider.jpeg",
 		"keywords": [
@@ -3680,6 +3698,12 @@ const cards = JSON.parse(JSON.stringify({
 			"Suppressive"
 		],
 		"upgradeBar": ["training", "comms", "armament"],
+		"history": [
+			{
+				"date": "19 November 2020",
+				"description": "Cost reduced from 90 to 75 points."
+			}
+		],
 		"id": "hf"
 	},
 	"hg": {
@@ -3863,10 +3887,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "T-21 Blaster Rifle",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 10,
+		"cost": 5,
 		"imageName": "T-21 Blaster Rifle.jpeg",
 		"keywords": ["Critical"],
 		"requirements": [{"cardName": "Dewback Rider"}],
+		"history": [
+			{
+				"date": "19 November 2020",
+				"description": "Cost reduced from 10 to 5 points."
+			}
+		],
 		"id": "hs"
 	},
 	"hv": {
@@ -4367,9 +4397,15 @@ const cards = JSON.parse(JSON.stringify({
 		"cardSubtype": "heavy weapon",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 27,
+		"cost": 24,
 		"imageName": "T-21 Stormtrooper.jpeg",
 		"keywords": ["Critical"],
+		"history": [
+			{
+				"date": "19 November 2020",
+				"description": "Cost reduced from 27 to 24 points."
+			}
+		],
 		"id": "ja"
 	},
 	"jb": {
