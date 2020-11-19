@@ -3516,7 +3516,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Obi-Wan Kenobi",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 175,
+		"cost": 170,
 		"faction": "republic",
 		"imageName": "Obi-Wan Kenobi.jpeg",
 		"keywords": [
