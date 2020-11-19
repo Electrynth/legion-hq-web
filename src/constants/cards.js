@@ -869,7 +869,7 @@ const cards = JSON.parse(JSON.stringify({
 		"faction": "empire",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 210,
+		"cost": 200,
 		"defense": "red",
 		"surges": ["crit", "block"],
 		"speed": 1,
