@@ -208,7 +208,7 @@ export function DataProvider({ children }) {
         // console.log(`Logging in user with email: ${auth.getEmail()}`);
         fetchUserId(auth.getEmail());
       }
-    }, 5000);
+    }, 20000);
     return () => clearInterval(intervalId);
   }, [userId, auth]);
 
@@ -272,7 +272,7 @@ export function DataProvider({ children }) {
         })
         .catch(e => {
           setError(e);
-          setMessage(`Failed to find user with email address ${email}.`);
+          setMessage(`Can't user with email address ${email}. Server likely down.`);
           setIsAlertOpen(true);
         });
     }
