@@ -73,13 +73,6 @@ function ListExtras() {
         label="Clear List"
         handleClick={handleClearList}
       />
-      <SimpleButton
-        timeout={1000}
-        timeoutMessage="Resetting list..."
-        icon={<UsePrevIcon />}
-        label={usingOldPoints ? "Using Sep 2019 Points" : "Using Nov 2020 Points"}
-        handleClick={toggleUsingOldPoints}
-      />
     </div>
   );
 };
