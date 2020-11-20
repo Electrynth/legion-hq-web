@@ -111,6 +111,14 @@ function consolidate(list) {
       list = removeCommand(list, i);
     }
   }
+  if (list.contingencies) {
+    for (let i = list.contingencies.length - 1; i > -1; i--) {
+      const { commander } = cards[list.contingencies[i]];
+      if (commander && !list.commanders.includes(commander)) {
+        list = removeContingency(list, i);
+      }
+    }
+  }
   list.commandCards = sortCommandIds(list.commandCards);
   return countPoints(list);
 }
@@ -543,6 +551,9 @@ function removeCounterpart(list, unitIndex) {
 function addUnit(list, unitId, stackSize = 1) {
   const unitCard = cards[unitId];
   const unitIndex = findUnitHash(list, unitId);
+  if (unitCard.keywords.includes('Contingencies')) {
+    if (!list.contingencies) list.contingencies = [];
+  }
   if (unitIndex > -1) {
     list.units[unitIndex].count += stackSize;
     list.units[unitIndex].totalUnitCost += unitCard.cost * stackSize;
@@ -685,6 +696,11 @@ function getEquippableLoadoutUpgrades(
   };
 }
 
+function addContingency(list, commandId) {
+  list.contingencies.push(commandId);
+  return list;
+}
+
 function addCommand(list, commandId) {
   list.commandCards.push(commandId);
   return list;
@@ -709,6 +725,11 @@ function removeBattle(list, type, index) {
   } else if (type === 'condition') {
     list.conditionCards = deleteItem(list.conditionCards, index);
   } else return;
+  return list;
+}
+
+function removeContingency(list, contingencyIndex) {
+  list.contingencies = deleteItem(list.contingencies, contingencyIndex);
   return list;
 }
 
@@ -753,6 +774,40 @@ function getEligibleBattlesToAdd(list, type) {
   return { validIds, invalidIds };
 }
 
+function getEligibleContingenciesToAdd(list) {
+if (!list.contingencies) list.contingencies = [];
+const validCommandIds = [];
+const invalidCommandIds = [];
+const cardsById = Object.keys(cards);
+let numContingencies = 0;
+list.units.forEach((unit) => {
+  const unitCard = cards[unit.unitId];
+  if (unitCard.contingencies && unitCard.contingencies > 0)
+    numContingencies += unitCard.contingencies
+});
+cardsById.forEach(id => {
+  const card = cards[id];
+  if (card.cardType !== 'command') return;
+  if (list.commandCards.includes(id)) return;
+  if (list.contingencies.includes(id)) return;
+  if (!list.faction.includes(card.faction)) return;
+  if (id === 'aa') return;
+  if (id === 'jl' || id === 'ka' || id ==='kb') return;
+  if (
+    list.contingencies.length >= numContingencies ||
+    (card.commander && !list.commanders.includes(card.commander))
+  ) {
+    invalidCommandIds.push(id);
+    return;
+  }
+  validCommandIds.push(id);
+});
+return {
+  validIds: sortCommandIds(validCommandIds),
+  invalidIds: sortCommandIds(invalidCommandIds)
+};
+}
+
 function getEligibleCommandsToAdd(list) {
   const validCommandIds = [];
   const invalidCommandIds = [];
@@ -766,6 +821,7 @@ function getEligibleCommandsToAdd(list) {
     const card = cards[id];
     if (card.cardType !== 'command') return;
     if (list.commandCards.includes(id)) return;
+    if (list.contingencies && list.contingencies.includes(id)) return;
     if (!list.faction.includes(card.faction)) return;
     if (id === 'aa') return; // Standing Orders
     if (id === 'jl' || id === 'ka' || id === 'kb') return; // Duplicates
@@ -802,7 +858,7 @@ function getEquippableUpgrades(
 
     // dynamically add the force affinity
     const { faction } = unitCard;
-    
+
     if (faction === 'rebels' || faction === 'republic') unitCard['light side'] = true;
     else if (faction === 'separatists' || faction === 'empire') unitCard['dark side'] = true;
 
@@ -1078,6 +1134,8 @@ export {
   addBattle,
   removeBattle,
   addCommand,
+  addContingency,
+  removeContingency,
   removeCommand,
   equipUpgrade,
   unequipUpgrade,
@@ -1092,6 +1150,7 @@ export {
   mergeLists,
   getEligibleBattlesToAdd,
   getEligibleCommandsToAdd,
+  getEligibleContingenciesToAdd,
   getEligibleUnitsToAdd,
   getEquippableUpgrades,
   getEquippableLoadoutUpgrades,
