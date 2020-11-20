@@ -126,7 +126,8 @@ const keywords = {
   "Cumbersome": "You cannot use this weapon and move during the same activation.",
   "Fire Support": "When another friendly unit performs a ranged attack, if you have a faceup order token, each mini in your unit may add an eligible weapon to the attack pool. If you do, flip your order token facedown. Limit 1 FIRE SUPPORT per attack pool. Note: Can still be used even if a unit would panic during its activation. Only the main unit attacking determines cover, LoS, and surges.",
   "Beam": "After performing an attack with this weapon, you may perform up to 2 extra attacks using only this weapon. Each attack must be against an enemy unit that is in line of sight, has not already defended, and is at range 1 of the defender.",
-  "Cycle": "At the end of your activation, if you did not use this card, ready it."
+  "Cycle": "At the end of your activation, if you did not use this card, ready it.",
+  "Field Commander": "After a friendly neutral command card is played, you may be nominated as commander."
 };
 
 export default keywords;
