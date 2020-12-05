@@ -5,7 +5,7 @@ function UnitPoints({ unit, variant = 'body1' }) {
   let { totalUnitCost } = unit;
   return (
     <Typography variant={variant}>
-      {totalUnitCost}
+      {unit.count > 1 && `(${totalUnitCost/unit.count}) `}{totalUnitCost}
     </Typography>
   );
 };

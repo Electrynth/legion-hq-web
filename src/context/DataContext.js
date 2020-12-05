@@ -176,6 +176,7 @@ export function DataProvider({ children }) {
   const [message, setMessage] = useState();
   const [userLists, setUserLists] = useState([]);
   const [userSettings, setUserSettings] = useState(initializeLocalSettings());
+  const [numListFetches, setNumListFetches] = useState(0);
 
   useEffect(() => {
     const asyncSilentAuth = async () => {
@@ -200,15 +201,15 @@ export function DataProvider({ children }) {
   }, [userId]);
 
   useEffect(() => {
+    let numFetches = 0;
     const intervalId = setInterval(() => {
-      if (userId) {
-        // console.log(`Fetching lists for userId: ${userId}`);
+      if (userId && numFetches < 5) {
+        numFetches++;
         fetchUserLists(userId);
       } else if (auth && auth.isAuthenticated() && !userId) {
-        // console.log(`Logging in user with email: ${auth.getEmail()}`);
         fetchUserId(auth.getEmail());
       }
-    }, 20000);
+    }, 15000);
     return () => clearInterval(intervalId);
   }, [userId, auth]);
 
@@ -247,9 +248,11 @@ export function DataProvider({ children }) {
     }
   }
   const fetchUserId = (email) => {
+    console.log('Auth0 profile:', auth.profile);
     if (email) {
       httpClient.get(`${urls.api}/users?email=${email}`)
         .then(response => {
+          console.log('User profiles:', response.data);
           if (response.data.length > 0) {
             setUserId(response.data[0].userId);
           } else {
