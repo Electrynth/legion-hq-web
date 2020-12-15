@@ -8,6 +8,7 @@ import ListHeader from './ListHeader';
 import RankSelector from './RankSelector';
 import ListUnits from './ListUnits';
 import ListCommands from './ListCommands';
+import ListContingencies from './ListContingencies';
 import ListObjectives from './ListObjectives';
 import ListExtras from './ListExtras';
 import ListDisplay from './ListDisplay';
@@ -54,6 +55,8 @@ function ListLayout() {
         <ListUnits />
         <Divider style={{ marginBottom: 4 }} />
         <ListCommands />
+        <Divider style={{ marginBottom: 4 }} />
+        <ListContingencies />
         <Divider style={{ marginBottom: 4 }} />
         <ListObjectives />
       </div>

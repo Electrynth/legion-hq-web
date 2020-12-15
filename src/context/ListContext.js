@@ -14,7 +14,9 @@ import {
   changeListTitle,
   addUnit,
   addCommand,
+  addContingency,
   removeCommand,
+  removeContingency,
   addCounterpart,
   removeCounterpart,
   addBattle,
@@ -24,6 +26,7 @@ import {
   equipUpgrade,
   unequipUpgrade,
   getEligibleCommandsToAdd,
+  getEligibleContingenciesToAdd,
   getEligibleUnitsToAdd,
   getEquippableUpgrades,
   getEquippableLoadoutUpgrades,
@@ -214,8 +217,16 @@ export function ListProvider({
     const newList = addCommand(currentList, commandId);
     setCurrentList({ ...newList });
   }
+  const handleAddContingency = (commandId) => {
+    const newList = addContingency(currentList, commandId);
+    setCurrentList({ ...newList });
+  }
   const handleRemoveCommand = (commandIndex) => {
     const newList = removeCommand(currentList, commandIndex);
+    setCurrentList({ ...newList });
+  }
+  const handleRemoveContingency = (contingencyIndex) => {
+    const newList = removeContingency(currentList, contingencyIndex);
     setCurrentList({ ...newList });
   }
   const handleAddBattle = (type, battleId) => {
@@ -318,7 +329,10 @@ export function ListProvider({
   const commandProps = {
     getEligibleCommandsToAdd,
     handleAddCommand,
-    handleRemoveCommand
+    handleRemoveCommand,
+    getEligibleContingenciesToAdd,
+    handleAddContingency,
+    handleRemoveContingency
   };
   const listProps = {
     currentList,

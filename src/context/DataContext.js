@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Lando & Agent Kallus",
+    "date": "15 December 2020",
+    "body": "Lando Calrissian, Agent Kallus cards added. Contingency mechanic added, but may be buggy."
+  },
+  {
     "title": "Rules Reference 2020 Update",
     "date": "19 November 2020",
     "body": "Changes can be accessed by hitting the Show More button and expanding History."
