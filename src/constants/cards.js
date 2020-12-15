@@ -6315,7 +6315,109 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"upgradeBar": ["comms"],
 		"id": "nk"
-	}
+	},
+	"nl": {
+		"cardType": "unit",
+		"cardSubtype": "trooper",
+		"cardName": "Lando Calrissian",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 105,
+		"faction": "rebels",
+		"defense": "white",
+		"surges": [],
+		"speed": 2,
+		"wounds": 6,
+		"courage": 2,
+		"imageName": "Lando Calrissian.jpeg",
+		"flaw": "",
+		"contingencies": 3,
+		"keywords": [
+			"Contingencies",
+			"Covert Ops",
+			"Flawed",
+			"Sharpshooter",
+			"Uncanny Luck",
+			"Pierce"
+		],
+		"upgradeBar": ["command", "training", "gear"],
+		"id": "nl"
+	},
+	"nm": {
+		"cardType": "unit",
+		"cardSubtype": "trooper",
+		"cardName": "Agent Kallus",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 90,
+		"faction": "empire",
+		"defense": "red",
+		"surges": [],
+		"speed": 2,
+		"wounds": 6,
+		"courage": 2,
+		"imageName": "Agent Kallus.jpeg",
+		"flaw": "",
+		"contingencies": 2,
+		"keywords": [
+			"Contingencies",
+			"Cunning",
+			"Flawed",
+			"Sharpshooter",
+			"Tactical",
+			"Pierce"
+		],
+		"upgradeBar": ["command", "training", "gear", "armament"],
+		"id": "nm"
+	},
+	"nn": {
+		"id": "nn",
+		"displayName": "",
+		"cardName": "Ace Up His Sleeve",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Lando Calrissian",
+		"imageName": "Ace Up His Sleeve.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": []
+	},
+	"no": {
+		"id": "no",
+		"displayName": "",
+		"cardName": "Face Me!",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Agent Kallus",
+		"imageName": "Face Me!.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": ["Agile", "Block"]
+	},
+	"np": {
+		"id": "np",
+		"displayName": "",
+		"cardSubtype": "armament",
+		"cardName": "J-19 Bo-Rifle Staff",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 25,
+		"imageName": "J-19 Bo-Rifle Staff.jpeg",
+		"keywords": ["Charge", "Immune", "Lethal", "Reconfigure"],
+		"requirements": [{"cardName": "Agent Kallus"}]
+	},
+	"nq": {
+		"id": "nq",
+		"displayName": "",
+		"cardSubtype": "command",
+		"cardName": "Inspiring Presence",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Inspiring Presence.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
 }));
 
 export default cards;
