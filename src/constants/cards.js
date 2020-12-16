@@ -6386,7 +6386,7 @@ const cards = JSON.parse(JSON.stringify({
 		"id": "no",
 		"displayName": "",
 		"cardName": "Face Me!",
-		"cardSubtype": "2",
+		"cardSubtype": "1",
 		"cardType": "command",
 		"commander": "Agent Kallus",
 		"imageName": "Face Me!.jpeg",
