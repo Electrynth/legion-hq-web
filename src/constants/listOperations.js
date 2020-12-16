@@ -194,6 +194,18 @@ function generateTournamentText(
     commands = `\nCommands:\n${commands}`;
     commands += '••••Standing Orders\n';
   }
+  let contingencies = '';
+  if (list.contingencies && list.contingencies.length > 0) {
+    contingencies = '\nContingencies:\n';
+    list.contingencies.forEach(commandId => {
+      let pips = '••••';
+      const commandCard = cards[commandId];
+      if (commandCard.cardSubtype === '1') pips = '•';
+      else if (commandCard.cardSubtype === '2') pips = '••';
+      else if (commandCard.cardSubtype === '3') pips = '•••';
+      contingencies += `${pips}${commandCard.cardName}\n`;
+    });
+  }
   let objectives = '';
   let deployments = '';
   let conditions = '';
@@ -220,7 +232,7 @@ function generateTournamentText(
   }
   let battle = '';
   if (objectives + deployments + conditions !== '') battle = `\nBattle Deck\n`;
-  return header + units + commands + battle + objectives + deployments + conditions;
+  return header + units + commands + contingencies + battle + objectives + deployments + conditions;
 }
 
 // • × •
@@ -284,7 +296,7 @@ function generateStandardText(list) {
   if (support) units += `Support:\n${support}`;
   if (heavy) units += `Heavy:\n${heavy}`;
 
-  let commands = '\n';
+  let commands = '\nCommands: ';
   list.commandCards.forEach(id => {
     const commandCard = cards[id];
     if (commandCard.cardSubtype === '1') commands += '• ';
@@ -294,7 +306,19 @@ function generateStandardText(list) {
     commands += `${commandCard.cardName}, `;
   });
   if (commands !== '') commands += '•••• Standing Orders';
-  return header + points + units + commands;
+  let contingencies = '';
+  if (list.contingencies && list.contingencies.length > 0) {
+    contingencies += '\nContingencies: ';
+    list.contingencies.forEach(id => {
+      const commandCard = cards[id];
+      if (commandCard.cardSubtype === '1') contingencies += '• ';
+      else if (commandCard.cardSubtype === '2') contingencies += '•• ';
+      else if (commandCard.cardSubtype === '3') contingencies += '••• ';
+      else contingencies += '•••• ';
+      contingencies += `${commandCard.cardName}, `;
+    });
+  }
+  return header + points + units + commands + contingencies;
 }
 
 function generateMinimalText(list) {
@@ -369,6 +393,18 @@ function generateMinimalText(list) {
     commands += `${commandCard.cardName}, `;
   });
   if (commands !== '') commands += '•••• Standing Orders';
+  let contingencies = '';
+  if (list.contingencies && list.contingencies.length > 0) {
+    contingencies += '\nContingencies: ';
+    list.contingencies.forEach((id, i) => {
+      const commandCard = cards[id];
+      if (commandCard.cardSubtype === '1') contingencies += '• ';
+      else if (commandCard.cardSubtype === '2') contingencies += '•• ';
+      else if (commandCard.cardSubtype === '3') contingencies += '••• ';
+      else contingencies += '•••• ';
+      contingencies += `${commandCard.cardName}, `;
+    });
+  }
   // let objectives = '';
   // let deployments = '';
   // let conditions = '';
@@ -397,7 +433,7 @@ function generateMinimalText(list) {
   //   conditions = conditions.substring(0, conditions.length - 2);
   // }
   // + objectives + deployments + conditions;
-  return header + units + commands;
+  return header + units + commands + contingencies;
 }
 
 function deleteItem(items, i) {
