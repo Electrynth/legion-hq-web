@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Specialists Personnel Expansions",
+    "date": "6 January 2021",
+    "body": "Content from Separatists and Republic Specialists Personnel Expansions added."
+  },
+  {
     "title": "Lando & Agent Kallus",
     "date": "15 December 2020",
     "body": "Lando Calrissian, Agent Kallus cards added. Contingency mechanic added, but may be buggy."

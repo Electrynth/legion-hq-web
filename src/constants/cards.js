@@ -6418,6 +6418,229 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": [],
 		"requirements": []
 	},
+	"nr": {
+		"cardType": "unit",
+		"cardSubtype": "driod trooper",
+		"cardName": "T-Series Tactical Droid",
+		"isUnique": false,
+		"rank": "commander",
+		"cost": 55,
+		"faction": "separatists",
+		"defense": "white",
+		"surges": [],
+		"speed": 2,
+		"wounds": 4,
+		"courage": 2,
+		"imageName": "T-Series Tactical Droid.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Bolster",
+			"Direct",
+			"Sharpshooter"
+		],
+		"upgradeBar": [
+			"command",
+			"comms",
+			"gear"
+		],
+		"id": "nr"
+	},
+	"ns": {
+		"cardType": "unit",
+		"cardSubtype": "driod trooper",
+		"cardName": "Clone Commander",
+		"isUnique": false,
+		"rank": "commander",
+		"cost": 55,
+		"faction": "republic",
+		"defense": "red",
+		"surges": [],
+		"speed": 2,
+		"wounds": 4,
+		"courage": 2,
+		"imageName": "Clone Commander.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Bolster",
+			"Direct",
+			"Sharpshooter"
+		],
+		"upgradeBar": [
+			"command",
+			"training",
+			"gear"
+		],
+		"id": "ns"
+	},
+	"nt": {
+
+	},
+	"nu": {
+		"id": "nu",
+		"displayName": "",
+		"cardName": "Orbital Strike",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Orbital Strike.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": []
+	},
+	"nv": {
+		"id": "nv",
+		"displayName": "",
+		"cardName": "Roger, Roger!",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Roger, Roger!.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": []
+	},
+	"nw": {
+		
+	},
+	"nx": {
+		"id": "nx",
+		"displayName": "",
+		"cardName": "Air Support",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Air Support.jpeg",
+		"products": [],
+		"faction": "republic",
+		"keywords": [
+			"Field commander",
+			"Beam",
+			"Immune"
+		]
+	},
+	"ny": {
+		"id": "ny",
+		"displayName": "",
+		"cardName": "Attack of the Clones",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Attack of the Clones.jpeg",
+		"products": [],
+		"faction": "republic",
+		"keywords": [
+		]
+	},
+	"nz": {
+		"id": "nz",
+		"displayName": "",
+		"cardSubtype": "command",
+		"cardName": "Vigilance",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Vigilance.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
+	"oa": {
+		"id": "oa",
+		"displayName": "",
+		"cardSubtype": "personnel",
+		"cardName": "Clone Comms Technician",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 12,
+		"imageName": "Clone Comms Technician.jpeg",
+		"keywords": [],
+		"requirements": [{"cardSubtype": "clone trooper"}],
+		"additionalUpgradeSlots": ["comms"]
+	},
+	"ob": {
+		"id": "ob",
+		"displayName": "",
+		"cardSubtype": "personnel",
+		"cardName": "Clone Engineer",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 18,
+		"imageName": "Clone Engineer.jpeg",
+		"keywords": ["Repair"],
+		"requirements": [{"cardSubtype": "clone trooper"}]
+	},
+	"oc": {
+		"id": "oc",
+		"displayName": "",
+		"cardSubtype": "personnel",
+		"cardName": "Clone Medic",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 20,
+		"imageName": "Clone Medic.jpeg",
+		"keywords": ["Treat"],
+		"requirements": [{"cardSubtype": "clone trooper"}]
+	},
+	"od": {
+		"id": "od",
+		"displayName": "",
+		"cardSubtype": "personnel",
+		"cardName": "Clone Commander",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 20,
+		"imageName": "Clone Commander.jpeg",
+		"keywords": [
+			"Inspire",
+			"Reliable",
+			"Leader"
+		],
+		"requirements": [{"cardSubtype": "clone trooper"}]
+	},
+	"oe": {
+		"id": "oe",
+		"displayName": "",
+		"cardSubtype": "personnel",
+		"cardName": "Viper Recon Droid",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 8,
+		"imageName": "Viper Recon Droid.jpeg",
+		"keywords": [
+			"Observe",
+			"Sidearm"
+		],
+		"requirements": [{"cardSubtype": "droid trooper"}]
+	},
+	"of": {
+		"id": "of",
+		"displayName": "",
+		"cardSubtype": "personnel",
+		"cardName": "PK-Series Worker Droid",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 12,
+		"imageName": "PK-Series Worker Droid.jpeg",
+		"keywords": [
+			"Repair",
+			"Noncombatant"
+		],
+		"requirements": [{"cardSubtype": "droid trooper"}]
+	},
+	"og": {
+		"id": "og",
+		"displayName": "",
+		"cardSubtype": "personnel",
+		"cardName": "EV-Series Medical Droid",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 14,
+		"imageName": "EV-Series Medical Droid.jpeg",
+		"keywords": [
+			"Treat",
+			"Noncombatant"
+		],
+		"requirements": [{"cardSubtype": "droid trooper"}]
+	},
 }));
 
 export default cards;
