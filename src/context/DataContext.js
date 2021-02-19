@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Lando & Kallus Update",
+    "date": "6 January 2021",
+    "body": "Lando and Kallus command cards and flaw card added."
+  },
+  {
     "title": "Specialists Personnel Expansions",
     "date": "6 January 2021",
     "body": "Content from Separatists and Republic Specialists Personnel Expansions added."
