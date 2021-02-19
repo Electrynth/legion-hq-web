@@ -6330,7 +6330,7 @@ const cards = JSON.parse(JSON.stringify({
 		"wounds": 6,
 		"courage": 2,
 		"imageName": "Lando Calrissian.jpeg",
-		"flaw": "",
+		"flaw": "oh",
 		"contingencies": 3,
 		"keywords": [
 			"Contingencies",
@@ -6357,7 +6357,7 @@ const cards = JSON.parse(JSON.stringify({
 		"wounds": 6,
 		"courage": 2,
 		"imageName": "Agent Kallus.jpeg",
-		"flaw": "",
+		"flaw": "oi",
 		"contingencies": 2,
 		"keywords": [
 			"Contingencies",
@@ -6473,7 +6473,16 @@ const cards = JSON.parse(JSON.stringify({
 		"id": "ns"
 	},
 	"nt": {
-
+		"id": "nt",
+		"displayName": "",
+		"cardName": "All In",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Lando Calrissian",
+		"imageName": "All In.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": []
 	},
 	"nu": {
 		"id": "nu",
@@ -6500,7 +6509,16 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": []
 	},
 	"nw": {
-		
+		"id": "nw",
+		"displayName": "",
+		"cardName": "Idiot's Array",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Lando Calrissian",
+		"imageName": "Idiot's Array.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": []
 	},
 	"nx": {
 		"id": "nx",
@@ -6641,6 +6659,50 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"requirements": [{"cardSubtype": "droid trooper"}]
 	},
+	"oh": {
+		"id": "oh",
+		"displayName": "",
+		"cardName": "I've Altered the Deal",
+		"cardType": "flaw",
+		"commander": "Lando Calrissian",
+		"imageName": "I've Altered the Deal.jpeg",
+		"products": [],
+		"keywords": []
+	},
+	"oi": {
+		"id": "oi",
+		"displayName": "",
+		"cardName": "Developing Sympathies",
+		"cardType": "flaw",
+		"commander": "Agent Kallus",
+		"imageName": "Developing Sympathies.jpeg",
+		"products": [],
+		"keywords": []
+	},
+	"oj": {
+		"id": "oj",
+		"displayName": "",
+		"cardName": "ISB Investigation",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Agent Kallus",
+		"imageName": "ISB Investigation.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": []
+	},
+	"ok": {
+		"id": "ok",
+		"displayName": "",
+		"cardName": "Ruthless Tactic",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Agent Kallus",
+		"imageName": "Ruthless Tactic.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": []
+	}
 }));
 
 export default cards;
