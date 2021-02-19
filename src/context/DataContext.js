@@ -79,7 +79,7 @@ const routes = {
 const newsPosts = [
   {
     "title": "Lando & Kallus Update",
-    "date": "6 January 2021",
+    "date": "19 February 2021",
     "body": "Lando and Kallus command cards and flaw card added."
   },
   {
