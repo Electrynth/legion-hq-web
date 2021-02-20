@@ -6694,11 +6694,11 @@ const cards = JSON.parse(JSON.stringify({
 	"ok": {
 		"id": "ok",
 		"displayName": "",
-		"cardName": "Ruthless Tactic",
+		"cardName": "Ruthless Tactics",
 		"cardSubtype": "3",
 		"cardType": "command",
 		"commander": "Agent Kallus",
-		"imageName": "Ruthless Tactic.jpeg",
+		"imageName": "Ruthless Tactics.jpeg",
 		"products": [],
 		"faction": "empire",
 		"keywords": []
