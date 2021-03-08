@@ -587,6 +587,7 @@ function removeCounterpart(list, unitIndex) {
 function addUnit(list, unitId, stackSize = 1) {
   const unitCard = cards[unitId];
   const unitIndex = findUnitHash(list, unitId);
+
   if (unitCard.keywords.includes('Contingencies')) {
     if (!list.contingencies) list.contingencies = [];
   }
@@ -1089,6 +1090,7 @@ function segmentToUnitObject(unitIndex, segment) {
 function convertHashToList(faction, url) {
   let list = JSON.parse(JSON.stringify(listTemplate));
   list.faction = faction;
+  list.contingencies = [];
   const segments = url.split(',');
   const unitSegments = [];
   const otherSegments = [];
