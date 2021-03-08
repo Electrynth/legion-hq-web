@@ -1123,7 +1123,8 @@ function convertHashToList(faction, url) {
       // if (cardId.includes('*')) {}
       const card = cards[cardId];
       if (card.cardType === 'command') {
-        list.commandCards.push(cardId);
+        if (list.commandCards.length < 6) list.commandCards.push(cardId);
+        else list.contingencies.push(cardId);
       } else if (card.cardSubtype === 'objective') {
         list.objectiveCards.push(cardId);
       } else if (card.cardSubtype === 'deployment') {

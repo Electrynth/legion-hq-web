@@ -29,6 +29,8 @@ function generateLink(list) {
     urlStrings.push(urlString);
   });
   list.commandCards.forEach(commandId => urlStrings.push(commandId));
+  if (list.contingencies)
+    list.contingencies.forEach(commandId => urlStrings.push(commandId));
   list.objectiveCards.forEach(objectiveId => urlStrings.push(objectiveId));
   list.deploymentCards.forEach(deploymentId => urlStrings.push(deploymentId));
   list.conditionCards.forEach(conditionId => urlStrings.push(conditionId));
