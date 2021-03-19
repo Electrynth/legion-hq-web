@@ -69,7 +69,7 @@ const keywords = {
   "Arsenal": "While attacking, each mini in this unit can use up to X of its weapons.",
   "Jump": "Perform a move during which you ignore terrain that is height 1 or lower. This is treated as a move action.",
   "Jedi Hunter": "While attacking a unit that has a Force upgrade icon, you gain surge to crit.",
-  "Shield Token": "While defending against a ranged attack, during the Roll Defense Dice step, before rolling defense dice, you may flip any number of active shield tokens. For each shield token flipped this way, the defender adds 1 block result and rolls 1 fewer defense die.",
+  "Shield Token": "While defending against a ranged attack, during the Apply Dodge and Cover step, a unit may flip any number of active shield tokens. For each shield token flipped this way, the defender cancels 1 hit or crit result.",
   "Dauntless": "After you rally, if you are suppressed but not panicked, you may gain 1 suppression token to perform a free move action.",
   "Defend": "When you are issued an order, you may gain X dodge tokens.",
   "Critical": "While converting attack surges, you may convert up to X surge results to critical results.",
