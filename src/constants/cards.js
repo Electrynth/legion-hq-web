@@ -6702,6 +6702,200 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "empire",
 		"keywords": []
+	},
+	"ol": {
+		"cardType": "unit",
+		"cardSubtype": "trooper",
+		"cardName": "Yoda",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 200,
+		"faction": "republic",
+		"defense": "red",
+		"surges": ["crit", "block"],
+		"speed": 1,
+		"wounds": 5,
+		"courage": 4,
+		"imageName": "Yoda.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Guidance",
+			"Ataru Mastery",
+			"Immune",
+			"Master of the Force",
+			"Impact",
+			"Pierce",
+			"Blast",
+			"Suppressive"
+		],
+		"upgradeBar": [
+			"force",
+			"force",
+			"force",
+			"command"
+		],
+		"id": "ol"
+	},
+	"om": {
+		"cardType": "unit",
+		"cardSubtype": "repulsor vehicle",
+		"cardName": "A-A5 Speeder Truck",
+		"isUnique": false,
+		"rank": "heavy",
+		"cost": 75,
+		"faction": "rebels",
+		"defense": "white",
+		"surges": ["block"],
+		"speed": 1,
+		"wounds": 8,
+		"resilience": 4,
+		"imageName": "A-A5 Speeder Truck.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Armor",
+			"Hover: Ground",
+			"Reposition",
+			"Transport: Closed",
+			"Weak Point"
+		],
+		"upgradeBar": [
+			"pilot",
+			"crew",
+			"crew",
+			"hardpoint",
+			"comms"
+		],
+		"id": "om"
+	},
+	"on": {
+		"cardType": "unit",
+		"cardSubtype": "repulsor vehicle",
+		"cardName": "LAAT Patrol Transport",
+		"isUnique": false,
+		"rank": "heavy",
+		"cost": 120,
+		"faction": "empire",
+		"defense": "white",
+		"surges": ["block"],
+		"speed": 2,
+		"wounds": 8,
+		"resilience": 4,
+		"imageName": "LAAT Patrol Transport E.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Armor",
+			"Arsenal",
+			"Cover",
+			"Hover: Air",
+			"Immune",
+			"Transport: Closed",
+			"Fixed"
+		],
+		"upgradeBar": [
+			"pilot",
+			"ordnance",
+			"comms"
+		],
+		"id": "on"
+	},
+	"oo": {
+		"cardType": "unit",
+		"cardSubtype": "repulsor vehicle",
+		"cardName": "LAAT Patrol Transport",
+		"isUnique": false,
+		"rank": "heavy",
+		"cost": 120,
+		"faction": "republic",
+		"defense": "white",
+		"surges": ["block"],
+		"speed": 2,
+		"wounds": 8,
+		"resilience": 4,
+		"imageName": "LAAT Patrol Transport R.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Armor",
+			"Arsenal",
+			"Cover",
+			"Hover: Air",
+			"Immune",
+			"Transport: Closed",
+			"Fixed"
+		],
+		"upgradeBar": [
+			"pilot",
+			"ordnance",
+			"comms"
+		],
+		"id": "oo"
+	},
+	"op": {
+		"id": "op",
+		"displayName": "",
+		"cardSubtype": "hardpoint",
+		"cardName": "Heavy Laser Retrofit",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 16,
+		"imageName": "Heavy Laser Retrofit.jpeg",
+		"keywords": [
+			"Critical"
+		],
+		"requirements": [{"cardName": "A-A5 Speeder Truck"}]
+	},
+	"oq": {
+		"id": "oq",
+		"displayName": "",
+		"cardSubtype": "pilot",
+		"cardName": "Shriv Suurgav",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Shriv Suurgav.jpeg",
+		"keywords": [
+			"Field Commander"
+		],
+		"requirements": [
+			"AND",
+			{"faction": "rebels"},
+			{"rank": "heavy"}
+		]
+	},
+	"or": {
+		"id": "or",
+		"displayName": "",
+		"cardSubtype": "pilot",
+		"cardName": "Governor Pryce",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Governor Pryce.jpeg",
+		"keywords": [
+			"Field Commander"
+		],
+		"requirements": [
+			"AND",
+			{"faction": "empire"},
+			{"rank": "heavy"}
+		]
+	},
+	"os": {
+		"id": "os",
+		"displayName": "",
+		"cardSubtype": "pilot",
+		"cardName": "Clone Commander Fox",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Clone Commander Fox.jpeg",
+		"keywords": [
+			"Field Commander"
+		],
+		"requirements": [
+			"AND",
+			{"faction": "republic"},
+			{"cardName": "LAAT Patrol Transport"}
+		]
 	}
 }));
 
