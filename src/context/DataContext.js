@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Heavy Vehicles & Yoda Update",
+    "date": "20 March 2021",
+    "body": "Cards from AMG livestream added"
+  },
+  {
     "title": "Lando & Kallus Update",
     "date": "19 February 2021",
     "body": "Lando and Kallus command cards and flaw card added."
