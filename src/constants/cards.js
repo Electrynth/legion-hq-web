@@ -6420,7 +6420,7 @@ const cards = JSON.parse(JSON.stringify({
 	},
 	"nr": {
 		"cardType": "unit",
-		"cardSubtype": "driod trooper",
+		"cardSubtype": "droid trooper",
 		"cardName": "T-Series Tactical Droid",
 		"isUnique": false,
 		"rank": "commander",
@@ -6447,7 +6447,7 @@ const cards = JSON.parse(JSON.stringify({
 	},
 	"ns": {
 		"cardType": "unit",
-		"cardSubtype": "driod trooper",
+		"cardSubtype": "clone trooper",
 		"cardName": "Clone Commander",
 		"isUnique": false,
 		"rank": "commander",
