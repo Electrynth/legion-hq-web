@@ -321,6 +321,93 @@ function generateStandardText(list) {
   return header + points + units + commands + contingencies;
 }
 
+function generateTTSJSONText(list) {
+  const ttsJSON = {};
+
+  ttsJSON.points = list.pointTotal;
+
+  if (list.faction === 'rebels') ttsJSON.faction = 'rebel';
+  else if (list.faction === 'empire') ttsJSON.faction = 'imperial';
+  else if (list.faction === 'republic') ttsJSON.faction = 'republic';
+  else ttsJSON.faction = 'separatist';
+
+  ttsJSON.commandCards = [];
+  for (let i = 0; i < list.commandCards.length; i++) {
+    const commandCard = cards[list.commandCards[i]];
+    ttsJSON.commandCards.push(commandCard.cardName);
+  }
+
+  ttsJSON.contingencies = [];
+  if (list.contingencies) {
+    for (let i = 0; i < list.contingencies.length; i++){
+      const commandCard = cards[list.contingencies[i]];
+      ttsJSON.contingencies.push(commandCard.cardName);
+    }
+  }
+
+  ttsJSON.units = [];
+  for (let i = 0; i < list.units.length; i++) {
+    const unitJSON = { name: '', upgrades: [], loadout: [] };
+    const unit = list.units[i];
+    const unitCard = cards[unit.unitId];
+    unitJSON.name = `${unitCard.cardName} ${unitCard.title}`;
+    for (let j = 0; j < unit.upgradesEquipped.length; j++) {
+      if (unit.upgradesEquipped[j]) {
+        const upgradeCard = cards[unit.upgradesEquipped[j]];
+        unitJSON.upgrades.push(upgradeCard.cardName);
+      }
+    }
+    if (unit.loadoutUpgrades) {
+      for (let j = 0; j < unit.loadoutUpgrades.length; j++) {
+        if (unit.loadoutUpgrades[j]) {
+          const upgradeCard = cards[unit.loadoutUpgrades[j]];
+          unitJSON.loadout.push(upgradeCard.cardName);
+        }
+      }
+    }
+    if (unit.counterpart) {
+      const counterpart = unit.counterpart;
+      const counterpartCard = cards[counterpart.counterpartId];
+      unitJSON.upgrades.push(`${counterpartCard.cardName} ${counterpartCard.title}`);
+      for (let j = 0; j < counterpart.upgradesEquipped.length; j++) {
+        if (counterpart.upgradesEquipped[j]) {
+          const upgradeCard = cards[counterpart.upgradesEquipped[j]];
+          unitJSON.upgrades.push(upgradeCard.cardName);
+        }
+      }
+      if (counterpart.loadoutUpgrades) {
+        for (let j = 0; j < counterpart.loadoutUpgrades.length; j++) {
+          if (counterpart.loadoutUpgrades[j]) {
+            const upgradeCard = cards[counterpart.loadoutUpgrades[j]];
+            unitJSON.loadout.push(upgradeCard.cardName);
+          }
+        }
+      }
+    };
+    if (unit.count > 1) {
+      for (let j = 0; j < unit.count; j++) ttsJSON.units.push(unitJSON);
+    } else {
+      ttsJSON.units.push(unitJSON);
+    }
+  }
+
+  ttsJSON.battlefieldDeck = { conditions: [], deployment: [], objective: [] };
+  for (let i = 0; i < list.objectiveCards.length; i++) {
+    const battlefieldCard = cards[list.objectiveCards[i]];
+    ttsJSON.battlefieldDeck.objective.push(battlefieldCard.cardName);
+  }
+  for (let i = 0; i < list.deploymentCards.length; i++) {
+    const battlefieldCard = cards[list.deploymentCards[i]];
+    ttsJSON.battlefieldDeck.deployment.push(battlefieldCard.cardName);
+  }
+  for (let i = 0; i < list.conditionCards.length; i++) {
+    const battlefieldCard = cards[list.conditionCards[i]];
+    ttsJSON.battlefieldDeck.conditions.push(battlefieldCard.cardName);
+  }
+
+  return JSON.stringify(ttsJSON, null, 2);
+}
+
 function generateMinimalText(list) {
   let header = `${list.pointTotal}/${legionModes[list.mode].maxPoints}`;
   const numActivations = getNumActivations(list)
@@ -1193,6 +1280,7 @@ export {
   getEligibleUnitsToAdd,
   getEquippableUpgrades,
   getEquippableLoadoutUpgrades,
+  generateTTSJSONText,
   generateTournamentText,
   generateStandardText,
   generateMinimalText

@@ -11,6 +11,7 @@ import ListContext from 'context/ListContext';
 import TemplateButton from './TemplateButton';
 import LinkButton from './LinkButton';
 import QRButton from './QRButton';
+import TTSTextExportButton from './TTSTextExportButton';
 import ImageExportButton from './ImageExportButton';
 import TextExportButton from './TextExportButton';
 import PrintExportButton from './PrintExportButton';
@@ -53,6 +54,7 @@ function ListExtras() {
       <QRButton currentList={currentList} />
       <ImageExportButton currentList={currentList} />
       <TextExportButton currentList={currentList} />
+      <TTSTextExportButton currentList={currentList} />
       <PrintExportButton currentList={currentList} />
       <SimpleButton
         timeout={3000}
