@@ -324,6 +324,18 @@ function generateStandardText(list) {
 function generateTTSJSONText(list) {
   const ttsJSON = {};
 
+  const idToName = {
+    "nc": "Offensive Stance",
+    "dz": "A-180 Config",
+    "ea": "A-300 Config",
+    "kh": "A-280-CFE Config",
+    "gn": "E-11D Config",
+    "np": "J-19 Bo-Rifle",
+    "Ci": "Clear Conditions",
+    "Cl": "War Weary",
+    "Dj": "Battle Lines",
+  };
+
   ttsJSON.points = list.pointTotal;
 
   if (list.faction === 'rebels') ttsJSON.faction = 'rebel';
@@ -353,15 +365,23 @@ function generateTTSJSONText(list) {
     unitJSON.name = `${unitCard.cardName} ${unitCard.title}`;
     for (let j = 0; j < unit.upgradesEquipped.length; j++) {
       if (unit.upgradesEquipped[j]) {
-        const upgradeCard = cards[unit.upgradesEquipped[j]];
-        unitJSON.upgrades.push(upgradeCard.cardName);
+        if (idToName[unit.upgradesEquipped[j]]) {
+          unitJSON.upgrades.push(idToName[unit.upgradesEquipped[j]]);
+        } else {
+          const upgradeCard = cards[unit.upgradesEquipped[j]];
+          unitJSON.upgrades.push(upgradeCard.cardName);
+        }
       }
     }
     if (unit.loadoutUpgrades) {
       for (let j = 0; j < unit.loadoutUpgrades.length; j++) {
         if (unit.loadoutUpgrades[j]) {
-          const upgradeCard = cards[unit.loadoutUpgrades[j]];
-          unitJSON.loadout.push(upgradeCard.cardName);
+          if (idToName[unit.loadoutUpgrades[j]]) {
+            unitJSON.loadout.push(idToName[unit.loadoutUpgrades[j]]);
+          } else {
+            const upgradeCard = cards[unit.loadoutUpgrades[j]];
+            unitJSON.loadout.push(upgradeCard.cardName);
+          }
         }
       }
     }
@@ -371,15 +391,23 @@ function generateTTSJSONText(list) {
       unitJSON.upgrades.push(`${counterpartCard.cardName} ${counterpartCard.title}`);
       for (let j = 0; j < counterpart.upgradesEquipped.length; j++) {
         if (counterpart.upgradesEquipped[j]) {
-          const upgradeCard = cards[counterpart.upgradesEquipped[j]];
-          unitJSON.upgrades.push(upgradeCard.cardName);
+          if (idToName[counterpart.upgradesEquipped[j]]) {
+            unitJSON.upgrades.push(idToName[counterpart.upgradesEquipped[j]]);
+          } else {
+            const upgradeCard = cards[counterpart.upgradesEquipped[j]];
+            unitJSON.upgrades.push(upgradeCard.cardName);
+          }
         }
       }
       if (counterpart.loadoutUpgrades) {
         for (let j = 0; j < counterpart.loadoutUpgrades.length; j++) {
           if (counterpart.loadoutUpgrades[j]) {
-            const upgradeCard = cards[counterpart.loadoutUpgrades[j]];
-            unitJSON.loadout.push(upgradeCard.cardName);
+            if (idToName[counterpart.loadoutUpgrades[j]]) {
+              unitJSON.loadout.push(idToName[counterpart.loadoutUpgrades[j]]);
+            } else {
+              const upgradeCard = cards[counterpart.loadoutUpgrades[j]];
+              unitJSON.loadout.push(upgradeCard.cardName);
+            }
           }
         }
       }
@@ -393,19 +421,31 @@ function generateTTSJSONText(list) {
 
   ttsJSON.battlefieldDeck = { conditions: [], deployment: [], objective: [] };
   for (let i = 0; i < list.objectiveCards.length; i++) {
-    const battlefieldCard = cards[list.objectiveCards[i]];
-    ttsJSON.battlefieldDeck.objective.push(battlefieldCard.cardName);
+    if (idToName[list.objectiveCards[i]]) {
+      ttsJSON.battlefieldDeck.objective.push(idToName[list.objectiveCards[i]]);
+    } else {
+      const battlefieldCard = cards[list.objectiveCards[i]];
+      ttsJSON.battlefieldDeck.objective.push(battlefieldCard.cardName);
+    }
   }
   for (let i = 0; i < list.deploymentCards.length; i++) {
-    const battlefieldCard = cards[list.deploymentCards[i]];
-    ttsJSON.battlefieldDeck.deployment.push(battlefieldCard.cardName);
+    if (idToName[list.deploymentCards[i]]) {
+      ttsJSON.battlefieldDeck.deployment.push(idToName[list.deploymentCards[i]]);
+    } else {
+      const battlefieldCard = cards[list.deploymentCards[i]];
+      ttsJSON.battlefieldDeck.deployment.push(battlefieldCard.cardName);
+    }
   }
   for (let i = 0; i < list.conditionCards.length; i++) {
-    const battlefieldCard = cards[list.conditionCards[i]];
-    ttsJSON.battlefieldDeck.conditions.push(battlefieldCard.cardName);
+    if (idToName[list.conditionCards[i]]) {
+      ttsJSON.battlefieldDeck.conditions.push(idToName[list.conditionCards[i]]);
+    } else {
+      const battlefieldCard = cards[list.conditionCards[i]];
+      ttsJSON.battlefieldDeck.conditions.push(battlefieldCard.cardName);
+    }
   }
 
-  return JSON.stringify(ttsJSON, null, 2);
+  return JSON.stringify(ttsJSON, null, 4);
 }
 
 function generateMinimalText(list) {

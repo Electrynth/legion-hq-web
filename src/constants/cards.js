@@ -93,6 +93,7 @@ const cards = JSON.parse(JSON.stringify({
 	},
 	"Cl": {
 		"cardSubtype": "condition",
+		"displayName": "War Weary",
 		"cardName": "War Weary2",
 		"cardType": "battle",
 		"imageName": "War Weary2.jpeg",
