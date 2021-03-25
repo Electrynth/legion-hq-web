@@ -5657,6 +5657,7 @@ const cards = JSON.parse(JSON.stringify({
 	"lw": {
 		"displayName": "ID10",
 		"cardName": "Iden's ID10 Seeker Droid",
+		"title": "Droid",
 		"faction": "empire",
 		"isUnique": true,
 		"upgradeBar": ["comms"],
