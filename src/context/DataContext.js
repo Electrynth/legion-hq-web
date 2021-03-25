@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Additional A-A5 Truck Upgrades",
+    "date": "25 March 2021",
+    "body": "Added cards from FFG A-A5 preview article."
+  },
+  {
     "title": "Heavy Vehicles & Yoda Update",
     "date": "20 March 2021",
     "body": "Cards from AMG livestream added"

@@ -6940,6 +6940,46 @@ const cards = JSON.parse(JSON.stringify({
 			{"cardSubtype": "ground vehicle"},
 			{"cardSubtype": "repulsor vehicle"}
 		]
+	},
+	"ou": {
+		"id": "ou",
+		"displayName": "",
+		"cardSubtype": "hardpoint",
+		"cardName": "AG-2G Quad Laser",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 36,
+		"imageName": "AG-2G Quad Laser.jpeg",
+		"keywords": ["Impact"],
+		"requirements": [{"cardName": "A-A5 Speeder Truck"}]
+	},
+	"ov": {
+		"id": "ov",
+		"displayName": "",
+		"cardSubtype": "pilot",
+		"cardName": "Hotshot Pilot",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 8,
+		"imageName": "Hotshot Pilot.jpeg",
+		"keywords": ["Sharpshooter"],
+		"requirements": [
+			"AND",
+			{"faction": "rebels"},
+			{"cardSubtype": "repulsor vehicle"}
+		]
+	},
+	"ow": {
+		"id": "ow",
+		"displayName": "",
+		"cardSubtype": "pilot",
+		"cardName": "Reckless Driver",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 6,
+		"imageName": "Reckless Driver.jpeg",
+		"keywords": [],
+		"requirements": [{"cardName": "A-A5 Speeder Truck"}]
 	}
 }));
 
