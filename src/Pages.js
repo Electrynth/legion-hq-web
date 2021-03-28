@@ -5,7 +5,8 @@ import listTemplate from 'constants/listTemplate';
 const Home = lazy(() => import('pages/Home'));
 const News = lazy(() => import('pages/News'));
 const Cards = lazy(() => import('pages/Cards'));
-const Roller = lazy(() => import('pages/Roller'));
+// const Roller = lazy(() => import('pages/Roller'));
+const Privacy = lazy(() => import('pages/Privacy'));
 const List = lazy(() => import('pages/List'));
 const Settings = lazy(() => import('pages/Settings'));
 const Callback = lazy(() => import('pages/Callback'));
@@ -30,7 +31,6 @@ function Pages() {
         <Route exact path="/" component={Home} />
         <Route exact path="/news" component={News} />
         <Route path="/cards" component={Cards} />
-        <Route path="/roller" component={Roller} />
         <Route
           path="/list/:slug/:listHash?"
           render={({ match }) => {
@@ -48,6 +48,7 @@ function Pages() {
         />
         <Route path="/settings" component={Settings} />
         <Route path="/info" component={Info} />
+        <Route path="/privacy" component={Privacy} />
         <Route path="/callback" component={Callback} />
         <Redirect to="/" />
       </Switch>
