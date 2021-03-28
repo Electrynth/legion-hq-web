@@ -71,15 +71,6 @@ function NavigationDrawer() {
               goToPage('/cards');
             }}
           />
-          <NavDrawerLink
-            text="Dice Roller"
-            selected={pathname === '/roller'}
-            icon={routes['/roller'].icon}
-            handleClick={() => {
-              setIsDrawerOpen(false);
-              goToPage('/roller');
-            }}
-          />
         </List>
         <Divider />
         <List dense={true}>
