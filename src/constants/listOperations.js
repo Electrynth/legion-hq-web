@@ -752,6 +752,10 @@ function incrementUnit(list, index) {
 function decrementUnit(list, index) {
   const unitObject = list.units[index];
   if (unitObject.count === 1) {
+    const unitCard = cards[unitObject.unitId];
+    if (unitCard.keywords.includes('Contingencies')) {
+      list.contingencies = [];
+    }
     list.unitObjectStrings = deleteItem(list.unitObjectStrings, index);
     list.units = deleteItem(list.units, index);
   } else {
