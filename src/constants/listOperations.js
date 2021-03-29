@@ -338,10 +338,10 @@ function generateTTSJSONText(list) {
 
   ttsJSON.points = list.pointTotal;
 
-  if (list.faction === 'rebels') ttsJSON.faction = 'rebel';
-  else if (list.faction === 'empire') ttsJSON.faction = 'imperial';
-  else if (list.faction === 'republic') ttsJSON.faction = 'republic';
-  else ttsJSON.faction = 'separatist';
+  if (list.faction === 'rebels') ttsJSON.armyFaction = 'rebel';
+  else if (list.faction === 'empire') ttsJSON.armyFaction = 'imperial';
+  else if (list.faction === 'republic') ttsJSON.armyFaction = 'republic';
+  else ttsJSON.armyFaction = 'separatist';
 
   ttsJSON.commandCards = [];
   for (let i = 0; i < list.commandCards.length; i++) {
