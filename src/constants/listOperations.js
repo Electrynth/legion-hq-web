@@ -362,7 +362,10 @@ function generateTTSJSONText(list) {
     const unitJSON = { name: '', upgrades: [], loadout: [] };
     const unit = list.units[i];
     const unitCard = cards[unit.unitId];
-    unitJSON.name = `${unitCard.cardName} ${unitCard.title}`;
+    
+    if (unitCard.title) unitJSON.name = `${unitCard.cardName} ${unitCard.title}`;
+    else unitJSON.name = unitCard.cardName;
+
     for (let j = 0; j < unit.upgradesEquipped.length; j++) {
       if (unit.upgradesEquipped[j]) {
         if (idToName[unit.upgradesEquipped[j]]) {
