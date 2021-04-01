@@ -322,7 +322,7 @@ function generateStandardText(list) {
 }
 
 function generateTTSJSONText(list) {
-  const ttsJSON = {};
+  const ttsJSON = { author: 'Legion HQ' };
 
   const idToName = {
     "nc": "Offensive Stance",
