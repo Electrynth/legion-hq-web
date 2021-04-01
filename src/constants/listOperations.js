@@ -334,6 +334,11 @@ function generateTTSJSONText(list) {
     "Ci": "Clear Conditions",
     "Cl": "War Weary",
     "Dj": "Battle Lines",
+    "ff": "Ax-108 \"Ground Buzzer\"",
+    "fg": "Mo/Dk Power Harpoon",
+    "bh": "TX-225 GAVw Occupier Combat Assault Tank",
+    "on": "LAAT/le Patrol Transport",
+    "oo": "LAAT/le Patrol Transport"
   };
 
   ttsJSON.points = list.pointTotal;
@@ -362,7 +367,8 @@ function generateTTSJSONText(list) {
     const unitJSON = { name: '', upgrades: [], loadout: [] };
     const unit = list.units[i];
     const unitCard = cards[unit.unitId];
-    unitJSON.name = `${unitCard.cardName} ${unitCard.title}`;
+    if (unitCard.title) unitJSON.name = `${unitCard.cardName} ${unitCard.title}`;
+    else unitJSON.name = unitCard.cardName;
     for (let j = 0; j < unit.upgradesEquipped.length; j++) {
       if (unit.upgradesEquipped[j]) {
         if (idToName[unit.upgradesEquipped[j]]) {
@@ -1237,7 +1243,6 @@ function convertHashToList(faction, url) {
       else otherSegments.push(segment);
     });
   } catch (e) {
-    // console.log(e);
     return false;
   }
   try {
@@ -1246,15 +1251,17 @@ function convertHashToList(faction, url) {
       list.unitObjectStrings.push(unit.unitObjectString);
     });
   } catch (e) {
-    // console.log(e);
     return false;
   }
   try {
+    let commandCardSlots = 6;
     otherSegments.forEach(cardId => {
+      commandCardSlots -=1;
+      if (cardId === '') return;
       // if (cardId.includes('*')) {}
       const card = cards[cardId];
       if (card.cardType === 'command') {
-        if (list.commandCards.length < 6) list.commandCards.push(cardId);
+        if (commandCardSlots > 0) list.commandCards.push(cardId);
         else list.contingencies.push(cardId);
       } else if (card.cardSubtype === 'objective') {
         list.objectiveCards.push(cardId);
