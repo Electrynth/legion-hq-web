@@ -322,7 +322,7 @@ function generateStandardText(list) {
 }
 
 function generateTTSJSONText(list) {
-  const ttsJSON = {};
+  const ttsJSON = { author: 'Legion HQ' };
 
   const idToName = {
     "nc": "Offensive Stance",
@@ -334,14 +334,20 @@ function generateTTSJSONText(list) {
     "Ci": "Clear Conditions",
     "Cl": "War Weary",
     "Dj": "Battle Lines",
+    "ff": "Ax-108 \"Ground Buzzer\"",
+    "fg": "Mo/Dk Power Harpoon",
+    "bh": "TX-225 GAVw Occupier Combat Assault Tank",
+    "on": "LAAT/le Patrol Transport",
+    "oo": "LAAT/le Patrol Transport",
+    "ig": "CM-0/93 Trooper"
   };
 
   ttsJSON.points = list.pointTotal;
 
-  if (list.faction === 'rebels') ttsJSON.faction = 'rebel';
-  else if (list.faction === 'empire') ttsJSON.faction = 'imperial';
-  else if (list.faction === 'republic') ttsJSON.faction = 'republic';
-  else ttsJSON.faction = 'separatist';
+  if (list.faction === 'rebels') ttsJSON.armyFaction = 'rebel';
+  else if (list.faction === 'empire') ttsJSON.armyFaction = 'imperial';
+  else if (list.faction === 'republic') ttsJSON.armyFaction = 'republic';
+  else ttsJSON.armyFaction = 'separatist';
 
   ttsJSON.commandCards = [];
   for (let i = 0; i < list.commandCards.length; i++) {
@@ -362,7 +368,11 @@ function generateTTSJSONText(list) {
     const unitJSON = { name: '', upgrades: [], loadout: [] };
     const unit = list.units[i];
     const unitCard = cards[unit.unitId];
-    unitJSON.name = `${unitCard.cardName} ${unitCard.title}`;
+
+    if (idToName[unit.unitId]) unitJSON.name = idToName[unit.unitId];
+    else if (unitCard.title) unitJSON.name = `${unitCard.cardName} ${unitCard.title}`;
+    else unitJSON.name = unitCard.cardName;
+
     for (let j = 0; j < unit.upgradesEquipped.length; j++) {
       if (unit.upgradesEquipped[j]) {
         if (idToName[unit.upgradesEquipped[j]]) {
@@ -412,6 +422,7 @@ function generateTTSJSONText(list) {
         }
       }
     };
+    if (unitCard.flaw) unitJSON.upgrades.push(cards[unitCard.flaw].cardName);
     if (unit.count > 1) {
       for (let j = 0; j < unit.count; j++) ttsJSON.units.push(unitJSON);
     } else {
@@ -752,6 +763,10 @@ function incrementUnit(list, index) {
 function decrementUnit(list, index) {
   const unitObject = list.units[index];
   if (unitObject.count === 1) {
+    const unitCard = cards[unitObject.unitId];
+    if (unitCard.keywords.includes('Contingencies')) {
+      list.contingencies = [];
+    }
     list.unitObjectStrings = deleteItem(list.unitObjectStrings, index);
     list.units = deleteItem(list.units, index);
   } else {
@@ -1233,7 +1248,6 @@ function convertHashToList(faction, url) {
       else otherSegments.push(segment);
     });
   } catch (e) {
-    // console.log(e);
     return false;
   }
   try {
@@ -1242,15 +1256,17 @@ function convertHashToList(faction, url) {
       list.unitObjectStrings.push(unit.unitObjectString);
     });
   } catch (e) {
-    // console.log(e);
     return false;
   }
   try {
+    let commandCardSlots = 6;
     otherSegments.forEach(cardId => {
+      commandCardSlots -=1;
+      if (cardId === '') return;
       // if (cardId.includes('*')) {}
       const card = cards[cardId];
       if (card.cardType === 'command') {
-        if (list.commandCards.length < 6) list.commandCards.push(cardId);
+        if (commandCardSlots > 0) list.commandCards.push(cardId);
         else list.contingencies.push(cardId);
       } else if (card.cardSubtype === 'objective') {
         list.objectiveCards.push(cardId);

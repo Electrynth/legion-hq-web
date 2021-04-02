@@ -5640,6 +5640,7 @@ const cards = JSON.parse(JSON.stringify({
 		"faction": "rebels",
 		"cardSubtype": "droid trooper",
 		"cardName": "K-2SO",
+		"title": "Sardonic Security Droid",
 		"isUnique": true,
 		"rank": "operative",
 		"cost": 70,
