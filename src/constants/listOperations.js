@@ -355,6 +355,7 @@ function generateTTSJSONText(list) {
     const commandCard = cards[list.commandCards[i]];
     ttsJSON.commandCards.push(commandCard.cardName);
   }
+  ttsJSON.commandCards.push('Standing Orders');
 
   ttsJSON.contingencies = [];
   if (list.contingencies) {
