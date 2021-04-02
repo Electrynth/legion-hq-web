@@ -1048,7 +1048,7 @@ const cards = JSON.parse(JSON.stringify({
 		"speed": 2,
 		"cardSubtype": "trooper",
 		"cardName": "Bossk",
-		"title": "Trandoshan Hunter",
+		"title": "Trandoshan Terror",
 		"isUnique": true,
 		"rank": "operative",
 		"cost": 115,
