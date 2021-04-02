@@ -422,6 +422,7 @@ function generateTTSJSONText(list) {
         }
       }
     };
+    if (unitCard.flaw) unitJSON.upgrades.push(cards[unitCard.flaw].cardName);
     if (unit.count > 1) {
       for (let j = 0; j < unit.count; j++) ttsJSON.units.push(unitJSON);
     } else {
