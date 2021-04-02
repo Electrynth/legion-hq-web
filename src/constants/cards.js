@@ -6477,7 +6477,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardType": "unit",
 		"cardSubtype": "clone trooper",
 		"cardName": "Clone Commander",
-		"title": "Trainer For Leadership",
+		"title": "Trained For Leadership",
 		"isUnique": false,
 		"rank": "commander",
 		"cost": 55,
