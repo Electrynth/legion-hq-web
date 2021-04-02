@@ -16,7 +16,7 @@ import DialogModal from './DialogModal';
 import ClipboardButton from './ClipboardButton';
 
 function DialogContent({
-  currentList, tabValue, content, handleChangeTextType, handleChangeListText
+  currentList, tabValue, content
 }) {
   return (
     <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center' }}>
@@ -24,8 +24,7 @@ function DialogContent({
         multiline
         size="small"
         variant="outlined"
-        value={generateTTSJSONText(currentList)}
-        onChange={handleChangeListText}
+        value={content}
         style={{ padding: 8, width: '100%' }}
       />
     </div>
@@ -36,9 +35,8 @@ function TTSTextExportButton({ currentList }) {
   const theme = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [textType, setTextType] = useState(0);
-  const [listText, setListText] = useState('');
+  const [ttsJSON, setTTSJSON] = useState(generateTTSJSONText(currentList));
   const handleChangeTextType = (e, value) => setTextType(value);
-  const handleChangeListText = e => setListText(e.target.value);
 
   const isFullscreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
@@ -54,14 +52,12 @@ function TTSTextExportButton({ currentList }) {
         isFullWidth={true}
         isMobile={isFullscreen}
         isOpen={isOpen}
-        actions={<ClipboardButton content={listText} />}
+        actions={<ClipboardButton content={ttsJSON} />}
         content={
           <DialogContent
             currentList={currentList}
             tabValue={textType}
-            content={listText}
-            handleChangeTextType={handleChangeTextType}
-            handleChangeListText={handleChangeListText}
+            content={ttsJSON}
           />
         }
         handleClose={() => setIsOpen(false)}
