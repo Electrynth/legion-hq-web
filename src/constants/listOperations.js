@@ -339,7 +339,8 @@ function generateTTSJSONText(list) {
     "bh": "TX-225 GAVw Occupier Combat Assault Tank",
     "on": "LAAT/le Patrol Transport",
     "oo": "LAAT/le Patrol Transport",
-    "ig": "CM-0/93 Trooper"
+    "ig": "CM-0/93 Trooper",
+    "kd": "Z-6 Phase II Trooper"
   };
 
   ttsJSON.points = list.pointTotal;
