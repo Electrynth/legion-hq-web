@@ -338,7 +338,8 @@ function generateTTSJSONText(list) {
     "fg": "Mo/Dk Power Harpoon",
     "bh": "TX-225 GAVw Occupier Combat Assault Tank",
     "on": "LAAT/le Patrol Transport",
-    "oo": "LAAT/le Patrol Transport"
+    "oo": "LAAT/le Patrol Transport",
+    "ig": "CM-0/93 Trooper"
   };
 
   ttsJSON.points = list.pointTotal;
