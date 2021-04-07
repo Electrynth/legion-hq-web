@@ -6982,6 +6982,62 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Reckless Driver.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "A-A5 Speeder Truck"}]
+	},
+	"ox": {
+		"id": "ox",
+		"displayName": "",
+		"cardSubtype": "crew",
+		"cardName": "Backworld Medic",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 12,
+		"imageName": "Backworld Medic.jpeg",
+		"keywords": [],
+		"requirements": [{"cardName": "A-A5 Speeder Truck"}]
+	},
+	"oy": {
+		"id": "oy",
+		"displayName": "",
+		"cardSubtype": "crew",
+		"cardName": "Refurbished \"Gonk\" Droid",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Refurbished %22Gonk%22 Droid.jpeg",
+		"keywords": ["Shielded", "Shield Token"],
+		"requirements": [
+			"OR",
+			{"cardName": "X-34 Landspeeder"},
+			{"cardName": "A-A5 Speeder Truck"}
+		]
+	},
+	"oz": {
+		"id": "oz",
+		"displayName": "",
+		"cardSubtype": "crew",
+		"cardName": "Unstable R5 Astromech",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 6,
+		"imageName": "Unstable R5 Astromech.jpeg",
+		"keywords": [],
+		"requirements": [
+			"OR",
+			{"cardName": "X-34 Landspeeder"},
+			{"cardName": "A-A5 Speeder Truck"}
+		]
+	},
+	"pa": {
+		"id": "pa",
+		"displayName": "",
+		"cardSubtype": "crew",
+		"cardName": "Unorthodox Tactician",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Unorthodox Tactician.jpeg",
+		"keywords": [],
+		"requirements": [{"cardName": "A-A5 Speeder Truck"}]
 	}
 }));
 
