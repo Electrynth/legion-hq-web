@@ -4650,6 +4650,7 @@ const cards = JSON.parse(JSON.stringify({
 	},
 	"ji": {
 		"cardName": "C-3PO",
+		"title": "Human-Cyborg Relations",
 		"faction": "rebels",
 		"isUnique": true,
 		"upgradeBar": [],
@@ -4666,6 +4667,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardType": "counterpart",
 		"cardSubtype": "droid trooper",
 		"faction": "republic",
+		"title": "Made to Suffer",
 		"cardName": "C-3PO",
 		"isUnique": true,
 		"cost": 15,
