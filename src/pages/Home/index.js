@@ -105,7 +105,7 @@ function Home() {
             </Grid>
             <Grid item style={{ maxWidth: '75vw', textAlign: 'center' }}>
               <Typography variant="subtitle1">
-                An unofficial list building tool and resource for Fantasy Flight Games: Star Wars: Legion.
+                An unofficial list building tool and resource for Atomic Mass Games: Star Wars: Legion.
               </Typography>
             </Grid>
             <Grid item>
