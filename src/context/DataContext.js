@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Final LAAT Upgrades",
+    "date": "12 April 2021",
+    "body": "Added last set of upgrade cards for LAAT expansion."
+  },
+  {
     "title": "Additional A-A5 Truck Upgrades",
     "date": "25 March 2021",
     "body": "Added cards from FFG A-A5 preview article."
