@@ -7040,6 +7040,70 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Unorthodox Tactician.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "A-A5 Speeder Truck"}]
+	},
+	"pb": {
+		"id": "pb",
+		"displayName": "",
+		"cardSubtype": "pilot",
+		"cardName": "Baron Rudor",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 12,
+		"imageName": "Baron Rudor.jpeg",
+		"keywords": ["Marksman"],
+		"requirements": [
+			"AND",
+			{"faction": "empire"},
+			{"cardSubtype": "repulsor vehicle"}
+		]
+	},
+	"pc": {
+		"id": "pc",
+		"displayName": "",
+		"cardSubtype": "pilot",
+		"cardName": "Hound & Grizzer",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 8,
+		"imageName": "Hound & Grizzer.jpeg",
+		"keywords": ["Observe"],
+		"requirements": [
+			"AND",
+			{"faction": "republic"},
+			{"cardName": "LAAT Patrol Transport"}
+		]
+	},
+	"pd": {
+		"id": "pc",
+		"displayName": "",
+		"cardSubtype": "pilot",
+		"cardName": "Imperial TIE Pilot",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 8,
+		"imageName": "Imperial TIE Pilot.jpeg",
+		"keywords": [],
+		"requirements": [
+			"AND",
+			{"faction": "empire"},
+			{"cardSubtype": "repulsor vehicle"}
+		]
+	},
+	"pe": {
+		"id": "pe",
+		"displayName": "",
+		"cardSubtype": "pilot",
+		"cardName": "Clone Shock Trooper Pilot",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 4,
+		"imageName": "Clone Shock Trooper Pilot.jpeg",
+		"keywords": [],
+		"requirements": [
+			"AND",
+			{"faction": "republic"},
+			{"cardName": "LAAT Patrol Transport"}
+		]
 	}
 }));
 
