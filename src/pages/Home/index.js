@@ -18,6 +18,7 @@ import {
 import LoginButton from './LoginButton';
 import ListChip from './ListChip';
 import FactionChip from './FactionChip';
+import ListChipDropdown from './ListChipDropdown';
 import DataContext from 'context/DataContext';
 import ErrorFallback from 'common/ErrorFallback';
 import factions from 'constants/factions';
@@ -147,11 +148,24 @@ function Home() {
                 <Grid item key="factionChip">
                   <FactionChip faction={faction} />
                 </Grid>
-                {listChips[faction].map(userList => (
-                  <Grid item key={userList.listId}>
-                    <ListChip userList={userList} deleteUserList={deleteUserList} />
-                  </Grid>
-                ))}
+                {listChips[faction].length > 4 ? (
+                  <ListChipDropdown
+                    faction={faction}
+                    chips={
+                      listChips[faction].map(userList => (
+                        <Grid item key={userList.listId}>
+                          <ListChip userList={userList} deleteUserList={deleteUserList} />
+                        </Grid>
+                      ))
+                    }
+                  />
+                ) : (
+                  listChips[faction].map(userList => (
+                    <Grid item key={userList.listId}>
+                      <ListChip userList={userList} deleteUserList={deleteUserList} />
+                    </Grid>
+                  ))
+                )}
               </Grid>
             ))}
             <Grid item>
