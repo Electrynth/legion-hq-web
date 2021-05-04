@@ -7104,6 +7104,18 @@ const cards = JSON.parse(JSON.stringify({
 			{"faction": "republic"},
 			{"cardName": "LAAT Patrol Transport"}
 		]
+	},
+	"pf": {
+		"id": "pe",
+		"displayName": "",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Battle Shield Wookiee",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 26,
+		"imageName": "Battle Shield Wookiee.jpeg",
+		"keywords": ["Armor", "Reconfigure"],
+		"requirements": [{"cardName": "Wookiee Warriors"}]
 	}
 }));
 

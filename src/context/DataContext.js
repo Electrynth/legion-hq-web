@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Battle Shield Wookiee Added",
+    "date": "4 May 2021",
+    "body": "New upgrade card added from AMG stream."
+  },
+  {
     "title": "Final LAAT Upgrades",
     "date": "12 April 2021",
     "body": "Added last set of upgrade cards for LAAT expansion."
