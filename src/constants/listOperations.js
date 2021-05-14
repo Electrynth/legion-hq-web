@@ -340,7 +340,8 @@ function generateTTSJSONText(list) {
     "on": "LAAT/le Patrol Transport",
     "oo": "LAAT/le Patrol Transport",
     "ig": "CM-0/93 Trooper",
-    "kd": "Z-6 Phase II Trooper"
+    "kd": "Z-6 Phase II Trooper",
+    "kt": "\"Bunker Buster\" Shells"
   };
 
   ttsJSON.points = list.pointTotal;
