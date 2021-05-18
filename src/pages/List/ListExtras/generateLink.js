@@ -29,9 +29,9 @@ function generateLink(list) {
     urlStrings.push(urlString);
   });
   list.commandCards.forEach(commandId => urlStrings.push(commandId));
-  console.log(list.commandCards);
+
   if (list.commandCards.length < 6) {
-    for (let i = 0; i < 7 - list.commandCards.length; i++) {
+    for (let i = 0; i < 6 - list.commandCards.length; i++) {
       urlStrings.push('');
     }
   }
