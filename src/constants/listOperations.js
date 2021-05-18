@@ -68,6 +68,7 @@ function rehashList(list) {
 }
 
 function consolidate(list) {
+  let hasContingencyKeyword = false;
   list.commanders = [];
   list.uniques = [];
   list.unitCounts = { ...listTemplate.unitCounts };
@@ -80,6 +81,7 @@ function consolidate(list) {
       list.uniques.push(unitCard.id);
       unit.hasUniques = true;
     }
+    if (unitCard.keywords.includes('Contingency')) hasContingencyKeyword = true;
     if (unitCard.rank === 'commander' || unitCard.rank === 'operative') {
       list.commanders.push(unitCard.cardName);
     }
@@ -119,6 +121,7 @@ function consolidate(list) {
       }
     }
   }
+  if (!hasContingencyKeyword) list.contingencies = [];
   list.commandCards = sortCommandIds(list.commandCards);
   return countPoints(list);
 }
@@ -341,7 +344,8 @@ function generateTTSJSONText(list) {
     "oo": "LAAT/le Patrol Transport",
     "ig": "CM-0/93 Trooper",
     "kd": "Z-6 Phase II Trooper",
-    "kt": "\"Bunker Buster\" Shells"
+    "kt": "\"Bunker Buster\" Shells",
+    "le": "EMP \"Droid Poppers\""
   };
 
   ttsJSON.points = list.pointTotal;
@@ -1262,7 +1266,7 @@ function convertHashToList(faction, url) {
     return false;
   }
   try {
-    let commandCardSlots = 6;
+    let commandCardSlots = 7;
     otherSegments.forEach(cardId => {
       commandCardSlots -=1;
       if (cardId === '') return;
