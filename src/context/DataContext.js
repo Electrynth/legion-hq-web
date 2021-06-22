@@ -283,11 +283,10 @@ export function DataProvider({ children }) {
     }
   }
   const fetchUserId = (email) => {
-    console.log('Auth0 profile:', auth.profile);
+    console.log('Email:', email);
     if (email) {
       httpClient.get(`${urls.api}/users?email=${email}`)
         .then(response => {
-          console.log('User profiles:', response.data);
           if (response.data.length > 0) {
             setUserId(response.data[0].userId);
           } else {
@@ -309,6 +308,7 @@ export function DataProvider({ children }) {
           }
         })
         .catch(e => {
+          console.log(e);
           setError(e);
           setMessage(`Can't user with email address ${email}. Server likely down.`);
           setIsAlertOpen(true);
