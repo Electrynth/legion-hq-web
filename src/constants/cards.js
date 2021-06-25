@@ -7074,7 +7074,7 @@ const cards = JSON.parse(JSON.stringify({
 		]
 	},
 	"pd": {
-		"id": "pc",
+		"id": "pd",
 		"displayName": "",
 		"cardSubtype": "pilot",
 		"cardName": "Imperial TIE Pilot",
@@ -7106,7 +7106,7 @@ const cards = JSON.parse(JSON.stringify({
 		]
 	},
 	"pf": {
-		"id": "pe",
+		"id": "pf",
 		"displayName": "",
 		"cardSubtype": "heavy weapon",
 		"cardName": "Battle Shield Wookiee",
@@ -7116,6 +7116,67 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Battle Shield Wookiee.jpeg",
 		"keywords": ["Armor", "Reconfigure"],
 		"requirements": [{"cardName": "Wookiee Warriors"}]
+	},
+	"pg": {
+		"cardType": "unit",
+		"cardSubtype": "wookiee trooper",
+		"cardName": "Wookiee Warriors",
+		"title": "Kashyyyk Defenders",
+		"isUnique": false,
+		"rank": "special",
+		"cost": 72,
+		"faction": "republic",
+		"defense": "white",
+		"surges": ["hit"],
+		"speed": 2,
+		"wounds": 3,
+		"courage": 2,
+		"imageName": "Wookiee Warriors2.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Indomitable",
+			"Scale",
+			"Sharpshooter"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"training",
+			"gear",
+			"grenades"
+		],
+		"id": "pg"
+	},
+	"ph": {
+		"cardType": "unit",
+		"cardSubtype": "wookiee trooper",
+		"cardName": "Wookiee Chieftain",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 100,
+		"faction": "republic",
+		"defense": "white",
+		"surges": ["hit", "block"],
+		"speed": 2,
+		"wounds": 7,
+		"courage": 2,
+		"imageName": "Wookiee Chieftain.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Agile",
+			"Charge",
+			"Duelist",
+			"Indomitable",
+			"Scale",
+			"Impact",
+			"Pierce"
+		],
+		"upgradeBar": [
+			"command",
+			"training",
+			"training",
+			"gear"
+		],
+		"id": "ph"
 	}
 }));
 

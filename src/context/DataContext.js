@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Wookiee Chieftain and Warriors added",
+    "date": "25 June 2021",
+    "body": "New unit cards added from AMG stream."
+  },
+  {
     "title": "Battle Shield Wookiee Added",
     "date": "4 May 2021",
     "body": "New upgrade card added from AMG stream."
