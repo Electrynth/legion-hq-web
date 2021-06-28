@@ -7121,6 +7121,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardType": "unit",
 		"cardSubtype": "wookiee trooper",
 		"cardName": "Wookiee Warriors",
+		"displayName": "Wookiee Warriors (Kashyyyk Defenders)",
 		"title": "Kashyyyk Defenders",
 		"isUnique": false,
 		"rank": "special",
@@ -7177,6 +7178,101 @@ const cards = JSON.parse(JSON.stringify({
 			"gear"
 		],
 		"id": "ph"
+	},
+	"pi": {
+		"id": "pi",
+    "displayName": "",
+    "cardName": "Size Matters Not",
+    "cardSubtype": "1",
+    "cardType": "command",
+    "commander": "Yoda",
+    "imageName": "Size Matters Not.jpeg",
+    "products": [],
+    "faction": "republic",
+    "keywords": ["Jump", "Charge", "Disengage"]
+  },
+	"pj": {
+		"id": "pj",
+    "displayName": "",
+    "cardName": "There Is No Try",
+    "cardSubtype": "2",
+    "cardType": "command",
+    "commander": "Yoda",
+    "imageName": "There Is No Try.jpeg",
+    "products": [],
+    "faction": "republic",
+    "keywords": ["Outmaneuver", "Relentless"]
+  },
+	"pk": {
+		"id": "pk",
+    "displayName": "",
+    "cardName": "Luminous Beings Are We",
+    "cardSubtype": "3",
+    "cardType": "command",
+    "commander": "Yoda",
+    "imageName": "Luminous Beings Are We.jpeg",
+    "products": [],
+    "faction": "republic",
+    "keywords": []
+  },
+	"pl": {
+		"cardType": "unit",
+		"cardSubtype": "wookiee trooper",
+		"cardName": "Wookiee Warriors",
+		"displayName": "Wookiee Warriors (Kashyyyk Resistance)",
+		"title": "Kashyyyk Resistance",
+		"isUnique": false,
+		"rank": "special",
+		"cost": 72,
+		"faction": "rebels",
+		"defense": "white",
+		"surges": ["hit"],
+		"speed": 2,
+		"wounds": 3,
+		"courage": 2,
+		"imageName": "Wookiee Warriors3.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Indomitable",
+			"Scale",
+			"Sharpshooter"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"training",
+			"gear",
+			"grenades"
+		],
+		"id": "pl"
+  },
+	"pm": {
+		"cardType": "unit",
+		"wounds": 3,
+		"courage": 2,
+		"speed": 2,
+		"defense": "white",
+		"surges": ["hit"],
+		"cardSubtype": "wookiee trooper",
+		"cardName": "Wookiee Warriors",
+		"isUnique": false,
+		"rank": "special",
+		"cost": 69,
+		"faction": "republic",
+		"imageName": "Wookiee Warriors4.jpeg",
+		"keywords": [
+			"Charge",
+			"Duelist",
+			"Indomitable",
+			"Scale"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"training",
+			"training",
+			"gear",
+			"grenades"
+		],
+		"id": "pm"
 	}
 }));
 

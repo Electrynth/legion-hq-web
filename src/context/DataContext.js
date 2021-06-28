@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Yoda Command Cards Added",
+    "date": "28 June 2021",
+    "body": "New command cards added from AMG update"
+  },
+  {
     "title": "Wookiee Chieftain and Warriors added",
     "date": "25 June 2021",
     "body": "New unit cards added from AMG stream."
