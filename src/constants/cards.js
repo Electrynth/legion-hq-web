@@ -7315,7 +7315,19 @@ const cards = JSON.parse(JSON.stringify({
 		"upgradeBar": ["training", "training", "gear"],
 		"history": [],
 		"id": "po"
-	}
+	},
+	"pp": {
+		"id": "pp",
+    "displayName": "",
+    "cardName": "Size Matters Sometimes",
+    "cardSubtype": "2",
+    "cardType": "command",
+    "commander": "Chewbacca",
+    "imageName": "Size Matters Sometimes.jpeg",
+    "products": [],
+    "faction": "republic",
+    "keywords": ["Deflect", "Guardian"]
+  }
 }));
 
 export default cards;
