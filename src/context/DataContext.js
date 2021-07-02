@@ -78,6 +78,21 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Chewbacca Added",
+    "date": "2 July 2021",
+    "body": "Chewbacca and command card added from AMG twitter post."
+  },
+  {
+    "title": "Wookiee Long Gun Added",
+    "date": "30 June 2021",
+    "body": "Wookiee Long Gun upgrade added. Accounts are now available and URLs should be working as normal. We apologize for the inconvenience."
+  },
+  {
+    "title": "Accounts Temporarily Unavailable",
+    "date": "29 June 2021",
+    "body": "Accounts unavailable for 12-24 hours"
+  },
+  {
     "title": "Yoda Command Cards Added",
     "date": "28 June 2021",
     "body": "New command cards added from AMG update"

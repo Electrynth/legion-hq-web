@@ -7273,6 +7273,48 @@ const cards = JSON.parse(JSON.stringify({
 			"grenades"
 		],
 		"id": "pm"
+	},
+	"pn": {
+		"id": "pn",
+		"displayName": "",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Long Gun Wookiee",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 26,
+		"imageName": "Long Gun Wookiee.jpeg",
+		"keywords": ["Suppressive"],
+		"requirements": [{"cardName": "Wookiee Warriors"}]
+	},
+	"po": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["hit"],
+		"wounds": 9,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "wookiee trooper",
+		"cardName": "Chewbacca",
+		"title": "Hero of Kashyyyk",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 90,
+		"prevCost": 95,
+		"faction": "republic",
+		"imageName": "Chewbacca2.jpeg",
+		"keywords": [
+			"Enrage",
+			"Guardian",
+			"Reliable",
+			"Scale",
+			"Lethal",
+			"Critical",
+			"Impact",
+			"Pierce"
+		],
+		"upgradeBar": ["training", "training", "gear"],
+		"history": [],
+		"id": "po"
 	}
 }));
 
