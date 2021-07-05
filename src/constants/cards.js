@@ -7318,16 +7318,64 @@ const cards = JSON.parse(JSON.stringify({
 	},
 	"pp": {
 		"id": "pp",
-    "displayName": "",
-    "cardName": "Size Matters Sometimes",
-    "cardSubtype": "2",
-    "cardType": "command",
-    "commander": "Chewbacca",
-    "imageName": "Size Matters Sometimes.jpeg",
-    "products": [],
-    "faction": "republic",
-    "keywords": ["Deflect", "Guardian"]
-  }
+		"displayName": "",
+		"cardName": "Size Matters Sometimes",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Chewbacca",
+		"imageName": "Size Matters Sometimes.jpeg",
+		"products": [],
+		"faction": "republic",
+		"keywords": ["Deflect", "Guardian"]
+  	},
+	"pq": {
+		"id": "pq",
+		"displayName": "",
+		"cardSubtype": "force",
+		"cardName": "Burst of Speed",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 3,
+		"imageName": "Burst of Speed.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
+	"pr": {
+		"id": "pr",
+		"displayName": "",
+		"cardSubtype": "force",
+		"cardName": "Force Lift",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Force Lift.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
+	"ps": {
+		"id": "ps",
+		"displayName": "",
+		"cardSubtype": "training",
+		"cardName": "Into the Fray",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 4,
+		"imageName": "Into the Fray.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
+	"pt": {
+		"id": "pt",
+		"displayName": "",
+		"cardSubtype": "training",
+		"cardName": "Protector",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Protector.jpeg",
+		"keywords": [],
+		"requirements": []
+	}
 }));
 
 export default cards;
