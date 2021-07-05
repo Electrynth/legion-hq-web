@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "New Cards Added",
+    "date": "5 July 2021",
+    "body": "New Force and Training upgrade cards added."
+  },
+  {
     "title": "Chewbacca Added",
     "date": "2 July 2021",
     "body": "Chewbacca and command card added from AMG twitter post."
