@@ -7375,7 +7375,43 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Protector.jpeg",
 		"keywords": [],
 		"requirements": []
-	}
+	},
+	"pu": {
+		"id": "pu",
+		"displayName": "",
+		"cardName": "Grroooogrrraaaawrrrrrrrrmph",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "",
+    		"imageName": "Grroooogrrraaaawrrrrrrrrmph.jpeg",
+		"products": [],
+		"faction": "republic",
+    		"keywords": []
+  	},
+	"pv": {
+		"id": "pv",
+		"displayName": "",
+		"cardName": "MROWGH GHRRMROWRIG!",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "",
+    		"imageName": "MROWGH GHRRMROWRIG!.jpeg",
+		"products": [],
+		"faction": "republic",
+    		"keywords": ["Agile"]
+  	},
+	"pw": {
+		"id": "pw",
+		"displayName": "",
+		"cardName": "YHWARGGHHHHHHHHHH!",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "",
+    		"imageName": "YHWARGGHHHHHHHHHH!.jpeg",
+		"products": [],
+		"faction": "republic",
+    		"keywords": ["Demoralize"]
+  	}
 }));
 
 export default cards;
