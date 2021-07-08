@@ -79,6 +79,11 @@ const routes = {
 const newsPosts = [
   {
     "title": "New Cards Added",
+    "date": "8 July 2021",
+    "body": "New wookiee command cards for GAR added."
+  },
+  {
+    "title": "New Cards Added",
     "date": "5 July 2021",
     "body": "New Force and Training upgrade cards added."
   },
