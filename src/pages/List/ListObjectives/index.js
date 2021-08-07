@@ -12,7 +12,8 @@ function ListObjectives() {
   const {
     currentList,
     setCardPaneFilter,
-    handleRemoveBattle
+    handleRemoveBattle,
+    handleCardZoom
   } = React.useContext(ListContext);
   const chipStyle = { marginRight: 4, marginBottom: 4 };
   const objectiveTheme = createMuiTheme({
@@ -30,6 +31,7 @@ function ListObjectives() {
       key={id}
       label={cards[id].cardName}
       style={chipStyle}
+      onClick={() => handleCardZoom(id)}
       onDelete={() => handleRemoveBattle('objective', i)}
     />
   ));
@@ -39,6 +41,7 @@ function ListObjectives() {
       key={id}
       label={cards[id].cardName}
       style={chipStyle}
+      onClick={() => handleCardZoom(id)}
       onDelete={() => handleRemoveBattle('deployment', i)}
     />
   ));
@@ -48,6 +51,7 @@ function ListObjectives() {
       key={id}
       label={cards[id].cardName}
       style={chipStyle}
+      onClick={() => handleCardZoom(id)}
       onDelete={() => handleRemoveBattle('condition', i)}
     />
   ));
