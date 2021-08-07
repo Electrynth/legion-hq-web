@@ -103,7 +103,7 @@ const keywords = {
   "Light Transport: Closed": "You may transport X friendly trooper units that consists of exactly 1 small base mini.",
   "Calculate Odds": "Choose a friendly trooper unit at range 1 and in line of sight. It gains 1 aim, 1 dodge, and 1 suppression token",
   "Bounty": "After setup, place a victory token on an enemy commander or operative. If you defeat a unit with a victory token, move that token to your. At the end of the game, if you have a victory token, gain that token.",
-  "Master of the Force": "During the End Phase, you may ready X of your Force upgrade cards.",
+  "Master of the Force": "At the end of its activation, this unit may ready up to X of its exhausted Force upgrade cards.",
   "Deflect": "While defending, if you spend a dodge token, any defense surge results are converted to block results; if it's a ranged attack, the attacker suffers 1 wound for each defense surge rolled.",
   "Spray": "Add this weapon's dice to the attack pool one time for each mini in the defending unit to which line of sight is not blocked.",
   "Detachment": "During army building, you may only be included if a unit that has the name or type specified by X is also included in your army. Each unit with the DETACHMENT keyword requires a corresponding unit that matches the unit name or type specified.",
