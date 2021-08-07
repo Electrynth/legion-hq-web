@@ -7411,7 +7411,33 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "republic",
     		"keywords": ["Demoralize"]
-  	}
+  	},
+	"px": {
+		"id": "px",
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["hit"],
+		"wounds": 2,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "droid trooper",
+		"cardName": "IG-100 MagnaGuard",
+		"isUnique": false,
+		"rank": "special",
+		"cost": 72,
+		"faction": "separatists",
+		"imageName": "IG-100 MagnaGuard.jpeg",
+		"keywords": [
+			"AI",
+			"Charge",
+			"Guardian",
+			"Immune",
+			"Retinue",
+			"Unhindered"
+		],
+		"upgradeBar": ["heavy weapon", "training", "training", "comms", "grenades"],
+		"history": []
+	}
 }));
 
 export default cards;
