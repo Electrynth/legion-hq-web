@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Temporary Outage",
+    "date": "23 July 2021",
+    "body": "Accounts are back online, however card images will be unavaible for a small amount of time. Sorry for the inconvenience."
+  },
+  {
     "title": "New Cards Added",
     "date": "8 July 2021",
     "body": "New wookiee command cards for GAR added."
