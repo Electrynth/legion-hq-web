@@ -7437,6 +7437,84 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"upgradeBar": ["heavy weapon", "training", "training", "comms", "grenades"],
 		"history": []
+	},
+	"py": {
+		"id": "py",
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["hit"],
+		"wounds": 5,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "droid trooper",
+		"cardName": "Super Tactical Droid",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 95,
+		"faction": "separatists",
+		"imageName": "Super Tactical Droid.jpeg",
+		"keywords": [
+			"Strategize",
+			"Direct",
+			"Override",
+			"Sharpshooter",
+			"Lethal"
+		],
+		"upgradeBar": ["command", "command", "comms", "gear"],
+		"history": []
+	},
+	"pz": {
+		"id": "pz",
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["crit"],
+		"wounds": 5,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "droid trooper",
+		"cardName": "Super Tactical Droid",
+		"displayName": "Kraken",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 100,
+		"faction": "separatists",
+		"imageName": "Super Tactical Droid (Kraken).jpeg",
+		"keywords": [
+			"Strategize",
+			"Charge",
+			"Override",
+			"Sharpshooter",
+			"Lethal",
+			"Pierce"
+		],
+		"upgradeBar": ["command", "command", "training", "comms", "gear"],
+		"history": []
+	},
+	"qa": {
+		"id": "qa",
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["hit"],
+		"wounds": 5,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "droid trooper",
+		"cardName": "Super Tactical Droid",
+		"displayName": "Kalani",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 100,
+		"faction": "separatists",
+		"imageName": "Super Tactical Droid (Kalani).jpeg",
+		"keywords": [
+			"Strategize",
+			"Direct",
+			"Reinforcements",
+			"Sharpshooter",
+			"Lethal"
+		],
+		"upgradeBar": ["command", "command", "command", "comms", "gear"],
+		"history": []
 	}
 }));
 

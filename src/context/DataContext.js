@@ -79,6 +79,11 @@ const routes = {
 const newsPosts = [
   {
     "title": "New Cards Added",
+    "date": "11 August 2021",
+    "body": "Added Super Tactical Droid units."
+  },
+  {
+    "title": "New Cards Added",
     "date": "7 August 2021",
     "body": "Added IG-100 MagnaGuard unit."
   },
