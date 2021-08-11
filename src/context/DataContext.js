@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "New Cards Added",
+    "date": "7 August 2021",
+    "body": "Added IG-100 MagnaGuard unit."
+  },
+  {
     "title": "Temporary Outage",
     "date": "23 July 2021",
     "body": "Accounts are back online, however card images will be unavaible for a small amount of time. Sorry for the inconvenience."
