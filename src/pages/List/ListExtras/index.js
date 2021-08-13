@@ -16,6 +16,7 @@ import ImageExportButton from './ImageExportButton';
 import TextExportButton from './TextExportButton';
 import PrintExportButton from './PrintExportButton';
 import SimpleButton from './SimpleButton';
+import StormtideButton from './StormtideButton';
 
 function ListExtras() {
   const [usingOldPoints, setUsingOldPoints] = useState(false);
@@ -49,6 +50,7 @@ function ListExtras() {
         justifyContent: 'center'
       }}
     >
+      <StormtideButton />
       <TemplateButton />
       <LinkButton currentList={currentList} />
       <QRButton currentList={currentList} />
