@@ -7525,7 +7525,7 @@ const cards = JSON.parse(JSON.stringify({
 		"courage": 2,
 		"speed": 2,
 		"cardSubtype": "trooper",
-		"cardName": "Commander",
+		"cardName": "Storm Tide Commander",
 		"isUnique": true,
 		"rank": "commander",
 		"cost": 60,
@@ -7542,10 +7542,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Armored Assault",
 		"cardSubtype": "1",
 		"cardType": "command",
-		"commander": "",
+		"commander": "Storm Tide Commander",
 		"imageName": "Armored Assault.jpeg",
 		"products": [],
-		"faction": "storm tide",
+		"faction": "",
 		"keywords": ["Barrage", "Steady"]
 	},
 	"AC": {
@@ -7553,10 +7553,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Brothers in Arms",
 		"cardSubtype": "3",
 		"cardType": "command",
-		"commander": "",
+		"commander": "Storm Tide Commander",
 		"imageName": "Brothers in Arms.jpeg",
 		"products": [],
-		"faction": "storm tide",
+		"faction": "",
 		"keywords": ["Inspire"]
 	},
 	"AD": {
@@ -7564,10 +7564,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Doors and Corners",
 		"cardSubtype": "1",
 		"cardType": "command",
-		"commander": "",
+		"commander": "Storm Tide Commander",
 		"imageName": "Doors and Corners.jpeg",
 		"products": [],
-		"faction": "storm tide",
+		"faction": "",
 		"keywords": ["Tactical", "Nimble"]
 	},
 	"AE": {
@@ -7575,10 +7575,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Keep Them Down",
 		"cardSubtype": "2",
 		"cardType": "command",
-		"commander": "",
+		"commander": "Storm Tide Commander",
 		"imageName": "Keep Them Down.jpeg",
 		"products": [],
-		"faction": "storm tide",
+		"faction": "",
 		"keywords": ["Suppressive"]
 	},
 	"AF": {
@@ -7586,10 +7586,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Man the Guns",
 		"cardSubtype": "3",
 		"cardType": "command",
-		"commander": "",
+		"commander": "Storm Tide Commander",
 		"imageName": "Man the Guns.jpeg",
 		"products": [],
-		"faction": "storm tide",
+		"faction": "",
 		"keywords": []
 	},
 	"AG": {
@@ -7597,10 +7597,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Somebody Has To Be a Hero",
 		"cardSubtype": "1",
 		"cardType": "command",
-		"commander": "",
+		"commander": "Storm Tide Commander",
 		"imageName": "Somebody Has To Be a Hero.jpeg",
 		"products": [],
-		"faction": "storm tide",
+		"faction": "",
 		"keywords": ["Dauntless", "Steady"]
 	},
 	"AH": {
@@ -7608,10 +7608,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Stealth Team",
 		"cardSubtype": "3",
 		"cardType": "command",
-		"commander": "",
+		"commander": "Storm Tide Commander",
 		"imageName": "Stealth Team.jpeg",
 		"products": [],
-		"faction": "storm tide",
+		"faction": "",
 		"keywords": ["Infiltrate", "Scout", "Low Profile"]
 	},
 	"AI": {
@@ -7619,10 +7619,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Surgical Strike",
 		"cardSubtype": "2",
 		"cardType": "command",
-		"commander": "",
+		"commander": "Storm Tide Commander",
 		"imageName": "Surgical Strike.jpeg",
 		"products": [],
-		"faction": "storm tide",
+		"faction": "",
 		"keywords": []
 	},
 	"AJ": {
@@ -7630,10 +7630,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Tank Shock",
 		"cardSubtype": "2",
 		"cardType": "command",
-		"commander": "",
+		"commander": "Storm Tide Commander",
 		"imageName": "Tank Shock.jpeg",
 		"products": [],
-		"faction": "storm tide",
+		"faction": "",
 		"keywords": []
 	}
 }));
