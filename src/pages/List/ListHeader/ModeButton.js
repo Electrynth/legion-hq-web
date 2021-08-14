@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Chip, Menu, MenuItem } from '@material-ui/core';
 import LargerTooltip from 'common/LargerTooltip';
+import legionModes from 'constants/legionModes';
 
 function ModeButton({ currentMode, points, maxPoints, tooltip, handleChangeMode }) {
   const [anchorEl, setAnchorEl] = useState();
@@ -69,13 +70,15 @@ function ModeButton({ currentMode, points, maxPoints, tooltip, handleChangeMode 
           Storm Tide: Special Forces Division
         </MenuItem>
       </Menu>
-      <Chip
-        clickable
-        variant={points > maxPoints ? 'default' : 'outlined'}
-        label={`${points}/${maxPoints}`}
-        onClick={handleOpenMenu}
-        style={points > maxPoints ? { backgroundColor: '#f44336' } : {}}
-      />
+      <LargerTooltip title={legionModes[currentMode].name}>
+        <Chip
+          clickable
+          variant={points > maxPoints ? 'default' : 'outlined'}
+          label={`${points}/${maxPoints}`}
+          onClick={handleOpenMenu}
+          style={points > maxPoints ? { backgroundColor: '#f44336' } : {}}
+        />
+      </LargerTooltip>
     </React.Fragment>
   );
 };
