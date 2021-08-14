@@ -12,6 +12,7 @@ import {
   convertHashToList,
   toggleListMode,
   changeListTitle,
+  setListMode,
   addUnit,
   addCommand,
   addContingency,
@@ -150,7 +151,7 @@ export function ListProvider({
     setCurrentList({ ...newList, faction: currentList.faction });
   }
   const handleChangeTitle = title => setCurrentList({ ...changeListTitle(currentList, title) });
-  const handleChangeMode = () => setCurrentList({ ...toggleListMode(currentList) });
+  const handleChangeMode = mode => setCurrentList({ ...setListMode(currentList, mode) });
   const handleEquipUpgrade = (action, unitIndex, upgradeIndex, upgradeId, isApplyToAll) => {
     const unit = currentList.units[unitIndex];
     let applyFilter; let nextAvailIndex; let nextAvailType;

@@ -7515,7 +7515,28 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"upgradeBar": ["command", "command", "command", "comms", "gear"],
 		"history": []
-	}
+	},
+	"AA": {
+		"id": "AA",
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["crit"],
+		"wounds": 5,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Commander",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 60,
+		"faction": "",
+		"imageName": "Storm Tide Commander1.jpeg",
+		"keywords": [
+			"Inspire"
+		],
+		"upgradeBar": ["training", "gear", "armament"],
+		"history": []
+	},
 }));
 
 export default cards;

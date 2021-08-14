@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import {
-  History as UsePrevIcon,
   Clear as ClearIcon,
   Save as SaveIcon,
   CallSplit as ForkIcon
@@ -16,10 +15,8 @@ import ImageExportButton from './ImageExportButton';
 import TextExportButton from './TextExportButton';
 import PrintExportButton from './PrintExportButton';
 import SimpleButton from './SimpleButton';
-import StormtideButton from './StormtideButton';
 
 function ListExtras() {
-  const [usingOldPoints, setUsingOldPoints] = useState(false);
   const { userId } = useContext(DataContext);
   const {
     currentList,
@@ -29,19 +26,6 @@ function ListExtras() {
     handleListFork
   } = useContext(ListContext);
 
-  const toggleUsingOldPoints = () => {
-    handleClearList();
-    Object.keys(cards).forEach(id => {
-      const card = cards[id];
-      if (card.prevCost) {
-        const temp = card.cost;
-        card.cost = card.prevCost;
-        card.prevCost = temp;
-      }
-    });
-    setUsingOldPoints(!usingOldPoints);
-  }
-
   return (
     <div
       style={{
@@ -50,7 +34,6 @@ function ListExtras() {
         justifyContent: 'center'
       }}
     >
-      <StormtideButton />
       <TemplateButton />
       <LinkButton currentList={currentList} />
       <QRButton currentList={currentList} />
@@ -61,13 +44,13 @@ function ListExtras() {
       <SimpleButton
         timeout={3000}
         timeoutMessage={listSaveMessage ? listSaveMessage : 'Saving...'}
-        isDisabled={usingOldPoints || !Boolean(userId)}
+        isDisabled={!Boolean(userId)}
         icon={<SaveIcon />}
         label="Save List"
         handleClick={() => handleListSave(currentList)}
       />
       <SimpleButton
-        isDisabled={usingOldPoints || !Boolean(currentList.listId)}
+        isDisabled={!Boolean(currentList.listId)}
         icon={<ForkIcon />}
         label="Fork List"
         handleClick={() => handleListFork(currentList)}

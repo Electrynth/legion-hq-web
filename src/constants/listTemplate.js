@@ -1,6 +1,7 @@
 const listTemplate = {
   version: 1,
   title: 'Untitled',
+  game: 'legion',
   mode: 'standard mode',
   faction: '',
   notes: '',

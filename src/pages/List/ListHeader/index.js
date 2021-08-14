@@ -30,6 +30,7 @@ function ListHeader() {
     num += unit.count;
     return num;
   }, 0);
+
   return (
     <div id="list-header" className={classes.container}>
       <Menu
@@ -61,9 +62,10 @@ function ListHeader() {
       </div>
       <div className={classes.item}>
         <ModeButton
+          currentMode={currentList.mode}
           points={currentList.pointTotal}
           maxPoints={legionModes[currentList.mode].maxPoints}
-          handleClick={handleChangeMode}
+          handleChangeMode={handleChangeMode}
         />
       </div>
     </div>

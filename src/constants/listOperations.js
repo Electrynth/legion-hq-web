@@ -598,6 +598,13 @@ function toggleListMode(list) {
   return list;
 }
 
+function setListMode(list, mode) {
+  if (legionModes[mode]) {
+    list.mode = mode;
+  }
+  return list;
+}
+
 function findUnitHash(list, unitHash) {
   return list.unitObjectStrings.indexOf(unitHash);
 }
@@ -1316,7 +1323,8 @@ export {
   rehashList,
   convertHashToList,
   changeListTitle,
-  toggleListMode,
+  // toggleListMode,
+  setListMode,
   addUnit,
   addCounterpart,
   removeCounterpart,
