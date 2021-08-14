@@ -1002,11 +1002,6 @@ return {
 }
 
 function getEligibleCommandsToAdd(list) {
-  const stormTideCommands = {
-    'storm tide: infantry': ['AC', 'AE', 'AG'],
-    'storm tide: armored': ['AB', 'AF', 'AJ'],
-    'storm tide: special forces': ['AD', 'AH', 'AI']
-  };
   const validCommandIds = [];
   const invalidCommandIds = [];
   const cardsById = Object.keys(cards);
@@ -1017,10 +1012,6 @@ function getEligibleCommandsToAdd(list) {
   });
   cardsById.forEach(id => {
     const card = cards[id];
-    if (stormTideCommands[list.mode] && stormTideCommands[list.mode].includes(id)) {
-      validCommandIds.push(id);
-      return;
-    }
     if (card.cardType !== 'command') return;
     if (list.commandCards.includes(id)) return;
     if (list.contingencies && list.contingencies.includes(id)) return;
