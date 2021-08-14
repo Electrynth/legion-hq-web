@@ -7545,7 +7545,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Armored Assault.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "storm tide",
 		"keywords": ["Barrage", "Steady"]
 	},
 	"AC": {
@@ -7556,7 +7556,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Brothers in Arms.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "storm tide",
 		"keywords": ["Inspire"]
 	},
 	"AD": {
@@ -7567,7 +7567,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Doors and Corners.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "storm tide",
 		"keywords": ["Tactical", "Nimble"]
 	},
 	"AE": {
@@ -7578,7 +7578,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Keep Them Down.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "storm tide",
 		"keywords": ["Suppressive"]
 	},
 	"AF": {
@@ -7589,7 +7589,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Man the Guns.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "storm tide",
 		"keywords": []
 	},
 	"AG": {
@@ -7600,7 +7600,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Somebody Has To Be a Hero.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "storm tide",
 		"keywords": ["Dauntless", "Steady"]
 	},
 	"AH": {
@@ -7611,7 +7611,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Stealth Team.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "storm tide",
 		"keywords": ["Infiltrate", "Scout", "Low Profile"]
 	},
 	"AI": {
@@ -7622,7 +7622,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Surgical Strike.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "storm tide",
 		"keywords": []
 	},
 	"AJ": {
@@ -7633,7 +7633,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Tank Shock.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "storm tide",
 		"keywords": []
 	}
 }));
