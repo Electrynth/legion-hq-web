@@ -7537,6 +7537,105 @@ const cards = JSON.parse(JSON.stringify({
 		"upgradeBar": ["training", "gear", "armament"],
 		"history": []
 	},
+	"AB": {
+		"id": "AB",
+		"cardName": "Armored Assault",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Armored Assault.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": ["Barrage", "Steady"]
+	},
+	"AC": {
+		"id": "AC",
+		"cardName": "Brothers in Arms",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Brothers in Arms.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": ["Inspire"]
+	},
+	"AD": {
+		"id": "AD",
+		"cardName": "Doors and Corners",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Doors and Corners.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": ["Tactical", "Nimble"]
+	},
+	"AE": {
+		"id": "AE",
+		"cardName": "Keep Them Down",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Keep Them Down.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": ["Suppressive"]
+	},
+	"AF": {
+		"id": "AF",
+		"cardName": "Man the Guns",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Man the Guns.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": []
+	},
+	"AG": {
+		"id": "AG",
+		"cardName": "Somebody Has To Be a Hero",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Somebody Has To Be a Hero.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": ["Dauntless", "Steady"]
+	},
+	"AH": {
+		"id": "AH",
+		"cardName": "Stealth Team",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Stealth Team.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": ["Infiltrate", "Scout", "Low Profile"]
+	},
+	"AI": {
+		"id": "AI",
+		"cardName": "Surgical Strike",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Surgical Strike.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": []
+	},
+	"AJ": {
+		"id": "AJ",
+		"cardName": "Tank Shock",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Tank Shock.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": []
+	}
 }));
 
 export default cards;
