@@ -1,6 +1,6 @@
 const legionModes = {
   '500-point mode': {
-    name: 'Skirmish',
+    name: 'Skirmish Format',
     maxPoints: 500,
     unitCounts: {
       commander: [1, 1],
@@ -12,7 +12,7 @@ const legionModes = {
     }
   },
   'standard mode': {
-    name: 'Standard',
+    name: 'Standard Format',
     maxPoints: 800,
     unitCounts: {
       commander: [1, 2],
@@ -24,7 +24,7 @@ const legionModes = {
     }
   },
   'grand army mode': {
-    name: 'Grand Army',
+    name: 'Grand Army Format',
     maxPoints: 1600,
     unitCounts: {
       commander: [1, 4],
