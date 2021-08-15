@@ -73,7 +73,7 @@ function ImageCard({ isSelected, card, handleClick, handleCardZoom }) {
           />
         </CardActionArea>
         <CardActions disableSpacing>
-          {cost && <CardChip type="points" value={cost} size={chipSize} />}
+          {(cost || cost === 0) && <CardChip type="points" value={cost} size={chipSize} />}
           {cardName === 'Storm Tide Commander' && (
             <HelpChip size={chipSize} />
           )}
