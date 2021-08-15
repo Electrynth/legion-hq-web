@@ -795,6 +795,11 @@ function getEligibleUnitsToAdd(list, rank) {
   for (let i = 0; i < cardsById.length; i++) {
     const id = cardsById[i];
     const card = cards[id];
+    if (list.mode.includes('storm tide') && id === 'AA') {
+      continue;
+    } else if (!list.mode.includes('storm tide') && id === 'AK') {
+      continue;
+    }
     if (card.cardType !== 'unit') continue;
     if (card.rank !== rank) continue;
     if (!list.faction.includes(card.faction)) continue;
@@ -1002,6 +1007,15 @@ return {
 }
 
 function getEligibleCommandsToAdd(list) {
+  const stormTideCommands = {
+    '500-point mode': ['AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH', 'AH', 'AI', 'AJ'],
+    'standard mode': ['AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH', 'AH', 'AI', 'AJ'],
+    'grand army mode': ['AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH', 'AH', 'AI', 'AJ'],
+    'storm tide: infantry': ['AC', 'AE', 'AG'],
+    'storm tide: armored': ['AB', 'AF', 'AJ'],
+    'storm tide: special forces': ['AD', 'AH', 'AI']
+  };
+
   const validCommandIds = [];
   const invalidCommandIds = [];
   const cardsById = Object.keys(cards);
@@ -1012,6 +1026,21 @@ function getEligibleCommandsToAdd(list) {
   });
   cardsById.forEach(id => {
     const card = cards[id];
+    if (
+      stormTideCommands[list.mode] &&
+      stormTideCommands[list.mode].length === 3 &&
+      stormTideCommands[list.mode].includes(id)
+    ) {
+      validCommandIds.push(id);
+      return;
+    } else if (
+      stormTideCommands[list.mode] &&
+      stormTideCommands[list.mode].length === 3 &&
+      stormTideCommands['standard mode'].includes(id)
+    ) {
+      invalidCommandIds.push(id);
+      return;
+    }
     if (card.cardType !== 'command') return;
     if (list.commandCards.includes(id)) return;
     if (list.contingencies && list.contingencies.includes(id)) return;
