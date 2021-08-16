@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Storm Tide Content",
+    "date": "16 August 2021",
+    "body": "Added ability to create lists for The Fifth Trooper's unofficial narrative campaign, Storm Tide."
+  },
+  {
     "title": "New Cards Added",
     "date": "11 August 2021",
     "body": "Added Super Tactical Droid units."
