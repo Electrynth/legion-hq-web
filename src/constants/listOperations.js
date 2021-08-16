@@ -1026,6 +1026,10 @@ function getEligibleCommandsToAdd(list) {
   });
   cardsById.forEach(id => {
     const card = cards[id];
+    if (card.cardType !== 'command') return;
+    if (list.commandCards.includes(id)) return;
+    if (list.contingencies && list.contingencies.includes(id)) return;
+    
     if (
       stormTideCommands[list.mode] &&
       stormTideCommands[list.mode].length === 3 &&
@@ -1041,9 +1045,7 @@ function getEligibleCommandsToAdd(list) {
       invalidCommandIds.push(id);
       return;
     }
-    if (card.cardType !== 'command') return;
-    if (list.commandCards.includes(id)) return;
-    if (list.contingencies && list.contingencies.includes(id)) return;
+
     if (!list.faction.includes(card.faction)) return;
     if (id === 'aa') return; // Standing Orders
     if (id === 'jl' || id === 'ka' || id === 'kb') return; // Duplicates
