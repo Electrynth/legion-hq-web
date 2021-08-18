@@ -7667,7 +7667,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 28,
 		"imageName": "Electro-whip MagnaGuard.jpeg",
 		"keywords": ["Immobilize", "Versatile"],
-		"requirements": []
+		"requirements": [{ "cardName": "IG-100 MagnaGuard" }]
 	},
 	"qc": {
 		"id": "qc",
@@ -7679,7 +7679,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 22,
 		"imageName": "IG-100 MagnaGuard.jpeg",
 		"keywords": [],
-		"requirements": []
+		"requirements": [{ "cardName": "IG-100 MagnaGuard" }]
 	},
 	"qd": {
 		"id": "qd",
@@ -7691,7 +7691,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 28,
 		"imageName": "RPS-6 MagnaGuard.jpeg",
 		"keywords": ["Critical", "Impact"],
-		"requirements": []
+		"requirements": [{ "cardName": "IG-100 MagnaGuard" }]
 	}
 }));
 
