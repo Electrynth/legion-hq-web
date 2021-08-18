@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "New Cards Added",
+    "date": "18 August 2021",
+    "body": "Added MagnaGuard upgrade cards."
+  },
+  {
     "title": "Storm Tide Content",
     "date": "16 August 2021",
     "body": "Added ability to create lists for The Fifth Trooper's unofficial narrative campaign, Storm Tide."

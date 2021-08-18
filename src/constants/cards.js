@@ -7657,6 +7657,42 @@ const cards = JSON.parse(JSON.stringify({
 		"upgradeBar": ["training", "gear", "armament"],
 		"history": []
 	},
+	"qb": {
+		"id": "qb",
+		"displayName": "",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Electro-whip MagnaGuard",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 28,
+		"imageName": "Electro-whip MagnaGuard.jpeg",
+		"keywords": ["Immobilize", "Versatile"],
+		"requirements": []
+	},
+	"qc": {
+		"id": "qc",
+		"displayName": "",
+		"cardSubtype": "heavy weapon",
+		"cardName": "IG-100 MagnaGuard",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 22,
+		"imageName": "IG-100 MagnaGuard.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
+	"qd": {
+		"id": "qd",
+		"displayName": "",
+		"cardSubtype": "heavy weapon",
+		"cardName": "RPS-6 MagnaGuard",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 28,
+		"imageName": "RPS-6 MagnaGuard.jpeg",
+		"keywords": ["Critical", "Impact"],
+		"requirements": []
+	}
 }));
 
 export default cards;
