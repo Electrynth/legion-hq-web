@@ -7692,6 +7692,39 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "RPS-6 MagnaGuard.jpeg",
 		"keywords": ["Critical", "Impact"],
 		"requirements": [{ "cardName": "IG-100 MagnaGuard" }]
+	},
+	"qe": {
+		"id": "qe",
+		"cardName": "They Too Will Suffer",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Super Tactical Droid",
+		"imageName": "They Too Will Suffer.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": []
+	},
+	"qf": {
+		"id": "qf",
+		"cardName": "Preservation Protocols",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Super Tactical Droid",
+		"imageName": "Preservation Protocols.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": ["AI", "Disengage", "Impervious"]
+	},
+	"qg": {
+		"id": "qg",
+		"cardName": "Do Not Underestimate Our Means",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Super Tactical Droid",
+		"imageName": "Do Not Underestimate Our Means.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": ["Divulge", "AI", "Reinforcements"]
 	}
 }));
 
