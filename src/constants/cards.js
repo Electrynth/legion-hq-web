@@ -7725,6 +7725,54 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "separatists",
 		"keywords": ["Divulge", "AI", "Reinforcements"]
+	},
+	"qh": {
+		"id": "qh",
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["hit", "block"],
+		"wounds": 6,
+		"resilience": 3,
+		"speed": 2,
+		"cardSubtype": "repulsor vehicle",
+		"cardName": "Raddaugh Gnasp Fluttercraft",
+		"isUnique": false,
+		"rank": "support",
+		"cost": 0,
+		"faction": "republic",
+		"imageName": "Raddaugh Gnasp Fluttercraft.jpeg",
+		"keywords": [
+			"Cover",
+			"Immune",
+			"Reposition",
+			"Speeder"
+		],
+		"upgradeBar": ["crew", "comms"],
+		"history": []
+	},
+	"qi": {
+		"id": "qi",
+		"displayName": "",
+		"cardSubtype": "crew",
+		"cardName": "Gnasp Gunner",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 25,
+		"imageName": "Gnasp Gunner.jpeg",
+		"keywords": ["Fixed", "Impact", "Pierce"],
+		"requirements": [{ "cardName": "Raddaugh Gnasp Fluttercraft" }]
+	},
+	"qj": {
+		"id": "qj",
+		"displayName": "",
+		"cardSubtype": "comms",
+		"cardName": "Hacked Comms Unit",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Hacked Comms Unit.jpeg",
+		"keywords": [],
+		"requirements": []
 	}
 }));
 
