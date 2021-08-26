@@ -7738,7 +7738,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Raddaugh Gnasp Fluttercraft",
 		"isUnique": false,
 		"rank": "support",
-		"cost": 0,
+		"cost": 55,
 		"faction": "republic",
 		"imageName": "Raddaugh Gnasp Fluttercraft.jpeg",
 		"keywords": [
