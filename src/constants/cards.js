@@ -7773,6 +7773,82 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Hacked Comms Unit.jpeg",
 		"keywords": [],
 		"requirements": []
+	},
+	"qk": {
+		"id": "qk",
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["hit", "block"],
+		"wounds": 6,
+		"resilience": 4,
+		"speed": 2,
+		"cardSubtype": "ground vehicle",
+		"displayName": "Dwarf Spider Droid",
+		"cardName": "DSD1 Dwarf Spider Droid",
+		"isUnique": false,
+		"rank": "support",
+		"cost": 55,
+		"faction": "separatists",
+		"imageName": "DSD1 Dwarf Spider Droid.jpeg",
+		"keywords": [
+			"Self-Destruct",
+			"Armor X",
+			"Climbing Vehicle",
+			"Expert Climber",
+			"Programmed",
+			"Blast",
+			"Impact"
+		],
+		"upgradeBar": ["programming", "hardpoint", "comms"],
+		"history": []
+	},
+	"ql": {
+		"id": "ql",
+		"displayName": "",
+		"cardSubtype": "programming",
+		"cardName": "Engagement Protocols",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 0,
+		"imageName": "Engagement Protocols.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
+	"qm": {
+		"id": "qm",
+		"displayName": "",
+		"cardSubtype": "programming",
+		"cardName": "Defense Protocols",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 0,
+		"imageName": "Defense Protocols.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
+	"qn": {
+		"id": "qn",
+		"displayName": "",
+		"cardSubtype": "programming",
+		"cardName": "Attack Protocols",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 0,
+		"imageName": "Attack Protocols.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
+	"qo": {
+		"id": "qo",
+		"displayName": "",
+		"cardSubtype": "hardpoint",
+		"cardName": "Nose-Mounted Flamethrower",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 0,
+		"imageName": "Nose-Mounted Flamethrower.jpeg",
+		"keywords": [],
+		"requirements": [{ "cardName": "DSD1 Dwarf Spider Droid" }]
 	}
 }));
 
