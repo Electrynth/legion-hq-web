@@ -81,7 +81,7 @@ function consolidate(list) {
       list.uniques.push(unitCard.id);
       unit.hasUniques = true;
     }
-    if (unitCard.keywords.includes('Contingency')) hasContingencyKeyword = true;
+    if (unitCard.keywords.includes('Contingencies')) hasContingencyKeyword = true;
     if (unitCard.rank === 'commander' || unitCard.rank === 'operative') {
       list.commanders.push(unitCard.cardName);
     }
@@ -1311,8 +1311,11 @@ function convertHashToList(faction, url) {
       // if (cardId.includes('*')) {}
       const card = cards[cardId];
       if (card.cardType === 'command') {
-        if (commandCardSlots > 0) list.commandCards.push(cardId);
-        else list.contingencies.push(cardId);
+        if (commandCardSlots > 0) {
+          list.commandCards.push(cardId);
+        } else {
+          list.contingencies.push(cardId);
+        }
       } else if (card.cardSubtype === 'objective') {
         list.objectiveCards.push(cardId);
       } else if (card.cardSubtype === 'deployment') {
