@@ -7849,6 +7849,18 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Nose-Mounted Flamethrower.jpeg",
 		"keywords": [],
 		"requirements": [{ "cardName": "DSD1 Dwarf Spider Droid" }]
+	},
+	"qp": {
+		"id": "qp",
+		"displayName": "",
+		"cardSubtype": "crew",
+		"cardName": "Gnasp Bombardier",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 20,
+		"imageName": "Gnasp Bombardier.jpeg",
+		"keywords": ["Overrun", "Suppressive"],
+		"requirements": [{ "cardName": "Raddaugh Gnasp Fluttercraft" }]
 	}
 }));
 
