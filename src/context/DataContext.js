@@ -79,6 +79,11 @@ const routes = {
 const newsPosts = [
   {
     "title": "New Cards Added",
+    "date": "8 September 2021",
+    "body": "Added more Dwarf Spider Droid cards."
+  },
+  {
+    "title": "New Cards Added",
     "date": "1 September 2021",
     "body": "Added Gnasp Bombardier."
   },

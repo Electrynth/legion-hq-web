@@ -7812,7 +7812,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 0,
 		"imageName": "Engagement Protocols.jpeg",
 		"keywords": [],
-		"requirements": []
+		"requirements": [{ "cardSubtype": "ground vehicle" }]
 	},
 	"qm": {
 		"id": "qm",
@@ -7824,7 +7824,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 0,
 		"imageName": "Defense Protocols.jpeg",
 		"keywords": [],
-		"requirements": []
+		"requirements": [{ "cardSubtype": "ground vehicle" }]
 	},
 	"qn": {
 		"id": "qn",
@@ -7833,10 +7833,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Attack Protocols",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 0,
+		"cost": 3,
 		"imageName": "Attack Protocols.jpeg",
 		"keywords": [],
-		"requirements": []
+		"requirements": [{ "cardSubtype": "ground vehicle" }]
 	},
 	"qo": {
 		"id": "qo",
@@ -7845,9 +7845,9 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Nose-Mounted Flamethrower",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 0,
+		"cost": 15,
 		"imageName": "Nose-Mounted Flamethrower.jpeg",
-		"keywords": [],
+		"keywords": ["Blast", "Fixed", "Spray"],
 		"requirements": [{ "cardName": "DSD1 Dwarf Spider Droid" }]
 	},
 	"qp": {
@@ -7861,6 +7861,30 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Gnasp Bombardier.jpeg",
 		"keywords": ["Overrun", "Suppressive"],
 		"requirements": [{ "cardName": "Raddaugh Gnasp Fluttercraft" }]
+	},
+	"qq": {
+		"id": "qq",
+		"displayName": "",
+		"cardSubtype": "hardpoint",
+		"cardName": "Nose-Mounted Ion Blaster",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Nose-Mounted Ion Blaster.jpeg",
+		"keywords": ["Cycle", "Fixed", "Ion", "Impact"],
+		"requirements": [{ "cardName": "DSD1 Dwarf Spider Droid" }]
+	},
+	"qr": {
+		"id": "qr",
+		"displayName": "",
+		"cardSubtype": "hardpoint",
+		"cardName": "Nose-Mounted Laser Cannon",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 15,
+		"imageName": "Nose-Mounted Laser Cannon.jpeg",
+		"keywords": ["Critical", "Fixed"],
+		"requirements": [{ "cardName": "DSD1 Dwarf Spider Droid" }]
 	}
 }));
 
