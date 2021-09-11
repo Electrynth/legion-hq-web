@@ -84,6 +84,11 @@ const routes = {
 const newsPosts = [
   {
     "title": "New Cards Added",
+    "date": "11 September 2021",
+    "body": "Added Slug Tank and Infantry Platform cards."
+  },
+  {
+    "title": "New Cards Added",
     "date": "8 September 2021",
     "body": "Added more Dwarf Spider Droid cards."
   },
