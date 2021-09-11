@@ -64,6 +64,11 @@ const routes = {
     path: '/list/separatists',
     icon: <FactionIcon faction="separatists" />
   },
+  '/list/fringe': {
+    name: 'Shadow Collective',
+    path: '/list/fringe',
+    icon: <FactionIcon faction="fringe" />
+  },
   '/settings': {
     name: 'Settings',
     path: '/settings',

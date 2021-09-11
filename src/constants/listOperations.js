@@ -353,6 +353,7 @@ function generateTTSJSONText(list) {
   if (list.faction === 'rebels') ttsJSON.armyFaction = 'rebel';
   else if (list.faction === 'empire') ttsJSON.armyFaction = 'imperial';
   else if (list.faction === 'republic') ttsJSON.armyFaction = 'republic';
+  else if (list.faction === 'fringe') ttsJSON.armyFaction = 'fringe';
   else ttsJSON.armyFaction = 'separatist';
 
   ttsJSON.commandCards = [];
@@ -1029,7 +1030,7 @@ function getEligibleCommandsToAdd(list) {
     if (card.cardType !== 'command') return;
     if (list.commandCards.includes(id)) return;
     if (list.contingencies && list.contingencies.includes(id)) return;
-    
+
     if (
       stormTideCommands[list.mode] &&
       stormTideCommands[list.mode].length === 3 &&
