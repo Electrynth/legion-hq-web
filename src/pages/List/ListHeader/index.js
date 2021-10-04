@@ -40,7 +40,7 @@ function ListHeader() {
         onClose={handleFactionMenuClose}
       >
         <MenuItem onClick={handleFactionMenuClose}>
-          hmm i wonder what goes here... :3c
+          Select a battle force
         </MenuItem>
       </Menu>
       <div className={classes.item}>

@@ -6,6 +6,8 @@ import republicWhite from 'assets/factions/republicWhite.svg';
 import republicBlack from 'assets/factions/republicBlack.svg';
 import separatistsWhite from 'assets/factions/separatistsWhite.svg';
 import separatistsBlack from 'assets/factions/separatistsBlack.svg';
+import fringeWhite from 'assets/factions/fringeWhite.svg';
+import fringeBlack from 'assets/factions/fringeBlack.svg';
 
 const factions = {
   rebels: {
@@ -55,6 +57,19 @@ const factions = {
     icon: {
       dark: separatistsWhite,
       light: separatistsBlack
+    }
+  },
+  fringe: {
+    name: 'Shadow Collective',
+    singular: 'Shadow Collective',
+    longName: 'Shadow Collective',
+    forceAffinity: 'dark side',
+    primaryColor: '#7b272e',
+    secondaryColor: '#030303',
+    tertiaryColor: '#eeeeee',
+    icon: {
+      dark: fringeWhite,
+      light: fringeBlack
     }
   }
 };

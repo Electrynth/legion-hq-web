@@ -7811,10 +7811,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Engagement Protocols",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 0,
+		"cost": 3,
 		"imageName": "Engagement Protocols.jpeg",
-		"keywords": [],
-		"requirements": []
+		"keywords": ["AI"],
+		"requirements": [{ "cardSubtype": "ground vehicle" }]
 	},
 	"qm": {
 		"id": "qm",
@@ -7823,10 +7823,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Defense Protocols",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 0,
+		"cost": 3,
 		"imageName": "Defense Protocols.jpeg",
-		"keywords": [],
-		"requirements": []
+		"keywords": ["AI", "Dodge", "Nimble", "Outmaneuver"],
+		"requirements": [{ "cardSubtype": "ground vehicle" }]
 	},
 	"qn": {
 		"id": "qn",
@@ -7835,10 +7835,10 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Attack Protocols",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 0,
+		"cost": 3,
 		"imageName": "Attack Protocols.jpeg",
-		"keywords": [],
-		"requirements": []
+		"keywords": ["AI", "Precise"],
+		"requirements": [{ "cardSubtype": "ground vehicle" }]
 	},
 	"qo": {
 		"id": "qo",
@@ -7847,9 +7847,9 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Nose-Mounted Flamethrower",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 0,
+		"cost": 15,
 		"imageName": "Nose-Mounted Flamethrower.jpeg",
-		"keywords": [],
+		"keywords": ["Blast", "Fixed", "Spray"],
 		"requirements": [{ "cardName": "DSD1 Dwarf Spider Droid" }]
 	},
 	"qp": {
@@ -7863,7 +7863,133 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Gnasp Bombardier.jpeg",
 		"keywords": ["Overrun", "Suppressive"],
 		"requirements": [{ "cardName": "Raddaugh Gnasp Fluttercraft" }]
+	},
+	"qq": {
+		"id": "qq",
+		"displayName": "",
+		"cardSubtype": "hardpoint",
+		"cardName": "Nose-Mounted Ion Blaster",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Nose-Mounted Ion Blaster.jpeg",
+		"keywords": ["Cycle", "Fixed", "Ion", "Impact"],
+		"requirements": [{ "cardName": "DSD1 Dwarf Spider Droid" }]
+	},
+	"qr": {
+		"id": "qr",
+		"displayName": "",
+		"cardSubtype": "hardpoint",
+		"cardName": "Nose-Mounted Laser Cannon",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 15,
+		"imageName": "Nose-Mounted Laser Cannon.jpeg",
+		"keywords": ["Critical", "Fixed"],
+		"requirements": [{ "cardName": "DSD1 Dwarf Spider Droid" }]
+	},
+	"qs": {
+		"id": "qs",
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["hit", "block"],
+		"wounds": 7,
+		"resilience": 5,
+		"speed": 3,
+		"cardSubtype": "repulsor vehicle",
+		"displayName": "",
+		"cardName": "Infantry Support Platform",
+		"isUnique": false,
+		"rank": "heavy",
+		"cost": 65,
+		"faction": "republic",
+		"imageName": "Infantry Support Platform.jpeg",
+		"keywords": [
+			"Armor",
+			"Cover",
+			"Hover",
+			"Weak Point",
+			"Impact"
+		],
+		"upgradeBar": ["pilot", "hardpoint", "comms"],
+		"history": []
+	},
+	"qt": {
+		"id": "qt",
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["hit", "block"],
+		"wounds": 11,
+		"resilience": 7,
+		"speed": 1,
+		"cardSubtype": "ground vehicle",
+		"displayName": "Snail Droid",
+		"cardName": "NR-N99 Persuader-class Tank Droid",
+		"isUnique": false,
+		"rank": "heavy",
+		"cost": 145,
+		"faction": "separatists",
+		"imageName": "NR-N99 Persuader-class Tank Droid.jpeg",
+		"keywords": [
+			"Armor",
+			"Arsenal",
+			"Programmed",
+			"Reposition",
+			"Transport",
+			"Weak Point"
+		],
+		"upgradeBar": ["programming", "ordnance", "comms"],
+		"history": []
+	},
+	"qu": {
+		"id": "qu",
+		"displayName": "Elite Armor Pilots",
+		"cardSubtype": "pilot",
+		"cardName": "327th Star Corps Elite Armor Pilots",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "327th Star Corps Elite Armor Pilots.jpeg",
+		"keywords": ["Fire Support"],
+		"requirements": [{ "cardName": "Infantry Support Platform" }]
+	},
+	"qv": {
+		"id": "qv",
+		"displayName": "",
+		"cardSubtype": "hardpoint",
+		"cardName": "Twin Blaster Cannons",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 40,
+		"imageName": "Twin Blaster Cannons.jpeg",
+		"keywords": ["Gunslinger", "Critical", "Fixed"],
+		"requirements": [{ "cardName": "Infantry Support Platform" }]
+	},
+	"qw": {
+		"id": "qw",
+		"displayName": "",
+		"cardSubtype": "hardpoint",
+		"cardName": "Twin Beam Cannons",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 40,
+		"imageName": "Twin Beam Cannons.jpeg",
+		"keywords": ["Beam", "Fixed"],
+		"requirements": [{ "cardName": "Infantry Support Platform" }]
+	},
+	"qx": {
+		"id": "qx",
+		"displayName": "",
+		"cardSubtype": "hardpoint",
+		"cardName": "Twin Missile Pods",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 40,
+		"imageName": "Twin Missile Pods.jpeg",
+		"keywords": ["Gunslinger", "Impact", "Fixed"],
+		"requirements": [{ "cardName": "Infantry Support Platform" }]
 	}
+
 }));
 
 export default cards;

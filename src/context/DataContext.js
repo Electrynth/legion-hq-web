@@ -64,6 +64,11 @@ const routes = {
     path: '/list/separatists',
     icon: <FactionIcon faction="separatists" />
   },
+  '/list/fringe': {
+    name: 'Shadow Collective',
+    path: '/list/fringe',
+    icon: <FactionIcon faction="fringe" />
+  },
   '/settings': {
     name: 'Settings',
     path: '/settings',
@@ -81,6 +86,16 @@ const newsPosts = [
     "title": "New Legion Guide",
     "date": "4 October 2021",
     "body": "Added a link to the Legion Quick Guide in the navigation menu. Check it out!"
+  },
+  {
+    "title": "New Cards Added",
+    "date": "11 September 2021",
+    "body": "Added Slug Tank and Infantry Platform cards."
+  },
+  {
+    "title": "New Cards Added",
+    "date": "8 September 2021",
+    "body": "Added more Dwarf Spider Droid cards."
   },
   {
     "title": "New Cards Added",

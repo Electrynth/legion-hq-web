@@ -111,6 +111,15 @@ function NavigationDrawer() {
               goToPage('/list/separatists');
             }}
           />
+          <NavDrawerLink
+            text="Shadow Collective"
+            selected={pathname === '/list/fringe' || faction === 'fringe'}
+            icon={routes['/list/fringe'].icon}
+            handleClick={() => {
+              setIsDrawerOpen(false);
+              goToPage('/list/fringe');
+            }}
+          />
         </List>
         <Divider />
         <List dense={true}>
