@@ -78,6 +78,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "New Legion Guide",
+    "date": "4 October 2021",
+    "body": "Added a link to the Legion Quick Guide in the navigation menu. Check it out!"
+  },
+  {
     "title": "New Cards Added",
     "date": "1 September 2021",
     "body": "Added Gnasp Bombardier."
