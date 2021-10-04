@@ -7809,7 +7809,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Engagement Protocols",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 3,
+		"cost": 5,
 		"imageName": "Engagement Protocols.jpeg",
 		"keywords": ["AI"],
 		"requirements": [{ "cardSubtype": "ground vehicle" }]
