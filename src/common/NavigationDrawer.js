@@ -9,6 +9,7 @@ import {
   ListItemIcon
 } from '@material-ui/core';
 import DataContext from 'context/DataContext';
+import { Launch as LaunchIcon } from '@material-ui/icons';
 
 function NavDrawerLink({ selected, icon, text, handleClick }) {
   return (
@@ -140,6 +141,15 @@ function NavigationDrawer() {
               goToPage('/info');
             }}
           />
+        </List>
+        <Divider />
+        <List dense={true}>
+          <ListItem button onClick={() => window.open("https://legionquickguide.com/", "_blank", "noopener noreferrer")}>
+            <ListItemIcon>
+              <LaunchIcon />
+            </ListItemIcon>
+            <ListItemText primary="Legion Quick Guide" />
+          </ListItem>
         </List>
       </div>
     </SwipeableDrawer>
