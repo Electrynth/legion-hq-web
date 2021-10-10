@@ -7151,6 +7151,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardType": "unit",
 		"cardSubtype": "wookiee trooper",
 		"cardName": "Wookiee Chieftain",
+		"title": "Clan Leader",
 		"isUnique": true,
 		"rank": "commander",
 		"cost": 100,
