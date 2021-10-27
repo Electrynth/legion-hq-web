@@ -439,6 +439,13 @@ function generateTTSJSONText(list) {
   }
 
   ttsJSON.battlefieldDeck = { conditions: [], deployment: [], objective: [] };
+  if (list.mode === "500-point mode") {
+    ttsJSON.battlefieldDeck.scenario =  "skirmish";
+  } else if (list.mode.includes("storm tide")) {
+    ttsJSON.battlefieldDeck.scenario = "community"
+  } else {
+    ttsJSON.battlefieldDeck.scenario =  "standard";
+  }
   for (let i = 0; i < list.objectiveCards.length; i++) {
     if (idToName[list.objectiveCards[i]]) {
       ttsJSON.battlefieldDeck.objective.push(idToName[list.objectiveCards[i]]);
