@@ -4383,8 +4383,8 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "BARC Speeder",
 		"isUnique": false,
 		"rank": "support",
-		"cost": 60,
-		"prevCost": 75,
+		"cost": 55,
+		"prevCost": 60,
 		"faction": "republic",
 		"imageName": "BARC Speeder.jpeg",
 		"keywords": [
@@ -4399,6 +4399,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 75 to 60 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 60 to 55 points."
 			}
 		],
 		"id": "ic"
