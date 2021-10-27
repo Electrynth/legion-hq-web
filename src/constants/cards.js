@@ -354,7 +354,7 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "Fearless and Inventive",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 90,
+		"cost": 80,
 		"faction": "rebels",
 		"imageName": "Leia Organa.jpeg",
 		"keywords": [
@@ -365,6 +365,12 @@ const cards = JSON.parse(JSON.stringify({
 			"Pierce"
 		],
 		"upgradeBar": ["command", "command", "gear"],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 90 to 80 points."
+			}
+		],
 		"id": "ab"
 	},
 	"ac": {
@@ -437,8 +443,7 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "Stardust",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 100,
-		"prevCost": 110,
+		"cost": 90,
 		"faction": "rebels",
 		"imageName": "Jyn Erso.jpeg",
 		"keywords": [
@@ -458,6 +463,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 110 to 100 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 100 to 90 points."
 			}
 		],
 		"id": "ae"
@@ -628,8 +637,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Rebel Commandos",
 		"isUnique": false,
 		"rank": "special",
-		"cost": 50,
-		"prevCost": 60,
+		"cost": 48,
 		"faction": "rebels",
 		"imageName": "Rebel Commandos.jpeg",
 		"keywords": [
@@ -648,6 +656,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 60 to 50 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 50 to 48 points."
 			}
 		],
 		"id": "ak"
@@ -698,8 +710,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Rebel Pathfinders",
 		"isUnique": false,
 		"rank": "special",
-		"cost": 58,
-		"prevCost": 68,
+		"cost": 56,
 		"faction": "rebels",
 		"imageName": "Rebel Pathfinders.jpeg",
 		"keywords": [
@@ -719,6 +730,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 68 to 58 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 58 to 56 points."
 			}
 		],
 		"id": "am"
@@ -735,7 +750,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "1.4 FD Laser Cannon Team",
 		"isUnique": false,
 		"rank": "support",
-		"cost": 70,
+		"cost": 65,
 		"faction": "rebels",
 		"imageName": "1.4 FD Laser Cannon Team.jpeg",
 		"keywords": [
@@ -747,6 +762,12 @@ const cards = JSON.parse(JSON.stringify({
 			"Fixed"
 		],
 		"upgradeBar": ["comms", "generator"],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 70 to 65 points."
+			}
+		],
 		"id": "an"
 	},
 	"ao": {
@@ -887,8 +908,7 @@ const cards = JSON.parse(JSON.stringify({
 		"faction": "empire",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 200,
-		"prevCost": 210,
+		"cost": 190,
 		"defense": "red",
 		"surges": ["crit", "block"],
 		"speed": 1,
@@ -909,6 +929,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 210 to 200 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 200 to 190 points."
 			}
 		],
 		"cardType": "unit"
@@ -925,8 +949,7 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "Dark Lord of the Sith",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 175,
-		"prevCost": 190,
+		"cost": 190,
 		"faction": "empire",
 		"imageName": "Darth Vader.jpeg",
 		"keywords": [
@@ -946,6 +969,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 190 to 175 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 175 to 190 points."
 			}
 		],
 		"id": "at"
@@ -962,7 +989,7 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "Master Tactician",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 80,
+		"cost": 75,
 		"faction": "empire",
 		"imageName": "General Veers.jpeg",
 		"keywords": [
@@ -977,6 +1004,12 @@ const cards = JSON.parse(JSON.stringify({
 			"command",
 			"gear"
 		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 80 to 75 points."
+			}
+		],
 		"id": "au"
 	},
 	"av": {
@@ -987,7 +1020,7 @@ const cards = JSON.parse(JSON.stringify({
 		"faction": "empire",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 90,
+		"cost": 75,
 		"defense": "white",
 		"surges": ["crit", "block"],
 		"speed": 2,
@@ -1003,7 +1036,13 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"upgradeBar": ["command", "command", "gear"],
 		"id": "av",
-		"cardType": "unit"
+		"cardType": "unit",
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 90 to 75 points."
+			}
+		]
 	},
 	"aw": {
 		"cardType": "unit",
@@ -1017,8 +1056,7 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "Infamous Bounty Hunter",
 		"isUnique": true,
 		"rank": "operative",
-		"cost": 125,
-		"prevCost": 140,
+		"cost": 120,
 		"faction": "empire",
 		"imageName": "Boba Fett.jpeg",
 		"keywords": [
@@ -1035,6 +1073,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 140 to 125 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 125 to 120 points."
 			}
 		],
 		"id": "aw"
@@ -1197,7 +1239,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Imperial Royal Guards",
 		"isUnique": false,
 		"rank": "special",
-		"cost": 75,
+		"cost": 69,
 		"faction": "empire",
 		"imageName": "Imperial Royal Guards.jpeg",
 		"keywords": ["Charge", "Disciplined", "Guardian"],
@@ -1207,6 +1249,12 @@ const cards = JSON.parse(JSON.stringify({
 			"training",
 			"gear",
 			"grenades"
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 75 to 69 points."
+			}
 		],
 		"id": "bc"
 	},
@@ -1222,7 +1270,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Imperial Death Troopers",
 		"isUnique": false,
 		"rank": "special",
-		"cost": 76,
+		"cost": 72,
 		"faction": "empire",
 		"imageName": "Imperial Death Troopers.jpeg",
 		"keywords": ["Disciplined", "Precise", "Ready"],
@@ -1233,6 +1281,12 @@ const cards = JSON.parse(JSON.stringify({
 			"gear",
 			"armament",
 			"grenades"
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 76 to 72 points."
+			}
 		],
 		"id": "bd"
 	},
@@ -1274,7 +1328,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "74-Z Speeder Bikes",
 		"isUnique": false,
 		"rank": "support",
-		"cost": 75,
+		"cost": 70,
 		"faction": "empire",
 		"imageName": "74-Z Speeder Bikes.jpeg",
 		"keywords": [
@@ -1289,6 +1343,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "12 September 2019",
 				"description": "Cost reduced from 90 to 75 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 75 to 70 points."
 			}
 		],
 		"id": "bf"
@@ -1304,8 +1362,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "AT-ST",
 		"isUnique": false,
 		"rank": "heavy",
-		"cost": 160,
-		"prevCost": 170,
+		"cost": 155,
 		"faction": "empire",
 		"imageName": "AT-ST.jpeg",
 		"keywords": [
@@ -1331,6 +1388,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 170 to 160 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 160 to 155 points."
 			}
 		],
 		"id": "bg"
@@ -1371,6 +1432,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 155 to 145 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 145 to 140 points."
 			}
 		],
 		"id": "bh"
@@ -1884,8 +1949,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Emergency Stims",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 10,
-		"prevCost": 12,
+		"cost": 8,
 		"imageName": "Emergency Stims.jpeg",
 		"keywords": [],
 		"requirements": [],
@@ -1897,6 +1961,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 12 to 10 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 10 to 8 points."
 			}
 		],
 		"id": "db"
@@ -1981,7 +2049,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Duck and Cover",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 4,
+		"cost": 2,
 		"imageName": "Duck and Cover.jpeg",
 		"keywords": [],
 		"requirements": [],
@@ -1989,6 +2057,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "12 September 2019",
 				"description": "Cost reduced from 8 to 4 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 4 to 2 points."
 			}
 		],
 		"id": "dh"
@@ -2252,10 +2324,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Anger",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 5,
+		"cost": 3,
 		"imageName": "Anger.jpeg",
 		"keywords": [],
 		"requirements": [{"dark side": true}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 5 to 3 points."
+			}
+		],
 		"id": "dx"
 	},
 	"dy": {
@@ -2322,8 +2400,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "MPL-57 Ion Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 18,
-		"prevCost": 24,
+		"cost": 17,
 		"imageName": "MPL-57 Ion Trooper.jpeg",
 		"keywords": ["Impact", "Ion", "Ion Token"],
 		"requirements": [{"cardName": "Rebel Troopers"}],
@@ -2335,6 +2412,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 24 to 18 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 18 to 17 points."
 			}
 		],
 		"id": "ec"
@@ -2380,13 +2461,20 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Proton Charge Saboteur",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 26,
+		"cost": 23,
+		"prevCost": 26,
 		"imageName": "Proton Charge Saboteur.jpeg",
 		"keywords": ["Arm", "Detonate", "Blast", "Impact"],
 		"requirements": [
 			"OR",
 			{"cardName": "Rebel Commandos"},
 			{"cardName": "Rebel Commandos Strike Team"}
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 26 to 23 points."
+			}
 		],
 		"id": "ef"
 	},
@@ -2422,8 +2510,8 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "MPL-57 Barrage Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 22,
-		"prevCost": 25,
+		"cost": 19,
+		"prevCost": 22,
 		"imageName": "MPL-57 Barrage Trooper.jpeg",
 		"keywords": ["Blast", "Impact"],
 		"requirements": [{"cardName": "Fleet Troopers"}],
@@ -2435,6 +2523,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 25 to 22 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 22 to 19 points."
 			}
 		],
 		"id": "ei"
@@ -2444,8 +2536,8 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "DLT-19 Stormtrooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 22,
-		"prevCost": 24,
+		"cost": 20,
+		"prevCost": 22,
 		"imageName": "DLT-19 Stormtrooper.jpeg",
 		"keywords": ["Impact"],
 		"requirements": [{"cardName": "Stormtroopers"}],
@@ -2453,6 +2545,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 24 to 22 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 22 to 20 points."
 			}
 		],
 		"id": "ej"
@@ -2462,8 +2558,8 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "HH-12 Stormtrooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 20,
-		"prevCost": 26,
+		"cost": 16,
+		"prevCost": 20,
 		"imageName": "HH-12 Stormtrooper.jpeg",
 		"keywords": ["Cumbersome", "Impact"],
 		"requirements": [{"cardName": "Stormtroopers"}],
@@ -2475,6 +2571,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 26 to 20 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 20 to 16 points."
 			}
 		],
 		"id": "ek"
@@ -2484,10 +2584,17 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Electrostaff Guard",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 25,
+		"cost": 21,
+		"prevCost": 25,
 		"imageName": "Electrostaff Guard.jpeg",
 		"keywords": ["Sidearm", "Immune"],
 		"requirements": [{"cardName": "Imperial Royal Guards"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 25 to 21 points."
+			}
+		],
 		"id": "el"
 	},
 	"em": {
@@ -2532,7 +2639,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 20,
-		"prevCost": 26,
 		"imageName": "T-7 Ion Snowtrooper.jpeg",
 		"keywords": ["Impact", "Ion", "Ion Token"],
 		"requirements": [{"cardName": "Snowtroopers"}],
@@ -2544,6 +2650,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 26 to 20 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 20 to 18 points."
 			}
 		],
 		"id": "eo"
@@ -2763,7 +2873,8 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "AT-RT Flamethrower",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 20,
+		"cost": 15,
+		"prevCost": 20,
 		"imageName": "AT-RT Flamethrower.jpeg",
 		"keywords": ["Blast", "Fixed", "Spray"],
 		"requirements": [{"cardName": "AT-RT"}],
@@ -2771,6 +2882,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "12 September 2019",
 				"description": "Cost reduced from 35 to 20 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 20 to 15 points."
 			}
 		],
 		"id": "fd"
@@ -2845,10 +2960,17 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "88 Twin Light Blaster Cannon",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 20,
+		"cost": 10,
+		"prevCost": 20,
 		"imageName": "88 Twin Light Blaster Cannon.jpeg",
 		"keywords": ["Impact", "Fixed"],
 		"requirements": [{"cardName": "AT-ST"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 20 to 10 points."
+			}
+		],
 		"id": "fh"
 	},
 	"fi": {
@@ -2857,10 +2979,17 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "AT-ST Mortar Launcher",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 10,
+		"cost": 5,
+		"prevCost": 10,
 		"imageName": "AT-ST Mortar Launcher.jpeg",
 		"keywords": ["Fixed", "Suppressive"],
 		"requirements": [{"cardName": "AT-ST"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 10 to 5 points."
+			}
+		],
 		"id": "fi"
 	},
 	"fj": {
@@ -2869,10 +2998,17 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "DW-3 Concussion Grenade Launcher",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 15,
+		"cost": 8,
+		"prevCost": 15,
 		"imageName": "DW-3 Concussion Grenade Launcher.jpeg",
 		"keywords": ["Fixed","Blast"],
 		"requirements": [{"cardName": "AT-ST"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 15 to 8 points."
+			}
+		],
 		"id": "fj"
 	},
 	"fk": {
@@ -2880,8 +3016,8 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Wedge Antilles",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 1,
-		"prevCost": 5,
+		"cost": 4,
+		"prevCost": 1,
 		"imageName": "Wedge Antilles.jpeg",
 		"keywords": ["Full Pivot"],
 		"requirements": [
@@ -2893,6 +3029,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 5 to 1 point."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 1 to 4 points."
 			}
 		],
 		"id": "fk"
@@ -2902,8 +3042,8 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "General Weiss",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 1,
-		"prevCost": 10,
+		"cost": 5,
+		"prevCost": 1,
 		"imageName": "General Weiss.jpeg",
 		"keywords": ["Arsenal"],
 		"requirements": [{"cardSubtype": "ground vehicle"}],
@@ -2911,6 +3051,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 10 to 1 point."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 1 to 5 points."
 			}
 		],
 		"id": "fl"
@@ -2958,8 +3102,8 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "The Emperor's Apprentice",
 		"isUnique": true,
 		"rank": "operative",
-		"cost": 155,
-		"prevCost": 170,
+		"cost": 175,
+		"prevCost": 155,
 		"defense": "red",
 		"surges": [],
 		"wounds": 6,
@@ -2981,12 +3125,17 @@ const cards = JSON.parse(JSON.stringify({
 		"upgradeBar": [
 			"force",
 			"force",
+			"training",
 			"training"
 		],
 		"history": [
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 170 to 155 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 155 to 175 points."
 			}
 		],
 		"id": "fn"
@@ -3028,14 +3177,18 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "BARC Ion Gunner",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 22,
-		"prevCost": 28,
+		"cost": 24,
+		"prevCost": 22,
 		"imageName": "BARC Ion Gunner.jpeg",
 		"keywords": ["Fixed", "Impact", "Ion", "Ion Token"],
 		"history": [
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 28 to 22 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 22 to 24 points."
 			}
 		],
 		"id": "fr"
@@ -3100,14 +3253,18 @@ const cards = JSON.parse(JSON.stringify({
 		"cardSubtype": "heavy weapon",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 35,
-		"prevCost": 32,
+		"cost": 32,
+		"prevCost": 35,
 		"imageName": "T-21B Trooper.jpeg",
 		"keywords": ["Critical"],
 		"history": [
 			{
 				"date": "19 November 2020",
 				"description": "Cost increased from 32 to 35 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 35 to 32 points."
 			}
 		],
 		"id": "fu"
@@ -3156,8 +3313,8 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "Darth Tyranus",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 200,
-		"prevCost": 205,
+		"cost": 195,
+		"prevCost": 200,
 		"defense": "red",
 		"surges": ["crit"],
 		"wounds": 6,
@@ -3179,6 +3336,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 205 to 200 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 200 to 195 points."
 			}
 		],
 		"id": "fx"
@@ -3196,7 +3357,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "commander",
 		"cardType": "unit",
-		"cost": 90,
+		"cost": 100,
+		"prevCost": 90,
 		"faction": "republic",
 		"imageName": "Clone Captain Rex.jpeg",
 		"keywords": [
@@ -3205,6 +3367,12 @@ const cards = JSON.parse(JSON.stringify({
 			"Scouting Party",
 			"Sharpshooter",
 			"Tactical"
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 90 to 100 points."
+			}
 		],
 		"upgradeBar": ["command", "training", "gear", "gear", "grenades"],
 		"id": "fy"
@@ -3306,7 +3474,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"rank": "heavy",
 		"cardType": "unit",
-		"cost": 170,
+		"cost": 175,
+		"prevCost": 170,
 		"faction": "separatists",
 		"imageName": "AAT Trade Federation Battle Tank.jpeg",
 		"keywords": [
@@ -3322,6 +3491,12 @@ const cards = JSON.parse(JSON.stringify({
 			"Impact"
 		],
 		"upgradeBar": ["pilot", "ordnance", "ordnance", "comms"],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 170 to 175 points."
+			}
+		],
 		"id": "gc"
 	},
 	"gd": {
@@ -3420,6 +3595,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"cardType": "upgrade",
 		"cost": 22,
+		"prevCost": 15,
 		"imageName": "DT-F16.jpeg",
 		"keywords": ["Compel", "Leader"],
 		"requirements": [{"cardName": "Imperial Death Troopers"}],
@@ -3427,6 +3603,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Wound threshold increased from 1 to 2."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 22 to 15 points."
 			}
 		],
 		"id": "gl"
@@ -3452,6 +3632,12 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "E-11D Configuration.jpeg",
 		"keywords": ["Blast", "Suppressive", "Reconfigure"],
 		"requirements": [{"cardName": "Imperial Death Troopers"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 8 to 0 points."
+			}
+		],
 		"id": "gn"
 	},
 	"go": {
@@ -3506,10 +3692,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "A-300 Rifle Gunner",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 9,
+		"cost": 1,
 		"imageName": "A-300 Rifle Gunner.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "X-34 Landspeeder"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 9 to 1 point."
+			}
+		],
 		"id": "gr"
 	},
 	"gs": {
@@ -3535,7 +3727,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Pao",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 22,
+		"cost": 20,
 		"imageName": "Pao.jpeg",
 		"keywords": ["Inspire", "Leader"],
 		"requirements": [{"cardName": "Rebel Pathfinders"}],
@@ -3543,6 +3735,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Wound threshold increased from 1 to 2."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 22 to 20 points."
 			}
 		],
 		"id": "gt"
@@ -3637,11 +3833,17 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "B1 Battle Droids",
 		"isUnique": false,
 		"rank": "corps",
-		"cost": 36,
+		"cost": 38,
 		"faction": "separatists",
 		"imageName": "B1 Battle Droids.jpeg",
 		"keywords": ["AI", "Coordinate", "Droid Trooper"],
 		"upgradeBar": ["heavy weapon", "personnel", "comms", "gear"],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 36 to 38 points."
+			}
+		],
 		"id": "gx"
 	},
 	"gy": {
@@ -3774,8 +3976,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Dewback Rider",
 		"isUnique": false,
 		"rank": "support",
-		"cost": 75,
-		"prevCost": 90,
+		"cost": 70,
 		"faction": "empire",
 		"imageName": "Dewback Rider.jpeg",
 		"keywords": [
@@ -3792,6 +3993,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 90 to 75 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 75 to 70 points."
 			}
 		],
 		"id": "hf"
@@ -3902,8 +4107,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "B1 Battle Droid",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 5,
-		"prevCost": 6,
+		"cost": 4,
 		"imageName": "B1 Battle Droid.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "B1 Battle Droids"}],
@@ -3911,6 +4115,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 6 to 5 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 5 to 4 points."
 			}
 		],
 		"id": "hn"
@@ -3921,10 +4129,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "E-5C B1 Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 18,
+		"cost": 16,
 		"imageName": "E-5C B1 Trooper.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "B1 Battle Droids"}],
+		"histoiry": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 18 to 16 points."
+			}
+		],
 		"id": "ho"
 	},
 	"hp": {
@@ -3952,8 +4166,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "DC-15 Phase I Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 27,
-		"prevCost": 30,
+		"cost": 26,
 		"imageName": "DC-15 Phase I Clone Trooper.jpeg",
 		"keywords": ["Critical"],
 		"requirements": [{"cardName": "Phase I Clone Troopers"}],
@@ -3961,6 +4174,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 30 to 27 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 27 to 26 points."
 			}
 		],
 		"id": "hq"
@@ -3971,10 +4188,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "E-60R B1 Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 20,
+		"cost": 18,
 		"imageName": "E-60R B1 Trooper.jpeg",
 		"keywords": ["Impact"],
 		"requirements": [{"cardName": "B1 Battle Droids"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 20 to 18 points."
+			}
+		],
 		"id": "hr"
 	},
 	"hs": {
@@ -3983,7 +4206,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 5,
-		"prevCost": 10,
 		"imageName": "T-21 Blaster Rifle.jpeg",
 		"keywords": ["Critical"],
 		"requirements": [{"cardName": "Dewback Rider"}],
@@ -4073,8 +4295,7 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "Sinister Cyborg",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 170,
-		"prevCost": 175,
+		"cost": 155,
 		"faction": "separatists",
 		"imageName": "General Grievous.jpeg",
 		"keywords": [
@@ -4092,6 +4313,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 175 to 170 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 170 to 155 points."
 			}
 		],
 		"id": "ia"
@@ -4101,8 +4326,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Smoke Grenades",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 2,
-		"prevCost": 6,
+		"cost": 3,
 		"imageName": "Smoke Grenades.jpeg",
 		"keywords": ["Smoke"],
 		"requirements": [],
@@ -4110,6 +4334,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 6 to 2 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 2 to 3 points."
 			}
 		],
 		"id": "ib"
@@ -4150,8 +4378,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "BARC Twin Laser Gunner",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 15,
-		"prevCost": 18,
+		"cost": 16,
 		"imageName": "BARC Twin Laser Gunner.jpeg",
 		"keywords": ["Fixed"],
 		"requirements": [{"cardName": "BARC Speeder"}],
@@ -4159,6 +4386,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 18 to 15 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 15 to 16 points."
 			}
 		],
 		"id": "id"
@@ -4174,8 +4405,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Droidekas",
 		"isUnique": false,
 		"rank": "support",
-		"cost": 80,
-		"prevCost": 100,
+		"cost": 75,
 		"faction": "separatists",
 		"imageName": "Droidekas.jpeg",
 		"keywords": [
@@ -4194,6 +4424,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 100 to 80 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 80 to 75 points."
 			}
 		],
 		"id": "ie"
@@ -4252,6 +4486,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Range band incresed from 1-3 to 1-4."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 32 to 30 points."
 			}
 		],
 		"id": "ig"
@@ -4316,10 +4554,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "DT-57 \"Annihilator\"",
 		"cardType": "upgrade",
 		"isUnique": true,
-		"cost": 12,
+		"cost": 8,
 		"imageName": "DT-57 %22Annihilator%22.jpeg",
 		"keywords": ["Critical", "Pierce", "Versatile"],
 		"requirements": [{"cardName": "General Grievous"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 12 to 8 points."
+			}
+		],
 		"id": "il"
 	},
 	"im": {
@@ -4409,8 +4653,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "B1 Security Droid",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 7,
-		"prevCost": 9,
+		"cost": 6,
 		"imageName": "B1 Security Droid.jpeg",
 		"keywords": [],
 		"displayName": "Security Droid",
@@ -4418,6 +4661,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 9 to 7 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 7 to 6 points."
 			}
 		],
 		"id": "it"
@@ -4439,8 +4686,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "DP-23 Phase I Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 23,
-		"prevCost": 27,
+		"cost": 22,
 		"imageName": "DP-23 Phase I Trooper.jpeg",
 		"keywords": ["Pierce"],
 		"displayName": "DP-23 Trooper",
@@ -4448,6 +4694,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 27 to 23 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 23 to 22 points."
 			}
 		],
 		"id": "iv"
@@ -4458,10 +4708,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardSubtype": "heavy weapon",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 20,
+		"cost": 18,
 		"imageName": "E-5s B1 Trooper.jpeg",
 		"keywords": ["Critical"],
 		"displayName": "E-5s Trooper",
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 20 to 18 points."
+			}
+		],
 		"id": "iw"
 	},
 	"ix": {
@@ -4492,6 +4748,12 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 26,
 		"imageName": "RT-97C Stormtrooper.jpeg",
 		"keywords": [],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 26 to 24 points."
+			}
+		],
 		"id": "iy"
 	},
 	"iz": {
@@ -4500,8 +4762,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "SX-21 Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 17,
-		"prevCost": 20,
+		"cost": 15,
 		"products": [],
 		"imageName": "SX-21 Trooper.jpeg",
 		"keywords": ["Impact"],
@@ -4509,6 +4770,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 20 to 17 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 17 to 15 points."
 			}
 		],
 		"id": "iz"
@@ -4519,14 +4784,17 @@ const cards = JSON.parse(JSON.stringify({
 		"cardSubtype": "heavy weapon",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 24,
-		"prevCost": 27,
+		"cost": 22,
 		"imageName": "T-21 Stormtrooper.jpeg",
 		"keywords": ["Critical"],
 		"history": [
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 27 to 24 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 24 to 22 points."
 			}
 		],
 		"id": "ja"
@@ -4594,8 +4862,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "operative",
 		"cardType": "unit",
-		"cost": 45,
-		"prevCost": 35,
+		"cost": 55,
 		"faction": "rebels",
 		"counterpartId": "ji",
 		"imageName": "R2-D2.jpeg",
@@ -4611,6 +4878,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost increased from 35 to 45."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 45 to 55 points."
 			}
 		],
 		"id": "jg"
@@ -4624,8 +4895,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "operative",
 		"counterpartId": "jj",
-		"cost": 45,
-		"prevCost": 35,
+		"cost": 55,
 		"surges": ["hit", "block"],
 		"speed": 1,
 		"courage": 2,
@@ -4643,7 +4913,11 @@ const cards = JSON.parse(JSON.stringify({
 		"history": [
 			{
 				"date": "19 November 2020",
-				"description": "Cost increased from 35 to 45."
+				"description": "Cost increased from 35 to 45 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 45 to 55 points."
 			}
 		],
 		"id": "jh"
@@ -4715,8 +4989,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Stormtrooper Captain",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 12,
-		"prevCost": 15,
+		"cost": 10,
 		"imageName": "Stormtrooper Captain.jpeg",
 		"keywords": ["Leader"],
 		"requirements": [{"cardName": "Stormtroopers"}],
@@ -4725,6 +4998,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 15 to 12 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 12 to 10 points."
 			}
 		],
 		"id": "jn"
@@ -4734,8 +5011,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Rebel Trooper Captain",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 11,
-		"prevCost": 14,
+		"cost": 9,
 		"imageName": "Rebel Trooper Captain.jpeg",
 		"keywords": ["Leader"],
 		"requirements": [{"cardName": "Rebel Troopers"}],
@@ -4744,6 +5020,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 14 to 11 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 11 to 9 points."
 			}
 		],
 		"id": "jo"
@@ -4753,8 +5033,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Rebel Trooper Specialist",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 12,
-		"prevCost": 14,
+		"cost": 8,
 		"imageName": "Rebel Trooper Specialist.jpeg",
 		"keywords": ["Surge Token"],
 		"requirements": [{"cardName": "Rebel Troopers"}],
@@ -4763,6 +5042,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 14 to 12 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 12 to 8 points."
 			}
 		],
 		"id": "jp"
@@ -4772,8 +5055,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Stormtrooper Specialist",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 12,
-		"prevCost": 15,
+		"cost": 9,
 		"imageName": "Stormtrooper Specialist.jpeg",
 		"keywords": ["Surge Token"],
 		"requirements": [{"cardName": "Stormtroopers"}],
@@ -4782,6 +5064,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 15 to 12 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 12 to 9 points."
 			}
 		],
 		"id": "jq"
@@ -4853,10 +5139,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Radiation Cannon B1 Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 22,
+		"cost": 16,
 		"imageName": "Radiation Cannon B1 Trooper.jpeg",
 		"keywords": ["Poison Token"],
 		"requirements": [{"cardName": "B1 Battle Droids"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 22 to 16 points."
+			}
+		],
 		"id": "jw"
 	},
 	"jx": {
@@ -4864,8 +5156,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Phase I Clone Captain",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 14,
-		"prevCost": 17,
+		"cost": 12,
 		"imageName": "Phase I Clone Captain.jpeg",
 		"keywords": ["Leader"],
 		"requirements": [{"cardName": "Phase I Clone Troopers"}],
@@ -4874,6 +5165,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 17 to 14 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 14 to 12 points."
 			}
 		],
 		"id": "jx"
@@ -4883,8 +5178,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Phase I Clone Specialist",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 14,
-		"prevCost": 17,
+		"cost": 11,
 		"imageName": "Phase I Clone Specialist.jpeg",
 		"keywords": ["Surge Token"],
 		"requirements": [{"cardName": "Phase I Clone Troopers"}],
@@ -4893,6 +5187,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 17 to 14 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 14 to 11 points."
 			}
 		],
 		"id": "jy"
@@ -5233,7 +5531,7 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "Needs No Introduction",
 		"isUnique": true,
 		"rank": "operative",
-		"cost": 125,
+		"cost": 120,
 		"defense": "white",
 		"surges": ["hit", "block"],
 		"courage": 3,
@@ -5254,6 +5552,12 @@ const cards = JSON.parse(JSON.stringify({
 			"gear",
 			"armament",
 			"grenades"
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 125 to 120 points."
+			}
 		],
 		"id": "kx"
 	},
@@ -5463,10 +5767,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Fives",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 36,
+		"cost": 40,
 		"imageName": "Fives.jpeg",
 		"keywords": [],
-		"requirements": [{"cardSubtype": "clone trooper"}]
+		"requirements": [{"cardSubtype": "clone trooper"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost increase from 36 to 40 points."
+			}
+		]
 	},
 	"lh": {
 		"id": "lh",
@@ -5474,10 +5784,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Echo",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 40,
+		"cost": 42,
 		"imageName": "Echo.jpeg",
 		"keywords": [],
-		"requirements": [{"cardSubtype": "clone trooper"}]
+		"requirements": [{"cardSubtype": "clone trooper"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 40 to 42 points."
+			}
+		]
 	},
 	"li": {
 		"id": "li",
@@ -5731,7 +6047,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"rank": "support",
 		"imageName": "AT-RT2.jpeg",
-		"cost": 65,
+		"cost": 60,
 		"products": [],
 		"faction": "republic",
 		"keywords": [
@@ -5742,7 +6058,13 @@ const cards = JSON.parse(JSON.stringify({
 			"Impact",
 			"Critical"
 		],
-		"upgradeBar": ["hardpoint", "comms"]
+		"upgradeBar": ["hardpoint", "comms"],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 65 to 60 points."
+			}
+		],
 	},
 	"mc": {
 		"cardType": "unit",
@@ -5752,7 +6074,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"rank": "support",
 		"imageName": "STAP Riders.jpeg",
-		"cost": 73,
+		"cost": 75,
 		"products": [],
 		"faction": "separatists",
 		"keywords": [
@@ -5765,6 +6087,12 @@ const cards = JSON.parse(JSON.stringify({
 			"Fixed"
 		],
 		"upgradeBar": ["comms"],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 73 to 75 points."
+			}
+		],
 		"id": "mc"
 	},
 	"md": {
@@ -5809,6 +6137,12 @@ const cards = JSON.parse(JSON.stringify({
 				]
 			],
 			{"faction": "empire"}
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 38 to 29 points."
+			}
 		]
 	},
 	"mf": {
@@ -5819,7 +6153,7 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Del Meeko.jpeg",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 38,
+		"cost": 25,
 		"products": [],
 		"keywords": ["Repair", "High Velocity", "Lethal", "Pierce"],
 		"requirements": [
@@ -5838,6 +6172,12 @@ const cards = JSON.parse(JSON.stringify({
 				]
 			],
 			{"faction": "empire"}
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 38 to 25 points."
+			}
 		]
 	},
 	"mg": {
@@ -6155,7 +6495,13 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 29,
 		"imageName": "T-21 Special Forces Trooper.jpeg",
 		"keywords": ["Critical"],
-		"requirements": [{"cardName": "Imperial Special Forces"}]
+		"requirements": [{"cardName": "Imperial Special Forces"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 29 to 27 points."
+			}
+		]
 	},
 	"na": {
 		"id": "na",
@@ -6167,7 +6513,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "commander",
 		"imageName": "Anakin Skywalker.jpeg",
-		"cost": 160,
+		"cost": 155,
 		"products": [],
 		"faction": "republic",
 		"flaw": "nh",
@@ -6183,6 +6529,12 @@ const cards = JSON.parse(JSON.stringify({
 			"force",
 			"training",
 			"training"
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 160 to 155 points."
+			}
 		]
 	},
 	"nb": {
@@ -6433,7 +6785,13 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 25,
 		"imageName": "J-19 Bo-Rifle Staff.jpeg",
 		"keywords": ["Charge", "Immune", "Lethal", "Reconfigure"],
-		"requirements": [{"cardName": "Agent Kallus"}]
+		"requirements": [{"cardName": "Agent Kallus"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 25 to 15 points."
+			}
+		]
 	},
 	"nq": {
 		"id": "nq",
@@ -6482,7 +6840,7 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "Trained For Leadership",
 		"isUnique": false,
 		"rank": "commander",
-		"cost": 55,
+		"cost": 60,
 		"faction": "republic",
 		"defense": "red",
 		"surges": [],
@@ -6500,6 +6858,12 @@ const cards = JSON.parse(JSON.stringify({
 			"command",
 			"training",
 			"gear"
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 55 to 60 points."
+			}
 		],
 		"id": "ns"
 	},
@@ -6652,13 +7016,19 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Viper Recon Droid",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 8,
+		"cost": 6,
 		"imageName": "Viper Recon Droid.jpeg",
 		"keywords": [
 			"Observe",
 			"Sidearm"
 		],
-		"requirements": [{"cardSubtype": "droid trooper"}]
+		"requirements": [{"cardSubtype": "droid trooper"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 8 to 6 points."
+			}
+		]
 	},
 	"of": {
 		"id": "of",
@@ -6805,7 +7175,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "LAAT Patrol Transport",
 		"isUnique": false,
 		"rank": "heavy",
-		"cost": 120,
+		"cost": 105,
 		"faction": "empire",
 		"defense": "white",
 		"surges": ["block"],
@@ -6828,6 +7198,12 @@ const cards = JSON.parse(JSON.stringify({
 			"ordnance",
 			"comms"
 		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 120 to 105 points."
+			}
+		],
 		"id": "on"
 	},
 	"oo": {
@@ -6836,7 +7212,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "LAAT Patrol Transport",
 		"isUnique": false,
 		"rank": "heavy",
-		"cost": 120,
+		"cost": 105,
 		"faction": "republic",
 		"defense": "white",
 		"surges": ["block"],
@@ -6858,6 +7234,12 @@ const cards = JSON.parse(JSON.stringify({
 			"pilot",
 			"ordnance",
 			"comms"
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 120 to 105 points."
+			}
 		],
 		"id": "oo"
 	},
@@ -6900,7 +7282,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Governor Pryce",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 10,
+		"cost": 5,
 		"imageName": "Governor Pryce.jpeg",
 		"keywords": [
 			"Field Commander"
@@ -6909,6 +7291,12 @@ const cards = JSON.parse(JSON.stringify({
 			"AND",
 			{"faction": "empire"},
 			{"rank": "heavy"}
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 10 to 5 points."
+			}
 		]
 	},
 	"os": {
@@ -6952,10 +7340,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "AG-2G Quad Laser",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 36,
+		"cost": 28,
 		"imageName": "AG-2G Quad Laser.jpeg",
 		"keywords": ["Impact"],
-		"requirements": [{"cardName": "A-A5 Speeder Truck"}]
+		"requirements": [{"cardName": "A-A5 Speeder Truck"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 36 to 28 points."
+			}
+		]
 	},
 	"ov": {
 		"id": "ov",
@@ -6980,10 +7374,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Reckless Driver",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 6,
+		"cost": 12,
 		"imageName": "Reckless Driver.jpeg",
 		"keywords": [],
-		"requirements": [{"cardName": "A-A5 Speeder Truck"}]
+		"requirements": [{"cardName": "A-A5 Speeder Truck"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 6 to 12 points."
+			}
+		]
 	},
 	"ox": {
 		"id": "ox",
@@ -7004,13 +7404,19 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Refurbished \"Gonk\" Droid",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 10,
+		"cost": 14,
 		"imageName": "Refurbished %22Gonk%22 Droid.jpeg",
 		"keywords": ["Shielded", "Shield Token"],
 		"requirements": [
 			"OR",
 			{"cardName": "X-34 Landspeeder"},
 			{"cardName": "A-A5 Speeder Truck"}
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 10 to 14 points."
+			}
 		]
 	},
 	"oz": {
@@ -7036,10 +7442,16 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Unorthodox Tactician",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 10,
+		"cost": 16,
 		"imageName": "Unorthodox Tactician.jpeg",
 		"keywords": [],
-		"requirements": [{"cardName": "A-A5 Speeder Truck"}]
+		"requirements": [{"cardName": "A-A5 Speeder Truck"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 10 to 16 points."
+			}
+		]
 	},
 	"pb": {
 		"id": "pb",
@@ -7048,13 +7460,19 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Baron Rudor",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 12,
+		"cost": 8,
 		"imageName": "Baron Rudor.jpeg",
 		"keywords": ["Marksman"],
 		"requirements": [
 			"AND",
 			{"faction": "empire"},
 			{"cardSubtype": "repulsor vehicle"}
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 12 to 8 points."
+			}
 		]
 	},
 	"pc": {
