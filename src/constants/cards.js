@@ -391,6 +391,7 @@ const cards = JSON.parse(JSON.stringify({
 		"faction": "rebels",
 		"imageName": "Han Solo.jpeg",
 		"keywords": [
+			"Steady",
 			"Low Profile",
 			"Gunslinger",
 			"Sharpshooter",
@@ -965,9 +966,10 @@ const cards = JSON.parse(JSON.stringify({
 			"Master of the Force",
 			"Relentless",
 			"Impact",
-			"Pierce"
+			"Pierce",
+			"Compel"
 		],
-		"upgradeBar": ["force", "force", "force"],
+		"upgradeBar": ["command", "force", "force", "force"],
 		"history": [
 			{
 				"date": "12 September 2019",
@@ -3125,9 +3127,9 @@ const cards = JSON.parse(JSON.stringify({
 		"prevCost": 155,
 		"defense": "red",
 		"surges": [],
-		"wounds": 6,
+		"wounds": 7,
 		"courage": 3,
-		"speed": 1,
+		"speed": 2,
 		"imageName": "Darth Vader2.jpeg",
 		"keywords": [
 			"Deflect",
@@ -3135,7 +3137,6 @@ const cards = JSON.parse(JSON.stringify({
 			"Jedi Hunter",
 			"Master of the Force",
 			"Relentless",
-			"Spur",
 			"Impact",
 			"Pierce",
 			"Blast",
