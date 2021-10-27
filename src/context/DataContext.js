@@ -83,6 +83,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Points Adjustments",
+    "date": "27 October 2021",
+    "body": "Implemented 2021 points adjustments (effective 8 November 2021). Feature to toggle old point costs will be implemented later today."
+  },
+  {
     "title": "New Legion Guide",
     "date": "4 October 2021",
     "body": "Added a link to the Legion Quick Guide in the navigation menu. Check it out!"
