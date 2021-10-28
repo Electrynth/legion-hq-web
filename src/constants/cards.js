@@ -973,7 +973,7 @@ const cards = JSON.parse(JSON.stringify({
 			},
 			{
 				"date": "27 October 2021",
-				"description": "Cost increased from 175 to 190 points."
+				"description": "Cost increased from 175 to 190 points. Added Command upgrade slot and Compel: Corps Trooper."
 			}
 		],
 		"id": "at"
@@ -3007,7 +3007,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 5,
 		"prevCost": 1,
 		"imageName": "Wedge Antilles.jpeg",
-		"keywords": ["Full Pivot"],
+		"keywords": ["Full Pivot", "Field Commander"],
 		"requirements": [
 			"AND",
 			{"cardSubtype": "repulsor vehicle"},
@@ -3020,7 +3020,7 @@ const cards = JSON.parse(JSON.stringify({
 			},
 			{
 				"date": "27 October 2021",
-				"description": "Cost increased from 1 to 5 points."
+				"description": "Cost increased from 1 to 5 points. Added Field Commander keyword."
 			}
 		],
 		"id": "fk"
@@ -3033,7 +3033,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 5,
 		"prevCost": 1,
 		"imageName": "General Weiss.jpeg",
-		"keywords": ["Arsenal"],
+		"keywords": ["Arsenal", "Field Commander"],
 		"requirements": [{"cardSubtype": "ground vehicle"}],
 		"history": [
 			{
@@ -3042,7 +3042,7 @@ const cards = JSON.parse(JSON.stringify({
 			},
 			{
 				"date": "27 October 2021",
-				"description": "Cost increased from 1 to 5 points."
+				"description": "Cost increased from 1 to 5 points. Added Field Commander keyword"
 			}
 		],
 		"id": "fl"
@@ -3121,7 +3121,7 @@ const cards = JSON.parse(JSON.stringify({
 			},
 			{
 				"date": "27 October 2021",
-				"description": "Cost increased from 155 to 175 points."
+				"description": "Cost increased from 155 to 175 points. Increased wound threshold from 6 to 7. Increased speed from 1 to 2. Removed Spur keyword."
 			}
 		],
 		"id": "fn"
