@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ListContext from 'context/ListContext';
 import ranks from 'constants/ranks';
 import legionModes from 'constants/legionModes';
+import cards from 'constants/cards';
 import RankButton from './RankButton';
 
 const useStyles = makeStyles({
@@ -22,6 +23,7 @@ function RankSelector() {
       rankInteractions += currentList.rankInteractions[key];
     });
   }
+
   return (
     <div className={classes.container}>
       {Object.keys(ranks).map(key => {
@@ -32,6 +34,8 @@ function RankSelector() {
         let rightBoundary = mode.unitCounts[key][1];
         if (key === 'special') rightBoundary += rankInteractions;
         if (count >= leftBoundary && count <= rightBoundary) {
+          color = 'primary';
+        } else if (key === 'commander' && currentList.hasFieldCommander) {
           color = 'primary';
         }
         return (

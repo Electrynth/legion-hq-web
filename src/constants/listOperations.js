@@ -85,6 +85,7 @@ function rehashList(list) {
 
 function consolidate(list) {
   let hasContingencyKeyword = false;
+  list.hasFieldCommander = false;
   list.commanders = [];
   list.uniques = [];
   list.unitCounts = { ...listTemplate.unitCounts };
@@ -108,6 +109,9 @@ function consolidate(list) {
         if (upgradeCard.isUnique) {
           list.uniques.push(upgradeCard.id);
           unit.hasUniques = true;
+        }
+        if (upgradeCard.keywords.includes('Field Commander')) {
+          list.hasFieldCommander = true;
         }
       }
     }
