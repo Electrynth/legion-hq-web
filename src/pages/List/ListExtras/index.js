@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import {
+  History as UsePrevIcon,
   Clear as ClearIcon,
   Save as SaveIcon,
   CallSplit as ForkIcon
@@ -23,7 +24,8 @@ function ListExtras() {
     listSaveMessage,
     handleClearList,
     handleListSave,
-    handleListFork
+    handleListFork,
+    handleToggleUsingOldPoints
   } = useContext(ListContext);
 
   return (
@@ -59,6 +61,13 @@ function ListExtras() {
         icon={<ClearIcon />}
         label="Clear List"
         handleClick={handleClearList}
+      />
+      <SimpleButton
+        timeout={1000}
+        timeoutMessage="Changing Points..."
+        icon={<UsePrevIcon />}
+        label={currentList.isUsingOldPoints ? "Using Old Points" : "Using New Points"}
+        handleClick={handleToggleUsingOldPoints}
       />
     </div>
   );

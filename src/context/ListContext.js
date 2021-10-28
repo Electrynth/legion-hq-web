@@ -31,7 +31,8 @@ import {
   getEligibleUnitsToAdd,
   getEquippableUpgrades,
   getEquippableLoadoutUpgrades,
-  getEligibleBattlesToAdd
+  getEligibleBattlesToAdd,
+  toggleUsingOldPoints
 } from 'constants/listOperations';
 import listTemplate from 'constants/listTemplate';
 
@@ -137,6 +138,10 @@ export function ListProvider({
       currentList.unitObjectStrings, startIndex, endIndex
     );
     setCurrentList({ ...currentList });
+  }
+  const handleToggleUsingOldPoints = () => {
+    const newList = toggleUsingOldPoints(currentList);
+    setCurrentList({ ...newList });
   }
   const handleIncrementStackSize = () => {
     if (stackSize < 12) { setStackSize(stackSize + 1); }
@@ -348,7 +353,8 @@ export function ListProvider({
     handleDecrementStackSize,
     handleListSave,
     handleListFork,
-    handleMergeList
+    handleMergeList,
+    handleToggleUsingOldPoints
   };
   const modalProps = {
     handleOpenModal,

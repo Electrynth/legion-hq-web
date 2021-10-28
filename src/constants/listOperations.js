@@ -10,7 +10,9 @@ function countPoints(list) {
   list.rankInteractions = {};
   list.units.forEach((unit, unitIndex) => {
     const unitCard = cards[unit.unitId];
-    unit.totalUnitCost = unitCard.cost;
+    if (list.isUsingOldPoints) {
+      unit.totalUnitCost = unitCard.prevCost ? unitCard.prevCost : unitCard.cost;
+    } else unit.totalUnitCost = unitCard.cost;
     if (unitCard.id in interactions.entourages) {
       const interaction = interactions.entourages[unitCard.id];
       if (interaction.isConditionMet(list, unit)) {
@@ -21,7 +23,9 @@ function countPoints(list) {
     unit.upgradesEquipped.forEach((upgradeId, upgradeIndex) => {
       if (upgradeId) {
         const upgradeCard = cards[upgradeId];
-        unit.totalUnitCost += upgradeCard.cost;
+        if (list.isUsingOldPoints) {
+          unit.totalUnitCost += upgradeCard.prevCost ? upgradeCard.prevCost : upgradeCard.cost;
+        } else unit.totalUnitCost += upgradeCard.cost;
         if (upgradeId in interactions.upgradePoints) {
           const interaction = interactions.upgradePoints[upgradeId];
           if (interaction.isConditionMet(list, unit)) {
@@ -35,18 +39,30 @@ function countPoints(list) {
     list.pointTotal += unit.totalUnitCost;
     if (unit.counterpart) {
       const counterpartCard = cards[unit.counterpart.counterpartId];
-      unit.counterpart.totalUnitCost = counterpartCard.cost;
+      if (list.isUsingOldPoints) {
+        unit.counterpart.totalUnitCost = counterpartCard.prevCost ? counterpartCard.prevCost : counterpartCard.cost;
+      } else unit.counterpart.totalUnitCost = counterpartCard.cost;
+
       unit.counterpart.upgradesEquipped.forEach(upgradeId => {
         if (upgradeId) {
           const upgradeCard = cards[upgradeId];
-          unit.counterpart.totalUnitCost += upgradeCard.cost;
+          if (list.isUsingOldPoints) {
+            unit.counterpart.totalUnitCost += upgradeCard.prevCost ? upgradeCard.prevCost : upgradeCard.cost;
+          } else unit.counterpart.totalUnitCost += upgradeCard.cost;
         }
       });
       list.pointTotal += unit.counterpart.totalUnitCost;
       list.uniques.push(unit.counterpart.counterpartId);
     }
   });
+
   return list;
+}
+
+function toggleUsingOldPoints(list) {
+  if (!list.isUsingOldPoints) list.isUsingOldPoints = true;
+  else list.isUsingOldPoints = false;
+  return countPoints(list);
 }
 
 function rehashList(list) {
@@ -1362,6 +1378,7 @@ function mergeLists(primaryList, secondaryList) {
 }
 
 export {
+  toggleUsingOldPoints,
   rehashList,
   convertHashToList,
   changeListTitle,
