@@ -3004,7 +3004,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Wedge Antilles",
 		"isUnique": true,
 		"cardType": "upgrade",
-		"cost": 4,
+		"cost": 5,
 		"prevCost": 1,
 		"imageName": "Wedge Antilles.jpeg",
 		"keywords": ["Full Pivot"],
@@ -3020,7 +3020,7 @@ const cards = JSON.parse(JSON.stringify({
 			},
 			{
 				"date": "27 October 2021",
-				"description": "Cost increased from 1 to 4 points."
+				"description": "Cost increased from 1 to 5 points."
 			}
 		],
 		"id": "fk"
@@ -4360,7 +4360,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "BARC Twin Laser Gunner",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 16,
+		"cost": 18,
 		"prevCost": 15,
 		"imageName": "BARC Twin Laser Gunner.jpeg",
 		"keywords": ["Fixed"],
@@ -4372,7 +4372,7 @@ const cards = JSON.parse(JSON.stringify({
 			},
 			{
 				"date": "27 October 2021",
-				"description": "Cost increased from 15 to 16 points."
+				"description": "Cost increased from 15 to 18 points."
 			}
 		],
 		"id": "id"
@@ -5388,7 +5388,8 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Phase II Mortar Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 20,
+		"cost": 18,
+		"prevCost": 20,
 		"imageName": "Phase II Mortar Trooper.jpeg",
 		"keywords": ["Critical", "Suppressive", "Cumbersome"],
 		"requirements": [{"cardName": "Phase II Clone Troopers"}],
@@ -5396,6 +5397,10 @@ const cards = JSON.parse(JSON.stringify({
 			{
 				"date": "19 November 2020",
 				"description": "Cost reduced from 25 to 20 points."
+			},
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 20 to 18 points."
 			}
 		],
 		"id": "ko"
@@ -5485,10 +5490,17 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "OOM-Series Droid Pilot",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 7,
+		"cost": 8,
+		"prevCost": 7,
 		"imageName": "OOM-Series Droid Pilot.jpeg",
 		"keywords": ["Coordinate"],
-		"requirements": [{"cardName": "AAT Trade Federation Battle Tank"}]
+		"requirements": [{"cardName": "AAT Trade Federation Battle Tank"}],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost increased from 7 to 8 points."
+			}
+		]
 	},
 	"kw": {
 		"cardType": "unit",
