@@ -85,7 +85,7 @@ const newsPosts = [
   {
     "title": "Points Adjustments",
     "date": "27 October 2021",
-    "body": "Implemented 2021 points adjustments (effective 8 November 2021). Feature to toggle old point costs will be implemented later today."
+    "body": "Implemented 2021 points adjustments (effective 8 Nov 2021). Feature to toggle old point costs added. Contact if discrepancies are found."
   },
   {
     "title": "New Legion Guide",
