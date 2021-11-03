@@ -13,7 +13,7 @@ const keywords = {
   "Loadout": "When you deploy, you may swap any of your equipped upgrades with your set-aside upgrades.",
   "Incognito": "You cannot be attacked by enemy units beyond range 1, unless you have performed an attack or used an objective card action during this game.",
   "Skirmish": "Intended for use in Skirmish matches.",
-  "Low Profile": "While defending, if you have light cover, improve your cover by 1.",
+  "Low Profile": "While defending against an attack, if a unit with this keyword has light cover, cancel one additional hit result.",
   "Generator": "During the End Phase, flip X inactive shield token(s).",
   "Agile": "After you perform a standard move, gain X dodge token(s). Note: climbing, clambering, embarking, disembarking, pivoting, and reversing are not standard moves. This effect does not trigger abilities that occur after dodge actions are performed.",
   "Compel": "After another friendly unit at range 1-2 rallies, if it is suppressed but not panicked, it may gain 1 suppression token to perform a free move action.",
@@ -127,7 +127,16 @@ const keywords = {
   "Fire Support": "When another friendly unit performs a ranged attack, if you have a faceup order token, each mini in your unit may add an eligible weapon to the attack pool. If you do, flip your order token facedown. Limit 1 FIRE SUPPORT per attack pool. Note: Can still be used even if a unit would panic during its activation. Only the main unit attacking determines cover, LoS, and surges.",
   "Beam": "After performing an attack with this weapon, you may perform up to 2 extra attacks using only this weapon. Each attack must be against an enemy unit that is in line of sight, has not already defended, and is at range 1 of the defender.",
   "Cycle": "At the end of your activation, if you did not use this card, ready it.",
-  "Field Commander": "After a friendly neutral command card is played, you may be nominated as commander."
+  "Field Commander": "After a friendly neutral command card is played, you may be nominated as commander.",
+  "Ataru Mastery": "You can perform up to 2 attack actions. After you perform an attack, gain 1 dodge token. After defending, you gains 1 aim token. When defending against a ranged attack, if you spend a dodge token, the attacker suffers 1 wound for each surge result rolled.",
+  "Guidance": "When you use this action, choose another friendly trooper at range 1-2. That unit may perform a free non-attack action.",
+  "Reinforcements": "You may deploy after all units without Reinforcements have deployed.",
+  "Strategize": "When you use this action, gain 1 suppression token to choose X friendly units at range 1. The chosen units gain each 1 aim and 1 dodge token.",
+  "Direct": "During the Command Phase, you may issue an order to a friendly unit with AI at range 1-2.",
+  "Lethal": "When attacking with a weapon with this keyword, you may spend up to X aim tokens during the Modify Attack Dice step. If you do, the attack pool gains Pierce 1 for each aim token spent.",
+  "Override": "When a friendly unit at range 1-2 activates, you may gain 1 suppression token. If you do, that unit ignores AI during its activation.",
+  "Bolster": "When you use this action, you may choose up to 2 friendly units at range 1. Each chosen unit gains 1 surge token.",
+  "Duelist": "While performing a melee attack, if you spend an aim token, gain Pierce 1. While defending against a melee attack, if you spend a dodge token, gain Immune: Pierce."
 };
 
 export default keywords;
