@@ -5110,14 +5110,14 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "OOM-Series Battle Droid",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 9,
+		"cost": 8,
 		"imageName": "OOM-Series Battle Droid.jpeg",
 		"keywords": ["Coordinate", "Leader"],
 		"requirements": [{"cardName": "B1 Battle Droids"}],
 		"history": [
 			{
 				"date": "19 November 2020",
-				"description": "Cost reduced from 12 to 9 points."
+				"description": "Cost reduced from 12 to 8 points."
 			}
 		],
 		"id": "jv"
@@ -5490,17 +5490,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "OOM-Series Droid Pilot",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 8,
-		"prevCost": 7,
+		"cost": 7,
 		"imageName": "OOM-Series Droid Pilot.jpeg",
 		"keywords": ["Coordinate"],
 		"requirements": [{"cardName": "AAT Trade Federation Battle Tank"}],
-		"history": [
-			{
-				"date": "27 October 2021",
-				"description": "Cost increased from 7 to 8 points."
-			}
-		]
+		"history": []
 	},
 	"kw": {
 		"cardType": "unit",
