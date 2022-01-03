@@ -6066,7 +6066,7 @@ const cards = JSON.parse(JSON.stringify({
 				"date": "27 October 2021",
 				"description": "Cost reduced from 65 to 60 points."
 			}
-		],
+		]
 	},
 	"mc": {
 		"cardType": "unit",
