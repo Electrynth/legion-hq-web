@@ -14,8 +14,10 @@ import { Description as TextIcon } from '@material-ui/icons';
 import {
   generateStandardText,
   generateMinimalText,
-  generateTournamentText
+  generateTournamentText,
+  generateHTMLText
 } from 'constants/listOperations';
+import HtmlListText from './HtmlListText';
 import DialogModal from './DialogModal';
 import ClipboardButton from './ClipboardButton';
 
@@ -23,6 +25,7 @@ function generateListText(type, currentList) {
   if (type === 0) return generateStandardText(currentList);
   else if (type === 1) return generateMinimalText(currentList);
   else if (type === 2) return generateTournamentText(currentList);
+  else if (type === 3) return generateHTMLText(currentList);
   else return '';
 }
 
@@ -53,6 +56,7 @@ function DialogContent({
           <Tab label="Standard" />
           <Tab label="Minimal" />
           <Tab label="Tournament" />
+          <Tab label="Tabletop.to (HTML)" />
         </Tabs>
       </AppBar>
       <TabPanel value="standard" index={0}>
@@ -64,19 +68,34 @@ function DialogContent({
       <TabPanel value="tournament" index={2}>
         Tournament
       </TabPanel>
+      <TabPanel value="tournament" index={3}>
+        Tabletop.to
+      </TabPanel>
       <div style={{ marginTop: 16 }} />
-      {content && (
-        <TextField
-          multiline
-          size="small"
-          variant="outlined"
-          value={content}
-          onChange={handleChangeListText}
-          style={{ padding: 8, width: '100%' }}
-        />
-      )}
+      <TextField
+        multiline
+        size="small"
+        variant="outlined"
+        value={tabValue === 3 ? 'Coming soon!' : content}
+        onChange={handleChangeListText}
+        style={{ padding: 8, width: '100%' }}
+      />
     </div>
   );
+
+  /*
+  {tabValue === 3 ?
+    <HtmlListText list={currentList} /> :
+    <TextField
+      multiline
+      size="small"
+      variant="outlined"
+      value={content}
+      onChange={handleChangeListText}
+      style={{ padding: 8, width: '100%' }}
+    />
+  }
+  */
 }
 
 function TextExportButton({ currentList }) {
