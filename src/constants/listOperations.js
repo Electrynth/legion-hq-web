@@ -164,7 +164,7 @@ function generateTournamentText(
     if (unit.count === 1) {
       if (unit.unitId === 'pz') { // Kraken
         units += `${unitCard.cardName} - Kraken (${unit.totalUnitCost})\n`;
-      } else if (unit.unitId === 'pz') { // Kalani
+      } else if (unit.unitId === 'qa') { // Kalani
         units += `${unitCard.cardName} - Kalani (${unit.totalUnitCost})\n`;
       } else {
         units += `${unitCard.cardName} (${unit.totalUnitCost})\n`;
