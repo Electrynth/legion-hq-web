@@ -545,7 +545,7 @@ function generateTTSJSONText(list) {
     if (unit.counterpart) {
       const counterpart = unit.counterpart;
       const counterpartCard = cards[counterpart.counterpartId];
-      unitJSON.upgrades.push(`${counterpartCard.cardName} ${counterpartCard.title}`);
+      unitJSON.upgrades.push(`${counterpartCard.cardName}${counterpartCard.title ? ` ${counterpartCard.title}}` : ''}`);
       for (let j = 0; j < counterpart.upgradesEquipped.length; j++) {
         if (counterpart.upgradesEquipped[j]) {
           if (idToName[counterpart.upgradesEquipped[j]]) {
@@ -628,7 +628,7 @@ function generateMinimalText(list) {
     } else if (unit.unitId === 'qa') {
       line += '- Kalani';
     }
-    
+
     let upgrades = '';
     let loadout = '';
     unit.upgradesEquipped.forEach((id, i) => {
