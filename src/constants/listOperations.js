@@ -471,7 +471,7 @@ function generateTTSJSONText(list) {
     "ea": "A-300 Config",
     "kh": "A-280-CFE Config",
     "gn": "E-11D Config",
-    "np": "J-19 Bo-Rifle",
+    "np": "J-19 Bo-rifle",
     "Ci": "Clear Conditions",
     "Cl": "War Weary",
     "Dj": "Battle Lines",
