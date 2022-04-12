@@ -623,6 +623,12 @@ function generateMinimalText(list) {
     let line = '';
     if (unit.count > 1) line += `${unit.count}× `;
     line += `${unitCard.cardName} `;
+    if (unit.unitId === 'pz') {
+      line += '- Kraken ';
+    } else if (unit.unitId === 'qa') {
+      line += '- Kalani';
+    }
+    
     let upgrades = '';
     let loadout = '';
     unit.upgradesEquipped.forEach((id, i) => {
