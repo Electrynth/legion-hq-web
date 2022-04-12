@@ -5978,7 +5978,6 @@ const cards = JSON.parse(JSON.stringify({
 	"lw": {
 		"displayName": "ID10",
 		"cardName": "Iden's ID10 Seeker Droid",
-		"title": "Droid",
 		"faction": "empire",
 		"isUnique": true,
 		"upgradeBar": ["comms"],
@@ -6786,7 +6785,7 @@ const cards = JSON.parse(JSON.stringify({
 		"id": "np",
 		"displayName": "",
 		"cardSubtype": "armament",
-		"cardName": "J-19 Bo-Rifle Staff",
+		"cardName": "J-19 Bo-rifle Staff",
 		"isUnique": true,
 		"cardType": "upgrade",
 		"cost": 15,
