@@ -955,7 +955,8 @@ function getEligibleUnitsToAdd(list, rank) {
     }
     if (card.cardType !== 'unit') continue;
     if (card.rank !== rank) continue;
-    if (!list.faction.includes(card.faction)) continue;
+    if (!list.faction.includes(card.faction) && !card.affiliations) continue;
+    if (!list.faction.includes(card.faction) && card.affiliations && !card.affiliations.includes(list.faction)) continue;
     if (list.uniques.includes(id)) continue;
     if (list.commanders.includes(card.cardName)) continue;
     if (card.detachment) {
