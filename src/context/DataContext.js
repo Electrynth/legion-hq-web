@@ -83,6 +83,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "New Mercenary Cards Added",
+    "date": "24 April 2022",
+    "body": "Added Pyke and Black Sun cards, the special counting of ranks for mercenaries is not yet implemented."
+  },
+  {
     "title": "Points Adjustments",
     "date": "27 October 2021",
     "body": "Implemented 2021 points adjustments (effective 8 Nov 2021). Feature to toggle old point costs added. Contact if discrepancies are found."
