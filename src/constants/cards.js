@@ -8488,12 +8488,7 @@ const cards = JSON.parse(JSON.stringify({
 		"faction": "fringe",
 		"affiliations": ["empire", "separatists"],
 		"imageName": "Black Sun Vigo.jpeg",
-		"keywords": [
-			"Dauntless",
-			"Precise",
-			"Self-Preservation",
-			"Independent"
-		],
+		"keywords": [],
 		"upgradeBar": ["command", "gear"],
 		"history": []
 	},
@@ -8686,6 +8681,18 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Scatter Gun Enforcer.jpeg",
 		"keywords": ["Pierce"],
 		"requirements": [{"cardName": "Black Sun Enforcers"}]
+	},
+	"ro": {
+		"id": "ro",
+		"displayName": "",
+		"cardSubtype": "gear",
+		"cardName": "Prepared Supplies",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Prepared Supplies.jpeg",
+		"keywords": ["Cache"],
+		"requirements": []
 	}
 }));
 
