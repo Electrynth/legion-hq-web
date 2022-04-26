@@ -8459,7 +8459,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Pyke Syndicate Foot Soldiers",
 		"isUnique": false,
 		"rank": "corps",
-		"cost": 0,
+		"cost": 40,
 		"faction": "fringe",
 		"affiliations": ["rebels", "republic", "empire", "separatists"],
 		"imageName": "Pyke Syndicate Foot Soldiers.jpeg",
