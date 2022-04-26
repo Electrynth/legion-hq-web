@@ -8693,6 +8693,18 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Prepared Supplies.jpeg",
 		"keywords": ["Cache"],
 		"requirements": []
+	},
+	"rp": {
+		"id": "rp",
+		"displayName": "",
+		"cardSubtype": "grenades",
+		"cardName": "Sonic Imploders",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 3,
+		"imageName": "Sonic Imploders.jpeg",
+		"keywords": ["Suppressive"],
+		"requirements": []
 	}
 }));
 
