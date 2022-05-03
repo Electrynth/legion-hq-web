@@ -1231,6 +1231,7 @@ function getEquippableUpgrades(
   for (let i = 0; i < cardsById.length; i++) {
     const id = cardsById[i];
     const card = cards[id];
+    if (id === 'nc') continue; // duplicate card
     if (card.cardType !== 'upgrade') continue;
     if (card.cardSubtype !== upgradeType) continue;
     if (list.uniques.includes(id)) continue;
@@ -1240,7 +1241,7 @@ function getEquippableUpgrades(
     const { faction } = unitCard;
 
     if (faction === 'rebels' || faction === 'republic') unitCard['light side'] = true;
-    else if (faction === 'separatists' || faction === 'empire') unitCard['dark side'] = true;
+    else if (faction === 'separatists' || faction === 'empire' || faction === 'fringe') unitCard['dark side'] = true;
 
     if (unitCard.keywords.includes('Tempted')) {
       unitCard['light side'] = true;
