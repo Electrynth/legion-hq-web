@@ -83,6 +83,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "New Cards Added",
+    "date": "3 May 2022",
+    "body": "Added Shadow Collective Maul and other cards"
+  },
+  {
     "title": "New Mercenary Cards Added",
     "date": "24 April 2022",
     "body": "Added Pyke and Black Sun cards, the special counting of ranks for mercenaries is not yet implemented."
