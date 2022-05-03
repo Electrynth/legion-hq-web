@@ -8580,7 +8580,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Mandalorian Super Commandos",
 		"isUnique": false,
 		"rank": "special",
-		"cost": 75,
+		"cost": 0,
 		"faction": "fringe",
 		"imageName": "Mandalorian Super Commandos.jpeg",
 		"keywords": [],
