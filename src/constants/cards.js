@@ -8529,11 +8529,24 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Maul",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 0,
+		"cost": 170,
 		"faction": "fringe",
 		"imageName": "Maul2.jpeg",
-		"keywords": [],
-		"upgradeBar": [],
+		"keywords": [
+			"Jump",
+			"Allies of Convenience",
+			"Deflect",
+			"Immune",
+			"Juyo Mastery",
+			"Wound"
+		],
+		"upgradeBar": [
+			"force",
+			"force",
+			"command",
+			"training",
+			"armament"
+		],
 		"history": []
 	},
 	"rd": {
@@ -8704,6 +8717,63 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 3,
 		"imageName": "Sonic Imploders.jpeg",
 		"keywords": ["Suppressive"],
+		"requirements": []
+	},
+	"rq": {
+		"id": "rq",
+		"displayName": "",
+		"cardSubtype": "armament",
+		"cardName": "The Darksaber2",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "The Darksaber2.jpeg",
+		"keywords": ["Cunning", "Sidearm", "Ranged", "Impact", "Pierce"],
+		"requirements": [{ "imageName": "Maul2.jpeg" }]
+	},
+	"rr": {
+		"id": "rr",
+		"cardName": "Witch Magick",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Maul",
+		"imageName": "Witch Magick.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": []
+	},
+	"rs": {
+		"id": "rs",
+		"cardName": "His Emminence",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Maul",
+		"imageName": "His Emminence.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": []
+	},
+	"rt": {
+		"id": "rt",
+		"cardName": "Seize What Power We Can",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Maul",
+		"imageName": "Seize What Power We Can.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": []
+	},
+	"ru": {
+		"id": "ru",
+		"displayName": "",
+		"cardSubtype": "training",
+		"cardName": "Up Close and Personal",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Up Close and Personal.jpeg",
+		"keywords": [],
 		"requirements": []
 	}
 }));
