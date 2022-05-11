@@ -24,14 +24,22 @@ function RankSelector() {
     });
   }
 
+  const currentUnitCounts = { ...currentList.unitCounts };
+
+  if (currentList.uniques.includes('rc') && currentList.uniques.includes('rq')) { // Maul + Darksaber interaction
+    currentUnitCounts['commander'] += 1;
+    currentUnitCounts['operative'] -= 1;
+  }
+
   return (
     <div className={classes.container}>
       {Object.keys(ranks).map(key => {
         let color = 'error';
-        const count = currentList.unitCounts[key];
+        let count = currentUnitCounts[key];
         const mode = legionModes[currentList.mode];
         let leftBoundary = mode.unitCounts[key][0];
         let rightBoundary = mode.unitCounts[key][1];
+
         if (key === 'special') rightBoundary += rankInteractions;
         if (count >= leftBoundary && count <= rightBoundary) {
           color = 'primary';
@@ -43,7 +51,7 @@ function RankSelector() {
             <RankButton
               rank={key}
               color={color}
-              count={currentList.unitCounts[key]}
+              count={currentUnitCounts[key]}
               handleClick={() => setCardPaneFilter({
                 action: 'UNIT', rank: key
               })}
