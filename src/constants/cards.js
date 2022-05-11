@@ -6431,7 +6431,7 @@ const cards = JSON.parse(JSON.stringify({
     "commander": "Maul",
     "imageName": "Duel of the Fates.jpeg",
     "products": [],
-    "faction": "separatists",
+    "faction": "",
     "keywords": ["Disengage"]
   },
 	"mx": {
@@ -6661,7 +6661,7 @@ const cards = JSON.parse(JSON.stringify({
     "commander": "Maul",
     "imageName": "The Phantom Menace.jpeg",
     "products": [],
-    "faction": "separatists",
+    "faction": "",
     "keywords": ["Divulge", "Infiltrate"]
   },
 	"nj": {
@@ -6673,7 +6673,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "Maul",
 		"imageName": "At Last.jpeg",
 		"products": [],
-		"faction": "separatists",
+		"faction": "",
 		"keywords": ["Jedi Hunter"]
 	},
 	"nk": {
@@ -8528,7 +8528,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardSubtype": "trooper",
 		"cardName": "Maul",
 		"isUnique": true,
-		"rank": "commander",
+		"rank": "operative",
 		"cost": 170,
 		"faction": "fringe",
 		"imageName": "Maul2.jpeg",
@@ -8721,10 +8721,10 @@ const cards = JSON.parse(JSON.stringify({
 	},
 	"rq": {
 		"id": "rq",
-		"displayName": "",
 		"cardSubtype": "armament",
 		"cardName": "The Darksaber2",
-		"isUnique": false,
+		"displayName": "The Darksaber",
+		"isUnique": true,
 		"cardType": "upgrade",
 		"cost": 10,
 		"imageName": "The Darksaber2.jpeg",
@@ -8739,7 +8739,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "Maul",
 		"imageName": "Witch Magick.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "fringe",
 		"keywords": []
 	},
 	"rs": {
@@ -8750,7 +8750,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "Maul",
 		"imageName": "His Emminence.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "fringe",
 		"keywords": []
 	},
 	"rt": {
@@ -8761,7 +8761,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "Maul",
 		"imageName": "Seize What Power We Can.jpeg",
 		"products": [],
-		"faction": "",
+		"faction": "fringe",
 		"keywords": []
 	},
 	"ru": {
