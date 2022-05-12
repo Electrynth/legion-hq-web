@@ -83,6 +83,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "New Mercenary Cards Added",
+    "date": "12 May 2022",
+    "body": "Added cards from AMG preview"
+  },
+  {
     "title": "New Cards Added",
     "date": "3 May 2022",
     "body": "Added Shadow Collective Maul and other cards"
