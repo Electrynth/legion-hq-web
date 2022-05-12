@@ -8436,11 +8436,12 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Pyke Syndicate Capo",
 		"isUnique": false,
 		"rank": "commander",
-		"cost": 0,
+		"cost": 45,
 		"faction": "fringe",
 		"affiliations": ["rebels", "republic", "empire", "separatists"],
 		"imageName": "Pyke Syndicate Capo.jpeg",
 		"keywords": [
+			"Aid",
 			"Independent",
 			"Danger Sense"
 		],
@@ -8484,11 +8485,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Black Sun Vigo",
 		"isUnique": false,
 		"rank": "commander",
-		"cost": 0,
+		"cost": 50,
 		"faction": "fringe",
 		"affiliations": ["empire", "separatists"],
 		"imageName": "Black Sun Vigo.jpeg",
-		"keywords": [],
+		"keywords": ["Aid", "Dauntless", "Independent"],
 		"upgradeBar": ["command", "gear"],
 		"history": []
 	},
@@ -8775,6 +8776,51 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Up Close and Personal.jpeg",
 		"keywords": [],
 		"requirements": []
+	},
+	"rv": {
+		"id": "rv",
+		"displayName": "",
+		"cardSubtype": "command",
+		"cardName": "Lead By Example",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 8,
+		"imageName": "Lead By Example.jpeg",
+		"keywords": [],
+		"requirements": []
+	},
+	"rw": {
+		"id": "rw",
+		"cardName": "Ploy",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Ploy.jpeg",
+		"products": [],
+		"faction": "fringe",
+		"keywords": []
+	},
+	"rx": {
+		"id": "rx",
+		"cardName": "Aggression",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Aggression.jpeg",
+		"products": [],
+		"faction": "fringe",
+		"keywords": []
+	},
+	"ry": {
+		"id": "ry",
+		"cardName": "Discretion",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Discretion.jpeg",
+		"products": [],
+		"faction": "fringe",
+		"keywords": []
 	}
 }));
 
