@@ -8797,7 +8797,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Ploy.jpeg",
 		"products": [],
-		"faction": "fringe",
+		"faction": "",
 		"keywords": []
 	},
 	"rx": {
@@ -8808,7 +8808,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Aggression.jpeg",
 		"products": [],
-		"faction": "fringe",
+		"faction": "",
 		"keywords": []
 	},
 	"ry": {
@@ -8819,7 +8819,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "",
 		"imageName": "Discretion.jpeg",
 		"products": [],
-		"faction": "fringe",
+		"faction": "",
 		"keywords": []
 	}
 }));
