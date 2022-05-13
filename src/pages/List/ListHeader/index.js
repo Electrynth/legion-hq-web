@@ -5,6 +5,7 @@ import ListContext from 'context/ListContext';
 import legionModes from 'constants/legionModes';
 import ModeButton from './ModeButton';
 import TitleField from './TitleField';
+import KillPointsField from './KillPointsField';
 import FactionButton from './FactionButton';
 
 const useStyles = makeStyles({
@@ -67,6 +68,12 @@ function ListHeader() {
           maxPoints={legionModes[currentList.mode].maxPoints}
           handleChangeMode={handleChangeMode}
         />
+      </div>
+      <div className={classes.item}>
+          <KillPointsField
+              killPoints={currentList.killPoints}
+              handleChangeMode={handleChangeMode}
+          />
       </div>
     </div>
   );

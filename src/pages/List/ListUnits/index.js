@@ -14,6 +14,8 @@ function ListUnits() {
     handleCardZoom,
     handleIncrementUnit,
     handleDecrementUnit,
+    handleRestoreUnit,
+    handleKillUnit,
     handleRemoveCounterpart
   } = React.useContext(ListContext);
 
@@ -182,6 +184,8 @@ function ListUnits() {
           handleCardZoom={() => handleCardZoom(unit.unitId)}
           handleDecrementUnit={() => handleDecrementUnit(unitIndex)}
           handleIncrementUnit={() => handleIncrementUnit(unitIndex)}
+          handleRestoreUnit={() => handleRestoreUnit(unitIndex)}
+          handleKillUnit={() => handleKillUnit(unitIndex)}
           addCounterpartHandler={addCounterpartHandler}
           removeCounterpartHandler={removeCounterpartHandler}
           zoomUpgradeHandlers={zoomUpgradeHandlers}

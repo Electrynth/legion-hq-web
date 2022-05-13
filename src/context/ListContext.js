@@ -24,6 +24,8 @@ import {
   removeBattle,
   incrementUnit,
   decrementUnit,
+  restoreUnit,
+  killUnit,
   equipUpgrade,
   unequipUpgrade,
   getEligibleCommandsToAdd,
@@ -264,6 +266,14 @@ export function ListProvider({
     const newList = decrementUnit(currentList, index);
     setCurrentList({ ...newList });
   }
+  const handleRestoreUnit = (index) => {
+    const newList = restoreUnit(currentList, index);
+    setCurrentList({ ...newList });
+  }
+  const handleKillUnit = (index) => {
+    const newList = killUnit(currentList, index);
+    setCurrentList({ ...newList });
+  }
   const handleMergeList = (listToMerge) => {
     const newList = mergeLists(currentList, listToMerge);
     setCurrentList({ ...newList });
@@ -325,7 +335,9 @@ export function ListProvider({
     handleEquipUpgrade,
     handleUnequipUpgrade,
     handleIncrementUnit,
-    handleDecrementUnit
+    handleDecrementUnit,
+    handleRestoreUnit,
+    handleKillUnit
   };
   const battleProps = {
     getEligibleBattlesToAdd,

@@ -942,6 +942,37 @@ function decrementUnit(list, index) {
   return consolidate(list);
 }
 
+function restoreUnit(list, index) {
+  const killedFiltered = list.killedUnits.filter(function(item){
+    return item === list.units[index].unitId + list.units[index].count;
+  })
+  
+  if(killedFiltered.length !== 0 && killedFiltered.length <= list.units[index].count){
+    killedFiltered.pop();
+    const remainingUnits = list.killedUnits.filter(function(item){
+      return item !== list.units[index].unitId + list.units[index].count;
+    });
+    
+    list.killedUnits = killedFiltered.concat(remainingUnits);
+    list.killPoints -= (list.units[index].totalUnitCost / list.units[index].count);
+  }
+  
+  return list;
+}
+
+function killUnit(list, index) {
+  const killedFiltered = list.killedUnits.filter(function(item){
+    return item === list.units[index].unitId + list.units[index].count;
+  })
+  
+  if(killedFiltered.length < list.units[index].count) {
+    list.killedUnits.push(list.units[index].unitId + list.units[index].count);
+    list.killPoints += (list.units[index].totalUnitCost / list.units[index].count);
+  }
+  
+  return list;
+}
+
 function getEligibleUnitsToAdd(list, rank) {
   const validUnitIds = [];
   const cardsById = Object.keys(cards);
@@ -1536,6 +1567,8 @@ export {
   unequipCounterpartLoadoutUpgrade,
   incrementUnit,
   decrementUnit,
+  restoreUnit,
+  killUnit,
   mergeLists,
   getEligibleBattlesToAdd,
   getEligibleCommandsToAdd,
