@@ -8745,7 +8745,7 @@ const cards = JSON.parse(JSON.stringify({
 	},
 	"rs": {
 		"id": "rs",
-		"cardName": "His Emminence",
+		"cardName": "His Eminence",
 		"cardSubtype": "2",
 		"cardType": "command",
 		"commander": "Maul",
