@@ -84,8 +84,13 @@ const routes = {
 const newsPosts = [
   {
     "title": "New Mercenary Cards Added",
+    "date": "17 May 2022",
+    "body": "Added Mandalorian Super Commando cards from an AMG preview."
+  },
+  {
+    "title": "New Mercenary Cards Added",
     "date": "12 May 2022",
-    "body": "Added cards from AMG preview"
+    "body": "Added cards from an AMG preview."
   },
   {
     "title": "New Cards Added",

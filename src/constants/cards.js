@@ -8581,11 +8581,18 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Mandalorian Super Commandos",
 		"isUnique": false,
 		"rank": "special",
-		"cost": 0,
+		"cost": 75,
 		"faction": "fringe",
 		"imageName": "Mandalorian Super Commandos.jpeg",
-		"keywords": [],
-		"upgradeBar": [],
+		"keywords": ["Jump", "Defend", "Impervious", "Independent"],
+		"upgradeBar": [
+			"heavy weapon",
+			"training",
+			"comms",
+			"gear",
+			"grenades",
+			"armament"
+		],
 		"history": []
 	},
 	"rf": {
@@ -8821,6 +8828,90 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "",
 		"keywords": []
+	},
+	"rz": {
+		"id": "rz",
+		"displayName": "",
+		"cardSubtype": "gear",
+		"cardName": "Super Commando Combat Shields",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Super Commando Combat Shields.jpeg",
+		"keywords": ["Shielded"],
+		"requirements": [{ "cardName": "Mandalorian Super Commandos" }]
+	},
+	"sa": {
+		"id": "sa",
+		"displayName": "",
+		"cardSubtype": "armament",
+		"cardName": "Super Commando Jetpack Rockets",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 8,
+		"imageName": "Super Commando Jetpack Rockets.jpeg",
+		"keywords": ["Blast", "Critical", "Impact"],
+		"requirements": [{ "cardName": "Mandalorian Super Commandos" }]
+	},
+	"sb": {
+		"id": "sb",
+		"displayName": "",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Mandalorian Super Commando",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 24,
+		"imageName": "Mandalorian Super Commando.jpeg",
+		"keywords": ["Cache"],
+		"requirements": [{ "cardName": "Mandalorian Super Commandos" }]
+	},
+	"sc": {
+		"id": "sc",
+		"displayName": "",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Super Commando Gunslinger",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 30,
+		"imageName": "Super Commando Gunslinger.jpeg",
+		"keywords": ["Lethal"],
+		"requirements": [{ "cardName": "Mandalorian Super Commandos" }]
+	},
+	"sd": {
+		"id": "sd",
+		"displayName": "",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Super Commando Marksman",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 30,
+		"imageName": "Super Commando Marksman.jpeg",
+		"keywords": ["Precise"],
+		"requirements": [{ "cardName": "Mandalorian Super Commandos" }]
+	},
+	"se": {
+		"id": "se",
+		"displayName": "",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Rook Kast",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 35,
+		"imageName": "Rook Kast.jpeg",
+		"keywords": ["Retinue", "Leader"],
+		"requirements": [{ "cardName": "Mandalorian Super Commandos" }]
+	},
+	"sf": {
+		"id": "sf",
+		"displayName": "",
+		"cardSubtype": "comms",
+		"cardName": "Emergency Transponder",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 4,
+		"imageName": "Emergency Transponder.jpeg",
+		"keywords": [],
+		"requirements": []
 	}
 }));
 
