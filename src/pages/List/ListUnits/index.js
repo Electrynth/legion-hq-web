@@ -9,12 +9,14 @@ function ListUnits() {
   const {
     currentList,
     reorderUnits,
+    isKillPointMode,
     setCardPaneFilter,
     handleUnequipUpgrade,
     handleCardZoom,
     handleIncrementUnit,
     handleDecrementUnit,
-    handleRemoveCounterpart
+    handleRemoveCounterpart,
+    handleAddKillPoints
   } = React.useContext(ListContext);
 
   const items = currentList.units.map((unit, unitIndex) => {
@@ -179,9 +181,12 @@ function ListUnits() {
           unitIndex={unitIndex}
           counterpartId={counterpartId}
           counterpartUnit={counterpartUnit}
+          isKillPointMode={isKillPointMode}
           handleCardZoom={() => handleCardZoom(unit.unitId)}
           handleDecrementUnit={() => handleDecrementUnit(unitIndex)}
           handleIncrementUnit={() => handleIncrementUnit(unitIndex)}
+          handleAddKillPoints={() => handleAddKillPoints(unit.totalUnitCost / unit.count)}
+          handleRemoveKillPoints={() => handleAddKillPoints(-1 * unit.totalUnitCost / unit.count)}
           addCounterpartHandler={addCounterpartHandler}
           removeCounterpartHandler={removeCounterpartHandler}
           zoomUpgradeHandlers={zoomUpgradeHandlers}

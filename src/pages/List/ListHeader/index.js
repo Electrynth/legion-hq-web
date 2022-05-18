@@ -5,6 +5,7 @@ import ListContext from 'context/ListContext';
 import legionModes from 'constants/legionModes';
 import ModeButton from './ModeButton';
 import TitleField from './TitleField';
+import KillPointsField from './KillPointsField';
 import FactionButton from './FactionButton';
 
 const useStyles = makeStyles({
@@ -19,6 +20,8 @@ const useStyles = makeStyles({
 function ListHeader() {
   const {
     currentList,
+    currentKillPoints,
+    isKillPointMode,
     handleChangeTitle,
     handleChangeMode
   } = useContext(ListContext);
@@ -68,6 +71,13 @@ function ListHeader() {
           handleChangeMode={handleChangeMode}
         />
       </div>
+      {isKillPointMode && (
+        <div className={classes.item}>
+          <KillPointsField
+            killPoints={currentKillPoints}
+          />
+        </div>
+      )}
     </div>
   );
 };

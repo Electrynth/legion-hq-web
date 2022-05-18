@@ -39,9 +39,12 @@ function ListUnit({
   unitIndex,
   counterpartId,
   counterpartUnit,
+  isKillPointMode,
   handleCardZoom,
   handleDecrementUnit,
   handleIncrementUnit,
+  handleAddKillPoints,
+  handleRemoveKillPoints,
   addCounterpartHandler,
   removeCounterpartHandler,
   zoomUpgradeHandlers,
@@ -65,10 +68,14 @@ function ListUnit({
   const actions = (
     <UnitActions
       key="actions"
+      isKillPointMode={isKillPointMode}
+      handleAddKillPoints={handleAddKillPoints}
+      handleRemoveKillPoints={handleRemoveKillPoints}
       decrementUnit={handleDecrementUnit}
       incrementUnit={unit.hasUniques ? undefined : handleIncrementUnit}
     />
   );
+
   const upgrades = (
     <UnitUpgrades
       key="upgrades"

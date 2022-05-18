@@ -16,38 +16,67 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function UnitActions({ incrementUnit = undefined, decrementUnit }) {
+function UnitActions({
+  incrementUnit = undefined,
+  decrementUnit,
+  isKillPointMode,
+  handleAddKillPoints,
+  handleRemoveKillPoints
+}) {
   const classes = useStyles();
   const fontSize = 26;
-  return (
-    <div className={classes.buttons}>
-      {incrementUnit ? (
-        <React.Fragment>
+  if (isKillPointMode) {
+    return (
+      <div className={classes.buttons}>
+      <React.Fragment>
+        <IconButton
+          size="small"
+          onClick={handleRemoveKillPoints}
+          style={{ marginLeft: 2, marginRight: 1 }}
+        >
+          <MinusOneIcon style={{ fontSize }} />
+        </IconButton>
+        <IconButton
+          size="small"
+          onClick={handleAddKillPoints}
+          style={{ marginLeft: 1, marginRight: 2 }}
+        >
+          <PlusOneIcon style={{ fontSize }} />
+        </IconButton>
+      </React.Fragment>
+    </div>
+    );
+  } else {
+    return (
+      <div className={classes.buttons}>
+        {incrementUnit ? (
+          <React.Fragment>
+            <IconButton
+              size="small"
+              onClick={decrementUnit}
+              style={{ marginLeft: 2, marginRight: 1 }}
+            >
+              <MinusOneIcon style={{ fontSize }} />
+            </IconButton>
+            <IconButton
+              size="small"
+              onClick={incrementUnit}
+              style={{ marginLeft: 1, marginRight: 2 }}
+            >
+              <PlusOneIcon style={{ fontSize }} />
+            </IconButton>
+          </React.Fragment>
+        ) : (
           <IconButton
             size="small"
             onClick={decrementUnit}
-            style={{ marginLeft: 2, marginRight: 1 }}
           >
-            <MinusOneIcon style={{ fontSize }} />
+            <DeleteIcon style={{ fontSize }} />
           </IconButton>
-          <IconButton
-            size="small"
-            onClick={incrementUnit}
-            style={{ marginLeft: 1, marginRight: 2 }}
-          >
-            <PlusOneIcon style={{ fontSize }} />
-          </IconButton>
-        </React.Fragment>
-      ): (
-        <IconButton
-          size="small"
-          onClick={decrementUnit}
-        >
-          <DeleteIcon style={{ fontSize }} />
-        </IconButton>
-      )}
-    </div>
-  );
+        )}
+      </div>
+    );
+  }
 };
 
 export default UnitActions;
