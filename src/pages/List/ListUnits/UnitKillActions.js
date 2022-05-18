@@ -1,6 +1,7 @@
 import React from 'react';
 import { IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { Icon as IconifyIcon } from '@iconify/react';
 import {
   PlusOne as PlusOneIcon,
   ExposureNeg1 as MinusOneIcon,
@@ -29,7 +30,15 @@ function UnitKillActions({ killUnit, restoreUnit }) {
         >
           <MinusOneIcon style={{ fontSize }} />
         </IconButton>
-        <AcUnitIcon style={{ fontSize }} />
+        <IconButton
+          size="small"
+          style={{ margin: 1 }}
+        >
+          <IconifyIcon
+            icon="mdi:skull-crossbones"
+            style={{ margin: 3 }}
+          />
+        </IconButton>
         <IconButton
             size="small"
             onClick={killUnit}

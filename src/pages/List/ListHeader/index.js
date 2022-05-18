@@ -20,6 +20,8 @@ const useStyles = makeStyles({
 function ListHeader() {
   const {
     currentList,
+    currentKillPoints,
+    isKillPointMode,
     handleChangeTitle,
     handleChangeMode
   } = useContext(ListContext);
@@ -69,12 +71,13 @@ function ListHeader() {
           handleChangeMode={handleChangeMode}
         />
       </div>
-      <div className={classes.item}>
+      {isKillPointMode && (
+        <div className={classes.item}>
           <KillPointsField
-              killPoints={currentList.killPoints}
-              handleChangeMode={handleChangeMode}
+            killPoints={currentKillPoints}
           />
-      </div>
+        </div>
+      )}
     </div>
   );
 };

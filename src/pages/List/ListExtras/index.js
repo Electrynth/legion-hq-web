@@ -3,9 +3,9 @@ import {
   History as UsePrevIcon,
   Clear as ClearIcon,
   Save as SaveIcon,
-  CallSplit as ForkIcon
+  CallSplit as ForkIcon,
+  Functions as CalculateIcon
 } from '@material-ui/icons';
-import cards from 'constants/cards';
 import DataContext from 'context/DataContext';
 import ListContext from 'context/ListContext';
 import TemplateButton from './TemplateButton';
@@ -21,11 +21,13 @@ function ListExtras() {
   const { userId } = useContext(DataContext);
   const {
     currentList,
+    isKillPointMode,
     listSaveMessage,
     handleClearList,
     handleListSave,
     handleListFork,
-    handleToggleUsingOldPoints
+    handleToggleUsingOldPoints,
+    handleToggleIsKillPointMode
   } = useContext(ListContext);
 
   return (
@@ -61,6 +63,11 @@ function ListExtras() {
         icon={<ClearIcon />}
         label="Clear List"
         handleClick={handleClearList}
+      />
+      <SimpleButton
+        icon={<CalculateIcon />}
+        label={isKillPointMode ? "Calculating Kill Points!" : "Calculate Kill Points"}
+        handleClick={handleToggleIsKillPointMode}
       />
       <SimpleButton
         timeout={1000}

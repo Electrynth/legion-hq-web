@@ -24,8 +24,6 @@ import {
   removeBattle,
   incrementUnit,
   decrementUnit,
-  restoreUnit,
-  killUnit,
   equipUpgrade,
   unequipUpgrade,
   getEligibleCommandsToAdd,
@@ -62,6 +60,8 @@ export function ListProvider({
   const [rightPaneWidth, setRightPaneWidth] = useState(0);
   const [modalContent, setModalContent] = useState();
   const [cardPaneFilter, setCardPaneFilter] = useState({ action: 'DISPLAY' });
+  const [isKillPointMode, setIsKillPointMode] = useState(false);
+  const [currentKillPoints, setCurrentKillPoints] = useState(0);
 
   useEffect(() => {
     // route '/list/rebels' fetches the rebel list from storage
@@ -266,14 +266,7 @@ export function ListProvider({
     const newList = decrementUnit(currentList, index);
     setCurrentList({ ...newList });
   }
-  const handleRestoreUnit = (index) => {
-    const newList = restoreUnit(currentList, index);
-    setCurrentList({ ...newList });
-  }
-  const handleKillUnit = (index) => {
-    const newList = killUnit(currentList, index);
-    setCurrentList({ ...newList });
-  }
+
   const handleMergeList = (listToMerge) => {
     const newList = mergeLists(currentList, listToMerge);
     setCurrentList({ ...newList });
@@ -325,6 +318,15 @@ export function ListProvider({
       setMessage(`Failed to fork list ${listId} for user ${userId}`);
     });
   }
+
+  const handleToggleIsKillPointMode = () => {
+    setIsKillPointMode(!isKillPointMode);
+  }
+
+  const handleAddKillPoints = (points) => {
+    setCurrentKillPoints(currentKillPoints + points);
+  }
+
   const unitProps = {
     getEligibleUnitsToAdd,
     getEquippableUpgrades,
@@ -335,9 +337,7 @@ export function ListProvider({
     handleEquipUpgrade,
     handleUnequipUpgrade,
     handleIncrementUnit,
-    handleDecrementUnit,
-    handleRestoreUnit,
-    handleKillUnit
+    handleDecrementUnit
   };
   const battleProps = {
     getEligibleBattlesToAdd,
@@ -356,6 +356,8 @@ export function ListProvider({
     currentList,
     stackSize,
     reorderUnits,
+    isKillPointMode,
+    currentKillPoints,
     isApplyToAll,
     handleClearList,
     handleToggleIsApplyToAll,
@@ -366,7 +368,9 @@ export function ListProvider({
     handleListSave,
     handleListFork,
     handleMergeList,
-    handleToggleUsingOldPoints
+    handleToggleUsingOldPoints,
+    handleToggleIsKillPointMode,
+    handleAddKillPoints
   };
   const modalProps = {
     handleOpenModal,

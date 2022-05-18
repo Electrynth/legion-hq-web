@@ -6,7 +6,6 @@ import UnitPoints from 'common/UnitPoints';
 import UnitActions from './UnitActions';
 import UnitUpgrades from './UnitUpgrades';
 import UnitFlaw from './UnitFlaw';
-import UnitKillActions from "./UnitKillActions";
 
 const useStyles = makeStyles(theme => ({
   unitRow: {
@@ -40,11 +39,12 @@ function ListUnit({
   unitIndex,
   counterpartId,
   counterpartUnit,
+  isKillPointMode,
   handleCardZoom,
   handleDecrementUnit,
   handleIncrementUnit,
-  handleKillUnit,
-  handleRestoreUnit,
+  handleAddKillPoints,
+  handleRemoveKillPoints,
   addCounterpartHandler,
   removeCounterpartHandler,
   zoomUpgradeHandlers,
@@ -68,17 +68,14 @@ function ListUnit({
   const actions = (
     <UnitActions
       key="actions"
+      isKillPointMode={isKillPointMode}
+      handleAddKillPoints={handleAddKillPoints}
+      handleRemoveKillPoints={handleRemoveKillPoints}
       decrementUnit={handleDecrementUnit}
       incrementUnit={unit.hasUniques ? undefined : handleIncrementUnit}
     />
   );
-  const killActions = (
-    <UnitKillActions
-        key="killActions"
-        killUnit={handleKillUnit}
-        restoreUnit={handleRestoreUnit}
-    />
-  );
+
   const upgrades = (
     <UnitUpgrades
       key="upgrades"
@@ -100,7 +97,7 @@ function ListUnit({
   const flaws = unitCard.flaw ? <UnitFlaw key="flaws" flawId={unitCard.flaw} /> : undefined;
   const leftCell = [avatar];
   const middleCell = [name, upgrades, flaws];
-  const rightCell = [points, actions, killActions];
+  const rightCell = [points, actions];
   return (
     <div className={classes.unitColumn}>
       <div className={classes.unitRow}>
