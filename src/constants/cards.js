@@ -8562,11 +8562,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Gar Saxon",
 		"isUnique": true,
 		"rank": "commander",
-		"cost": 0,
+		"cost": 105,
 		"faction": "fringe",
 		"imageName": "Gar Saxon.jpeg",
-		"keywords": [],
-		"upgradeBar": [],
+		"keywords": ["Jump", "Allies of Convenience", "Compel", "Impervious", "Sharpshooter", "Pierce"],
+		"upgradeBar": ["training", "training", "comms", "gear", "gear", "armament", "armament"],
 		"history": []
 	},
 	"re": {
@@ -8912,6 +8912,75 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Emergency Transponder.jpeg",
 		"keywords": [],
 		"requirements": []
+	},
+	"sg": {
+		"id": "sg",
+		"displayName": "",
+		"cardSubtype": "armament",
+		"cardName": "Saxon's Galar-90 Rifle",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 15,
+		"imageName": "Saxon's Galar-90 Rifle.jpeg",
+		"keywords": ["High Velocity", "Lethal", "Long Shot"],
+		"requirements": [{ "cardName": "Gar Saxon" }]
+	},
+	"sh": {
+		"id": "sh",
+		"displayName": "",
+		"cardSubtype": "armament",
+		"cardName": "Saxon's Z-3X Jetpack Rockets",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Saxon's Z-3X Jetpack Rockets.jpeg",
+		"keywords": ["Blast", "Cycle", "Impact"],
+		"requirements": [{ "cardName": "Gar Saxon" }]
+	},
+	"si": {
+		"id": "si",
+		"displayName": "",
+		"cardSubtype": "armament",
+		"cardName": "Saxon's ZX Flame Projector",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Saxon's ZX Flame Projector.jpeg",
+		"keywords": ["Blast", "Spray", "Suppressive"],
+		"requirements": [{ "cardName": "Gar Saxon" }]
+	},
+	"sj": {
+		"id": "sj",
+		"cardName": "Marked For Elimination",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Gar Saxon",
+		"imageName": "Marked For Elimination.jpeg",
+		"products": [],
+		"faction": "fringe",
+		"keywords": []
+	},
+	"sk": {
+		"id": "sk",
+		"cardName": "Fight Another Day",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Gar Saxon",
+		"imageName": "Fight Another Day.jpeg",
+		"products": [],
+		"faction": "fringe",
+		"keywords": ["Outmaneuver"]
+	},
+	"sl": {
+		"id": "sl",
+		"cardName": "Victory or Death!",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Gar Saxon",
+		"imageName": "Victory or Death!.jpeg",
+		"products": [],
+		"faction": "fringe",
+		"keywords": ["Outmaneuver"]
 	}
 }));
 

@@ -320,6 +320,7 @@ export function ListProvider({
   }
 
   const handleToggleIsKillPointMode = () => {
+    if (isKillPointMode) setCurrentKillPoints(0);
     setIsKillPointMode(!isKillPointMode);
   }
 

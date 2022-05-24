@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Chip} from '@material-ui/core';
+import { Chip } from '@material-ui/core';
 
 function KillPointField({killPoints}) {
     return (
         <Chip
-            label={`Killed points: ${killPoints}`}
+            label={`Points Defeated: ${killPoints}`}
         />
     );
 };

@@ -84,6 +84,16 @@ const routes = {
 const newsPosts = [
   {
     "title": "New Mercenary Cards Added",
+    "date": "24 May 2022",
+    "body": "Added Gar Saxon cards from an AMG preview."
+  },
+  {
+    "title": "Added Kill Calculator Feature",
+    "date": "18 May 2022",
+    "body": "Added feature to quickly calculating points killed for end game ties."
+  },
+  {
+    "title": "New Mercenary Cards Added",
     "date": "17 May 2022",
     "body": "Added Mandalorian Super Commando cards from an AMG preview."
   },
