@@ -8981,7 +8981,71 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "fringe",
 		"keywords": ["Outmaneuver"]
-	}
+	},
+	"sm": {
+		"cardType": "unit",
+		"cardSubtype": "repulsor vehicle",
+		"cardName": "A-A5 Speeder Truck",
+		"isUnique": false,
+		"rank": "heavy",
+		"cost": 75,
+		"faction": "fringe",
+		"defense": "white",
+		"surges": ["block"],
+		"speed": 1,
+		"wounds": 8,
+		"resilience": 4,
+		"imageName": "A-A5 Speeder Truck2.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Armor",
+			"Hover: Ground",
+			"Reposition",
+			"Transport: Closed",
+			"Weak Point"
+		],
+		"upgradeBar": [
+			"pilot",
+			"crew",
+			"crew",
+			"hardpoint",
+			"comms"
+		],
+		"id": "sm"
+	},
+	"sn": {
+		"id": "sn",
+		"displayName": "",
+		"cardSubtype": "crew",
+		"cardName": "Frenzied Gunner",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"faction": "fringe",
+		"imageName": "Frenzied Gunner.jpeg",
+		"keywords": [],
+		"requirements": [
+			"AND",
+			{ "rank": "heavy" },
+			{ "faction" : "fringe" }
+		]
+	},
+	"so": {
+		"id": "so",
+		"displayName": "",
+		"cardSubtype": "pilot",
+		"cardName": "Raiding Party Leader",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Raiding Party Leader.jpeg",
+		"keywords": ["Allies of Convenience", "Field Commander", "Demoralize"],
+		"requirements": [
+			"AND",
+			{ "rank": "heavy" },
+			{ "faction" : "fringe" }
+		]
+	},
 }));
 
 export default cards;
