@@ -83,6 +83,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Bounty Hunters Updated",
+    "date": "31 May 2022",
+    "body": "Updated bounty hunters from an AMG preview."
+  },
+  {
     "title": "New Mercenary Cards Added",
     "date": "24 May 2022",
     "body": "Added Gar Saxon cards from an AMG preview."

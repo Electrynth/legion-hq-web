@@ -1546,7 +1546,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Z-6 Jetpack Rocket",
 		"cardType": "command",
 		"commander": "Boba Fett",
-		"faction": "empire",
+		"faction": "",
 		"imageName": "Z-6 Jetpack Rocket.jpeg",
 		"keywords": ["Blast", "Impact"],
 		"id": "bp"
@@ -1556,7 +1556,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Lying In Wait",
 		"cardType": "command",
 		"commander": "Bossk",
-		"faction": "empire",
+		"faction": "",
 		"imageName": "Lying In Wait.jpeg",
 		"keywords": ["Sharpshooter"],
 		"id": "bq"
@@ -1596,7 +1596,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "ZX Flame Projector",
 		"cardType": "command",
 		"commander": "Boba Fett",
-		"faction": "empire",
+		"faction": "",
 		"imageName": "ZX Flame Projector.jpeg",
 		"keywords": ["Blast", "Spray"],
 		"id": "bu"
@@ -1646,7 +1646,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Whipcord Launcher",
 		"cardType": "command",
 		"commander": "Boba Fett",
-		"faction": "empire",
+		"faction": "",
 		"imageName": "Whipcord Launcher.jpeg",
 		"keywords": [],
 		"id": "bz"
@@ -3514,7 +3514,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Merciless Munitions",
 		"cardType": "command",
 		"commander": "Bossk",
-		"faction": "empire",
+		"faction": "",
 		"imageName": "Merciless Munitions.jpeg",
 		"keywords": ["Arm", "Detonate", "Poison Token"],
 		"id": "gf"
@@ -3524,7 +3524,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "Reptilian Rampage",
 		"cardType": "command",
 		"commander": "Bossk",
-		"faction": "empire",
+		"faction": "",
 		"imageName": "Reptilian Rampage.jpeg",
 		"keywords": [],
 		"id": "gg"
@@ -5901,7 +5901,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardSubtype": "2",
 		"cardType": "command",
 		"commander": "Cad Bane",
-		"faction": "separatists",
+		"faction": "",
 		"imageName": "I'm in Control.jpeg",
 		"keywords": [],
 		"id": "lo"
@@ -5911,7 +5911,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardSubtype": "3",
 		"cardType": "command",
 		"commander": "Cad Bane",
-		"faction": "separatists",
+		"faction": "",
 		"imageName": "I Make the Rules Now.jpeg",
 		"keywords": ["Divulge"],
 		"id": "lp"
@@ -6208,7 +6208,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardType": "command",
 		"commander": "Cad Bane",
 		"products": [],
-		"faction": "separatists",
+		"faction": "",
 		"imageName": "I'm Your Worst Nightmare.jpeg",
 		"keywords": ["Uncanny Luck"],
 		"id": "mg"
