@@ -1061,18 +1061,20 @@ const cards = JSON.parse(JSON.stringify({
 		"rank": "operative",
 		"cost": 120,
 		"prevCost": 125,
-		"faction": "empire",
+		"faction": "fringe",
+		"affiliations": ["empire"],
 		"imageName": "Boba Fett.jpeg",
 		"keywords": [
 			"Jump",
 			"Arsenal",
 			"Bounty",
 			"Impervious",
+			"Independent",
 			"Sharpshooter",
 			"Impact",
 			"Pierce"
 		],
-		"upgradeBar": ["training", "training", "gear", "gear"],
+		"upgradeBar": ["training", "training", "comms", "gear", "gear"],
 		"history": [
 			{
 				"date": "19 November 2020",
@@ -1097,20 +1099,28 @@ const cards = JSON.parse(JSON.stringify({
 		"title": "Trandoshan Terror",
 		"isUnique": true,
 		"rank": "operative",
-		"cost": 115,
-		"faction": "empire",
+		"cost": 105,
+		"prevCost": 115,
+		"faction": "fringe",
+		"affiliations": ["empire", "separatists"],
 		"imageName": "Bossk.jpeg",
 		"keywords": [
 			"Bounty",
 			"Enrage",
-			"Expert Climber",
+			"Independent",
 			"Regenerate",
-			"Unhindered",
+			"Scale",
 			"Pierce",
 			"Suppressive"
 		],
 		"upgradeBar": ["training", "training", "gear"],
-		"id": "ax"
+		"id": "ax",
+		"history": [
+			{
+				"date": "31 May 2022",
+				"description": "Cost reduced from 115 to 105 points."
+			}
+		]
 	},
 	"ay": {
 		"cardType": "unit",
@@ -5525,14 +5535,15 @@ const cards = JSON.parse(JSON.stringify({
 	},
 	"kx": {
 		"cardType": "unit",
-		"faction": "separatists",
+		"faction": "fringe",
+		"affiliations": ["empire", "separatists"],
 		"cardSubtype": "trooper",
 		"cardName": "Cad Bane",
 		"title": "Needs No Introduction",
 		"isUnique": true,
 		"rank": "operative",
-		"cost": 120,
-		"prevCost": 125,
+		"cost": 105,
+		"prevCost": 120,
 		"defense": "white",
 		"surges": ["hit", "block"],
 		"courage": 3,
@@ -5543,11 +5554,13 @@ const cards = JSON.parse(JSON.stringify({
 			"Jump",
 			"Bounty",
 			"Danger Sense",
+			"Independent",
 			"Sharpshooter",
 			"Steady",
 			"Pierce"
 		],
 		"upgradeBar": [
+			"training",
 			"training",
 			"comms",
 			"gear",
@@ -5555,6 +5568,10 @@ const cards = JSON.parse(JSON.stringify({
 			"grenades"
 		],
 		"history": [
+			{
+				"date": "31 May 2022",
+				"description": "Cost reduced from 120 to 105 points."
+			},
 			{
 				"date": "27 October 2021",
 				"description": "Cost reduced from 125 to 120 points."
