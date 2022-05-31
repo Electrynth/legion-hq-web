@@ -9016,7 +9016,7 @@ const cards = JSON.parse(JSON.stringify({
 	"sn": {
 		"id": "sn",
 		"displayName": "",
-		"cardSubtype": "crew",
+		"cardSubtype": "pilot",
 		"cardName": "Frenzied Gunner",
 		"isUnique": false,
 		"cardType": "upgrade",
