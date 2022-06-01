@@ -1,4 +1,7 @@
 const keywords = {
+  "Aid": "When you would gain an aim, dodge, or surge token, another friendly X unit at range 1 and in line of sight may gain that token instead. If they do, you gain 1 suppression token.",
+  "Scale": "You ignore the effects of difficult terrain and do not suffer wounds while clambering. Either before or after you perform a move action, you may perform a free clamber action.",
+  "Independent": "At the start of the Activation Phase, if you do not have an order token, gain X tokens.",
   "Observe": "Choose an enemy unit at range 1-3 and in line of sight. It gains 3 observation tokens.",
   "Juyo Mastery": "While you are wounded, you can perform 1 additional action during your activation. Limit 2 move actions.",
   "Djem So Mastery": "While defending, if you spend a dodge token, you gain defensive surge to block: if at least 1 hit or crit result was canceled, the attacker suffers 1 wound",
