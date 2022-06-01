@@ -83,6 +83,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "New Feature to View Old Cards",
+    "date": "1 June 2022",
+    "body": "Click on a unit's portrait or the 'Show More' button to view the old version of a card. As of now only the original bounty hunter cards use this feature."
+  },
+  {
     "title": "Bounty Hunters Updated",
     "date": "31 May 2022",
     "body": "Updated bounty hunters from an AMG preview."
