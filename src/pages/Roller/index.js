@@ -74,9 +74,6 @@ function Stats() {
   }
   return (
     <div className={classes.column}>
-      <Alert variant="filled" severity="info" style={{ marginBottom: 16 }}>
-        Under construction! The result counting does <b>not</b> work properly yet!
-      </Alert>
       <div className={classes.row}>
         <Typography variant="h5">
           Dice Roller
@@ -89,12 +86,6 @@ function Stats() {
           numWhiteAttackDice={numWhiteAttackDice}
           handleSetDice={handleSetDice}
           handleRollDice={handleRollDice}
-        />
-        <ResultPanel
-          isRolling={isRolling}
-          redAttackResults={redAttackResults}
-          blackAttackResults={blackAttackResults}
-          whiteAttackResults={whiteAttackResults}
         />
       </div>
       <div className={classes.row}>

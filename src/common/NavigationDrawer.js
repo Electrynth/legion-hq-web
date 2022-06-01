@@ -124,6 +124,15 @@ function NavigationDrawer() {
         <Divider />
         <List dense={true}>
           <NavDrawerLink
+            text="Roller"
+            selected={pathname === '/roller'}
+            icon={routes['/roller'].icon}
+            handleClick={() => {
+              setIsDrawerOpen(false);
+              goToPage('/roller');
+            }}
+          />
+          <NavDrawerLink
             text="Settings"
             selected={pathname === '/settings'}
             icon={routes['/settings'].icon}

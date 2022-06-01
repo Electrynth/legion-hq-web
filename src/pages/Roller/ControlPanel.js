@@ -90,7 +90,7 @@ function ControlPanel({
             setTimeout(() => setIsDisabled(false), 500);
           }}
         >
-          {isDisabled ? 'Rolling!' : 'Roll Dice!'}
+          Roll Dice!
         </Button>
       </div>
     </div>

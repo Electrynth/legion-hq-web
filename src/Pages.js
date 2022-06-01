@@ -5,7 +5,7 @@ import listTemplate from 'constants/listTemplate';
 const Home = lazy(() => import('pages/Home'));
 const News = lazy(() => import('pages/News'));
 const Cards = lazy(() => import('pages/Cards'));
-// const Roller = lazy(() => import('pages/Roller'));
+const Roller = lazy(() => import('pages/Roller'));
 const Privacy = lazy(() => import('pages/Privacy'));
 const List = lazy(() => import('pages/List'));
 const Settings = lazy(() => import('pages/Settings'));
@@ -47,6 +47,7 @@ function Pages() {
             );
           }}
         />
+        <Route path="/roller" component={Roller} />
         <Route path="/settings" component={Settings} />
         <Route path="/info" component={Info} />
         <Route path="/privacy" component={Privacy} />
