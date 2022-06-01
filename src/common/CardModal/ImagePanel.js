@@ -10,18 +10,18 @@ import { Skeleton } from '@material-ui/lab';
 import { ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 import urls from 'constants/urls';
 
-function ImagePanel({ card }) {
+function ImagePanel({ card, usingOriginalImage = false }) {
   if (!card) return null;
   const { cardType, imageName } = card;
   return (
     <React.Fragment>
-      <ExpansionPanel defaultExpanded={true}>
+      <ExpansionPanel defaultExpanded={!usingOriginalImage}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography>Card Image</Typography>
+          <Typography>{usingOriginalImage ? 'Original Card Image' : 'Current Card Image'}</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails style={{ padding: '0px 24px 24px' }}>
           <Img
-            src={`${urls.cdn}/${cardType}Cards/${imageName}`}
+            src={`${urls.cdn}/${cardType}Cards/${usingOriginalImage ? `original-${imageName}` : imageName}`}
             loader={<Skeleton variant="rect" width={315} height={225} />}
             style={{ width: '100%' }}
           />
