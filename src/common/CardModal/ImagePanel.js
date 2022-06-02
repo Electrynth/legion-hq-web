@@ -6,7 +6,6 @@ import {
   ExpansionPanelSummary,
   ExpansionPanelDetails
 } from '@material-ui/core';
-import { Skeleton } from '@material-ui/lab';
 import { ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 import urls from 'constants/urls';
 
@@ -22,7 +21,6 @@ function ImagePanel({ card, usingOriginalImage = false }) {
         <ExpansionPanelDetails style={{ padding: '0px 24px 24px' }}>
           <Img
             src={`${urls.cdn}/${cardType}Cards/${usingOriginalImage ? `original-${imageName}` : imageName}`}
-            loader={<Skeleton variant="rect" width={315} height={225} />}
             style={{ width: '100%' }}
           />
         </ExpansionPanelDetails>
