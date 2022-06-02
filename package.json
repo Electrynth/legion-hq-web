@@ -34,7 +34,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-to-print": "^2.8.0",
-    "three": "^0.117.1",
+    "three": "^0.137.0",
     "typeface-roboto": "0.0.75",
     "universal-cookie": "^4.0.3"
   },
