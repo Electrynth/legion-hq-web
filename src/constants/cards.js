@@ -8985,7 +8985,7 @@ const cards = JSON.parse(JSON.stringify({
 			{ "rank": "heavy" },
 			{ "faction" : "fringe" }
 		]
-	},
+	}
 }));
 
 export default cards;
