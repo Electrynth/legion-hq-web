@@ -8986,6 +8986,49 @@ const cards = JSON.parse(JSON.stringify({
 			{ "faction" : "fringe" }
 		]
 	},
+	"sp": {
+		"id": "sp",
+		"displayName": "",
+		"cardSubtype": "gear",
+		"cardName": "Saxon's Combat Shield",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Saxon's Combat Shield.jpeg",
+		"keywords": ["Shielded", "Recharge"],
+		"requirements": [
+			{ "cardName": "Gar Saxon" }
+		]
+	},
+	"sq": {
+		"cardType": "unit",
+		"cardSubtype": "repulsor vehicle",
+		"cardName": "Swoop Bike Riders",
+		"isUnique": false,
+		"rank": "support",
+		"cost": 70,
+		"faction": "fringe",
+		"subfaction": "raiders",
+		"affiliations": ["rebels", "republic"],
+		"defense": "white",
+		"surges": ["block", "hit"],
+		"speed": 3,
+		"wounds": 3,
+		"resilience": 0,
+		"imageName": "Swoop Bike Riders.jpeg",
+		"flaw": "",
+		"keywords": [
+			"Cover",
+			"Independent",
+			"Reinforcements",
+			"Speeder",
+			"Overrun"
+		],
+		"upgradeBar": [
+			"comms"
+		],
+		"id": "sq"
+	}
 }));
 
 export default cards;
