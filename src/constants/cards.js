@@ -9456,7 +9456,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardType": "upgrade",
 		"cost": 0,
 		"faction": "rebels",
-		"imageName": "\"Nanny\" Programming.jpeg",
+		"imageName": "%22Nanny%22 Programming.jpeg",
 		"keywords": ["Counterpart", "AI"],
 		"requirements": [
 			{ "cardName": "IG-11" }
