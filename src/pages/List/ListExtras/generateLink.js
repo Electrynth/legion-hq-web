@@ -40,6 +40,16 @@ function generateLink(list) {
   list.objectiveCards.forEach(objectiveId => urlStrings.push(objectiveId));
   list.deploymentCards.forEach(deploymentId => urlStrings.push(deploymentId));
   list.conditionCards.forEach(conditionId => urlStrings.push(conditionId));
+  if (list.battleForce) {
+    let bf = 'ebd';
+    if (list.battleForce === 'Echo Base Defenders') bf = 'ebd';
+    else if (list.battleForce === 'Blizzard Force') bf = 'bf';
+    else if (list.battleForce === '501st Legion') bf = '5l';
+    else if (list.battleForce === 'Separatist Invasion Force') bf = 'sif';
+    else if (list.battleForce === 'Shadow Collective') bf = 'sc';
+
+    return `${urls.listPath}/${list.faction}/${bf}:${urlStrings.join(',')}`;
+  }
   return `${urls.listPath}/${list.faction}/${urlStrings.join(',')}`;
 }
 

@@ -5,6 +5,7 @@ import ranks from 'constants/ranks';
 import legionModes from 'constants/legionModes';
 import cards from 'constants/cards';
 import RankButton from './RankButton';
+import battleForcesDict from 'constants/battleForcesDict';
 
 const useStyles = makeStyles({
   container: {
@@ -40,12 +41,24 @@ function RankSelector() {
         let leftBoundary = mode.unitCounts[key][0];
         let rightBoundary = mode.unitCounts[key][1];
 
-        if (key === 'special') rightBoundary += rankInteractions;
-        if (count >= leftBoundary && count <= rightBoundary) {
-          color = 'primary';
-        } else if (key === 'commander' && currentList.hasFieldCommander) {
-          color = 'primary';
+
+        if (currentList.battleForce) {
+          leftBoundary = battleForcesDict[currentList.battleForce][currentList.mode][key][0];
+          rightBoundary = battleForcesDict[currentList.battleForce][currentList.mode][key][1];
+          if (key === 'special') rightBoundary += rankInteractions;
+          if (count >= leftBoundary && count <= rightBoundary) {
+            color = 'primary';
+          }
+        } else {
+          if (key === 'special') rightBoundary += rankInteractions;
+          if (count >= leftBoundary && count <= rightBoundary) {
+            color = 'primary';
+          } else if (key === 'commander' && currentList.hasFieldCommander) {
+            color = 'primary';
+          }
         }
+
+
         return (
           <div key={ranks[key].name} className={classes.item}>
             <RankButton

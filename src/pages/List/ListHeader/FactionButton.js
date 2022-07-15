@@ -5,7 +5,10 @@ import FactionIcon from 'common/FactionIcon';
 
 function FactionButton({ faction, handleFactionMenuOpen }) {
   return (
-    <IconButton size="small" onClick={handleFactionMenuOpen}>
+    <IconButton
+      size="medium"
+      onClick={handleFactionMenuOpen}
+    >
       <FactionIcon faction={faction} />
     </IconButton>
   );

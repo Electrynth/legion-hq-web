@@ -35,11 +35,17 @@ function ListUnits() {
     const changeLoadoutHandlers = [];
     const deleteLoadoutHandlers = [];
     const totalUpgradeBar = [...unitCard.upgradeBar, ...unit.additionalUpgradeSlots];
-    if (counterpartId && !currentList.uniques.includes(counterpartId)) {
+    if (counterpartId && unit.unitId === 'tj' && currentList.uniques.includes('tp') && !currentList.uniques.includes(counterpartId)) {
       addCounterpartHandler = () => setCardPaneFilter({
         action: 'COUNTERPART', unitIndex, counterpartId
       });
-    } else if (counterpartId && currentList.uniques.includes(counterpartId)) {
+    } else if (counterpartId && !currentList.uniques.includes(counterpartId)) {
+      if (unit.unitId !== 'tj') {
+        addCounterpartHandler = () => setCardPaneFilter({
+          action: 'COUNTERPART', unitIndex, counterpartId
+        });
+      }
+    } else if (counterpartId && currentList.uniques.includes(counterpartId) && unit.counterpart) {
       const cAddUpgradeHandlers = [];
       const cSwapUpgradeHandlers = [];
       const cZoomUpgradeHandlers = [];
