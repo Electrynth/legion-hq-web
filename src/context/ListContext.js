@@ -10,7 +10,6 @@ import {
   rehashList,
   mergeLists,
   convertHashToList,
-  toggleListMode,
   changeListTitle,
   setListMode,
   addUnit,
@@ -155,6 +154,7 @@ export function ListProvider({
   const handleClearList = () => {
     setCardPaneFilter({ action: 'DISPLAY' });
     const newList = JSON.parse(JSON.stringify(listTemplate));
+    if (currentList.faction === 'fringe') newList.battleForce = 'Shadow Collective';
     setCurrentList({ ...newList, faction: currentList.faction });
   }
   const handleChangeTitle = title => setCurrentList({ ...changeListTitle(currentList, title) });
@@ -328,6 +328,10 @@ export function ListProvider({
     setCurrentKillPoints(currentKillPoints + points);
   }
 
+  const handleSetBattleForce = (battleForce) => {
+    setCurrentList({ ...currentList, battleForce });
+  }
+
   const unitProps = {
     getEligibleUnitsToAdd,
     getEquippableUpgrades,
@@ -338,7 +342,8 @@ export function ListProvider({
     handleEquipUpgrade,
     handleUnequipUpgrade,
     handleIncrementUnit,
-    handleDecrementUnit
+    handleDecrementUnit,
+    handleSetBattleForce
   };
   const battleProps = {
     getEligibleBattlesToAdd,
@@ -371,7 +376,7 @@ export function ListProvider({
     handleMergeList,
     handleToggleUsingOldPoints,
     handleToggleIsKillPointMode,
-    handleAddKillPoints
+    handleAddKillPoints,
   };
   const modalProps = {
     handleOpenModal,
