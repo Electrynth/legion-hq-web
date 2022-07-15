@@ -8,6 +8,7 @@ const listTemplate = {
   pointTotal: 0,
   killPoints: 0,
   competitive: false,
+  battleForce: '',
   killedUnits: [],
   units: [],
   commandCards: [],

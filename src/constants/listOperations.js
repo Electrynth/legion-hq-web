@@ -4,6 +4,7 @@ import ranks from 'constants/ranks';
 import legionModes from 'constants/legionModes';
 import interactions from 'constants/cardInteractions';
 import listTemplate from 'constants/listTemplate';
+import battleForcesDict from 'constants/battleForcesDict';
 
 function countPoints(list) {
   list.pointTotal = 0;
@@ -141,6 +142,7 @@ function consolidate(list) {
       }
     }
   }
+  if (!list.battleForce) list.battleForce = '';
   if (!hasContingencyKeyword) list.contingencies = [];
   list.commandCards = sortCommandIds(list.commandCards);
   return countPoints(list);
@@ -945,37 +947,37 @@ function decrementUnit(list, index) {
 function restoreUnit(list, index) {
   let unit = list.units[index];
   let perUnitCost = unit.totalUnitCost / unit.count;
-  
+
   const killedFiltered = list.killedUnits.filter(function(item){
     return item === unit.unitId + unit.count;
   })
-  
+
   if(killedFiltered.length !== 0 && killedFiltered.length <= unit.totalUnitCost){
     killedFiltered.pop();
     const remainingUnits = list.killedUnits.filter(function(item){
       return item !== unit.unitId + perUnitCost;
     });
-    
+
     list.killedUnits = killedFiltered.concat(remainingUnits);
     list.killPoints -= perUnitCost;
   }
-  
+
   return list;
 }
 
 function killUnit(list, index) {
   let unit = list.units[index];
   let perUnitCost = unit.totalUnitCost / unit.count;
-  
+
   const killedFiltered = list.killedUnits.filter(function(item){
     return item === unit.unitId + perUnitCost;
   })
-  
+
   if(killedFiltered.length < unit.count) {
     list.killedUnits.push(unit.unitId + unit.count);
     list.killPoints += perUnitCost;
   }
-  
+
   return list;
 }
 
@@ -996,6 +998,8 @@ function getEligibleUnitsToAdd(list, rank) {
     if (!list.faction.includes(card.faction) && card.affiliations && !card.affiliations.includes(list.faction)) continue;
     if (list.uniques.includes(id)) continue;
     if (list.commanders.includes(card.cardName)) continue;
+    if (list.battleForce && !battleForcesDict[list.battleForce][rank].includes(id)) continue;
+    if (list.battleForce !== 'Blizzard Force' && id === 'sr') continue;
     if (card.detachment) {
       for (let i = 0; i < list.units.length; i++) {
         const unit = list.units[i];
@@ -1242,6 +1246,9 @@ function getEligibleCommandsToAdd(list) {
     if (!list.faction.includes(card.faction)) return;
     if (id === 'aa') return; // Standing Orders
     if (id === 'jl' || id === 'ka' || id === 'kb') return; // Duplicates
+    if (card.battleForce && card.battleForce !== list.battleForce) {
+      return;
+    }
     if (
       pipCounts[card.cardSubtype] > 1 ||
       (card.commander && !list.commanders.includes(card.commander))
@@ -1273,6 +1280,8 @@ function getEquippableUpgrades(
     if (card.cardSubtype !== upgradeType) continue;
     if (list.uniques.includes(id)) continue;
     if (upgradesEquipped.includes(id)) continue;
+    if (card.faction !== '' && list.faction !== card.faction) continue;
+    if (card.isUnique && list.battleForce && !battleForcesDict[list.battleForce].allowedUniqueUpgrades.includes(id)) continue;
 
     // dynamically add the force affinity
     const { faction } = unitCard;
@@ -1472,7 +1481,19 @@ function convertHashToList(faction, url) {
   let list = JSON.parse(JSON.stringify(listTemplate));
   list.faction = faction;
   list.contingencies = [];
-  const segments = url.split(',');
+  let segments;
+  if (url.includes(':')) {
+    const battleForceSegments = url.split(':');
+    if (battleForceSegments[0].includes('ebd')) list.battleForce = 'Echo Base Defenders';
+    else if (battleForceSegments[0].includes('bf')) list.battleForce = 'Blizzard Force';
+    else if (battleForceSegments[0].includes('5l')) list.battleForce = '501st Legion';
+    else if (battleForceSegments[0].includes('sif')) list.battleForce = 'Separatist Invasion Force';
+    else if (battleForceSegments[0].includes('sc')) list.battleForce = 'Shadow Collective';
+    segments = battleForceSegments[1].split(',');
+  } else {
+    list.battleForce = '';
+    segments = url.split(',');
+  }
   const unitSegments = [];
   const otherSegments = [];
   try {
@@ -1522,6 +1543,7 @@ function convertHashToList(faction, url) {
     // console.log(e);
     return false;
   }
+  if (list.faction === 'fringe') list.battleForce = 'Shadow Collective';
   return consolidate(list);
 }
 
