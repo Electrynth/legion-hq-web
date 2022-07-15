@@ -83,6 +83,16 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Mini-extravaganza Cards Added",
+    "date": "15 July 2022",
+    "body": "Added various The Mandalorian themed cards from AMG event."
+  },
+  {
+    "title": "Battle Forces Implemented",
+    "date": "5 July 2022",
+    "body": "Click on the faction icon button to select a battle force. More quality of life features related to battle forces soon to come."
+  },
+  {
     "title": "New Feature to View Old Cards",
     "date": "1 June 2022",
     "body": "Click on a unit's portrait or the 'Show More' button to view the old version of a card. As of now only the original bounty hunter cards use this feature."
