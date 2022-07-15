@@ -1280,7 +1280,7 @@ function getEquippableUpgrades(
     if (card.cardSubtype !== upgradeType) continue;
     if (list.uniques.includes(id)) continue;
     if (upgradesEquipped.includes(id)) continue;
-    if (card.faction !== '' && list.faction !== card.faction) continue;
+    if (card.faction && card.faction !== '' && list.faction !== card.faction) continue;
     if (card.isUnique && list.battleForce && !battleForcesDict[list.battleForce].allowedUniqueUpgrades.includes(id)) continue;
 
     // dynamically add the force affinity
