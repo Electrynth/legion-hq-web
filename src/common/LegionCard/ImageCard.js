@@ -45,6 +45,7 @@ function ImageCard({ isSelected, card, handleClick, handleCardZoom }) {
   const handleExpandClick = () => setIsExpanded(!isExpanded);
   const isDoubleSided = cardType === 'upgrade' && keywords.includes('Reconfigure');
   const isSkirmish = card.keywords.includes('Skirmish');
+
   return (
     <Grow unmountOnExit in={true}>
       <Card
