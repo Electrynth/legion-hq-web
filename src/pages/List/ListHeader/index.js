@@ -4,12 +4,17 @@ import {
   MenuItem,
   Typography,
   IconButton,
-  Button
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Clear as ClearIcon } from '@material-ui/icons';
 import ListContext from 'context/ListContext';
 import legionModes from 'constants/legionModes';
+import battleForcesDict from 'constants/battleForcesDict';
 import battleForces from 'constants/battleForces';
 import ModeButton from './ModeButton';
 import TitleField from './TitleField';
@@ -21,6 +26,12 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  battleForceContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 4
   },
   columnContainer: {
     display: 'flex',
@@ -42,8 +53,11 @@ function ListHeader() {
   } = useContext(ListContext);
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [isBattleForceDialogOpen, setIsBattleForceDialogOpen] = React.useState(false);
   const handleFactionMenuOpen = event => setAnchorEl(event.currentTarget);
   const handleFactionMenuClose = () => setAnchorEl(null);
+  const handleOpenBFDialog = () => setIsBattleForceDialogOpen(true);
+  const handleCloseBFDialog = () => setIsBattleForceDialogOpen(false);
   const numActivations = currentList.units.reduce((num, unit) => {
     num += unit.count;
     return num;
@@ -125,10 +139,27 @@ function ListHeader() {
 
       </div>
       {currentList.battleForce && (
-        <div className={classes.container}>
-          <Typography>
+        <div className={classes.battleForceContainer}>
+          <Button
+            variant="outlined"
+            size="small"
+            onClick={handleOpenBFDialog}
+          >
             {currentList.battleForce}
-          </Typography>
+          </Button>
+          <Dialog open={isBattleForceDialogOpen} onClose={handleCloseBFDialog}>
+            <DialogTitle>{currentList.battleForce} List Requirements</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                The list building rules for the {currentList.battleForce} battleforce is <a style={{ textDecoration: 'none' }} href={battleForcesDict[currentList.battleForce].ruleUrl} target="_blank" rel="noreferrer noopener">here</a>.
+              </DialogContentText>
+              <br/>
+              <DialogContentText>
+                All Star Wars: Legion documents are located on the Atomic Mass Games{' '}
+                <a style={{ textDecoration: 'none' }} href="https://atomicmassgames.com/star-wars-legion-documents" target="_blank" rel="noreferrer noopener">website</a>.
+              </DialogContentText>
+            </DialogContent>
+          </Dialog>
         </div>
       )}
     </div>

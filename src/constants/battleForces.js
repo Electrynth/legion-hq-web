@@ -16,7 +16,7 @@ const battleForces = {
       name: 'Blizzard Force',
       commander: ['at', 'au', 'ar'],
       operative: ['fn'],
-      corps: ['az', 'sr'],
+      corps: ['ay', 'az', 'sr'],
       special: [],
       support: ['bf', 'be'],
       heavy: ['bg'],

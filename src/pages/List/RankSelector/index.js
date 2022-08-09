@@ -32,38 +32,98 @@ function RankSelector() {
     currentUnitCounts['operative'] -= 1;
   }
 
-  return (
-    <div className={classes.container}>
-      {Object.keys(ranks).map(key => {
-        let color = 'error';
-        let count = currentUnitCounts[key];
-        const mode = legionModes[currentList.mode];
-        let leftBoundary = mode.unitCounts[key][0];
-        let rightBoundary = mode.unitCounts[key][1];
+  const rankValidities = {
+    commander: false,
+    operative: false,
+    corps: false,
+    special: false,
+    support: false,
+    heavy: false
+  };
+
+  Object.keys(ranks).forEach(key => {
+    let count = currentUnitCounts[key];
+    const mode = legionModes[currentList.mode];
+    let leftBoundary = mode.unitCounts[key][0];
+    let rightBoundary = mode.unitCounts[key][1];
 
 
-        if (currentList.battleForce) {
-          leftBoundary = battleForcesDict[currentList.battleForce][currentList.mode][key][0];
-          rightBoundary = battleForcesDict[currentList.battleForce][currentList.mode][key][1];
-          if (key === 'special') rightBoundary += rankInteractions;
-          if (count >= leftBoundary && count <= rightBoundary) {
-            color = 'primary';
+    if (currentList.battleForce) {
+      leftBoundary = battleForcesDict[currentList.battleForce][currentList.mode][key][0];
+      rightBoundary = battleForcesDict[currentList.battleForce][currentList.mode][key][1];
+      if (key === 'commander' && currentList.hasFieldCommander) {
+        leftBoundary = 0;
+      }
+      if (key === 'special') rightBoundary += rankInteractions;
+      if (count >= leftBoundary && count <= rightBoundary) {
+        rankValidities[key] = true;
+      }
+
+      if (currentList.battleForce === 'Shadow Collective') {
+        if (mode === '500-point mode' && (key === 'commander' || key === 'operative')) {
+          if (currentUnitCounts.commander + currentUnitCounts.operative > 2) {
+            rankValidities.commander = false;
+            rankValidities.operative = false;
           }
         } else {
-          if (key === 'special') rightBoundary += rankInteractions;
-          if (count >= leftBoundary && count <= rightBoundary) {
-            color = 'primary';
-          } else if (key === 'commander' && currentList.hasFieldCommander) {
-            color = 'primary';
+          if (currentUnitCounts.commander + currentUnitCounts.operative > 4) {
+            rankValidities.commander = false;
+            rankValidities.operative = false;
           }
         }
+      } else if (currentList.battleForce === 'Blizzard Force') {
+        if (mode === '500-point mode' && (key === 'commander' || key === 'operative')) {
+          if (currentUnitCounts.commander + currentUnitCounts.operative > 2) {
+            rankValidities.commander = false;
+            rankValidities.operative = false;
+          }
+        } else {
+          if (currentUnitCounts.commander + currentUnitCounts.operative > 2) {
+            rankValidities.commander = false;
+            rankValidities.operative = false;
+          }
+        }
+      } else if (currentList.battleForce === 'Echo Base Defenders') {
+        if (mode === '500-point mode' && (key === 'commander' || key === 'operative')) {
+          if (currentUnitCounts.commander + currentUnitCounts.operative > 3) {
+            rankValidities.commander = false;
+            rankValidities.operative = false;
+          }
+        } else {
+          if (currentUnitCounts.commander + currentUnitCounts.operative > 4) {
+            rankValidities.commander = false;
+            rankValidities.operative = false;
+          }
+        }
+      } else if (currentList.battleForce === '501st Legion') {
+        if (key === 'commander' || key === 'operative') {
+          if (currentUnitCounts.commander + currentUnitCounts.operative > 2) {
+            rankValidities.commander = false;
+            rankValidities.operative = false;
+          }
+        }
+      }
 
+    } else {
+      if (key === 'commander' && currentList.hasFieldCommander) {
+        leftBoundary = 0;
+      }
+      if (key === 'special') rightBoundary += rankInteractions;
+      if (count >= leftBoundary && count <= rightBoundary) {
+        rankValidities[key] = true;
+      }
+    }
+  });
+
+  return (
+    <div className={classes.container}>
+      {Object.keys(rankValidities).map(key => {
 
         return (
           <div key={ranks[key].name} className={classes.item}>
             <RankButton
               rank={key}
-              color={color}
+              color={rankValidities[key] ? 'primary' : 'error'}
               count={currentUnitCounts[key]}
               handleClick={() => setCardPaneFilter({
                 action: 'UNIT', rank: key

@@ -8,6 +8,7 @@ const battleForcesDict = {
       support: ['an', 'he'],
       heavy: ['ap'],
       allowedUniqueUpgrades: ['fk'],
+      ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-EBD.pdf',
       'standard mode': {
         commander: [1, 4],
         operative: [0, 3],
@@ -29,10 +30,11 @@ const battleForcesDict = {
       name: 'Blizzard Force',
       commander: ['at', 'au', 'ar'],
       operative: ['fn'],
-      corps: ['az', 'sr'],
+      corps: ['ay', 'az', 'sr'],
       special: [],
       support: ['bf', 'be'],
       heavy: ['bg'],
+      ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-BF.pdf',
       allowedUniqueUpgrades: ['fl'],
       'standard mode': {
         commander: [1, 2],
@@ -59,6 +61,7 @@ const battleForcesDict = {
       special: ['kz', 'ky'],
       support: ['mb', 'ic'],
       heavy: ['oo'],
+      ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-501.pdf',
       allowedUniqueUpgrades: ['lh', 'lg'],
       'standard mode': {
         commander: [1, 2],
@@ -85,6 +88,7 @@ const battleForcesDict = {
       special: ['px'],
       support: ['ie', 'mc'],
       heavy: ['gc'],
+      ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-SI.pdf',
       allowedUniqueUpgrades: ['il'],
       'standard mode': {
         commander: [1, 1],
@@ -111,13 +115,14 @@ const battleForcesDict = {
       special: ['re'],
       support: ['sq'],
       heavy: ['sm'],
+      ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-SC.pdf',
       allowedUniqueUpgrades: ['rq', 'so', 'se', 'sp', 'sg', 'sh', 'si'],
       'standard mode': {
         commander: [1, 4],
         operative: [0, 3],
         corps: [2, 6],
         special: [0, 4],
-        support: [0, 2],
+        support: [0, 3],
         heavy: [0, 2]
       },
       '500-point mode': {

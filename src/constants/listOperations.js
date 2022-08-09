@@ -494,7 +494,7 @@ function generateTTSJSONText(list) {
   if (list.faction === 'rebels') ttsJSON.armyFaction = 'rebel';
   else if (list.faction === 'empire') ttsJSON.armyFaction = 'imperial';
   else if (list.faction === 'republic') ttsJSON.armyFaction = 'republic';
-  else if (list.faction === 'fringe') ttsJSON.armyFaction = 'fringe';
+  else if (list.faction === 'fringe') ttsJSON.armyFaction = '';
   else ttsJSON.armyFaction = 'separatist';
 
   ttsJSON.commandCards = [];
