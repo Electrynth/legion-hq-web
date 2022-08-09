@@ -83,6 +83,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Rank Counting Improvements",
+    "date": "9 August 2022",
+    "body": "The way units of a given rank are counted have been improved to work better with battle forces. Additionally, a link to battle force rules has been added in the form of a button for convenience."
+  },
+  {
     "title": "Mini-extravaganza Cards Added",
     "date": "15 July 2022",
     "body": "Added various The Mandalorian themed cards from AMG event."
