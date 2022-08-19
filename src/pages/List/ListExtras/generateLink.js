@@ -45,7 +45,7 @@ function generateLink(list) {
     if (list.battleForce === 'Echo Base Defenders') bf = 'ebd';
     else if (list.battleForce === 'Blizzard Force') bf = 'bf';
     else if (list.battleForce === '501st Legion') bf = '5l';
-    else if (list.battleForce === 'Separatist Invasion Force') bf = 'sif';
+    else if (list.battleForce === 'Separatist Invasion') bf = 'si';
     else if (list.battleForce === 'Shadow Collective') bf = 'sc';
 
     return `${urls.listPath}/${list.faction}/${bf}:${urlStrings.join(',')}`;

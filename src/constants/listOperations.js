@@ -1487,7 +1487,8 @@ function convertHashToList(faction, url) {
     if (battleForceSegments[0].includes('ebd')) list.battleForce = 'Echo Base Defenders';
     else if (battleForceSegments[0].includes('bf')) list.battleForce = 'Blizzard Force';
     else if (battleForceSegments[0].includes('5l')) list.battleForce = '501st Legion';
-    else if (battleForceSegments[0].includes('sif')) list.battleForce = 'Separatist Invasion Force';
+    else if (battleForceSegments[0].includes('si')) list.battleForce = 'Separatist Invasion';
+    else if (battleForceSegments[0].includes('sif')) list.battleForce = 'Separatist Invasion';
     else if (battleForceSegments[0].includes('sc')) list.battleForce = 'Shadow Collective';
     segments = battleForceSegments[1].split(',');
   } else {
@@ -1544,6 +1545,9 @@ function convertHashToList(faction, url) {
     return false;
   }
   if (list.faction === 'fringe') list.battleForce = 'Shadow Collective';
+  if (list.faction === 'separatists' && list.battleForce === 'Echo Base Defenders') {
+    list.battleForce = 'Separatist Invasion';
+  }
   return consolidate(list);
 }
 
