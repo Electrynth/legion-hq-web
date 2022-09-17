@@ -4,12 +4,23 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { DataProvider } from 'context/DataContext';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Auth0Provider } from '@auth0/auth0-react';
+import auth from 'constants/auth';
+const { domain, clientID } = auth.v1;
+const { returnTo } = auth.prod;
+
 
 ReactDOM.render(
   <Router>
-    <DataProvider>
-      <App />
-    </DataProvider>
+    <Auth0Provider
+      domain={domain}
+      clientId={clientID}
+      redirectUri={returnTo}
+    >
+      <DataProvider>
+        <App />
+      </DataProvider>
+    </Auth0Provider>
   </Router>,
   document.getElementById('root')
 );

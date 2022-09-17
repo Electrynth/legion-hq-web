@@ -58,9 +58,9 @@ function RankSelector() {
       if (count >= leftBoundary && count <= rightBoundary) {
         rankValidities[key] = true;
       }
-
       if (currentList.battleForce === 'Shadow Collective') {
-        if (mode === '500-point mode' && (key === 'commander' || key === 'operative')) {
+
+        if (currentList.mode === '500-point mode' && (key === 'commander' || key === 'operative')) {
           if (currentUnitCounts.commander + currentUnitCounts.operative > 2) {
             rankValidities.commander = false;
             rankValidities.operative = false;
@@ -72,7 +72,7 @@ function RankSelector() {
           }
         }
       } else if (currentList.battleForce === 'Blizzard Force') {
-        if (mode === '500-point mode' && (key === 'commander' || key === 'operative')) {
+        if (currentList.mode === '500-point mode' && (key === 'commander' || key === 'operative')) {
           if (currentUnitCounts.commander + currentUnitCounts.operative > 2) {
             rankValidities.commander = false;
             rankValidities.operative = false;
@@ -84,7 +84,7 @@ function RankSelector() {
           }
         }
       } else if (currentList.battleForce === 'Echo Base Defenders') {
-        if (mode === '500-point mode' && (key === 'commander' || key === 'operative')) {
+        if (currentList.mode === '500-point mode' && (key === 'commander' || key === 'operative')) {
           if (currentUnitCounts.commander + currentUnitCounts.operative > 3) {
             rankValidities.commander = false;
             rankValidities.operative = false;

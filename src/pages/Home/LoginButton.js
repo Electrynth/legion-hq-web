@@ -1,33 +1,24 @@
-import React from 'react';
+import React  from 'react';
 import { Button } from '@material-ui/core';
 import LargerTooltip from 'common/LargerTooltip';
+import DataContext from 'context/DataContext';
 
 function LoginButton({ auth }) {
-  let disabled, buttonText, tooltipText, handleClick;
-  if (!auth) {
-    disabled = true;
-    tooltipText = '';
-    buttonText = 'Loading...';
-  } else if (auth.isAuthenticated()) {
-    disabled = false;
-    buttonText = 'Logout';
-    tooltipText = `Logged in as ${auth.getEmail()}`;
-    handleClick = auth.signOut;
-  } else {
-    disabled = false;
-    buttonText = 'Login';
-    tooltipText = 'Login via Google, Facebook, or use a custom account.';
-    handleClick = auth.signIn;
-  }
+  const {
+    isLoginDisabled,
+    loginTooltipText,
+    loginButtonText,
+    loginHandler
+  } = React.useContext(DataContext);
   return (
-    <LargerTooltip arrow title={tooltipText}>
+    <LargerTooltip arrow title={loginTooltipText}>
       <Button
         color="default"
         variant="contained"
-        disabled={disabled}
-        onClick={handleClick}
+        disabled={isLoginDisabled}
+        onClick={loginHandler}
       >
-        {buttonText}
+        {loginButtonText}
       </Button>
     </LargerTooltip>
   );

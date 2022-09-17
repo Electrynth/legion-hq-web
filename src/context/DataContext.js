@@ -13,9 +13,11 @@ import { Snackbar } from '@material-ui/core';
 import { AlertTitle, Alert } from '@material-ui/lab';
 // import ErrorFallback from 'common/ErrorFallback';
 import FactionIcon from 'common/FactionIcon';
-import auth0Client from 'utility/Auth';
 import urls from 'constants/urls';
 import settings from 'constants/settings';
+import { useAuth0 } from '@auth0/auth0-react';
+import auth from 'constants/auth';
+const { returnTo } = auth.prod;
 
 const DataContext = createContext();
 const httpClient = Axios.create();
@@ -365,31 +367,35 @@ export function DataProvider({ children }) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isAlertOpen, setIsAlertOpen] = useState(false);
   const [isAlertAllowed, setIsAlertAllowed] = useState(true);
-  const [auth, setAuth] = useState();
   const [error, setError] = useState();
   const [userId, setUserId] = useState();
   const [message, setMessage] = useState();
   const [userLists, setUserLists] = useState([]);
   const [userSettings, setUserSettings] = useState(initializeLocalSettings());
-  const [numListFetches, setNumListFetches] = useState(0);
+
+  const { user, loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  let isLoginDisabled = true;
+  let loginTooltipText = '';
+  let loginButtonText = 'Loading...';
+  let loginHandler;
+
+  if (!isAuthenticated) {
+    isLoginDisabled = false;
+    loginButtonText = 'Login';
+    loginTooltipText = 'Login via Google, Facebook, or use a custom account.';
+    loginHandler = () => loginWithRedirect();
+  } else {
+    isLoginDisabled = false;
+    loginButtonText = 'Logout';
+    loginTooltipText = `Logged in as ${user.email}`;
+    loginHandler = () => logout({ returnTo });
+  }
 
   useEffect(() => {
-    const asyncSilentAuth = async () => {
-      try {
-        await auth0Client.silentAuth();
-        setAuth(auth0Client);
-      } catch {
-        setAuth(auth0Client);
-      }
+    if (user && user.email && isAuthenticated && !userId) {
+      fetchUserId(user.email);
     }
-    asyncSilentAuth();
-  }, []);
-
-  useEffect(() => {
-    if (auth && auth.isAuthenticated() && !userId) {
-      fetchUserId(auth.getEmail());
-    }
-  }, [auth]);
+  }, [isAuthenticated, user, userId]);
 
   useEffect(() => {
     if (userId) fetchUserLists(userId);
@@ -401,12 +407,12 @@ export function DataProvider({ children }) {
       if (userId && numFetches < 5) {
         numFetches++;
         fetchUserLists(userId);
-      } else if (auth && auth.isAuthenticated() && !userId) {
-        fetchUserId(auth.getEmail());
+      } else if (user && isAuthenticated && !userId) {
+        fetchUserId(user.email ? user.email : 'Undefined email');
       }
     }, 15000);
     return () => clearInterval(intervalId);
-  }, [userId, auth]);
+  }, [userId, user, isAuthenticated]);
 
   const setUserSettingsValue = (key, value) => {
     if (typeof(Storage) !== 'undefined') {
@@ -443,7 +449,6 @@ export function DataProvider({ children }) {
     }
   }
   const fetchUserId = (email) => {
-    console.log('Email:', email);
     if (email) {
       httpClient.get(`${urls.api}/users?email=${email}`)
         .then(response => {
@@ -481,13 +486,13 @@ export function DataProvider({ children }) {
   }
 
   // if (error) return <ErrorFallback error={error} message={message} />;
+
   return (
     <React.Fragment>
       <DataContext.Provider
         value={{
           isDrawerOpen,
           newsPosts,
-          auth,
           userId,
           routes,
           userLists,
@@ -497,7 +502,11 @@ export function DataProvider({ children }) {
           setUserLists,
           setUserSettingsValue,
           setIsDrawerOpen,
-          deleteUserList
+          deleteUserList,
+          isLoginDisabled,
+          loginTooltipText,
+          loginButtonText,
+          loginHandler
         }}
       >
         {children}
