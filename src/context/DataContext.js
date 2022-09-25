@@ -85,6 +85,16 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "IG-11 & IG-88 Cards Added",
+    "date": "20 September 2022",
+    "body": "Added cards from the AMG preview on the IG-Series Assassin Droid."
+  },
+  {
+    "title": "Din Djarin Cards Added",
+    "date": "16 September 2022",
+    "body": "The final revealed cards for The Mandalorian have been added."
+  },
+  {
     "title": "Rank Counting Improvements",
     "date": "9 August 2022",
     "body": "The way units of a given rank are counted have been improved to work better with battle forces. Additionally, a link to battle force rules has been added in the form of a button for convenience."

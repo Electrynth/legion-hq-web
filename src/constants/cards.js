@@ -9491,6 +9491,156 @@ const cards = JSON.parse(JSON.stringify({
 		"requirements": [
 			{ "cardName": "Din Djarin" }
 		]
+	},
+	"ts": {
+		"id": "ts",
+		"displayName": "",
+		"cardSubtype": "armament",
+		"cardName": "Beskar Spear",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 15,
+		"faction": "",
+		"imageName": "Beskar Spear.jpeg",
+		"keywords": ["Duelist", "Pierce"],
+		"requirements": [
+			{ "cardName": "Din Djarin" }
+		]
+	},
+	"tt": {
+		"id": "tt",
+		"cardName": "I Like Those Odds",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Din Djarin",
+		"imageName": "I Like Those Odds.jpeg",
+		"products": [],
+		"faction": "",
+		"battleForce": "",
+		"keywords": []
+	},
+	"tu": {
+		"id": "tu",
+		"cardName": "This is the Way",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Din Djarin",
+		"imageName": "This is the Way.jpeg",
+		"products": [],
+		"faction": "",
+		"battleForce": "",
+		"keywords": ["Relentless"]
+	},
+	"tv": {
+		"id": "tv",
+		"cardName": "The Hand Thing",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Din Djarin",
+		"imageName": "The Hand Thing.jpeg",
+		"products": [],
+		"faction": "",
+		"battleForce": "",
+		"keywords": ["Deflect"]
+	},
+	"tw": {
+		"id": "tw",
+		"cardName": "A Machine Made For Killing",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "IG-11",
+		"imageName": "A Machine Made For Killing.jpeg",
+		"products": [],
+		"faction": "",
+		"battleForce": "",
+		"keywords": ["Demoralize", "Steady"]
+	},
+	"tx": {
+		"id": "tx",
+		"cardName": "Anti-Capture Protocols",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "IG-11",
+		"imageName": "Anti-Capture Protocols.jpeg",
+		"products": [],
+		"faction": "",
+		"battleForce": "",
+		"keywords": ["Blast", "Impact", "Suppressive"]
+	},
+	"ty": {
+		"id": "ty",
+		"cardName": "Focused on the Kill",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "IG-88",
+		"imageName": "Focused on the Kill.jpeg",
+		"products": [],
+		"faction": "",
+		"battleForce": "",
+		"keywords": ["Permanent", "Bounty"]
+	},
+	"tz": {
+		"id": "tz",
+		"cardName": "Independent Programming",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "IG-88",
+		"imageName": "Independent Programming.jpeg",
+		"products": [],
+		"faction": "",
+		"battleForce": "",
+		"keywords": ["Permanent", "Independent"]
+	},
+	"ua": {
+		"id": "ua",
+		"cardName": "Mechanical Carnage",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "IG-11",
+		"imageName": "Mechanical Carnage.jpeg",
+		"products": [],
+		"faction": "",
+		"battleForce": "",
+		"keywords": ["Gunslinger"]
+	},
+	"ub": {
+		"id": "ub",
+		"displayName": "",
+		"cardSubtype": "programming",
+		"cardName": "\"Bounty\" Programming",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"faction": "",
+		"imageName": "%22Bounty%22 Programming.jpeg",
+		"keywords": ["Bounty", "AI", "Pierce", "Suppressive"],
+		"requirements": [
+			{ "cardName": "IG-11" }
+		]
+	},
+	"uc": {
+		"id": "uc",
+		"cardName": "A Machine Made For Killing",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "IG-88",
+		"imageName": "A Machine Made For Killing.jpeg",
+		"products": [],
+		"faction": "",
+		"battleForce": "",
+		"keywords": ["Demoralize", "Steady"]
+	},
+	"ud": {
+		"id": "ud",
+		"cardName": "The Hand Thing",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "IG-11",
+		"imageName": "The Hand Thing.jpeg",
+		"products": [],
+		"faction": "",
+		"battleForce": "",
+		"keywords": ["Deflect"]
 	}
 }));
 

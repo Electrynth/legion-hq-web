@@ -1246,6 +1246,8 @@ function getEligibleCommandsToAdd(list) {
     if (!list.faction.includes(card.faction)) return;
     if (id === 'aa') return; // Standing Orders
     if (id === 'jl' || id === 'ka' || id === 'kb') return; // Duplicates
+    if ((id === 'tv' || id === 'ud') && !list.uniques.includes('tn')) return; // grogu's command card
+
     if (card.battleForce && card.battleForce !== list.battleForce) {
       return;
     }
