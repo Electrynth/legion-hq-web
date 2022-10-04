@@ -11,7 +11,7 @@ import {
   DialogContentText
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Clear as ClearIcon } from '@material-ui/icons';
+import { Clear as ClearIcon, Info as InfoIcon } from '@material-ui/icons';
 import ListContext from 'context/ListContext';
 import legionModes from 'constants/legionModes';
 import battleForcesDict from 'constants/battleForcesDict';
@@ -141,6 +141,7 @@ function ListHeader() {
       {currentList.battleForce && (
         <div className={classes.battleForceContainer}>
           <Button
+            endIcon={<InfoIcon />}
             variant="outlined"
             size="small"
             onClick={handleOpenBFDialog}

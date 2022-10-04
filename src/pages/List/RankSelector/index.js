@@ -49,8 +49,14 @@ function RankSelector() {
 
 
     if (currentList.battleForce) {
-      leftBoundary = battleForcesDict[currentList.battleForce][currentList.mode][key][0];
-      rightBoundary = battleForcesDict[currentList.battleForce][currentList.mode][key][1];
+      if (!battleForcesDict[currentList.battleForce][currentList.mode]) {
+        leftBoundary = battleForcesDict[currentList.battleForce]['standard mode'][key][0];
+        rightBoundary = battleForcesDict[currentList.battleForce]['standard mode'][key][1];
+      } else {
+        leftBoundary = battleForcesDict[currentList.battleForce][currentList.mode][key][0];
+        rightBoundary = battleForcesDict[currentList.battleForce][currentList.mode][key][1];
+      }
+
       if (key === 'commander' && currentList.hasFieldCommander) {
         leftBoundary = 0;
       }
@@ -82,6 +88,16 @@ function RankSelector() {
             rankValidities.commander = false;
             rankValidities.operative = false;
           }
+        }
+        if (key === 'corps') {
+          const maxStormtroopers = 2;
+          let currentStormtroopers = 0;
+          for (let i = 0; i < currentList.units.length; i++) {
+            if (currentList.units[i].unitId === 'ay') {
+              currentStormtroopers += currentList.units[i].count;
+            }
+          }
+          if (currentStormtroopers > maxStormtroopers) rankValidities.corps = false;
         }
       } else if (currentList.battleForce === 'Echo Base Defenders') {
         if (currentList.mode === '500-point mode' && (key === 'commander' || key === 'operative')) {
