@@ -487,6 +487,7 @@ function generateTTSJSONText(list) {
     "kt": "\"Bunker Buster\" Shells",
     "le": "EMP \"Droid Poppers\"",
     "lw": "Iden's ID10 Seeker Droid",
+    "sr": "Stormtroopers Heavy Response Unit"
   };
 
   ttsJSON.points = list.pointTotal;

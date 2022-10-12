@@ -9038,6 +9038,7 @@ const cards = JSON.parse(JSON.stringify({
 		"speed": 2,
 		"cardSubtype": "trooper",
 		"cardName": "Stormtroopers",
+		"displayName": "Stormtroopers Heavy Response Unit",
 		"isUnique": false,
 		"rank": "corps",
 		"cost": 30,
