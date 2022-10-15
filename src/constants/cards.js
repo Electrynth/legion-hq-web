@@ -9642,6 +9642,69 @@ const cards = JSON.parse(JSON.stringify({
 		"faction": "",
 		"battleForce": "",
 		"keywords": ["Deflect"]
+	},
+	"ue": {
+		"id": "ue",
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["crit"],
+		"speed": 2,
+		"wounds": 5,
+		"courage": 2,
+		"cardSubtype": "clone trooper",
+		"cardName": "Clone Commander Cody",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 105,
+		"faction": "republic",
+		"imageName": "Clone Commander Cody.jpeg",
+		"keywords": [
+			"Observe",
+			"Jump",
+			"Take Cover",
+			"Direct",
+			"Target"
+		],
+		"upgradeBar": [
+			"command",
+			"training",
+			"gear"
+		],
+		"history": []
+	},
+	"uf": {
+		"id": "uf",
+		"displayName": "",
+		"cardSubtype": "personnel",
+		"cardName": "Boil",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 15,
+		"faction": "republic",
+		"imageName": "Boil.jpeg",
+		"keywords": ["Guardian", "Scout", "Leader"],
+		"requirements": [
+			"AND",
+			{ "cardSubtype": "clone trooper" },
+			{ "rank": "corps" }
+		]
+	},
+	"ug": {
+		"id": "ug",
+		"displayName": "",
+		"cardSubtype": "personnel",
+		"cardName": "Waxer",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 15,
+		"faction": "republic",
+		"imageName": "Waxer.jpeg",
+		"keywords": ["Disciplined", "Scout", "Leader"],
+		"requirements": [
+			"AND",
+			{ "cardSubtype": "clone trooper" },
+			{ "rank": "corps" }
+		]
 	}
 }));
 
