@@ -9416,7 +9416,7 @@ const cards = JSON.parse(JSON.stringify({
 		"id": "tn",
 		"cardName": "Grogu",
 		"faction": "fringe",
-		"affiliations": ["rebels", "empire"],
+		"affiliations": ["rebels"],
 		"subfaction": "bounty hunters",
 		"isUnique": true,
 		"upgradeBar": [],
@@ -9705,6 +9705,18 @@ const cards = JSON.parse(JSON.stringify({
 			{ "cardSubtype": "clone trooper" },
 			{ "rank": "corps" }
 		]
+	},
+	"uh": {
+		"id": "uh",
+		"displayName": "",
+		"cardSubtype": "gear",
+		"cardName": "Boba's Flame Projector",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Boba's Flame Projector.jpeg",
+		"keywords": ["Blast", "Spray", "Suppressive"],
+		"requirements": [{ "cardName": "Boba Fett" }]		
 	}
 }));
 
