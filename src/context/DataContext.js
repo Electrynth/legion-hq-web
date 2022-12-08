@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Points Update!",
+    "date": "8 December 2022",
+    "body": "Version 2.5 points update is being used. Click on the Using New Points toggle button to switch between the current point change taking place 1-1-2023 and the previous points change."
+  },
+  {
     "title": "IG-11 & IG-88 Cards Added",
     "date": "20 September 2022",
     "body": "Added cards from the AMG preview on the IG-Series Assassin Droid."
