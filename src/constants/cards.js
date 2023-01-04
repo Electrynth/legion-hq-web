@@ -2384,7 +2384,7 @@ const cards = JSON.parse(JSON.stringify({
 	"eb": {
 		"cardSubtype": "armament",
 		"cardName": "The Darksaber",
-		"isUnique": false,
+		"isUnique": true,
 		"cardType": "upgrade",
 		"cost": 15,
 		"imageName": "The Darksaber.jpeg",
@@ -9881,6 +9881,86 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Boba's Flame Projector.jpeg",
 		"keywords": ["Blast", "Spray", "Suppressive"],
 		"requirements": [{ "cardName": "Boba Fett" }]		
+	},
+	"ui": {
+		"id": "ui",
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["crit", "block"],
+		"speed": 2,
+		"wounds": 5,
+		"courage": 3,
+		"cardSubtype": "trooper",
+		"cardName": "Moff Gideon",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 100,
+		"faction": "empire",
+		"imageName": "Moff Gideon.jpeg",
+		"keywords": [
+			"Observe",
+			"Entourage",
+			"Ruthless",
+			"Sharpshooter",
+			"Tactical"
+		],
+		"upgradeBar": [
+			"command",
+			"command",
+			"training",
+			"gear",
+			"armament"
+		],
+		"history": []
+	},
+	"uj": {
+		"cardSubtype": "armament",
+		"cardName": "The Darksaber3",
+		"displayName": "The Darksaber",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 15,
+		"imageName": "The Darksaber3.jpeg",
+		"keywords": ["Demoralize", "Immune", "Impact", "Pierce"],
+		"requirements": [{"cardName": "Moff Gideon"}],
+		"history": [],
+		"id": "uj"
+	},
+	"uk": {
+		"id": "uk",
+		"cardName": "Die at My Hand",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Moff Gideon",
+		"imageName": "Die at My Hand.jpeg",
+		"products": [],
+		"faction": "empire",
+		"battleForce": "",
+		"keywords": ["Relentless"]
+	},
+	"ul": {
+		"id": "ul",
+		"cardName": "You Have Something I Want",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Moff Gideon",
+		"imageName": "You Have Something I Want.jpeg",
+		"products": [],
+		"faction": "empire",
+		"battleForce": "",
+		"keywords": []
+	},
+	"um": {
+		"id": "um",
+		"cardName": "Moment of Consideration",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Moff Gideon",
+		"imageName": "Moment of Consideration.jpeg",
+		"products": [],
+		"faction": "empire",
+		"battleForce": "",
+		"keywords": ["Fire Support"]
 	}
 }));
 

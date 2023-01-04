@@ -1,4 +1,5 @@
 const keywords = {
+  "Ruthless": "When another friendly Corps trooper unit at range 2 and in LOS that has a faceup order token activates, it may suffer 1 wound to perform 1 free action.",
   "Aid": "When you would gain an aim, dodge, or surge token, another friendly X unit at range 1 and in line of sight may gain that token instead. If they do, you gain 1 suppression token.",
   "Scale": "You ignore the effects of difficult terrain and do not suffer wounds while clambering. Either before or after you perform a move action, you may perform a free clamber action.",
   "Independent": "At the start of the Activation Phase, if you do not have an order token, gain X tokens.",
