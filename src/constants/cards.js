@@ -9961,6 +9961,66 @@ const cards = JSON.parse(JSON.stringify({
 		"faction": "empire",
 		"battleForce": "",
 		"keywords": ["Fire Support"]
+	},
+	"uo": {
+		"id": "uo",
+		"cardSubtype": "heavy weapon",
+		"cardName": "XS-IV Assault Cannon",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 48,
+		"imageName": "XS-IV Assault Cannon.jpeg",
+		"keywords": ["Critical"],
+		"requirements": [{"cardName": "Imperial Dark Troopers"}],
+		"history": []
+	},
+	"up": {
+		"id": "up",
+		"cardSubtype": "heavy weapon",
+		"cardName": "SM-9 Frag Launcher",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 40,
+		"imageName": "SM-9 Frag Launcher.jpeg",
+		"keywords": ["Blast", "Impact", "Cycle"],
+		"requirements": [{"cardName": "Imperial Dark Troopers"}],
+		"history": []
+	},
+	"uq": {
+		"id": "uq",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Mertalizer",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 36,
+		"imageName": "Mertalizer.jpeg",
+		"keywords": ["Suppressive"],
+		"requirements": [{"cardName": "Imperial Dark Troopers"}],
+		"history": []
+	},
+	"ur": {
+		"id": "ur",
+		"cardSubtype": "personnel",
+		"cardName": "Imperial Dark Trooper",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 32,
+		"imageName": "Imperial Dark Trooper.jpeg",
+		"keywords": [],
+		"requirements": [{"cardName": "Imperial Dark Troopers"}],
+		"history": []
+	},
+	"us": {
+		"id": "us",
+		"cardSubtype": "programming",
+		"cardName": "Programmed Loyalty",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Programmed Loyalty.jpeg",
+		"keywords": [],
+		"requirements": [{"cardName": "Imperial Dark Troopers"}],
+		"history": []
 	}
 }));
 

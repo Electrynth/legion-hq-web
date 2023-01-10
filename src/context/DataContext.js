@@ -85,6 +85,16 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Dark Trooper Cards Added",
+    "date": "10 January 2023",
+    "body": "Added cards from the AMG preview on Imperial Dark Troopers."
+  },
+  {
+    "title": "Moff Gideon",
+    "date": "4 January 2023",
+    "body": "Added cards from the AMG preview on Moff Gideon."
+  },
+  {
     "title": "Points Update!",
     "date": "8 December 2022",
     "body": "Version 2.5 points update is being used. Click on the Using New Points toggle button to switch between the current point change taking place 1-1-2023 and the previous points change."
