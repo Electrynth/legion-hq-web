@@ -10057,7 +10057,7 @@ const cards = JSON.parse(JSON.stringify({
 	"uu": {
 		"id": "uu",
 		"cardName": "The Sith Will Rule",
-		"cardSubtype": "3",
+		"cardSubtype": "2",
 		"cardType": "command",
 		"commander": "Count Dooku",
 		"imageName": "The Sith Will Rule.jpeg",
