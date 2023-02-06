@@ -10021,6 +10021,86 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": [],
 		"requirements": [{"cardName": "Imperial Dark Troopers"}],
 		"history": []
+	},
+	"ut": {
+		"id": "ut",
+		"cardType": "unit",
+		"defense": "red",
+		"surges": [],
+		"speed": 2,
+		"wounds": 5,
+		"courage": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Asajj Ventress",
+		"isUnique": true,
+		"rank": "operative",
+		"cost": 150,
+		"faction": "separatists",
+		"imageName": "Asajj Ventress.jpeg",
+		"keywords": [
+			"Jump",
+			"Deflect",
+			"Independent",
+			"Indomitable",
+			"Immune",
+			"Jar'Kai Mastery",
+			"Relentless"
+		],
+		"upgradeBar": [
+			"force",
+			"force",
+			"training",
+			"training"
+		],
+		"history": []
+	},
+	"uu": {
+		"id": "uu",
+		"cardName": "The Sith Will Rule",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Count Dooku",
+		"imageName": "The Sith Will Rule.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"battleForce": "",
+		"keywords": []
+	},
+	"uv": {
+		"id": "uv",
+		"cardName": "The Jedi Shall Fall",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Asajj Ventress",
+		"imageName": "The Jedi Shall Fall.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"battleForce": "",
+		"keywords": ["Jedi Hunter"]
+	},
+	"uv": {
+		"id": "uv",
+		"cardName": "I Am Fear",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Asajj Ventress",
+		"imageName": "I Am Fear.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"battleForce": "",
+		"keywords": ["Suppressive", "Spray"]
+	},
+	"uw": {
+		"id": "uw",
+		"cardName": "Yes, My Master",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Asajj Ventress",
+		"imageName": "Yes, My Master.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"battleForce": "",
+		"keywords": ["Divulge", "Permanent", "Demoralize", "Makashi Mastery", "Outmaneuver"]
 	}
 }));
 
