@@ -10078,8 +10078,8 @@ const cards = JSON.parse(JSON.stringify({
 		"battleForce": "",
 		"keywords": ["Jedi Hunter"]
 	},
-	"uv": {
-		"id": "uv",
+	"ux": {
+		"id": "ux",
 		"cardName": "I Am Fear",
 		"cardSubtype": "2",
 		"cardType": "command",
