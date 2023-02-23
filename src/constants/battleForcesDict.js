@@ -53,6 +53,33 @@ const battleForcesDict = {
         heavy: [0, 1]
       }
     },
+  'Imperial Remnant': {
+    name: 'Imperial Remnant',
+    commander: ['ui', 'ar'],
+    operative: [],
+    corps: ['ay', 'hg', 'ut', 'uu'],
+    special: [],
+    support: ['bf', 'be'],
+    heavy: ['tm'],
+    ruleUrl: 'https://www.atomicmassgames.com/s/Imperial-Remnant-Rules-Sheet.pdf',
+    allowedUniqueUpgrades: ['uj', 'gm', 'gl'],
+    'standard mode': {
+      commander: [1, 2],
+      operative: [0, 2],
+      corps: [3, 6],
+      special: [0, 0],
+      support: [0, 2],
+      heavy: [0, 2]
+    },
+    '500-point mode': {
+      commander: [1, 2],
+      operative: [0, 2],
+      corps: [2, 4],
+      special: [0, 0],
+      support: [0, 1],
+      heavy: [0, 1]
+    }
+  },
   '501st Legion': {
       name: '501st Legion',
       commander: ['na', 'fy', 'ns'],

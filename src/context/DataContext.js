@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Imperial Remnant Added",
+    "date": "22 February 2023",
+    "body": "Implemented the Imperial Remnant Battleforce. Counting of ranks for units will never show red. This feature will be disabled until more work is done on it to prevent confusion."
+  },
+  {
     "title": "Dark Trooper Cards Added",
     "date": "10 January 2023",
     "body": "Added cards from the AMG preview on Imperial Dark Troopers."
@@ -500,7 +505,7 @@ export function DataProvider({ children }) {
         .catch(e => {
           console.log(e);
           setError(e);
-          setMessage(`Can't user with email address ${email}. Server likely down.`);
+          setMessage(`Can't find user with email address ${email}. Server likely down.`);
           setIsAlertOpen(true);
         });
     }

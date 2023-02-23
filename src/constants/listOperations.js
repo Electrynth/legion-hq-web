@@ -1002,6 +1002,8 @@ function getEligibleUnitsToAdd(list, rank) {
     if (list.commanders.includes(card.cardName)) continue;
     if (list.battleForce && !battleForcesDict[list.battleForce][rank].includes(id)) continue;
     if (list.battleForce !== 'Blizzard Force' && id === 'sr') continue;
+    if (list.battleForce !== 'Imperial Remnant' && id === 'ut') continue;
+    if (list.battleForce !== 'Imperial Remnant' && id === 'uu') continue;
     if (card.detachment) {
       for (let i = 0; i < list.units.length; i++) {
         const unit = list.units[i];
@@ -1271,6 +1273,7 @@ function getEligibleCommandsToAdd(list) {
 function getEquippableUpgrades(
   list, upgradeType, id, upgradesEquipped, additionalUpgradeSlots
 ) {
+  const impRemnantUpgrades = ['ej', 'ek', 'fv', 'fu', 'gm', 'gl', 'em', 'en'];
   const validUpgradeIds = [];
   const invalidUpgradeIds = [];
   const cardsById = Object.keys(cards);
@@ -1298,6 +1301,8 @@ function getEquippableUpgrades(
       unitCard['dark side'] = true;
     }
 
+
+
     // dynamically add the upgrade types
     for (let j = 0; j < unitCard.upgradeBar.length; j++) {
       const upgradeType = unitCard.upgradeBar[j];
@@ -1314,6 +1319,13 @@ function getEquippableUpgrades(
       const interaction = interactions.eligibility[unitCard.id];
       if (interaction.resultFunction(card)) {
         validUpgradeIds.push(id);
+      }
+    } else if (list.battleForce === 'Imperial Remnant' && card.cardSubtype === 'heavy weapon') {
+
+      if (unitCard.cardSubtype !== 'droid trooper' && unitCard.cardSubtype.includes('trooper')) {
+        if (impRemnantUpgrades.includes(id)) validUpgradeIds.push(id);
+        else if (isRequirementsMet(card.requirements, unitCard)) validUpgradeIds.push(id)
+        else invalidUpgradeIds.push(id);
       }
     } else if (isRequirementsMet(card.requirements, unitCard)) {
       validUpgradeIds.push(id);

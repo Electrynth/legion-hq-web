@@ -10021,6 +10021,68 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": [],
 		"requirements": [{"cardName": "Imperial Dark Troopers"}],
 		"history": []
+	},
+	"ut": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["block"],
+		"wounds": 1,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Scout Troopers",
+		"isUnique": false,
+		"rank": "corps",
+		"cost": 48,
+		"faction": "empire",
+		"imageName": "Scout Troopers.jpeg",
+		"keywords": ["Low Profile", "Scout", "Sharpshooter"],
+		"upgradeBar": [
+			"heavy weapon",
+			"training",
+			"comms",
+			"gear",
+			"grenades"
+		],
+		"history": [
+			{
+				"date": "19 November 2020",
+				"description": "Cost reduced from 60 to 48 points."
+			}
+		],
+		"id": "ut"
+	},
+	"uu": {
+		"cardType": "unit",
+		"displayName": "Death Troopers",
+		"defense": "red",
+		"surges": ["crit", "block"],
+		"wounds": 1,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Imperial Death Troopers",
+		"isUnique": false,
+		"rank": "corps",
+		"cost": 72,
+		"faction": "empire",
+		"imageName": "Imperial Death Troopers.jpeg",
+		"keywords": ["Disciplined", "Precise", "Ready"],
+		"upgradeBar": [
+			"heavy weapon",
+			"training",
+			"comms",
+			"gear",
+			"armament",
+			"grenades"
+		],
+		"history": [
+			{
+				"date": "27 October 2021",
+				"description": "Cost reduced from 76 to 72 points."
+			}
+		],
+		"id": "uu"
 	}
 }));
 
