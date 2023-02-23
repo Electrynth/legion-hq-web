@@ -34,7 +34,8 @@ class PrintList extends React.Component {
 
     const unitLines = [];
     units.forEach((line, i) => {
-      if (line.includes('- ')) unitLines.push(<div key={`${line}_${i}`}>{line}</div>);
+      if (i === 0) unitLines.push(<div key={`${line}_${i}`} style={{ fontSize: 24 }}>{line}</div>);
+      else if (line.includes('- ')) unitLines.push(<div key={`${line}_${i}`}>{line}</div>);
       else unitLines.push(<div key={`${line}_${i}`} style={{ marginTop: 6 }}>{line}</div>)
     })
 
