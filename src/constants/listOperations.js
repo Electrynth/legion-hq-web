@@ -1190,7 +1190,6 @@ cardsById.forEach(id => {
   if (list.commandCards.includes(id)) return;
   if (list.contingencies.includes(id)) return;
   if (!list.faction.includes(card.faction)) return;
-  if (id === 'tn' && list.faction === 'rebels') return;
   if (id === 'aa') return;
   if (id === 'jl' || id === 'ka' || id ==='kb') return;
   if (

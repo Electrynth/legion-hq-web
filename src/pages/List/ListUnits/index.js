@@ -35,7 +35,9 @@ function ListUnits() {
     const changeLoadoutHandlers = [];
     const deleteLoadoutHandlers = [];
     const totalUpgradeBar = [...unitCard.upgradeBar, ...unit.additionalUpgradeSlots];
-    if (counterpartId && unit.unitId === 'tj' && currentList.uniques.includes('tp') && !currentList.uniques.includes(counterpartId)) {
+    if (counterpartId === 'tn' && currentList.faction === 'empire') {
+      addCounterpartHandler = undefined;
+    } else if (counterpartId && unit.unitId === 'tj' && currentList.uniques.includes('tp') && !currentList.uniques.includes(counterpartId)) {
       addCounterpartHandler = () => setCardPaneFilter({
         action: 'COUNTERPART', unitIndex, counterpartId
       });
