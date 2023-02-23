@@ -2760,7 +2760,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 17,
 		"imageName": "Imperial Officer.jpeg",
 		"keywords": ["Inspire", "Leader"],
-		"requirements": [{"faction": "empire"}],
+		"requirements": [
+			"AND",
+			{"rank": "corps"},
+			{"faction": "empire"}
+		],
 		"history": [
 			{
 				"date": "19 November 2020",
@@ -2795,7 +2799,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 10,
 		"imageName": "Imperial Comms Technician.jpeg",
 		"keywords": [],
-		"requirements": [{"faction": "empire"}],
+		"requirements": [
+			"AND",
+			{"rank": "corps"},
+			{"faction": "empire"}
+		],
 		"additionalUpgradeSlots": ["comms"],
 		"id": "ey"
 	},
@@ -2808,7 +2816,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 19,
 		"imageName": "FX-9 Medical Droid.jpeg",
 		"keywords": ["Treat", "Noncombatant"],
-		"requirements": [{"faction": "empire"}],
+		"requirements": [
+			"AND",
+			{"faction": "empire"},
+			{"rank": "corps"}
+		],
 		"id": "ez"
 	},
 	"fa": {
@@ -2819,7 +2831,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 9,
 		"imageName": "R4 Astromech Droid.jpeg",
 		"keywords": ["Repair", "Noncombatant"],
-		"requirements": [{"faction": "empire"}],
+		"requirements": [
+			"AND",
+			{"rank": "corps"},
+			{"faction": "empire"}
+		],
 		"id": "fa"
 	},
 	"fb": {
@@ -6382,7 +6398,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 18,
 		"imageName": "T-Series Tactical Droid.jpeg",
 		"keywords": ["AI", "Reliable", "Leader", "Sidearm"],
-		"requirements": [{"cardSubtype": "droid trooper"}]
+		"requirements": [
+			"AND",
+			{"faction": "separatists"},
+			{"cardSubtype": "droid trooper"}
+		]
 	},
 	"mr": {
 		"id": "mr",
@@ -7081,7 +7101,11 @@ const cards = JSON.parse(JSON.stringify({
 			"Observe",
 			"Sidearm"
 		],
-		"requirements": [{"cardSubtype": "droid trooper"}],
+		"requirements": [
+			"AND",
+			{"faction": "separatists"},
+			{"cardSubtype": "droid trooper"}
+		],
 		"history": [
 			{
 				"date": "27 October 2021",
@@ -7102,7 +7126,11 @@ const cards = JSON.parse(JSON.stringify({
 			"Repair",
 			"Noncombatant"
 		],
-		"requirements": [{"cardSubtype": "droid trooper"}]
+		"requirements": [
+			"AND",
+			{"faction": "separatists"},
+			{"cardSubtype": "droid trooper"}
+		]
 	},
 	"og": {
 		"id": "og",
@@ -7117,7 +7145,11 @@ const cards = JSON.parse(JSON.stringify({
 			"Treat",
 			"Noncombatant"
 		],
-		"requirements": [{"cardSubtype": "droid trooper"}]
+		"requirements": [
+			"AND",
+			{"faction": "separatists"},
+			{"cardSubtype": "droid trooper"}
+		]
 	},
 	"oh": {
 		"id": "oh",

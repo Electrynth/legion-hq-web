@@ -30,7 +30,7 @@ const battleForces = {
       special: [],
       support: ['bf', 'be'],
       heavy: ['tm'],
-      allowedUniqueUpgrades: ['uj', 'gm', 'gl']
+      allowedUniqueUpgrades: ['uj', 'gm']
     }
   ],
   republic: [

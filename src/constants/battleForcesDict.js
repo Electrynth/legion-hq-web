@@ -62,7 +62,7 @@ const battleForcesDict = {
     support: ['bf', 'be'],
     heavy: ['tm'],
     ruleUrl: 'https://www.atomicmassgames.com/s/Imperial-Remnant-Rules-Sheet.pdf',
-    allowedUniqueUpgrades: ['uj', 'gm', 'gl'],
+    allowedUniqueUpgrades: ['uj', 'gm'],
     'standard mode': {
       commander: [1, 2],
       operative: [0, 2],
