@@ -209,14 +209,6 @@ function PrintExportButton({ currentList }) {
         >
           With Battle Cards & Without Command Cards
         </MenuItem>
-        <MenuItem
-          onClick={() => {
-            handlePrintListImages();
-            handlePrintMenuClose();
-          }}
-        >
-            Card Images
-        </MenuItem>
       </Menu>
       <Chip
         clickable
