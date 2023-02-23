@@ -1273,7 +1273,7 @@ function getEligibleCommandsToAdd(list) {
 function getEquippableUpgrades(
   list, upgradeType, id, upgradesEquipped, additionalUpgradeSlots
 ) {
-  const impRemnantUpgrades = ['ej', 'ek', 'fv', 'fu', 'gm', 'gl', 'em', 'en'];
+  const impRemnantUpgrades = ['ej', 'ek', 'fv', 'iy', 'fu', 'gm', 'gl', 'em', 'en'];
   const validUpgradeIds = [];
   const invalidUpgradeIds = [];
   const cardsById = Object.keys(cards);
