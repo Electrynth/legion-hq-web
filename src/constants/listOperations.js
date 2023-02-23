@@ -1002,8 +1002,8 @@ function getEligibleUnitsToAdd(list, rank) {
     if (list.commanders.includes(card.cardName)) continue;
     if (list.battleForce && !battleForcesDict[list.battleForce][rank].includes(id)) continue;
     if (list.battleForce !== 'Blizzard Force' && id === 'sr') continue;
-    if (list.battleForce !== 'Imperial Remnant' && id === 'ut') continue;
-    if (list.battleForce !== 'Imperial Remnant' && id === 'uu') continue;
+    if (list.battleForce !== 'Imperial Remnant' && id === 'uy') continue;
+    if (list.battleForce !== 'Imperial Remnant' && id === 'uz') continue;
     if (card.detachment) {
       for (let i = 0; i < list.units.length; i++) {
         const unit = list.units[i];
@@ -1190,6 +1190,7 @@ cardsById.forEach(id => {
   if (list.commandCards.includes(id)) return;
   if (list.contingencies.includes(id)) return;
   if (!list.faction.includes(card.faction)) return;
+  if (id === 'tn' && list.faction === 'rebels') return;
   if (id === 'aa') return;
   if (id === 'jl' || id === 'ka' || id ==='kb') return;
   if (

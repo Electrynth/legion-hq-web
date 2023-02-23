@@ -57,7 +57,7 @@ const battleForcesDict = {
     name: 'Imperial Remnant',
     commander: ['ui', 'ar'],
     operative: [],
-    corps: ['ay', 'hg', 'ut', 'uu'],
+    corps: ['ay', 'hg', 'uy', 'uz'],
     special: [],
     support: ['bf', 'be'],
     heavy: ['tm'],

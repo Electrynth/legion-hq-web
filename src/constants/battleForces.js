@@ -26,8 +26,8 @@ const battleForces = {
       name: 'Imperial Remnant',
       commander: ['ui', 'ar'],
       operative: [],
-      corps: ['ay', 'hg'],
-      special: ['ba', 'bd'],
+      corps: ['ay', 'hg', 'uy', 'uz'],
+      special: [],
       support: ['bf', 'be'],
       heavy: ['tm'],
       allowedUniqueUpgrades: ['uj', 'gm', 'gl']
