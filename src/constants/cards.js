@@ -6881,7 +6881,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardType": "unit",
 		"cardSubtype": "clone trooper",
 		"cardName": "Clone Commander",
-		"title": "Trained For Leadership",
+		"title": "Leader of the 212th",
 		"isUnique": false,
 		"rank": "commander",
 		"cost": 60,
@@ -8673,6 +8673,7 @@ const cards = JSON.parse(JSON.stringify({
 		"speed": 2,
 		"cardSubtype": "trooper",
 		"cardName": "Gar Saxon",
+		"title": "Militant Commando",
 		"isUnique": true,
 		"rank": "commander",
 		"cost": 105,
@@ -9924,6 +9925,7 @@ const cards = JSON.parse(JSON.stringify({
 		"courage": 3,
 		"cardSubtype": "trooper",
 		"cardName": "Moff Gideon",
+		"title": "Long Live the Empire",
 		"isUnique": true,
 		"rank": "commander",
 		"cost": 100,
@@ -10064,6 +10066,7 @@ const cards = JSON.parse(JSON.stringify({
 		"courage": 2,
 		"cardSubtype": "trooper",
 		"cardName": "Asajj Ventress",
+		"title": "Separatist Assassin",
 		"isUnique": true,
 		"rank": "operative",
 		"cost": 150,
@@ -10195,6 +10198,39 @@ const cards = JSON.parse(JSON.stringify({
 			}
 		],
 		"id": "uz"
+	},
+	"va": {
+		"id": "va",
+		"cardName": "Bring It Down!",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Clone Commander Cody",
+		"imageName": "Bring It Down!.jpeg",
+		"products": [],
+		"faction": "republic",
+		"keywords": []
+	},
+	"vb": {
+		"id": "vb",
+		"cardName": "Have I Ever Let You Down?",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Clone Commander Cody",
+		"imageName": "Have I Ever Let You Down.jpeg",
+		"products": [],
+		"faction": "republic",
+		"keywords": []
+	},
+	"vc": {
+		"id": "vc",
+		"cardName": "Combined Arms",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Clone Commander Cody",
+		"imageName": "Combined Arms.jpeg",
+		"products": [],
+		"faction": "republic",
+		"keywords": []
 	}
 }));
 
