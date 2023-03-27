@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Ahsoka and Wicket Added",
+    "date": "27 March 2023",
+    "body": "Added cards revealed at Adepticon."
+  },
+  {
     "title": "Imperial Remnant Added",
     "date": "22 February 2023",
     "body": "Implemented the Imperial Remnant Battleforce. Counting of ranks for units will never show red. This feature will be disabled until more work is done on it to prevent confusion."

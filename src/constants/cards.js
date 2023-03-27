@@ -10232,6 +10232,65 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "republic",
 		"keywords": []
+	},
+	"vd": {
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["crit"],
+		"wounds": 6,
+		"courage": 3,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Ahsoka Tano",
+		"title": "Fulcrum",
+		"isUnique": true,
+		"rank": "operative",
+		"cost": 165,
+		"faction": "rebels",
+		"imageName": "Ahsoka Tano.jpeg",
+		"keywords": ["Jump", "Charge", "Defend", "Deflect", "Immune", "Jar'Kai Mastery", "Impact", "Pierce"],
+		"upgradeBar": [
+			"force",
+			"force",
+			"training",
+			"training"
+		],
+		"history": [],
+		"id": "vd"
+	},
+	"ve": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["crit", "block"],
+		"wounds": 5,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Wicket",
+		"title": "Head of Bright Tree",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 70,
+		"faction": "rebels",
+		"imageName": "Wicket.jpeg",
+		"keywords": [
+			"Independent",
+			"Low Profile",
+			"Nimble",
+			"Scout",
+			"Scouting Party",
+			"Sharpshooter",
+			"Unhindered",
+			"Pierce",
+			"Primitive"
+		],
+		"upgradeBar": [
+			"training",
+			"training",
+			"training"
+		],
+		"history": [],
+		"id": "ve"
 	}
 }));
 
