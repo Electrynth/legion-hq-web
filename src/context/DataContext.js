@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Ahsoka Command Cards Added",
+    "date": "4 April 2023",
+    "body": "Added cards revealed in Ahsoka article."
+  },
+  {
     "title": "Ahsoka and Wicket Added",
     "date": "27 March 2023",
     "body": "Added cards revealed at Adepticon."

@@ -10291,6 +10291,50 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"history": [],
 		"id": "ve"
+	},
+	"vf": {
+		"id": "vf",
+		"cardName": "I Am No Jedi",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Ahsoka Tano",
+		"imageName": "I Am No Jedi.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": ["Agile"]
+	},
+	"vg": {
+		"id": "vg",
+		"cardName": "Family Reunion",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Ahsoka Tano",
+		"imageName": "Family Reunion.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": ["Teamwork"]
+	},
+	"vh": {
+		"id": "vh",
+		"cardName": "Swift Protector",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Ahsoka Tano",
+		"imageName": "Swift Protector.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": ["Guardian"]
+	},
+	"vi": {
+		"id": "vi",
+		"cardName": "A New Beginning",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Ahsoka Tano",
+		"imageName": "A New Beginning.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": ["Inspire"]
 	}
 }));
 
