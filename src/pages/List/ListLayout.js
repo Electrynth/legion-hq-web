@@ -38,7 +38,7 @@ function ListLayout() {
 
   const stickyStyles = {
     top: 0,
-    zIndex: 1,
+    zIndex: 2,
     position: '-webkit-sticky',
     position: 'sticky',
     backgroundColor: palette ? palette.background.default : ''
