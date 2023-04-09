@@ -121,7 +121,7 @@ const keywords = {
   "Relentless": "After you perform a move action, you may perform 1 free attack action.",
   "Impervious": "While defending, if the attack pool has PIERCE X, roll X additional defense dice.",
   "Noncombatant": "This mini cannot use any weapons and wounds must be assigned to other non-unit leader minis first.",
-  "Transport: Open": "You may transport up to X friendly trooper units. After defending, if you suffered 1 or more wounds, each unit you are transporting suffers 1 wound.",
+  "Transport: Open": "You may transport up to X friendly trooper units. Units being transported can spend tokens, ignore restrictions on Fixed keywords when attacking. More info can be found at Legion Quick Guide.",
   "High Velocity": "While attacking, if each weapon in your attack pool has HIGH VELOCITY, the defender cannot spend dodge tokens.",
   "Climbing Vehicle": "You are treated as a trooper for the purposes of vertical movement.",
   "Quick Thinking": "Gain 1 aim token and 1 dodge token.",
