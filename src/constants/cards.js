@@ -9554,7 +9554,7 @@ const cards = JSON.parse(JSON.stringify({
 		"courage": 3,
 		"cardSubtype": "trooper",
 		"cardName": "Boba Fett",
-		"title": "The Old and Wise",
+		"title": "Daimyo of Mos Espa",
 		"isUnique": true,
 		"rank": "operative",
 		"cost": 120,
