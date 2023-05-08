@@ -10335,6 +10335,61 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "rebels",
 		"keywords": ["Inspire"]
+	},
+	"vj": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["crit", "block"],
+		"wounds": 11,
+		"resilience": 8,
+		"speed": 2,
+		"cardSubtype": "ground vehicle",
+		"cardName": "Chewbacca",
+		"title": "Let the Wookie Win",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 190,
+		"faction": "rebels",
+		"imageName": "Chewbacca3.jpeg",
+		"keywords": [
+			"Armor",
+			"Arsenal",
+			"Inspire",
+			"Incognito",
+			"Weak Point",
+			"Fixed",
+			"Blast",
+			"Impact"
+		],
+		"upgradeBar": [],
+		"history": [],
+		"id": "vj"
+	},
+	"vk": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": [],
+		"wounds": 1,
+		"courage": 1,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Ewok Skirmishers",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 40,
+		"faction": "rebels",
+		"imageName": "Ewok Skirmishers.jpeg",
+		"keywords": [
+			"Low Profile",
+			"Unhindered"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"personnel",
+			"training"
+		],
+		"history": [],
+		"id": "vk"
 	}
 }));
 
