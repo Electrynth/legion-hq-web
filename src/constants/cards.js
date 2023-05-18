@@ -10390,6 +10390,70 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"history": [],
 		"id": "vk"
+	},
+	"vl": {
+		"id": "vl",
+		"cardName": "Close Call",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Wicket",
+		"imageName": "Close Call.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": ["Outmaneuver"]
+	},
+	"vm": {
+		"id": "vm",
+		"cardName": "Sneaky Scouting",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Wicket",
+		"imageName": "Sneaky Scouting.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": []
+	},
+	"vn": {
+		"id": "vn",
+		"cardName": "Courageous Counterattack",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Wicket",
+		"imageName": "Courageous Counterattack.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": []
+	},
+	"vo": {
+		"id": "vo",
+		"cardName": "A Beautiful Friendship",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Wicket",
+		"imageName": "A Beautiful Friendship.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"keywords": ["Permanent", "Teamwork"]
+	},
+	"vp": {
+		"id": "vp",
+		"cardSubtype": "training",
+		"cardName": "Forest Dwellers",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 3,
+		"imageName": "Forest Dwellers.jpeg",
+		"keywords": ["Scout"],
+		"requirements": [
+			"OR",
+			[
+				"OR",
+				{"cardName": "Wicket"},
+				{"cardName": "Logray"}
+			],
+			{"cardName": "Ewok Skirmishers"}
+		],
+		"history": []
 	}
 }));
 

@@ -85,9 +85,14 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Ewok Cards Added",
+    "date": "18 May 2023",
+    "body": "Added cards from AMG article."
+  },
+  {
     "title": "Ewok cards added",
     "date": "7 May 2023",
-    "body": "Ewok Skirmishers and Chewbacca (AT-ST)"
+    "body": "Ewok Skirmishers and Chewbacca (AT-ST)."
   },
   {
     "title": "Ahsoka Command Cards Added",
