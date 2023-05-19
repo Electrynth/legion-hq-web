@@ -10429,7 +10429,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "A Beautiful Friendship",
 		"cardSubtype": "2",
 		"cardType": "command",
-		"commander": "Wicket",
+		"commander": "Leia Organa",
 		"imageName": "A Beautiful Friendship.jpeg",
 		"products": [],
 		"faction": "rebels",
