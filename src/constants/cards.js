@@ -10374,7 +10374,7 @@ const cards = JSON.parse(JSON.stringify({
 		"speed": 2,
 		"cardSubtype": "trooper",
 		"cardName": "Ewok Skirmishers",
-		"isUnique": true,
+		"isUnique": false,
 		"rank": "corps",
 		"cost": 40,
 		"faction": "rebels",
