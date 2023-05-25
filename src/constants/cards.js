@@ -10267,7 +10267,7 @@ const cards = JSON.parse(JSON.stringify({
 		"speed": 2,
 		"cardSubtype": "trooper",
 		"cardName": "Wicket",
-		"title": "Head of Bright Tree",
+		"title": "Hero of Bright Tree",
 		"isUnique": true,
 		"rank": "commander",
 		"cost": 70,
@@ -10451,9 +10451,115 @@ const cards = JSON.parse(JSON.stringify({
 				{"cardName": "Wicket"},
 				{"cardName": "Logray"}
 			],
-			{"cardName": "Ewok Skirmishers"}
+			[
+				"OR",
+				{"cardName": "Ewok Skirmishers"},
+				{"cardName": "Ewok Slingers"}
+			]
 		],
 		"history": []
+	},
+	"vq": {
+		"id": "vq",
+		"cardSubtype": "training",
+		"cardName": "Call To Arms",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Call To Arms.jpeg",
+		"keywords": ["Charge"],
+		"requirements": [
+			"OR",
+			[
+				"OR",
+				{"cardName": "Wicket"},
+				{"cardName": "Logray"}
+			],
+			[
+				"OR",
+				{"cardName": "Ewok Skirmishers"},
+				{"cardName": "Ewok Slingers"}
+			]
+		],
+		"history": []
+	},
+	"vr": {
+		"id": "vr",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Axe Ewok",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 15,
+		"imageName": "Axe Ewok.jpeg",
+		"keywords": ["Pierce", "Impact"],
+		"requirements": [
+			"OR",
+			{"cardName": "Ewok Skirmishers"},
+			{"cardName": "Ewok Slingers"}
+		],
+		"history": []
+	},
+	"vs": {
+		"id": "vs",
+		"cardSubtype": "training",
+		"cardName": "Insatiable Curiosity",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 8,
+		"imageName": "Insatiable Curiosity.jpeg",
+		"keywords": [],
+		"requirements": [
+			"OR",
+			{"cardName": "Ewok Skirmishers"},
+			{"cardName": "Ewok Slingers"}
+		],
+		"history": []
+	},
+	"vt": {
+		"id": "vt",
+		"cardSubtype": "personnel",
+		"cardName": "Ewok Trapper",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Ewok Trapper.jpeg",
+		"keywords": [],
+		"requirements": [
+			"OR",
+			{"cardName": "Ewok Skirmishers"},
+			{"cardName": "Ewok Slingers"}
+		],
+		"additionalUpgradeSlots": ["training"],
+		"history": []
+	},
+	"vu": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": [],
+		"wounds": 1,
+		"courage": 1,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Ewok Slingers",
+		"isUnique": false,
+		"rank": "corps",
+		"cost": 35,
+		"faction": "rebels",
+		"imageName": "Ewok Slingers.jpeg",
+		"keywords": [
+			"Independent",
+			"Low Profile",
+			"Target",
+			"Unhindered",
+			"Primitive"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"personnel",
+			"training"
+		],
+		"history": [],
+		"id": "vu"
 	}
 }));
 
