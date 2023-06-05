@@ -10848,8 +10848,7 @@ const cards = JSON.parse(JSON.stringify({
 		"id": "vu"
 	},
 	"vv": {
-		"cardName": "C-3PO3",
-		"displayName": "C-3PO",
+		"cardName": "C-3PO",
 		"title": "Golden God",
 		"faction": "rebels",
 		"isUnique": true,
