@@ -10846,6 +10846,24 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"history": [],
 		"id": "vu"
+	},
+	"vv": {
+		"cardName": "C-3PO3",
+		"displayName": "C-3PO",
+		"title": "Golden God",
+		"faction": "rebels",
+		"isUnique": true,
+		"upgradeBar": [],
+		"cardType": "unit",
+		"rank": "commander",
+		"cost": 40,
+		"surges": [],
+		"wounds": 3,
+		"courage": 2,
+		"imageName": "C-3PO3.jpeg",
+		"keywords": ["Master Storyteller", "Compel", "Divine Influence"],
+		"cardSubtype": "droid trooper",
+		"id": "vv"
 	}
 }));
 
