@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Summer Points Update",
+    "date": "5 June 2023",
+    "body": "Implemented summer points update. Click on the Using New Points button at the bottom of the list building screen to toggle between new and old points."
+  },
+  {
     "title": "Ewok Cards Added",
     "date": "25 May 2023",
     "body": "Added cards from AMG Scene to Stats article on Ewok Skirmishers and Slingers."
