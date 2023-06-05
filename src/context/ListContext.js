@@ -183,7 +183,12 @@ export function ListProvider({
                         unit.additionalUpgradeSlots[i - (unitCard.upgradeBar.length + 1)];
         i = (i + 1) % unit.upgradesEquipped.length;
       }
-      if (nextAvailIndex !== undefined && nextAvailType) {
+      let letUpgradesCascade = true;
+      if (userSettings && userSettings.cascadeUpgradeSelection) {
+        letUpgradesCascade = userSettings.cascadeUpgradeSelection === 'yes' ? true : false;
+      }
+
+      if (letUpgradesCascade && nextAvailIndex !== undefined && nextAvailType) {
         applyFilter = (newUpgradesEquipped, newAdditionalUpgradeSlots) => setCardPaneFilter({
           action: 'UNIT_UPGRADE',
           unitIndex,
@@ -206,6 +211,7 @@ export function ListProvider({
     } else setCardPaneFilter({ action: 'DISPLAY' });
     setCurrentList({ ...newList });
   };
+
   const handleUnequipUpgrade = (action, unitIndex, upgradeIndex) => {
     setCardPaneFilter({ action: 'DISPLAY' });
     const newList = unequipUpgrade(

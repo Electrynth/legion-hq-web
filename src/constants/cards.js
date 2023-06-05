@@ -6422,7 +6422,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"rank": "special",
 		"imageName": "Mandalorian Resistance.jpeg",
-		"cost": 72,
+		"cost": 68,
+		"prevCost": 72,
 		"products": [],
 		"faction": "rebels",
 		"keywords": [
@@ -6438,7 +6439,13 @@ const cards = JSON.parse(JSON.stringify({
 			"armament",
 			"grenades"
 		],
-		"id": "mk"
+		"id": "mk",
+		"history": [
+			{
+				"date": "5 June 2023",
+				"description": "Cost reduced from 72 to 68 points."
+			}
+		]
 	},
 	"ml": {
 		"cardType": "unit",

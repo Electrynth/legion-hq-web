@@ -22,7 +22,7 @@ function SettingDropdown({ id, name, value, options, handleClick }) {
         id={id}
         value={value}
         onChange={handleClick}
-        style={{ minWidth: 100 }}
+        style={{ minWidth: 200 }}
       >
         {options.map(option => (
           <MenuItem key={option.key} value={option.key}>
