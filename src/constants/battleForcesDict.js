@@ -29,7 +29,7 @@ const battleForcesDict = {
   'Blizzard Force': {
       name: 'Blizzard Force',
       commander: ['at', 'au', 'ar'],
-      operative: ['fn'],
+      operative: [],
       corps: ['ay', 'az', 'sr'],
       special: [],
       support: ['bf', 'be'],
