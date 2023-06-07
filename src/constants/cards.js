@@ -10835,7 +10835,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardSubtype": "trooper",
 		"cardName": "Ewok Slingers",
 		"isUnique": false,
-		"rank": "corps",
+		"rank": "special",
 		"cost": 35,
 		"faction": "rebels",
 		"imageName": "Ewok Slingers.jpeg",
@@ -10870,6 +10870,128 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": ["Master Storyteller", "Compel", "Divine Influence"],
 		"cardSubtype": "droid trooper",
 		"id": "vv"
+	},
+	"vw": {
+		"id": "vw",
+		"cardName": "Arboreal Assault",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Arboreal Assault.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"battleForce": "Bright Tree Village",
+		"keywords": ["Suppressive", "Immobilize"]
+	},
+	"vx": {
+		"id": "vx",
+		"cardName": "Log Traps",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Log Traps.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"battleForce": "Bright Tree Village",
+		"keywords": ["Impact", "Pierce"]
+	},
+	"vy": {
+		"id": "vy",
+		"cardName": "Hiding in Plain Sight",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Hiding in Plain Sight.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"battleForce": "Bright Tree Village",
+		"keywords": ["Inconspicuous"]
+	},
+	"vz": {
+		"id": "vz",
+		"cardName": "For the Tribe",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "For the Tribe.jpeg",
+		"products": [],
+		"faction": "rebels",
+		"battleForce": "Bright Tree Village",
+		"keywords": ["Dauntless", "Relentless"]
+	},
+	"wa": {
+		"id": "wa",
+		"cardSubtype": "training",
+		"cardName": "Secret Ingredients",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Secret Ingredients.jpeg",
+		"keywords": ["Aid"],
+		"requirements": [
+			{"cardName": "Logray"}
+		],
+		"history": []
+	},
+	"wb": {
+		"id": "wb",
+		"cardSubtype": "training",
+		"cardName": "Herbal Medicine",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Herbal Medicine.jpeg",
+		"keywords": [],
+		"requirements": [
+			{"cardName": "Logray"}
+		],
+		"history": []
+	},
+	"wc": {
+		"id": "wc",
+		"cardSubtype": "training",
+		"cardName": "Onward to Victory",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 10,
+		"imageName": "Onward to Victory.jpeg",
+		"keywords": [],
+		"requirements": [
+			{"cardName": "Logray"}
+		],
+		"history": []
+	},
+	"wd": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["block"],
+		"wounds": 4,
+		"courage": 3,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Logray",
+		"title": "Superstitious Shaman",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 45,
+		"faction": "rebels",
+		"imageName": "Logray.jpeg",
+		"keywords": [
+			"Aid",
+			"Independent",
+			"Inspire",
+			"Low Profile",
+			"Nimble",
+			"Suppressive"
+		],
+		"upgradeBar": [
+			"command",
+			"training",
+			"training",
+			"training"
+		],
+		"history": [],
+		"id": "wd"
 	}
 }));
 

@@ -9,6 +9,16 @@ const battleForces = {
       support: ['an', 'he'],
       heavy: ['ap'],
       allowedUniqueUpgrades: ['fk']
+    },
+    {
+      name: 'Bright Tree Village',
+      commander: ['vv', 'ac', 'ab', 've', 'wd'],
+      operative: ['af'],
+      corps: ['vk', 'ah'],
+      special: ['vu', 'ak'],
+      support: [],
+      heavy: ['vj'],
+      allowedUniqueUpgrades: ['vq', 'wa', 'wb', 'wc']
     }
   ],
   empire: [

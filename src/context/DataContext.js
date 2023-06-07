@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Bright Tree Village Added",
+    "date": "6 June 2023",
+    "body": "Added the new ewok battleforce."
+  },
+  {
     "title": "Summer Points Update",
     "date": "5 June 2023",
     "body": "Implemented summer points update. Click on the Using New Points button at the bottom of the list building screen to toggle between new and old points."
