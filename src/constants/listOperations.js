@@ -100,7 +100,7 @@ function consolidate(list) {
       unit.hasUniques = true;
     }
     if (unitCard.keywords.includes('Contingencies')) hasContingencyKeyword = true;
-    if (unitCard.rank === 'commander' || unitCard.rank === 'operative') {
+    if (unitCard.rank === 'commander' || unitCard.rank === 'operative' || unitCard.isUnique) {
       list.commanders.push(unitCard.cardName);
     }
     for (let j = 0; j < unit.upgradesEquipped.length; j++) {
