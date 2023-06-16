@@ -5035,7 +5035,7 @@ const cards = JSON.parse(JSON.stringify({
 		"id": "jh"
 	},
 	"ji": {
-		"cardName": "C-3PO",
+		"cardName": "C-3P0",
 		"title": "Human-Cyborg Relations",
 		"faction": "rebels",
 		"isUnique": true,
@@ -5054,7 +5054,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardSubtype": "droid trooper",
 		"faction": "republic",
 		"title": "Made to Suffer",
-		"cardName": "C-3PO",
+		"cardName": "C-3P0",
 		"isUnique": true,
 		"cost": 15,
 		"surges": [],
@@ -10638,7 +10638,7 @@ const cards = JSON.parse(JSON.stringify({
 		"speed": 2,
 		"cardSubtype": "ground vehicle",
 		"cardName": "Chewbacca",
-		"title": "Let the Wookie Win",
+		"title": "Let the Wookiee Win",
 		"isUnique": true,
 		"rank": "heavy",
 		"cost": 190,
@@ -10855,7 +10855,7 @@ const cards = JSON.parse(JSON.stringify({
 		"id": "vu"
 	},
 	"vv": {
-		"cardName": "C-3PO",
+		"cardName": "C-3P0",
 		"title": "Golden God",
 		"faction": "rebels",
 		"isUnique": true,
