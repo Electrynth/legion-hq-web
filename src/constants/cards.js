@@ -3878,7 +3878,7 @@ const cards = JSON.parse(JSON.stringify({
 			"Guardian",
 			"Immune",
 			"Master of the Force",
-			"Soresu Master",
+			"Soresu Mastery",
 			"Critical",
 			"Impact",
 			"Pierce"
@@ -6072,7 +6072,7 @@ const cards = JSON.parse(JSON.stringify({
 		"commander": "Cad Bane",
 		"faction": "",
 		"imageName": "I Make the Rules Now.jpeg",
-		"keywords": ["Divulge"],
+		"keywords": ["Divulge", "Bane Token", "Here I Am", "Smoke and Mirrors", "Kablamo!"],
 		"id": "lp"
 	},
 	"lq": {
