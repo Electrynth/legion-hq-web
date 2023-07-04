@@ -70,7 +70,7 @@ const keywords = {
 	"High Velocity": "While attacking, if each weapon in your attack pool has HIGH VELOCITY, the defender cannot spend dodge tokens.",
 	"Hover": "You can reverse, strafe, and standby. You are treated as a ground vehicle by other units. See Rulebook.",
 	"Hunted": "When you are defeated, replace this mini with an unclaimed The Asset token. Each trooper may Claim this token as an action. If an enemy unit has claimed this token at the end of the game, the controlling player gains 1 victory token.",
-    "Immobilize": "A unit suffering 1 or more wounds from an attack pool with this weapon gains X immobilize tokens. Reduce a unit's max speed by 1 per immobilize token. A unit with max speed 0 and one or more immobilize tokens cannot perform moves of any kind. Remove all of a unit's immobilize tokens at the end of its activation.",	
+	"Immobilize": "A unit suffering 1 or more wounds from an attack pool with this weapon gains X immobilize tokens. Reduce a unit's max speed by 1 per immobilize token. A unit with max speed 0 and one or more immobilize tokens cannot perform moves of any kind. Remove all of a unit's immobilize tokens at the end of its activation.",	
 	"Immune": "X cannot be used against you.",
 	"Impact": "While attacking a unit that has ARMOR, change up to X hit results to crit results.",
 	"Impervious": "While defending, if the attack pool has PIERCE X, roll X additional defense dice. Do not roll these additional dice if you have IMMUNE: PIERCE.",

@@ -1002,6 +1002,7 @@ function getEligibleUnitsToAdd(list, rank) {
     if (list.uniques.includes(id)) continue;
     if (list.commanders.includes(card.cardName)) continue;
     if (list.battleForce && !battleForcesDict[list.battleForce][rank].includes(id)) continue;
+    // TODO bf exclusivity should probably be in cards data rather than this tree
     if (list.battleForce !== 'Blizzard Force' && id === 'sr') continue;
     if (list.battleForce !== 'Imperial Remnant' && id === 'uy') continue;
     if (list.battleForce !== 'Imperial Remnant' && id === 'uz') continue;
