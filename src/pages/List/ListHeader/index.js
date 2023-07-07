@@ -56,7 +56,8 @@ function ListHeader() {
     currentKillPoints,
     isKillPointMode,
     handleChangeTitle,
-    handleChangeMode
+    handleChangeMode,
+    validationIssues
   } = useContext(ListContext);
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -72,110 +73,16 @@ function ListHeader() {
   }, 0);
 
 
-  const validBattleForces = []; 
+  // const validBattleForces = []; 
 
+  const validBattleForces = Object.values(battleForcesDict).filter(bf => bf.faction == currentList.faction);
+  // Object.keys(battleForcesDict).forEach(bf=>{
+  //   if(battleForcesDict[bf].faction == currentList.faction){
+  //     validBattleForces.push(battleForcesDict[bf]);
+  //   }
+  // });
 
-  Object.keys(battleForcesDict).forEach(bf=>{
-    if(battleForcesDict[bf].faction == currentList.faction){
-      validBattleForces.push(battleForcesDict[bf]);
-    }
-  });
-
-  var validationIssues =[];
-
-  const battleForce = currentList.battleForce;
-
-  var ranks = { commander:0, operative:0, corps:0, special:0, heavy:0, support:0 }
-  var mercs = { commander:0, operative:0, corps:0, special:0, heavy:0, support:0 }
-
-  // TODO brighttree
-  // TODO this is ugly (but works for now)
-  const isSC = battleForce == "Shadow Collective"
-
-
-  // TODO BF rules should go in an obj or other handler
-  if(battleForce == "Blizzard Force"){
-    var stormsCount = 0;
-    currentList.units.forEach((unit)=>{
-
-      if(unit.unitId == "ay" || unit.unitId == "sr"){
-        stormsCount += unit.count;
-      }
-    });
-    
-    if(stormsCount > 2){
-      validationIssues.push({level:2, text:"Maximum 2 Stormtroopers (Regular or HRU in any combo)"});
-    }
-  }
-
-  // Check for Allies of Convenience via keyword or Underworld Connections
-  var hasAoc = false;
-  var aocRanks = []; // could toggle the aoc flag itself, this feels nicer
-  currentList.units.forEach((unit)=>{
-    const card = cards[unit.unitId]
-    ranks[card.rank]+=unit.count;
-
-    if(card.faction == 'fringe' && !isSC){
-      mercs[card.rank]+=unit.count;
-    }
-
-    // Check for upgrades which impact rank limits, i.e. Allies of Convenience
-    // Eventually, Entourage will probably go in this loop
-    if(!hasAoc)
-    {
-      if(card.keywords.find(k => k == "Allies of Convenience")){
-        hasAoc = true;
-      }
-      else if(unit.upgradesEquipped.find(c => c != null && c == 'rf')){ // find Underworld Connections
-        hasAoc = true;
-      }
-    }
-  });
-
-  var rankReqs;
-  // TODO need more definitive handling for the other modes...
-  if(battleForce){
-    if(battleForcesDict[battleForce][currentList.mode])
-      rankReqs = battleForcesDict[battleForce][currentList.mode];
-    else{
-      validationIssues.push({level:2, text:"Playing a battleforce in a mode with no defined army construction rules (Defaulting to 800pt)"});
-      rankReqs = battleForcesDict[battleForce]['standard mode'];
-    }
-  } else{
-    rankReqs = legionModes[currentList.mode].unitCounts;
-  }
-
-  // Flag for a bf's combined comm/op limits, only when comm/op individually isn't being overrun
-  if(rankReqs.commOp && (ranks.commander + ranks.commander) > rankReqs.commOp
-    && !(ranks.commander > rankReqs.commander || ranks.operative > rankReqs.operative)){
-    validationIssues.push({level:2, text:"Limit of " + rankReqs.commOp + " total COMMMANDERS and OPERATIVES"});
-  }
-
-  Object.keys(ranks).forEach(t =>{
-    const range = rankReqs[t];
-
-    // mercs don't count for minimum; for applicable battleforces, just don't count them as mercs
-    if((ranks[t] - mercs[t]) < range[0]){
-      validationIssues.push({level:2, text:"Not enough " + t.toUpperCase() + " units! (minimum " + range[0] + ")"});
-    }
-    
-    if(ranks[t] > range[1]){
-      validationIssues.push({level:2, text:"Too many " + t.toUpperCase() + " units! (maximum " + range[1] + ")"});
-    }
-    
-    // TODO Entourage
-    
-    if(mercs[t] > 1){
-      if(!hasAoc || mercs[t] > 2){
-        validationIssues.push({level:2, text:"Too many MERCENARY " + t.toUpperCase() + " units! (maximum " + (hasAoc ? 2:1) + ")"});
-      } 
-      aocRanks.push(t);
-    }
-  });
-
-  if(aocRanks.length > 1){
-    validationIssues.push({level:2, text:"Allies of Convenience only allows ONE additional merc of any rank (" + aocRanks.join(", ")+ ")"});
-  }
+  
 
   var minValidationError = validationIssues.reduce((highest, e)=>{
     return e.level > highest ? e.level : highest;
@@ -254,8 +161,8 @@ function ListHeader() {
 
             <Dialog open={isValidationDialogOpen} onClose={() => setValidationDialogOpen(false)}>
               <DialogTitle>List Errors*</DialogTitle>
-              <DialogContent>*Validation does currently not catch all edge cases or rank modifications. (e.g. Allies of Convenience, Entourage, Maul's Darksaber, etc)</DialogContent>
               <DialogContent>
+                <DialogContentText>*Validation does not catch all errors, e.g.: Detachment, Heavy Weapon... others</DialogContentText>
                 {validationIssues.map((el, i) =>
                 <div key={i} className={classes.valError}>
                   <WarningIcon className={classes.item} style={{color: el.level == 1 ?'yellow':'red'}}/>

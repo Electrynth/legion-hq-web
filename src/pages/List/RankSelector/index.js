@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 
 function RankSelector() {
   const classes = useStyles();
-  const { currentList, setCardPaneFilter } = useContext(ListContext);
+  const { currentList, setCardPaneFilter, rankLimits } = useContext(ListContext);
   let rankInteractions = 0;
   if (currentList.rankInteractions) {
     Object.keys(currentList.rankInteractions).forEach(key => {
@@ -27,19 +27,7 @@ function RankSelector() {
 
   const currentUnitCounts = { ...currentList.unitCounts };
 
-  if (currentList.uniques.includes('rc') && currentList.uniques.includes('rq')) { // Maul + Darksaber interaction
-    currentUnitCounts['commander'] += 1;
-    currentUnitCounts['operative'] -= 1;
-  }
 
-  const rankValidities = {
-    commander: false,
-    operative: false,
-    corps: false,
-    special: false,
-    support: false,
-    heavy: false
-  };
 
   // Object.keys(ranks).forEach(key => {
   //   let count = currentUnitCounts[key];
@@ -133,13 +121,17 @@ function RankSelector() {
 
   return (
     <div className={classes.container}>
-      {Object.keys(rankValidities).map(key => {
+      {Object.keys(rankLimits).map(key => {
+        let color = 'primary';
+        if(currentUnitCounts[key] > rankLimits[key][1] || currentUnitCounts[key] < rankLimits[key][0]){
+          color = 'error'
+        }
 
         return (
           <div key={ranks[key].name} className={classes.item}>
             <RankButton
               rank={key}
-              color="primary"
+              color={color}
               count={currentUnitCounts[key]}
               handleClick={() => setCardPaneFilter({
                 action: 'UNIT', rank: key
