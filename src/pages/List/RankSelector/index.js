@@ -123,8 +123,7 @@ function RankSelector() {
     <div className={classes.container}>
       {Object.keys(rankLimits).map(key => {
 
-        // TODO
-        if(key === 'commOp')
+        if(!key[0]) // commOp is a non-array, non-displayed rank limit
           return null;
 
         let color = 'primary';

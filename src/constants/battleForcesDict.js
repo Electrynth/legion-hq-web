@@ -31,6 +31,7 @@ const battleForcesDict = {
     },
     'Bright Tree Village': {
       name: 'Bright Tree Village',
+      faction: 'rebels',
       commander: ['vv', 'ac', 'ab', 've', 'wd'],
       operative: ['af'],
       corps: ['vk', 'ah'],
@@ -45,7 +46,8 @@ const battleForcesDict = {
         corps: [3, 6],
         special: [0, 3],
         support: [0, 2],
-        heavy: [0, 2]
+        heavy: [0, 2],
+        commOp: 5
       },
       '500-point mode': {
         commander: [1, 4],
@@ -53,7 +55,8 @@ const battleForcesDict = {
         corps: [2, 4],
         special: [0, 3],
         support: [0, 1],
-        heavy: [0, 1]
+        heavy: [0, 1],
+        commOp: 4
       }
     },
   'Blizzard Force': {

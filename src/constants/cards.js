@@ -6477,6 +6477,7 @@ const cards = JSON.parse(JSON.stringify({
 			"armament",
 			"grenades"
 		],
+    "equip":["mo", "mp"], // tristan + ursa wren
 		"history": [
 			{
 				"date": "5 June 2023",
@@ -6707,7 +6708,8 @@ const cards = JSON.parse(JSON.stringify({
 			"comms",
 			"gear",
 			"grenades"
-		]
+		],
+    "equip": ["me", "mf"], // del meeko, gideon hask
 	},
 	"mz": {
 		"id": "mz",
@@ -9528,6 +9530,7 @@ const cards = JSON.parse(JSON.stringify({
 			"heavy weapon",
 			"heavy weapon"
 		],
+    "flexResponse": 2,
 		"history": [
 			{
 				"date": "5 June 2023",
