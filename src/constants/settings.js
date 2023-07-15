@@ -4,7 +4,8 @@ const settings = {
     themeColor: 'dark',
     cardStyle: 'images',
     chipSize: 'medium',
-    builderOrientation: 'right'
+    builderOrientation: 'right',
+    cascadeUpgradeSelection: 'yes'
   },
   list: [
     {
@@ -30,6 +31,14 @@ const settings = {
       values: [
         { key: 'small', name: 'Small' },
         { key: 'medium', name: 'Large' }
+      ]
+    },
+    {
+      key: 'cascadeUpgradeSelection',
+      name: 'Cascade Upgrade Selecting',
+      values: [
+        { key: 'yes', name: 'Yes' },
+        { key: 'no', name: 'No' }
       ]
     }
   ]

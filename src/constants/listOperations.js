@@ -100,7 +100,7 @@ function consolidate(list) {
       unit.hasUniques = true;
     }
     if (unitCard.keywords.includes('Contingencies')) hasContingencyKeyword = true;
-    if (unitCard.rank === 'commander' || unitCard.rank === 'operative') {
+    if (unitCard.rank === 'commander' || unitCard.rank === 'operative' || unitCard.isUnique) {
       list.commanders.push(unitCard.cardName);
     }
     for (let j = 0; j < unit.upgradesEquipped.length; j++) {
@@ -1522,6 +1522,7 @@ function convertHashToList(faction, url) {
     else if (battleForceSegments[0].includes('si')) list.battleForce = 'Separatist Invasion';
     else if (battleForceSegments[0].includes('sif')) list.battleForce = 'Separatist Invasion';
     else if (battleForceSegments[0].includes('sc')) list.battleForce = 'Shadow Collective';
+    else if (battleForceSegments[0].includes('btv')) list.battleForce = 'Bright Tree Village';
     segments = battleForceSegments[1].split(',');
   } else {
     list.battleForce = '';

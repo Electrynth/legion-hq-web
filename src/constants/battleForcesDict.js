@@ -29,6 +29,33 @@ const battleForcesDict = {
         commOp: 3
       }
     },
+    'Bright Tree Village': {
+      name: 'Bright Tree Village',
+      commander: ['vv', 'ac', 'ab', 've', 'wd'],
+      operative: ['af'],
+      corps: ['vk', 'ah'],
+      special: ['vu', 'ak'],
+      support: [],
+      heavy: ['vj'],
+      allowedUniqueUpgrades: ['vq', 'wa', 'wb', 'wc'],
+      ruleUrl: 'https://static1.squarespace.com/static/5ce432b1f9d2be000134d8ae/t/6480bd67c7a4c84f6c1bf2af/1686158697261/Star+Wars+Legion+BF+Rules+Sheet+Bright+Tree+Village+%281%29.pdf',
+      'standard mode': {
+        commander: [1, 5],
+        operative: [0, 4],
+        corps: [3, 6],
+        special: [0, 3],
+        support: [0, 2],
+        heavy: [0, 2]
+      },
+      '500-point mode': {
+        commander: [1, 4],
+        operative: [0, 3],
+        corps: [2, 4],
+        special: [0, 3],
+        support: [0, 1],
+        heavy: [0, 1]
+      }
+    },
   'Blizzard Force': {
       name: 'Blizzard Force',
       faction: 'empire',
