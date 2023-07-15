@@ -348,6 +348,7 @@ export function ListProvider({
 
   // Maybe there should be a 'units only' flag, but lists will be something like 50-100 entities max anyhow...
   const doUnitValidation = (list, rankLimits) =>{
+    // console.log('performing list validation!');
     setValidationIssues(validateList(list, rankLimits));
   }
 

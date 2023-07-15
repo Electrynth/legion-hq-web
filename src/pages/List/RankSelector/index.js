@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ListContext from 'context/ListContext';
 import ranks from 'constants/ranks';
-import legionModes from 'constants/legionModes';
-import cards from 'constants/cards';
+// import legionModes from 'constants/legionModes';
+// import cards from 'constants/cards';
 import RankButton from './RankButton';
-import battleForcesDict from 'constants/battleForcesDict';
+// import battleForcesDict from 'constants/battleForcesDict';
 
 const useStyles = makeStyles({
   container: {
@@ -131,7 +131,6 @@ function RankSelector() {
         if(currentUnitCounts[key] > rankLimits[key][1] || currentUnitCounts[key] < rankLimits[key][0]){
           color = 'error'
         }
-        console.log('rank  ' + key);
 
         return (
           <div key={ranks[key].name} className={classes.item}>

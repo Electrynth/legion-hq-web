@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import cards from 'constants/cards';
+import cards, {cardsIdsByType as cardIdsByType} from 'constants/cards';
 import ranks from 'constants/ranks';
 import legionModes from 'constants/legionModes';
 import interactions from 'constants/cardInteractions';
@@ -996,7 +996,7 @@ function killUnit(list, index) {
 
 function getEligibleUnitsToAdd(list, rank) {
   const validUnitIds = [];
-  const cardsById = Object.keys(cards);
+  const cardsById = cardIdsByType.unit; // Object.keys(cards);
   for (let i = 0; i < cardsById.length; i++) {
     const id = cardsById[i];
     const card = cards[id];
@@ -1005,7 +1005,7 @@ function getEligibleUnitsToAdd(list, rank) {
     } else if (!list.mode.includes('storm tide') && id === 'AK') {
       continue;
     }
-    if (card.cardType !== 'unit') continue;
+    // if (card.cardType !== 'unit') continue;
     if (card.rank !== rank) continue;
     if (!list.faction.includes(card.faction) && !card.affiliations) continue;
     if (!list.faction.includes(card.faction) && card.affiliations && !card.affiliations.includes(list.faction)) continue;
@@ -1161,7 +1161,7 @@ function getEligibleBattlesToAdd(list, type) {
   const validIds = [];
   const invalidIds = [];
   const scenarioMissionIds = ['Df', 'Oe'];
-  const cardsById = Object.keys(cards);
+  const cardsById = cardIdsByType.battle; //Object.keys(cards);
   let currentCards;
   if (type === 'objective') currentCards = list.objectiveCards;
   else if (type === 'deployment') currentCards = list.deploymentCards;
@@ -1169,7 +1169,7 @@ function getEligibleBattlesToAdd(list, type) {
   else return;
   cardsById.forEach(id => {
     const card = cards[id];
-    if (card.cardType !== 'battle') return;
+    // if (card.cardType !== 'battle') return;
     if (card.cardSubtype !== type) return;
     if (currentCards.includes(id)) return;
     if (scenarioMissionIds.includes(id)) return;
@@ -1189,7 +1189,7 @@ function getEligibleContingenciesToAdd(list) {
 if (!list.contingencies) list.contingencies = [];
 const validCommandIds = [];
 const invalidCommandIds = [];
-const cardsById = Object.keys(cards);
+const cardsById = cardIdsByType.command; // Object.keys(cards);
 let numContingencies = 0;
 list.units.forEach((unit) => {
   const unitCard = cards[unit.unitId];
@@ -1198,7 +1198,7 @@ list.units.forEach((unit) => {
 });
 cardsById.forEach(id => {
   const card = cards[id];
-  if (card.cardType !== 'command') return;
+  // if (card.cardType !== 'command') return;
   if (list.commandCards.includes(id)) return;
   if (list.contingencies.includes(id)) return;
   if (!list.faction.includes(card.faction)) return;
@@ -1231,7 +1231,7 @@ function getEligibleCommandsToAdd(list) {
 
   const validCommandIds = [];
   const invalidCommandIds = [];
-  const cardsById = Object.keys(cards);
+  const cardsById = cardIdsByType.command; // Object.keys(cards);
   const pipCounts = { '1': 0, '2': 0, '3': 0 };
   list.commandCards.forEach(id => {
     const commandCard = cards[id];
@@ -1239,7 +1239,7 @@ function getEligibleCommandsToAdd(list) {
   });
   cardsById.forEach(id => {
     const card = cards[id];
-    if (card.cardType !== 'command') return;
+    // if (card.cardType !== 'command') return;
     if (list.commandCards.includes(id)) return;
     if (list.contingencies && list.contingencies.includes(id)) return;
 
@@ -1288,14 +1288,14 @@ function getEquippableUpgrades(
   const impRemnantUpgrades = ['ej', 'ek', 'fv', 'iy', 'fu', 'gm', 'gl', 'em', 'en', 'ja'];
   const validUpgradeIds = [];
   const invalidUpgradeIds = [];
-  const cardsById = Object.keys(cards);
+  const cardsById = cardIdsByType.upgrade; // Object.keys(cards);
   if (!id) return { validUpgradeIds: [], invalidUpgradeIds: [] };
   const unitCard = cards[id];
   for (let i = 0; i < cardsById.length; i++) {
     const id = cardsById[i];
     const card = cards[id];
     if (id === 'nc') continue; // duplicate card
-    if (card.cardType !== 'upgrade') continue;
+    // if (card.cardType !== 'upgrade') continue;
     if (card.cardSubtype !== upgradeType) continue;
     if (list.uniques.includes(id)) continue;
     if (upgradesEquipped.includes(id)) continue;
