@@ -122,10 +122,16 @@ function RankSelector() {
   return (
     <div className={classes.container}>
       {Object.keys(rankLimits).map(key => {
+
+        // TODO
+        if(key === 'commOp')
+          return null;
+
         let color = 'primary';
         if(currentUnitCounts[key] > rankLimits[key][1] || currentUnitCounts[key] < rankLimits[key][0]){
           color = 'error'
         }
+        console.log('rank  ' + key);
 
         return (
           <div key={ranks[key].name} className={classes.item}>

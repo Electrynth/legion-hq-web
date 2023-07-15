@@ -929,7 +929,8 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost reduced from 200 to 190 points."
 			}
 		],
-		"cardType": "unit"
+		"cardType": "unit",
+    "entourage": {"name":'Imperial Royal Guards', "type":'special'}
 	},
 	"at": {
 		"cardType": "unit",
@@ -1032,6 +1033,7 @@ const cards = JSON.parse(JSON.stringify({
 		"upgradeBar": ["command", "command", "gear"],
 		"id": "av",
 		"cardType": "unit",
+    "entourage": {"name":'Imperial Death Troopers', "type":'special'},
 		"history": [
 			{
 				"date": "27 October 2021",
@@ -6970,7 +6972,7 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "republic",
 		"keywords": [
-			"Field commander",
+			"Field Commander",
 			"Beam",
 			"Immune"
 		]
@@ -9946,6 +9948,7 @@ const cards = JSON.parse(JSON.stringify({
 			"gear",
 			"armament"
 		],
+    "entourage": {"name":"Imperial Dark Troopers", "type":"special"},
 		"history": []
 	},
 	"uj": {

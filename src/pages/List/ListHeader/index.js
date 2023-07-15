@@ -72,24 +72,11 @@ function ListHeader() {
     return num;
   }, 0);
 
-
-  // const validBattleForces = []; 
-
   const validBattleForces = Object.values(battleForcesDict).filter(bf => bf.faction == currentList.faction);
-  // Object.keys(battleForcesDict).forEach(bf=>{
-  //   if(battleForcesDict[bf].faction == currentList.faction){
-  //     validBattleForces.push(battleForcesDict[bf]);
-  //   }
-  // });
-
-  
 
   var minValidationError = validationIssues.reduce((highest, e)=>{
     return e.level > highest ? e.level : highest;
   }, 0)
-
-  
-
 
   return (
     <div id="list-header" className={classes.columnContainer}>

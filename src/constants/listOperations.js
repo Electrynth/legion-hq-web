@@ -128,7 +128,7 @@ function consolidate(list) {
     }
     list.unitCounts[unitCard.rank] += unit.count;
 
-    if (unit.unitId == 'rc' && unit.upgradesEquipped.includes('rq')) { // Maul + Darksaber interaction
+    if (unit.unitId === 'rc' && unit.upgradesEquipped.includes('rq')) { // Maul + Darksaber interaction
       list.unitCounts['commander']++;
       list.unitCounts['operative']--;
     }
@@ -1640,12 +1640,11 @@ function mercValidation(currentList, rank, mercs){
     if(!hasAoc)
     {
       // check for AoC keyword or Underworlds Connection card
-      hasAoc = card.keywords.find(k => k === "Allies of Convenience") || unit.upgradesEquipped.find(c => c != null && c == 'rf');
+      hasAoc = card.keywords.find(k => k === "Allies of Convenience") || unit.upgradesEquipped.find(c => c !== null && c === 'rf');
     }
   });
 
-  // TODO bright tree
-  if(currentList.battleForce != "Shadow Collective"){
+  if(currentList.battleForce !== "Shadow Collective" || currentList.battleForce !== "Bright Tree Village"){
     Object.keys(ranks).forEach(t =>{
 
       if(mercs[t] > mercLimits[t]){
@@ -1666,9 +1665,9 @@ function mercValidation(currentList, rank, mercs){
 function rankValidation(currentList, ranks, mercs, rankReqs){
   const validationIssues = [];
 
-  // TODO brighttree
-  // TODO this is ugly (but works for now)
-  const isSC = currentList.battleForce == "Shadow Collective"
+  // TODO this is ugly - probably should be a BF flag
+  const countMercs = currentList.battleForce === "Shadow Collective" || currentList.battleForce == "Bright Tree Village"
+  // const countMercs = currentList.battleForce.countsMercsForMin;
 
   // Flag for a bf's combined comm/op limits, only when comm/op already overrun individually
   if(rankReqs.commOp && (ranks.commander + ranks.commander) > rankReqs.commOp
@@ -1680,8 +1679,8 @@ function rankValidation(currentList, ranks, mercs, rankReqs){
     let min =rankReqs[t][0]; 
     let max = rankReqs[t][1];
 
-    // mercs don't count for minimum unless SC - maybe bright tree too?
-    const countMin = !isSC ? (ranks[t] - mercs[t]) : ranks[t];
+    // mercs don't count for minimum, unless they do
+    const countMin = !countMercs ? (ranks[t] - mercs[t]) : ranks[t];
     if(countMin < min){
       validationIssues.push({level:2, text:"Not enough " + t.toUpperCase() + " units! (minimum " + min + ")"});
     }
@@ -1692,6 +1691,52 @@ function rankValidation(currentList, ranks, mercs, rankReqs){
   });
 
   return validationIssues;
+}
+
+// TODO very lazy/gross implementation for now...
+function applyEntourage(currentList, rankReqs)
+{
+  // for now, only empire uses the 'entourage' keyword, and this implementation for it is kind of nasty...
+  if(currentList.faction !== "empire"){
+    return;
+  }
+
+  let entourage = [];
+  let specials = [];
+  let heavies = [];
+
+  currentList.units.forEach((unit)=>{
+    const card = cards[unit.unitId];
+
+    if(card.rank === 'special' && !specials.includes(card.cardName)){
+      specials.push(card.cardName);
+    }
+    if(card.rank === 'heavy' && !heavies.includes(card.cardName)){
+      heavies.push(card.cardName);
+    }
+
+    if(card.entourage){
+      entourage.push(card.entourage);
+    }
+  });
+
+  // this kind of check makes a really really strong argument for stratifying the list by rank, lol
+  entourage.forEach((e) =>{ 
+    if( e.type === 'special' && specials.includes(e.name)){
+      rankReqs.special[1]++; // increase the max
+    }
+    else if( e.type === 'heavy' && heavies.includes(e.name)){
+      rankReqs.heavy[1]++; // incerease the max
+    }
+  });
+
+  return;
+}
+
+function applyFieldCommander(list, rankReqs){
+  if(list.hasFieldCommander){
+    rankReqs.commander[0] = 0;
+  }
 }
 
 function getRankLimits(currentList){
@@ -1708,51 +1753,14 @@ function getRankLimits(currentList){
   } else{
     dictRankReqs = legionModes[currentList.mode].unitCounts;
   }
-  // copy over so modifying w entourage doesn't blow stuff up
-  // console.log(JSON.stringify(dictRankReqs));
+
+  // copy over so we can play with limits
   let rankReqs = {};
   (Object.keys(dictRankReqs)).forEach(r => rankReqs[r] = [dictRankReqs[r][0], dictRankReqs[r][1]]);
 
-  // for now, only empire uses the 'entourage' keyword, and this implementation for it is kind of nasty...
-  if(currentList.faction !== "empire"){
-    return rankReqs;
-  }
+  applyEntourage(currentList, rankReqs);  
+  applyFieldCommander(currentList, rankReqs);
 
-  let entourage = [];
-  let specials = [];
-
-  currentList.units.forEach((unit)=>{
-    const card = cards[unit.unitId];
-
-    if(card.rank == 'special' && !specials.includes(card.cardName)){
-      specials.push(card.cardName);
-    }
-
-    // with Entourage NOT being decorated with the target unit, faster to just grab the Entourage target than to map a map to get it
-    if(card.cardName === 'Emperor Palpatine')
-    {
-      entourage.push('Imperial Royal Guards');
-    }
-    // Krennic + Deaths
-    else if(card.cardName === 'Director Orson Krennic')
-    {
-      entourage.push('Imperial Death Troopers');
-    }
-    // Gideon + Darks
-    else if(card.cardName === 'Moff Gideon')
-    {
-      entourage.push('Imperial Dark Troopers');
-    }
-  });
-
-  if(entourage.length > 0){
-    // this kind of check makes a really really strong argument for stratifying the list by rank, lol
-    entourage.forEach((e) =>{ 
-      if(specials.includes(e)){
-        rankReqs.special[1]++;
-        console.log('special limit = ' + rankReqs.special[1]);
-      }})
-  }
   return rankReqs;
 }
 
@@ -1779,7 +1787,7 @@ function validateList(currentList, rankLimits){
   currentList.units.forEach((unit)=>{
     const card = cards[unit.unitId];
 
-    if(card.faction == 'fringe'){
+    if(card.faction === 'fringe'){
       mercs[card.rank] += unit.count;
     }
   });

@@ -147,6 +147,7 @@ const battleForcesDict = {
   'Shadow Collective': {
       name: 'Shadow Collective',
       faction: 'fringe',
+      countsMercsForMin: true,
       commander: ['ra', 'rd', 'qy'],
       operative: ['rc', 'kx', 'ax'],
       corps: ['rb', 'qz'],
