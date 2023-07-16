@@ -904,6 +904,8 @@ function addUnit(list, unitId, stackSize = 1) {
   const unitCard = cards[unitId];
   const unitIndex = findUnitHash(list, unitId);
 
+  // TODO TODO - this  will break stuff again if a list can have 2 units with Contingencies
+  // Should set list.contingencies=[] by default and let consolidate handle the show/no-show/emptying of it
   if (unitCard.keywords.includes('Contingencies')) {
     if (!list.contingencies) list.contingencies = [];
   }
