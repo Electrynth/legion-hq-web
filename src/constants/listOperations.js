@@ -841,7 +841,7 @@ function equipUpgradeToOne(list, unitIndex, upgradeIndex, upgradeId) {
     list.units.splice(unitIndex + 1, 0, newUnit);
     list.unitObjectStrings.splice(unitIndex + 1, 0, newUnit.unitObjectString);
   }
-  list = decrementUnit(list, unitIndex);
+  list = decrementUnit(list, unitIndex, true);
   return consolidate(list);
 }
 
@@ -932,12 +932,15 @@ function incrementUnit(list, index) {
   return consolidate(list);
 }
 
-function decrementUnit(list, index) {
+function decrementUnit(list, index, isModification=false) {
   const unitObject = list.units[index];
   if (unitObject.count === 1) {
     const unitCard = cards[unitObject.unitId];
-    if (unitCard.keywords.includes('Contingencies')) {
-      list.contingencies = [];
+    // TODO - this will probably break if a faction gets 2 Contingencies units
+    if (unitCard.keywords.includes('Contingencies')){
+      if(!isModification){ // indicates there's still a copy of this guy out there
+        list.contingencies = [];
+      }
     }
     list.unitObjectStrings = deleteItem(list.unitObjectStrings, index);
     list.units = deleteItem(list.units, index);
@@ -1395,7 +1398,7 @@ function unequipUpgrade(list, action, unitIndex, upgradeIndex) {
         list.units.splice(unitIndex + 1, 0, newUnit);
         list.unitObjectStrings.splice(unitIndex + 1, 0, newUnit.unitObjectString);
       }
-      list = decrementUnit(list, unitIndex);
+      list = decrementUnit(list, unitIndex, true);
       return consolidate(list);
     }
     list = unequip(list, unitIndex, upgradeIndex);
