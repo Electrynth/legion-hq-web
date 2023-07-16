@@ -62,6 +62,7 @@ export function ListProvider({
   const [isKillPointMode, setIsKillPointMode] = useState(false);
   const [currentKillPoints, setCurrentKillPoints] = useState(0);
 
+
   useEffect(() => {
     // route '/list/rebels' fetches the rebel list from storage
     if (slug in factions) {
@@ -165,7 +166,7 @@ export function ListProvider({
     if (isApplyToAll || unit.count === 1) {
       let i = (upgradeIndex + 1) % unit.upgradesEquipped.length;
       let numUpgradesEquipped = 0;
-      // console.log(i, unit.upgradesEquipped.length);
+
       while (
         !nextAvailIndex &&
         !nextAvailType &&
@@ -200,8 +201,8 @@ export function ListProvider({
           additionalUpgradeSlots: newAdditionalUpgradeSlots
         });
       }
-    }
-    // else applyFilter = () => setCardPaneFilter({ action: 'DISPLAY' })
+    } // else applyFilter = () => setCardPaneFilter({ action: 'DISPLAY' })
+
     const newList = equipUpgrade(
       currentList, action, unitIndex, upgradeIndex, upgradeId, isApplyToAll
     );
@@ -213,6 +214,7 @@ export function ListProvider({
   };
 
   const handleUnequipUpgrade = (action, unitIndex, upgradeIndex) => {
+
     setCardPaneFilter({ action: 'DISPLAY' });
     const newList = unequipUpgrade(
       currentList, action, unitIndex, upgradeIndex
@@ -406,7 +408,6 @@ export function ListProvider({
   if (error) return <ErrorFallback error={error} message={message} />;
   if (status === 'loading') return <LoadingWidget />;
   if (status === 'idle') {
-    // console.log(currentList);
     return (
       <ListContext.Provider
         value={{

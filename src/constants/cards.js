@@ -10992,6 +10992,104 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"history": [],
 		"id": "wd"
+	},
+	"we": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["hit", "block"],
+		"wounds": 11,
+		"resilience": 8,
+		"speed": 2,
+		"cardSubtype": "ground vehicle",
+		"cardName": "Major Marquand",
+		"title": "Tempest Scout 2",
+		"isUnique": true,
+		"rank": "heavy",
+		"cost": 190,
+		"faction": "empire",
+		"imageName": "Major Marquand.jpeg",
+		"keywords": [
+			"Vehicle",
+			"Armor",
+			"Arsenal",
+			"Direct",
+			"Weak Point",
+			"Special Issue",
+			"Fixed",
+			"Impact"
+		],
+		"upgradeBar": [],
+		"history": [],
+		"id": "we"
+	},
+	"wf": {
+		"id": "wf",
+		"cardName": "Drive Them Out",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Drive Them Out.jpeg",
+		"products": [],
+		"faction": "empire",
+		"battleForce": "Tempest Force",
+		"keywords": ["Demoralize"]
+	},
+	"wg": {
+		"id": "wg",
+		"cardName": "We Need Reinforcements",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "We Need Reinforcements.jpeg",
+		"products": [],
+		"faction": "empire",
+		"battleForce": "Tempest Force",
+		"keywords": ["Disengage"]
+	},
+	"wh": {
+		"id": "wh",
+		"cardName": "Constantly Alert",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Constantly Alert.jpeg",
+		"products": [],
+		"faction": "empire",
+		"battleForce": "Tempest Force",
+		"keywords": []
+	},
+	"wi": {
+		"id": "wi",
+		"cardName": "Gunner, Infantry!",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Major Marquand",
+		"imageName": "Gunner, Infantry!.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": ["Tactical", "Suppressive"]
+	},
+	"wj": {
+		"id": "wj",
+		"cardName": "Squadron, On Me",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Major Marquand",
+		"imageName": "Squadron, On Me.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": []
+	},
+	"wk": {
+		"id": "wk",
+		"cardName": "Armored Cavalry",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Major Marquand",
+		"imageName": "Armored Cavalry.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": []
 	}
 }));
 
