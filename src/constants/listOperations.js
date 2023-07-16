@@ -84,6 +84,12 @@ function rehashList(list) {
   return list;
 }
 
+/**
+ * Lots of various reduction and housekeeping things. 
+ * E.g. remove Contingencies deck if you no longer have
+ * @param {} list 
+ * @returns 
+ */
 function consolidate(list) {
   let hasContingencyKeyword = false;
   list.hasFieldCommander = false;
@@ -841,7 +847,7 @@ function equipUpgradeToOne(list, unitIndex, upgradeIndex, upgradeId) {
     list.units.splice(unitIndex + 1, 0, newUnit);
     list.unitObjectStrings.splice(unitIndex + 1, 0, newUnit.unitObjectString);
   }
-  list = decrementUnit(list, unitIndex, true);
+  list = decrementUnit(list, unitIndex);
   return consolidate(list);
 }
 
@@ -932,16 +938,9 @@ function incrementUnit(list, index) {
   return consolidate(list);
 }
 
-function decrementUnit(list, index, isModification=false) {
+function decrementUnit(list, index) {
   const unitObject = list.units[index];
   if (unitObject.count === 1) {
-    const unitCard = cards[unitObject.unitId];
-    // TODO - this will probably break if a faction gets 2 Contingencies units
-    if (unitCard.keywords.includes('Contingencies')){
-      if(!isModification){ // indicates there's still a copy of this guy out there
-        list.contingencies = [];
-      }
-    }
     list.unitObjectStrings = deleteItem(list.unitObjectStrings, index);
     list.units = deleteItem(list.units, index);
   } else {
@@ -1398,7 +1397,7 @@ function unequipUpgrade(list, action, unitIndex, upgradeIndex) {
         list.units.splice(unitIndex + 1, 0, newUnit);
         list.unitObjectStrings.splice(unitIndex + 1, 0, newUnit.unitObjectString);
       }
-      list = decrementUnit(list, unitIndex, true);
+      list = decrementUnit(list, unitIndex);
       return consolidate(list);
     }
     list = unequip(list, unitIndex, upgradeIndex);
