@@ -11103,4 +11103,17 @@ const cards = JSON.parse(JSON.stringify({
 	}
 }));
 
+
+const cardIdsByType = {
+};
+
+Object.keys(cards).forEach(id=>{
+  const type = cards[id].cardType;
+  if(!cardIdsByType[type]){
+    cardIdsByType[type] = [];
+  }
+  cardIdsByType[type].push(id);
+});
+
 export default cards;
+export {cardIdsByType};
