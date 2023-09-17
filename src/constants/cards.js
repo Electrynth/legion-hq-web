@@ -11090,6 +11090,320 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "empire",
 		"keywords": []
+	},
+	"wl": {
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["hit"],
+		"wounds": 6,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Fifth Brother",
+		"title": "The Kill is Mine",
+		"isUnique": true,
+		"rank": "operative",
+		"cost": 105,
+		"faction": "empire",
+		"imageName": "Fifth Brother.jpeg",
+		"keywords": [
+			"Dauntless",
+			"Block",
+			"Enrage",
+			"Immune",
+			"Ram",
+			"Impact",
+			"Pierce"
+		],
+		"upgradeBar": [
+			"training",
+			"training",
+			"force"
+		],
+		"history": [],
+		"id": "wl"
+	},
+	"wm": {
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["hit"],
+		"wounds": 5,
+		"courage": 3,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Seventh Sister",
+		"title": "Compelled to Inflict Pain",
+		"isUnique": true,
+		"rank": "operative",
+		"cost": 110,
+		"faction": "empire",
+		"imageName": "Seventh Sister.jpeg",
+		"keywords": [
+			"Associate",
+			"Block",
+			"Charge",
+			"Disciplined",
+			"Immune",
+			"Impact",
+			"Pierce"
+		],
+		"upgradeBar": [
+			"training",
+			"training",
+			"force"
+		],
+		"history": [],
+		"id": "wm"
+	},
+	"wn": {
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["hit"],
+		"wounds": 4,
+		"courage": 3,
+		"speed": 1,
+		"cardSubtype": "trooper",
+		"cardName": "Poggle the Lesser",
+		"title": "Public Leader of the Geonosians",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 85,
+		"faction": "separatists",
+		"imageName": "Poggle the Lesser.jpeg",
+		"keywords": [
+			"Jump",
+			"Compel",
+			"Entourage",
+			"Override",
+			"Weighed Down"
+		],
+		"upgradeBar": [
+			"command",
+			"command",
+			"comms",
+			"gear"
+		],
+		"history": [],
+		"id": "wn"
+	},
+	"wo": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["hit", "block"],
+		"wounds": 5,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Sun Fac",
+		"title": "Ruthless Lieutenant",
+		"isUnique": true,
+		"rank": "operative",
+		"cost": 90,
+		"faction": "separatists",
+		"imageName": "Sun Fac.jpeg",
+		"keywords": [
+			"Jump",
+			"Cover",
+			"Death From Above",
+			"Direct",
+			"Retinue",
+			"Scale",
+			"Weighed Down",
+			"Pierce",
+			"Suppressive"
+		],
+		"upgradeBar": [
+			"training",
+			"comms",
+			"gear"
+		],
+		"history": [],
+		"id": "wo"
+	},
+	"wp": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["block"],
+		"wounds": 1,
+		"courage": 1,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Geonosian Warriors",
+		"title": "Soldiers of the Hive",
+		"isUnique": false,
+		"rank": "corps",
+		"cost": 45,
+		"faction": "separatists",
+		"imageName": "Geonosian Warriors.jpeg",
+		"keywords": [
+			"Jump",
+			"Scale",
+			"Death From Above",
+			"Weighed Down"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"personnel"
+		],
+		"history": [],
+		"id": "wp"
+	},
+	"wq": {
+		"id": "wq",
+		"cardSubtype": "training",
+		"cardName": "Inquisitorius Training",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Inquisitorius Training.jpeg",
+		"keywords": [],
+		"requirements": [
+			"OR",
+			{"cardName": "Fifth Brother"},
+			{"cardName": "Seventh Sister"}
+		],
+		"history": []
+	},
+	"wr": {
+		"id": "wr",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Force Pike Warrior",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 15,
+		"imageName": "Force Pike Warrior.jpeg",
+		"keywords": ["Suppressive"],
+		"requirements": [
+			{"cardName": "Geonosian Warriors"}
+		],
+		"history": []
+	},
+	"ws": {
+		"id": "ws",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Sonic Cannon Warrior",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 25,
+		"imageName": "Sonic Cannon Warrior.jpeg",
+		"keywords": ["Scatter", "Impact"],
+		"requirements": [
+			{"cardName": "Geonosian Warriors"}
+		],
+		"history": []
+	},
+	"wt": {
+		"id": "wt",
+		"cardSubtype": "personnel",
+		"cardName": "Geonosian Warrior",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 11,
+		"imageName": "Geonosian Warrior.jpeg",
+		"keywords": [],
+		"requirements": [
+			{"cardName": "Geonosian Warriors"}
+		],
+		"history": []
+	},
+	"wu": {
+		"id": "wu",
+		"cardName": "You Would Question Me?",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Fifth Brother",
+		"imageName": "You Would Question Me%3F.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": ["Permanent"]
+	},
+	"wv": {
+		"id": "wv",
+		"cardName": "I Care Not For Your Struggles",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Fifth Brother",
+		"imageName": "I Care Not For Your Struggles.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": ["Dauntless"]
+	},
+	"ww": {
+		"id": "ww",
+		"cardName": "Come and Prove It",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Seventh Sister",
+		"imageName": "Come and Prove It.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": ["Indomitable"]
+	},
+	"wx": {
+		"id": "wx",
+		"cardName": "Unexpected, But Not Unwelcome",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Seventh Sister",
+		"imageName": "Unexpected, But Not Unwelcome.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": []
+	},
+	"wy": {
+		"id": "wy",
+		"cardName": "You Hide Your Fear Well",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Seventh Sister",
+		"imageName": "You Hide Your Fear Well.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": []
+	},
+	"wz": {
+		"id": "wz",
+		"cardName": "Brutal Enforcer",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Sun Fac",
+		"imageName": "Brutal Enforcer.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": ["Jump", "Demoralize"]
+	},
+	"xa": {
+		"id": "xa",
+		"cardName": "Let the Executions Begin!",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Poggle the Lesser",
+		"imageName": "Let the Executions Begin!.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": ["Fire Support"]
+	},
+	"xb": {
+		"id": "xb",
+		"cardName": "We Serve the Queen",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Poggle the Lesser",
+		"imageName": "We Serve the Queen.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": ["Direct", "Coordinate"]
+	},
+	"xc": {
+		"id": "xc",
+		"cardName": "We Make Weapons",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Poggle the Lesser",
+		"imageName": "We Make Weapons.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": []
 	}
 }));
 
