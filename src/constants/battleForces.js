@@ -41,6 +41,16 @@ const battleForces = {
       support: ['bf', 'be'],
       heavy: ['tm'],
       allowedUniqueUpgrades: ['uj', 'gm']
+    },
+    {
+      name: 'Tempest Force',
+      commander: ['ar'],
+      operative: [],
+      corps: ['ay'],
+      special: ['ba'],
+      support: ['bf'],
+      heavy: ['we', 'bg'],
+      allowedUniqueUpgrades: []
     }
   ],
   republic: [

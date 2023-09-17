@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Tempest Force Added",
+    "date": "13 July 2023",
+    "body": "Added the new empire battleforce."
+  },
+  {
     "title": "Bright Tree Village Added",
     "date": "6 June 2023",
     "body": "Added the new ewok battleforce."

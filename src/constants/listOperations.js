@@ -1513,6 +1513,7 @@ function convertHashToList(faction, url) {
     else if (battleForceSegments[0].includes('sif')) list.battleForce = 'Separatist Invasion';
     else if (battleForceSegments[0].includes('sc')) list.battleForce = 'Shadow Collective';
     else if (battleForceSegments[0].includes('btv')) list.battleForce = 'Bright Tree Village';
+    else if (battleForceSegments[0].includes('tf')) list.battleForce = 'Tempest Force';
     segments = battleForceSegments[1].split(',');
   } else {
     list.battleForce = '';
