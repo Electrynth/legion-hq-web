@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 import {
   Menu,
   MenuItem,
-  Typography,
-  IconButton,
   Button,
   Dialog,
   DialogTitle,
@@ -11,11 +9,10 @@ import {
   DialogContentText
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Clear as ClearIcon, Info as InfoIcon } from '@material-ui/icons';
+import {Info as InfoIcon } from '@material-ui/icons';
 import ListContext from 'context/ListContext';
 import legionModes from 'constants/legionModes';
 import battleForcesDict from 'constants/battleForcesDict';
-import battleForces from 'constants/battleForces';
 import ModeButton from './ModeButton';
 import TitleField from './TitleField';
 import KillPointsField from './KillPointsField';
@@ -64,9 +61,12 @@ function ListHeader() {
   }, 0);
 
   const validBattleForces = [];
-  for (let i = 0; i < battleForces[currentList.faction].length; i++) {
-    validBattleForces.push(battleForces[currentList.faction][i]);
-  }
+
+  Object.getOwnPropertyNames(battleForcesDict).forEach(bf =>{
+    if(battleForcesDict[bf].faction === currentList.faction){
+      validBattleForces.push(battleForcesDict[bf]);
+    }
+  });
 
   return (
     <div id="list-header" className={classes.columnContainer}>

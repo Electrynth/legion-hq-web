@@ -1,6 +1,7 @@
 const battleForcesDict = {
   'Echo Base Defenders': {
       name: 'Echo Base Defenders',
+      faction:'rebels',
       commander: ['ab', 'ad', 'ac', 'bi'],
       operative: ['jg', 'ji', 'af'],
       corps: ['gv', 'if'],
@@ -28,6 +29,7 @@ const battleForcesDict = {
     },
     'Bright Tree Village': {
       name: 'Bright Tree Village',
+      faction: 'rebels',
       commander: ['vv', 'ac', 'ab', 've', 'wd'],
       operative: ['af'],
       corps: ['vk', 'ah'],
@@ -55,6 +57,7 @@ const battleForcesDict = {
     },
   'Blizzard Force': {
       name: 'Blizzard Force',
+      faction: 'empire',
       commander: ['at', 'au', 'ar'],
       operative: [],
       corps: ['ay', 'az', 'sr'],
@@ -82,6 +85,7 @@ const battleForcesDict = {
     },
   'Imperial Remnant': {
     name: 'Imperial Remnant',
+    faction: 'empire',
     commander: ['ui', 'ar'],
     operative: [],
     corps: ['ay', 'hg', 'uy', 'uz'],
@@ -109,6 +113,7 @@ const battleForcesDict = {
   },
   'Tempest Force': {
     name: 'Tempest Force',
+    faction: 'empire',
     commander: ['ar'],
     operative: [],
     corps: ['ay'],
@@ -136,6 +141,7 @@ const battleForcesDict = {
   },
   '501st Legion': {
       name: '501st Legion',
+      faction: 'republic',
       commander: ['na', 'fy', 'ns'],
       operative: [],
       corps: ['fz'],
@@ -163,6 +169,7 @@ const battleForcesDict = {
     },
   'Separatist Invasion': {
       name: 'Separatist Invasion',
+      faction:'separatists',
       commander: ['fx', 'ia', 'nr'],
       operative: ['nb'],
       corps: ['gx'],
@@ -190,6 +197,7 @@ const battleForcesDict = {
     },
   'Shadow Collective': {
       name: 'Shadow Collective',
+      faction:'fringe',
       commander: ['ra', 'rd', 'qy'],
       operative: ['rc', 'kx', 'ax'],
       corps: ['rb', 'qz'],

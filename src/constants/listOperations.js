@@ -1001,14 +1001,14 @@ function getEligibleUnitsToAdd(list, rank) {
     }
     if (card.cardType !== 'unit') continue;
     if (card.rank !== rank) continue;
-    if (!list.faction.includes(card.faction) && !card.affiliations) continue;
-    if (!list.faction.includes(card.faction) && card.affiliations && !card.affiliations.includes(list.faction)) continue;
+    if(!list.battleForce)
+    {
+      if (!list.faction.includes(card.faction) && !card.affiliations) continue;
+      if (!list.faction.includes(card.faction) && card.affiliations && !card.affiliations.includes(list.faction)) continue;
+    }
     if (list.uniques.includes(id)) continue;
     if (list.commanders.includes(card.cardName)) continue;
     if (list.battleForce && !battleForcesDict[list.battleForce][rank].includes(id)) continue;
-    if (list.battleForce !== 'Blizzard Force' && id === 'sr') continue;
-    if (list.battleForce !== 'Imperial Remnant' && id === 'uy') continue;
-    if (list.battleForce !== 'Imperial Remnant' && id === 'uz') continue;
     if (card.detachment) {
       for (let i = 0; i < list.units.length; i++) {
         const unit = list.units[i];

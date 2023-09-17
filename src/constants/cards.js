@@ -4214,7 +4214,7 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "E-5C B1 Trooper.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "B1 Battle Droids"}],
-		"histoiry": [
+		"history": [
 			{
 				"date": "27 October 2021",
 				"description": "Cost reduced from 18 to 16 points."
@@ -6744,7 +6744,9 @@ const cards = JSON.parse(JSON.stringify({
 			"Djem So Mastery",
 			"Flawed",
 			"Immune",
-			"Tempted"
+			"Tempted",
+      "Impact",
+      "Pierce"
 		],
 		"upgradeBar": [
 			"force",
@@ -8650,8 +8652,7 @@ const cards = JSON.parse(JSON.stringify({
 			"Armor",
 			"Cover",
 			"Hover",
-			"Weak Point",
-			"Impact"
+			"Weak Point"
 		],
 		"upgradeBar": ["pilot", "hardpoint", "comms"],
 		"history": []
@@ -8889,7 +8890,9 @@ const cards = JSON.parse(JSON.stringify({
 			"Deflect",
 			"Immune",
 			"Juyo Mastery",
-			"Wound"
+			"Wound",
+      "Impact",
+      "Pierce"
 		],
 		"upgradeBar": [
 			"force",
@@ -9532,6 +9535,7 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost increased from 30 to 40 points."
 			}
 		],
+    "specialIssue": "Blizzard Force",
 		"id": "sr"
 	},
 	"ss": {
@@ -10642,7 +10646,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "heavy",
 		"cost": 190,
-		"faction": "rebels",
+		"faction": "fringe",
+    "affiliations":[],
 		"imageName": "Chewbacca3.jpeg",
 		"keywords": [
 			"Armor",
@@ -10670,7 +10675,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"rank": "corps",
 		"cost": 40,
-		"faction": "rebels",
+		"faction": "fringe",
+    "affiliations":['rebels'],
 		"imageName": "Ewok Skirmishers.jpeg",
 		"keywords": [
 			"Low Profile",
@@ -10837,7 +10843,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"rank": "special",
 		"cost": 35,
-		"faction": "rebels",
+		"faction": "fringe",
+    "affiliations":['rebels'],
 		"imageName": "Ewok Slingers.jpeg",
 		"keywords": [
 			"Independent",
