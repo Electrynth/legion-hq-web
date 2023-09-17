@@ -10465,7 +10465,9 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost reduced from 76 to 72 points."
 			}
 		],
-		"id": "uy"
+		"id": "uy",
+    "specialIssue" : "Imperial Remnant",
+
 	},
 	"uz": {
 		"cardType": "unit",
@@ -10495,7 +10497,8 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost reduced from 60 to 48 points."
 			}
 		],
-		"id": "uz"
+		"id": "uz",
+    "specialIssue" : "Imperial Remnant",
 	},
 	"va": {
 		"id": "va",
