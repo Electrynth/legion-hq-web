@@ -1961,7 +1961,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 5,
-		"faction": "",
 		"imageName": "Strict Orders.jpeg",
 		"keywords": [],
 		"requirements": [],
@@ -1973,7 +1972,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 2,
-		"faction": "",
 		"imageName": "Recon Intel.jpeg",
 		"keywords": ["Scout"],
 		"requirements": [],
@@ -3623,7 +3621,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 4,
-		"faction": "",
 		"imageName": "Overwatch.jpeg",
 		"keywords": ["Sentinel"],
 		"requirements": [],
@@ -4360,12 +4357,9 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": ["Target"],
 		"requirements": [
 			"OR",
-			[
-				"OR",
 				{"cardSubtype": "ground vehicle"},
-				{"cardSubtype": "repulsor vehicle"}
-			],
-			{"cardSubtype": "emplacement trooper"}
+				{"cardSubtype": "repulsor vehicle"},
+        {"cardSubtype": "emplacement trooper"}
 		],
 		"id": "hz"
 	},
@@ -5353,7 +5347,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 27,
-		"faction": "republic",
 		"imageName": "Z-6 Phase II Clone Trooper.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "Phase II Clone Troopers"}],
@@ -10867,7 +10860,7 @@ const cards = JSON.parse(JSON.stringify({
 	"vv": {
 		"cardName": "C-3P0",
 		"title": "Golden God",
-		"faction": "rebels",
+		"faction": "fringe",
 		"isUnique": true,
 		"upgradeBar": [],
 		"cardType": "unit",
@@ -10984,7 +10977,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "commander",
 		"cost": 45,
-		"faction": "rebels",
+		"faction": "fringe",
 		"imageName": "Logray.jpeg",
 		"keywords": [
 			"Aid",

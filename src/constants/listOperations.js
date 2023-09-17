@@ -752,14 +752,14 @@ function changeListTitle(list, title) {
   return { ...list, title: title.substring(0, 30) };
 }
 
-function toggleListMode(list) {
-  const modes = Object.keys(legionModes);
-  let modeIndex = modes.indexOf(list.mode);
-  modeIndex += 1;
-  modeIndex %= modes.length;
-  list.mode = modes[modeIndex];
-  return list;
-}
+// function toggleListMode(list) {
+//   const modes = Object.keys(legionModes);
+//   let modeIndex = modes.indexOf(list.mode);
+//   modeIndex += 1;
+//   modeIndex %= modes.length;
+//   list.mode = modes[modeIndex];
+//   return list;
+// }
 
 function setListMode(list, mode) {
   if (legionModes[mode]) {
