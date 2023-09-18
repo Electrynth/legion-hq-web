@@ -123,8 +123,8 @@ function RankSelector() {
     <div className={classes.container}>
       {Object.keys(rankLimits).map(key => {
 
-        if(!key[0]) // commOp is a non-array, non-displayed rank limit
-          return null;
+         // commOp is a non-array, non-displayed rank limit
+        if(!ranks[key]) return null;
 
         let color = 'primary';
         if(currentUnitCounts[key] > rankLimits[key][1] || currentUnitCounts[key] < rankLimits[key][0]){
@@ -132,7 +132,7 @@ function RankSelector() {
         }
 
         return (
-          <div key={ranks[key].name} className={classes.item}>
+          <div key={key} className={classes.item}>
             <RankButton
               rank={key}
               color={color}
