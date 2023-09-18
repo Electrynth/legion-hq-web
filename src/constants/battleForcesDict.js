@@ -1,7 +1,7 @@
 const battleForcesDict = {
   'Echo Base Defenders': {
       name: 'Echo Base Defenders',
-      faction:'rebels',
+      faction: 'rebels',
       commander: ['ab', 'ad', 'ac', 'bi'],
       operative: ['jg', 'ji', 'af'],
       corps: ['gv', 'if'],
@@ -16,7 +16,8 @@ const battleForcesDict = {
         corps: [3, 6],
         special: [0, 0],
         support: [1, 4],
-        heavy: [0, 2]
+        heavy: [0, 2],
+        commOp: 4
       },
       '500-point mode': {
         commander: [1, 3],
@@ -24,7 +25,8 @@ const battleForcesDict = {
         corps: [2, 4],
         special: [0, 0],
         support: [1, 3],
-        heavy: [0,1]
+        heavy: [0, 1],
+        commOp: 3
       }
     },
     'Bright Tree Village': {
@@ -44,7 +46,8 @@ const battleForcesDict = {
         corps: [3, 6],
         special: [0, 3],
         support: [0, 2],
-        heavy: [0, 2]
+        heavy: [0, 2],
+        commOp: 5
       },
       '500-point mode': {
         commander: [1, 4],
@@ -52,7 +55,8 @@ const battleForcesDict = {
         corps: [2, 4],
         special: [0, 3],
         support: [0, 1],
-        heavy: [0, 1]
+        heavy: [0, 1],
+        commOp: 4
       }
     },
   'Blizzard Force': {
@@ -68,7 +72,7 @@ const battleForcesDict = {
       allowedUniqueUpgrades: ['fl'],
       'standard mode': {
         commander: [1, 2],
-        operative: [0, 2],
+        operative: [0, 0],
         corps: [3, 6],
         special: [0, 0],
         support: [1, 4],
@@ -76,7 +80,7 @@ const battleForcesDict = {
       },
       '500-point mode': {
         commander: [1, 2],
-        operative: [0, 1],
+        operative: [0, 0],
         corps: [2, 4],
         special: [0, 0],
         support: [1, 3],
@@ -96,19 +100,21 @@ const battleForcesDict = {
     allowedUniqueUpgrades: ['uj', 'gm'],
     'standard mode': {
       commander: [1, 2],
-      operative: [0, 2],
+      operative: [0, 1],
       corps: [3, 6],
       special: [0, 0],
       support: [0, 2],
-      heavy: [0, 2]
+      heavy: [0, 2],
+      commOp: 2
     },
     '500-point mode': {
       commander: [1, 2],
-      operative: [0, 2],
+      operative: [0, 1],
       corps: [2, 4],
       special: [0, 0],
       support: [0, 1],
-      heavy: [0, 1]
+      heavy: [0, 1],
+      commOp: 2
     }
   },
   'Tempest Force': {
@@ -156,20 +162,21 @@ const battleForcesDict = {
         corps: [1, 4],
         special: [1, 4],
         support: [1, 2],
-        heavy: [0, 1]
+        heavy: [0, 1],
+        commOp: 2
       },
       '500-point mode': {
         commander: [1, 1],
         operative: [0, 1],
         corps: [1, 4],
-        special: [0, 0],
-        support: [1, 2],
+        special: [1, 4],
+        support: [0, 2],
         heavy: [0, 1]
       }
     },
   'Separatist Invasion': {
       name: 'Separatist Invasion',
-      faction:'separatists',
+      faction: 'separatists',
       commander: ['fx', 'ia', 'nr'],
       operative: ['nb'],
       corps: ['gx'],
@@ -192,12 +199,13 @@ const battleForcesDict = {
         corps: [2, 6],
         special: [0, 1],
         support: [0, 2],
-        heavy: [0, 1]
+        heavy: [1, 1]
       }
     },
   'Shadow Collective': {
       name: 'Shadow Collective',
-      faction:'fringe',
+      faction: 'fringe',
+      countsMercsForMin: true,
       commander: ['ra', 'rd', 'qy'],
       operative: ['rc', 'kx', 'ax'],
       corps: ['rb', 'qz'],
@@ -212,7 +220,8 @@ const battleForcesDict = {
         corps: [2, 6],
         special: [0, 4],
         support: [0, 3],
-        heavy: [0, 2]
+        heavy: [0, 2],
+        commOp: 4
       },
       '500-point mode': {
         commander: [1, 2],
@@ -220,7 +229,8 @@ const battleForcesDict = {
         corps: [1, 4],
         special: [0, 3],
         support: [0, 2],
-        heavy: [0, 1]
+        heavy: [0, 1],
+        commOp: 2
       }
     }
 };

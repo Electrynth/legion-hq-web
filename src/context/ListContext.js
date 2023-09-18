@@ -31,7 +31,9 @@ import {
   getEquippableUpgrades,
   getEquippableLoadoutUpgrades,
   getEligibleBattlesToAdd,
-  toggleUsingOldPoints
+  toggleUsingOldPoints, 
+  validateList,
+  getRankLimits
 } from 'constants/listOperations';
 import listTemplate from 'constants/listTemplate';
 
@@ -61,6 +63,8 @@ export function ListProvider({
   const [cardPaneFilter, setCardPaneFilter] = useState({ action: 'DISPLAY' });
   const [isKillPointMode, setIsKillPointMode] = useState(false);
   const [currentKillPoints, setCurrentKillPoints] = useState(0);
+  const [validationIssues, setValidationIssues] = useState([]);
+  const [rankLimits, setRankLimits] = useState();
 
 
   useEffect(() => {
@@ -68,9 +72,9 @@ export function ListProvider({
     if (slug in factions) {
       if (listHash) {
         const convertedList = convertHashToList(slug, listHash);
-        if (convertedList) setCurrentList({ ...convertedList });
-        else setCurrentList(JSON.parse(JSON.stringify(storedLists[slug])));
-      } else setCurrentList(JSON.parse(JSON.stringify(storedLists[slug])));
+        if (convertedList) updateThenValidateList({ ...convertedList });
+        else updateThenValidateList(JSON.parse(JSON.stringify(storedLists[slug])));
+      } else updateThenValidateList(JSON.parse(JSON.stringify(storedLists[slug])));
     }
     // route '/list/1234' fetches list 1234 from database
     else if (slug !== '' && isValidListId(slug)) {
@@ -90,7 +94,7 @@ export function ListProvider({
                 return !oldCounterparts.includes(id);
               });
             }
-            setCurrentList(rehashList(loadedList));
+            updateThenValidateList(rehashList(loadedList));
           } else setError(`List ${slug} not found.`);
           setStatus('idle');
         })
@@ -126,6 +130,14 @@ export function ListProvider({
     }
     setStackSize(1);
   }, [width, cardPaneFilter]);
+
+  const updateThenValidateList = (list) => {
+    const rankLimits = getRankLimits(list);
+    setCurrentList(list);
+    doUnitValidation(list, rankLimits);
+    setRankLimits(rankLimits);
+  }
+
   const reorderUnits = (startIndex, endIndex) => {
     function reorder(arr) {
       const result = Array.from(arr);
@@ -156,10 +168,12 @@ export function ListProvider({
     setCardPaneFilter({ action: 'DISPLAY' });
     const newList = JSON.parse(JSON.stringify(listTemplate));
     if (currentList.faction === 'fringe') newList.battleForce = 'Shadow Collective';
-    setCurrentList({ ...newList, faction: currentList.faction });
+    updateThenValidateList({ ...newList, faction: currentList.faction });
   }
   const handleChangeTitle = title => setCurrentList({ ...changeListTitle(currentList, title) });
-  const handleChangeMode = mode => setCurrentList({ ...setListMode(currentList, mode) });
+  const handleChangeMode = mode => {
+    updateThenValidateList({ ...setListMode(currentList, mode) });
+  }
   const handleEquipUpgrade = (action, unitIndex, upgradeIndex, upgradeId, isApplyToAll) => {
     const unit = currentList.units[unitIndex];
     let applyFilter; let nextAvailIndex; let nextAvailType;
@@ -210,7 +224,7 @@ export function ListProvider({
       const newUnit = newList.units[unitIndex];
       applyFilter(newUnit.upgradesEquipped, newUnit.additionalUpgradeSlots);
     } else setCardPaneFilter({ action: 'DISPLAY' });
-    setCurrentList({ ...newList });
+    updateThenValidateList({ ...newList });
   };
 
   const handleUnequipUpgrade = (action, unitIndex, upgradeIndex) => {
@@ -219,7 +233,7 @@ export function ListProvider({
     const newList = unequipUpgrade(
       currentList, action, unitIndex, upgradeIndex
     );
-    setCurrentList({ ...newList });
+    updateThenValidateList({ ...newList });
   }
   const handleAddUnit = (unitId) => {
     if (width === 'xs' || width === 'sm') {
@@ -227,7 +241,7 @@ export function ListProvider({
     }
     setStackSize(1);
     const newList = addUnit(currentList, unitId, stackSize);
-    setCurrentList({ ...newList });
+    updateThenValidateList({ ...newList });
   }
   const handleAddCommand = (commandId) => {
     const newList = addCommand(currentList, commandId);
@@ -256,28 +270,28 @@ export function ListProvider({
   const handleAddCounterpart = (unitIndex, counterpartId) => {
     setCardPaneFilter({ action: 'DISPLAY' });
     const newList = addCounterpart(currentList, unitIndex, counterpartId);
-    setCurrentList({ ...newList });
+    updateThenValidateList({ ...newList });
   }
   const handleRemoveCounterpart = (unitIndex) => {
     setCardPaneFilter({ action: 'DISPLAY' });
     const newList = removeCounterpart(currentList, unitIndex);
-    setCurrentList({ ...newList });
+    updateThenValidateList({ ...newList });
   }
   const handleIncrementUnit = (index) => {
     const newList = incrementUnit(currentList, index);
-    setCurrentList({ ...newList });
+    updateThenValidateList({ ...newList });
   }
   const handleDecrementUnit = (index) => {
     if (cardPaneFilter.action.includes('UPGRADE')) {
       setCardPaneFilter({ action: 'DISPLAY' });
     }
     const newList = decrementUnit(currentList, index);
-    setCurrentList({ ...newList });
+    updateThenValidateList({ ...newList });
   }
 
   const handleMergeList = (listToMerge) => {
     const newList = mergeLists(currentList, listToMerge);
-    setCurrentList({ ...newList });
+    updateThenValidateList({ ...newList });
   }
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -337,7 +351,13 @@ export function ListProvider({
   }
 
   const handleSetBattleForce = (battleForce) => {
-    setCurrentList({ ...currentList, battleForce });
+    updateThenValidateList({ ...currentList, battleForce });
+  }
+
+  // Maybe there should be a 'units only' flag, but lists will be something like 50-100 entities max anyhow...
+  const doUnitValidation = (list, rankLimits) =>{
+    // console.log('performing list validation!');
+    setValidationIssues(validateList(list, rankLimits));
   }
 
   const unitProps = {
@@ -418,7 +438,9 @@ export function ListProvider({
           ...listProps,
           ...modalProps,
           ...viewProps,
-          ...messageProps
+          ...messageProps,
+          validationIssues,
+          rankLimits
         }}
       >
         {children}

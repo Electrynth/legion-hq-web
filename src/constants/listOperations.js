@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import cards, {cardIdsByType} from 'constants/cards';
+import cards, {cardsIdsByType as cardIdsByType} from 'constants/cards';
+import ranks from 'constants/ranks';
 import legionModes from 'constants/legionModes';
 import interactions from 'constants/cardInteractions';
 import listTemplate from 'constants/listTemplate';
@@ -132,6 +133,11 @@ function consolidate(list) {
       }
     }
     list.unitCounts[unitCard.rank] += unit.count;
+
+    if (unit.unitId === 'rc' && unit.upgradesEquipped.includes('rq')) { // Maul + Darksaber interaction
+      list.unitCounts['commander']++;
+      list.unitCounts['operative']--;
+    }
   }
   for (let i = list.commandCards.length - 1; i > -1 ; i--) {
     const { commander } = cards[list.commandCards[i]];
@@ -815,7 +821,7 @@ function equipUpgradeToAll(list, unitIndex, upgradeIndex, upgradeId) {
   const newUnitHash = getUnitHash(newUnit);
   newUnit.unitObjectString = newUnitHash;
   if ('additionalUpgradeSlots' in upgradeCard) {
-    newUnit.additionalUpgradeSlots = [upgradeCard.additionalUpgradeSlots[0]];
+    newUnit.additionalUpgradeSlots = [...upgradeCard.additionalUpgradeSlots];
     newUnit.upgradesEquipped.push(null);
   }
   if (list.unitObjectStrings.includes(newUnitHash)) {
@@ -836,7 +842,7 @@ function equipUpgradeToOne(list, unitIndex, upgradeIndex, upgradeId) {
   newUnit.upgradesEquipped[upgradeIndex] = upgradeId;
   newUnit.unitObjectString = getUnitHash(newUnit);
   if ('additionalUpgradeSlots' in upgradeCard) {
-    newUnit.additionalUpgradeSlots = [upgradeCard.additionalUpgradeSlots[0]];
+    newUnit.additionalUpgradeSlots = [...upgradeCard.additionalUpgradeSlots];
     newUnit.upgradesEquipped.push(null);
   }
   const newUnitHashIndex = findUnitHash(list, newUnit.unitObjectString);
@@ -847,6 +853,7 @@ function equipUpgradeToOne(list, unitIndex, upgradeIndex, upgradeId) {
     list.unitObjectStrings.splice(unitIndex + 1, 0, newUnit.unitObjectString);
   }
   list = decrementUnit(list, unitIndex);
+
   return consolidate(list);
 }
 
@@ -901,7 +908,7 @@ function removeCounterpart(list, unitIndex) {
 
 function addUnit(list, unitId, stackSize = 1) {
   const unitCard = cards[unitId];
-  const unitIndex = findUnitHash(list, unitId);
+  let unitIndex = findUnitHash(list, unitId);
 
   // TODO TODO - this  will break stuff again if a list can have 2 units with Contingencies
   // Should set list.contingencies=[] by default and let consolidate handle the show/no-show/emptying of it
@@ -930,7 +937,10 @@ function addUnit(list, unitId, stackSize = 1) {
     }
     list.units.push(newUnitObject);
     list.unitObjectStrings.push(unitId);
+    unitIndex = list.units.length - 1;
   }
+
+  validateUpgrades(list, unitIndex);
   return consolidate(list);
 }
 
@@ -989,8 +999,9 @@ function killUnit(list, index) {
 
 function getEligibleUnitsToAdd(list, rank) {
   const validUnitIds = [];
-  for (let i = 0; i < cardIdsByType['unit'].length; i++) {
-    const id = cardIdsByType['unit'][i];
+  const cardsById = cardIdsByType.unit; // Object.keys(cards);
+  for (let i = 0; i < cardsById.length; i++) {
+    const id = cardsById[i];
     const card = cards[id];
 
     // if (card.cardType !== 'unit') continue;
@@ -1002,6 +1013,7 @@ function getEligibleUnitsToAdd(list, rank) {
       continue;
     }
 
+
     if(!list.battleForce)
     {
       if (!list.faction.includes(card.faction) && !card.affiliations) continue;
@@ -1012,7 +1024,7 @@ function getEligibleUnitsToAdd(list, rank) {
     if (list.uniques.includes(id)) continue;
     if (list.commanders.includes(card.cardName)) continue;
     if (card.specialIssue && card.specialIssue !== list.battleForce)continue;
-    
+
     if (card.detachment) {
       for (let i = 0; i < list.units.length; i++) {
         const unit = list.units[i];
@@ -1158,6 +1170,8 @@ function getEligibleBattlesToAdd(list, type) {
   const validIds = [];
   const invalidIds = [];
   const scenarioMissionIds = ['Df', 'Oe'];
+  const cardsById = cardIdsByType.battle; //Object.keys(cards);
+
   let currentCards;
   if (type === 'objective') currentCards = list.objectiveCards;
   else if (type === 'deployment') currentCards = list.deploymentCards;
@@ -1185,6 +1199,8 @@ function getEligibleContingenciesToAdd(list) {
 if (!list.contingencies) list.contingencies = [];
 const validCommandIds = [];
 const invalidCommandIds = [];
+const cardsById = cardIdsByType.command; // Object.keys(cards);
+
 let numContingencies = 0;
 list.units.forEach((unit) => {
   const unitCard = cards[unit.unitId];
@@ -1226,6 +1242,8 @@ function getEligibleCommandsToAdd(list) {
 
   const validCommandIds = [];
   const invalidCommandIds = [];
+  const cardsById = cardIdsByType.command; // Object.keys(cards);
+
   const pipCounts = { '1': 0, '2': 0, '3': 0 };
   list.commandCards.forEach(id => {
     const commandCard = cards[id];
@@ -1282,11 +1300,15 @@ function getEquippableUpgrades(
   const impRemnantUpgrades = ['ej', 'ek', 'fv', 'iy', 'fu', 'gm', 'gl', 'em', 'en', 'ja'];
   const validUpgradeIds = [];
   const invalidUpgradeIds = [];
+  const cardsById = cardIdsByType.upgrade; // Object.keys(cards);
+
   if (!id) return { validUpgradeIds: [], invalidUpgradeIds: [] };
   const unitCard = cards[id];
   for (let i = 0; i < cardIdsByType['upgrade'].length; i++) {
     const id = cardIdsByType['upgrade'][i];
     const card = cards[id];
+    if (id === 'nc') continue; // duplicate card
+
     // if (card.cardType !== 'upgrade') continue;
     if (card.cardSubtype !== upgradeType) continue;
     if (card.faction && card.faction !== '' && list.faction !== card.faction) continue;
@@ -1358,6 +1380,82 @@ function sortIds(ids) {
   return sortedIds;
 }
 
+/**
+ * Check validation ONLY for things pertaining to this unit's currently equipped upgrades. 
+ * Generally, should *probably* not do things that have a further reach than upgrade bar itself (I think)
+ * e.g. adding Field Commander or Maul's Darksaber for list validation
+ * @param {} list 
+ * @param {*} unitIndex 
+ * @param {*} upgradeIndex 
+ * @param {*} upgradeId 
+ */
+function validateUpgrades(list, unitIndex){
+  console.log('unit index = ' + unitIndex);
+  
+  const unit = list.units[unitIndex];
+  const card = cards[unit.unitId];
+
+  unit.validationIssues = [];
+  
+  // Validation for each of the 'must equip' keywords (that I know of)
+
+  if(card.flexResponse){
+    let heavyCount = 0;
+    unit.upgradesEquipped.forEach((id)=>{
+      if(id == null)
+        return;
+      const equipCard = cards[id];
+      if(equipCard.cardSubtype == 'heavy weapon'){
+        heavyCount++;
+      }
+    });
+    if(heavyCount < card.flexResponse){
+      unit.validationIssues.push( { level:2, text: card.displayName + " needs " + card.flexResponse + " Heavy Weapon upgrades (Flexible Response)" });
+    }
+  }
+
+  // Equip
+  if(card.equip){
+    card.equip.forEach((equipReq)=>{
+      const equipCard = cards[equipReq];
+      if(!unit.upgradesEquipped.includes(equipReq)){
+        unit.validationIssues.push( { level:2, text: card.displayName + " is missing " + equipCard.cardName + " (Equip)"});
+      }
+    });
+  }
+
+  if(card.keywords.includes("Heavy Weapon Team")){
+    let hasHeavy = false;
+    unit.upgradesEquipped.forEach((id)=>{
+      if(id == null)
+        return;
+      const equipCard = cards[id];
+      if(equipCard.cardSubtype == 'heavy weapon'){
+        hasHeavy = true;
+      }
+    });
+    if(!hasHeavy){
+      unit.validationIssues.push( { level:2, text: card.displayName + " is missing a Heavy Weapon upgrade (Heavy Weapon Team)" });
+    }
+  }
+
+  if(card.keywords.includes("Programmed")){
+    let hasProto = false;
+    unit.upgradesEquipped.forEach((id)=>{
+      if(id == null)
+        return;
+      const equipCard = cards[id];
+      if(equipCard.cardSubtype == 'programming'){
+        hasProto = true;
+      }
+    });
+    if(!hasProto){
+      unit.validationIssues.push( { level:2, text: card.cardName + " is missing a Programming upgrade (Programmed)" });
+    }
+  }
+
+}
+
 function equipUpgrade(list, action, unitIndex, upgradeIndex, upgradeId, isApplyToAll = false) {
   if (action === 'UNIT_UPGRADE') {
     if (isApplyToAll) {
@@ -1372,10 +1470,16 @@ function equipUpgrade(list, action, unitIndex, upgradeIndex, upgradeId, isApplyT
   } else if (action === 'COUNTERPART_LOADOUT_UPGRADE') {
     list = equipCounterpartLoadoutUpgrade(list, unitIndex, upgradeIndex, upgradeId);
   }
+
+  validateUpgrades(list, unitIndex);
+
   return list;
 }
 
 function unequipUpgrade(list, action, unitIndex, upgradeIndex) {
+  
+  const upgradeId = list.units[unitIndex].upgradesEquipped[upgradeIndex];
+
   if (action === 'UNIT_UPGRADE') {
     function unequip(list, unitIndex, upgradeIndex) {
       const unit = list.units[unitIndex];
@@ -1410,6 +1514,10 @@ function unequipUpgrade(list, action, unitIndex, upgradeIndex) {
   } else if (action === 'COUNTERPART_LOADOUT_UPGRADE') {
     list = unequipCounterpartLoadoutUpgrade(list, unitIndex, upgradeIndex);
   }
+
+  validateUpgrades(list, unitIndex);
+
+
   return list;
 }
 
@@ -1597,6 +1705,204 @@ function mergeLists(primaryList, secondaryList) {
   return consolidate(primaryList);
 }
 
+// All (most...) battleForce-specific stuff (should) goes here
+function battleForceValidation(currentList){
+
+  const validationIssues = [];
+  // TODO is a switch against the code standard? ;)
+  switch(currentList.battleForce){
+
+    case "Blizzard Force":
+      {
+        const stormsCount = currentList.units.filter((unit)=>unit.unitId === "ay" || unit.unitId === "sr").reduce((count,u)=>count+=u.count, 0);
+        
+        if(stormsCount > 2){
+          validationIssues.push({level:2, text:"Maximum 2 Stormtroopers (Regular or HRU in any combo)"});
+        }
+        break;
+      }
+  }
+  return validationIssues;
+}
+
+function mercValidation(currentList, rank, mercs){
+  const validationIssues = [];
+
+  let hasAoc = false;
+  let aocRanks = []; 
+
+  let mercLimits = { commander:1, operative:1, corps:2, special:1, heavy:1, support:1 }
+
+  currentList.units.forEach((unit)=>{
+    const card = cards[unit.unitId]
+
+    // Check for Allies of Convenience
+    if(!hasAoc)
+    {
+      // check for AoC keyword or Underworlds Connection card
+      hasAoc = card.keywords.find(k => k === "Allies of Convenience") || unit.upgradesEquipped.find(c => c !== null && c === 'rf');
+    }
+  });
+
+  if(currentList.battleForce !== "Shadow Collective" || currentList.battleForce !== "Bright Tree Village"){
+    Object.keys(ranks).forEach(t =>{
+
+      if(mercs[t] > mercLimits[t]){
+        if(!hasAoc || mercs[t] > mercLimits[t] + 1){
+          validationIssues.push({level:2, text:"Too many MERCENARY " + t.toUpperCase() + " units! (maximum " + (hasAoc ? mercLimits[t]+1:mercLimits[t]) + ")"});
+        } 
+        aocRanks.push(t);
+      }
+      if(aocRanks.length > 1){
+        validationIssues.push({level:2, text:"Allies of Convenience only allows ONE additional merc of any rank (" + aocRanks.join(", ")+ ")"});
+      }
+
+    });
+  }
+  return validationIssues;
+}
+
+function rankValidation(currentList, ranks, mercs, rankReqs){
+  const validationIssues = [];
+
+  // TODO this is ugly - probably should be a BF flag
+  const countMercs = currentList.battleForce === "Shadow Collective" || currentList.battleForce == "Bright Tree Village"
+  // const countMercs = currentList.battleForce.countsMercsForMin;
+
+  // Flag for a bf's combined comm/op limits, only when comm/op already overrun individually
+  if(rankReqs.commOp && (ranks.commander + ranks.commander) > rankReqs.commOp
+    && !(ranks.commander > rankReqs.commander || ranks.operative > rankReqs.operative)){
+    validationIssues.push({level:2, text:"Limit of " + rankReqs.commOp + " total COMMMANDERS and OPERATIVES"});
+  }
+
+  Object.keys(ranks).forEach(t =>{
+    let min =rankReqs[t][0]; 
+    let max = rankReqs[t][1];
+
+    // mercs don't count for minimum, unless they do
+    const countMin = !countMercs ? (ranks[t] - mercs[t]) : ranks[t];
+    if(countMin < min){
+      validationIssues.push({level:2, text:"Not enough " + t.toUpperCase() + " units! (minimum " + min + ")"});
+    }
+    
+    if(ranks[t] > max){
+      validationIssues.push({level:2, text:"Too many " + t.toUpperCase() + " units! (maximum " + max + ")"});
+    }
+  });
+
+  return validationIssues;
+}
+
+// TODO very lazy/gross implementation for now...
+function applyEntourage(currentList, rankReqs)
+{
+  // for now, only empire uses the 'entourage' keyword, and this implementation for it is kind of nasty...
+  if(currentList.faction !== "empire"){
+    return;
+  }
+
+  let entourage = [];
+  let specials = [];
+  let heavies = [];
+
+  currentList.units.forEach((unit)=>{
+    const card = cards[unit.unitId];
+
+    if(card.rank === 'special' && !specials.includes(card.cardName)){
+      specials.push(card.cardName);
+    }
+    if(card.rank === 'heavy' && !heavies.includes(card.cardName)){
+      heavies.push(card.cardName);
+    }
+
+    if(card.entourage){
+      entourage.push(card.entourage);
+    }
+  });
+
+  // this kind of check makes a really really strong argument for stratifying the list by rank, lol
+  entourage.forEach((e) =>{ 
+    if( e.type === 'special' && specials.includes(e.name)){
+      rankReqs.special[1]++; // increase the max
+    }
+    else if( e.type === 'heavy' && heavies.includes(e.name)){
+      rankReqs.heavy[1]++; // incerease the max
+    }
+  });
+
+  return;
+}
+
+function applyFieldCommander(list, rankReqs){
+  if(list.hasFieldCommander){
+    rankReqs.commander[0] = 0;
+  }
+}
+
+function getRankLimits(currentList){
+
+  const battleForce = currentList.battleForce;
+  let dictRankReqs;
+
+  if(battleForce){
+    if(battleForcesDict[battleForce][currentList.mode])
+      dictRankReqs = battleForcesDict[battleForce][currentList.mode];
+    else{
+      dictRankReqs = battleForcesDict[battleForce]['standard mode'];
+    }
+  } else{
+    dictRankReqs = legionModes[currentList.mode].unitCounts;
+  }
+
+  // copy over so we can play with limits
+  let rankReqs = {};
+  (Object.keys(dictRankReqs)).forEach(r => rankReqs[r] = [dictRankReqs[r][0], dictRankReqs[r][1]]);
+
+  applyEntourage(currentList, rankReqs);  
+  applyFieldCommander(currentList, rankReqs);
+
+  return rankReqs;
+}
+
+// TODO most of this was written before understanding the whole 'running total' state we have going
+// Would be better to move most of this into the proper unit/upgrade modify steps instead of 
+// iterating everything every time something's added
+function validateList(currentList, rankLimits){
+  let validationIssues = [];
+
+  const battleForce = currentList.battleForce;
+
+  let ranks = {...currentList.unitCounts} //{ commander:0, operative:0, corps:0, special:0, heavy:0, support:0 }
+  let mercs = { commander:0, operative:0, corps:0, special:0, heavy:0, support:0 }
+
+  // Determine what our rank requirements are, warn if unknown
+  // TODO need more definitive handling for the other modes...
+  if(battleForce && !battleForcesDict[battleForce][currentList.mode]){
+      validationIssues.push({level:1, text:"Playing a battleforce in a mode with no defined battleforce construction rules (Defaulting to 800pt)"});
+  } 
+  
+  let rankReqs = rankLimits; //updateRankLimits(currentList);
+
+  // count up them mercs, pull in any unit-specific issues
+  currentList.units.forEach((unit)=>{
+    const card = cards[unit.unitId];
+
+    if(unit.validationIssues?.length > 0){
+      validationIssues = validationIssues.concat(unit.validationIssues);
+    }
+
+    if(card.faction === 'fringe'){
+      mercs[card.rank] += unit.count;
+    }
+  });
+
+  validationIssues.push(...battleForceValidation(currentList));
+  validationIssues.push(...rankValidation(currentList, ranks, mercs, rankReqs));
+  validationIssues.push(...mercValidation(currentList, ranks, mercs));
+
+  return validationIssues;
+}
+
 export {
   toggleUsingOldPoints,
   rehashList,
@@ -1636,5 +1942,7 @@ export {
   generateTournamentText,
   generateStandardText,
   generateMinimalText,
-  generateHTMLText
+  generateHTMLText,
+  validateList,
+  getRankLimits
 };

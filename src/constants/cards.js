@@ -946,7 +946,8 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost reduced from 200 to 190 points."
 			}
 		],
-		"cardType": "unit"
+		"cardType": "unit",
+    "entourage": {"name":'Imperial Royal Guards', "type":'special'}
 	},
 	"at": {
 		"cardType": "unit",
@@ -1054,6 +1055,7 @@ const cards = JSON.parse(JSON.stringify({
 		"upgradeBar": ["command", "command", "gear"],
 		"id": "av",
 		"cardType": "unit",
+    "entourage": {"name":'Imperial Death Troopers', "type":'special'},
 		"history": [
 			{
 				"date": "27 October 2021",
@@ -6468,6 +6470,7 @@ const cards = JSON.parse(JSON.stringify({
 			"armament",
 			"grenades"
 		],
+    "equip":["mo", "mp"], // tristan + ursa wren
 		"history": [
 			{
 				"date": "5 June 2023",
@@ -6698,7 +6701,8 @@ const cards = JSON.parse(JSON.stringify({
 			"comms",
 			"gear",
 			"grenades"
-		]
+		],
+    "equip": ["me", "mf"], // del meeko, gideon hask
 	},
 	"mz": {
 		"id": "mz",
@@ -7162,7 +7166,7 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "republic",
 		"keywords": [
-			"Field commander",
+			"Field Commander",
 			"Beam",
 			"Immune"
 		]
@@ -9522,6 +9526,7 @@ const cards = JSON.parse(JSON.stringify({
 			"heavy weapon",
 			"heavy weapon"
 		],
+    "flexResponse": 2,
 		"history": [
 			{
 				"date": "5 June 2023",
@@ -10224,6 +10229,7 @@ const cards = JSON.parse(JSON.stringify({
 			"gear",
 			"armament"
 		],
+    "entourage": {"name":"Imperial Dark Troopers", "type":"special"},
 		"history": []
 	},
 	"uj": {
@@ -11414,6 +11420,7 @@ const cards = JSON.parse(JSON.stringify({
 const cardIdsByType = {
 };
 
+
 Object.keys(cards).forEach(id=>{
   const type = cards[id].cardType;
   if(!cardIdsByType[type]){
@@ -11422,5 +11429,6 @@ Object.keys(cards).forEach(id=>{
   cardIdsByType[type].push(id);
 });
 
+export {cardIdsByType as cardsIdsByType};
 export default cards;
-export {cardIdsByType};
+
