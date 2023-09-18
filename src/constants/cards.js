@@ -1961,7 +1961,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 5,
-		"faction": "",
 		"imageName": "Strict Orders.jpeg",
 		"keywords": [],
 		"requirements": [],
@@ -1973,7 +1972,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 2,
-		"faction": "",
 		"imageName": "Recon Intel.jpeg",
 		"keywords": ["Scout"],
 		"requirements": [],
@@ -3623,7 +3621,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 4,
-		"faction": "",
 		"imageName": "Overwatch.jpeg",
 		"keywords": ["Sentinel"],
 		"requirements": [],
@@ -4214,7 +4211,7 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "E-5C B1 Trooper.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "B1 Battle Droids"}],
-		"histoiry": [
+		"history": [
 			{
 				"date": "27 October 2021",
 				"description": "Cost reduced from 18 to 16 points."
@@ -4360,12 +4357,9 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": ["Target"],
 		"requirements": [
 			"OR",
-			[
-				"OR",
 				{"cardSubtype": "ground vehicle"},
-				{"cardSubtype": "repulsor vehicle"}
-			],
-			{"cardSubtype": "emplacement trooper"}
+				{"cardSubtype": "repulsor vehicle"},
+        {"cardSubtype": "emplacement trooper"}
 		],
 		"id": "hz"
 	},
@@ -5353,7 +5347,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 27,
-		"faction": "republic",
 		"imageName": "Z-6 Phase II Clone Trooper.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "Phase II Clone Troopers"}],
@@ -6744,7 +6737,9 @@ const cards = JSON.parse(JSON.stringify({
 			"Djem So Mastery",
 			"Flawed",
 			"Immune",
-			"Tempted"
+			"Tempted",
+      "Impact",
+      "Pierce"
 		],
 		"upgradeBar": [
 			"force",
@@ -8650,8 +8645,7 @@ const cards = JSON.parse(JSON.stringify({
 			"Armor",
 			"Cover",
 			"Hover",
-			"Weak Point",
-			"Impact"
+			"Weak Point"
 		],
 		"upgradeBar": ["pilot", "hardpoint", "comms"],
 		"history": []
@@ -8889,7 +8883,9 @@ const cards = JSON.parse(JSON.stringify({
 			"Deflect",
 			"Immune",
 			"Juyo Mastery",
-			"Wound"
+			"Wound",
+      "Impact",
+      "Pierce"
 		],
 		"upgradeBar": [
 			"force",
@@ -9532,6 +9528,7 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost increased from 30 to 40 points."
 			}
 		],
+    "specialIssue": "Blizzard Force",
 		"id": "sr"
 	},
 	"ss": {
@@ -10461,7 +10458,9 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost reduced from 76 to 72 points."
 			}
 		],
-		"id": "uy"
+		"id": "uy",
+    "specialIssue" : "Imperial Remnant",
+
 	},
 	"uz": {
 		"cardType": "unit",
@@ -10491,7 +10490,8 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost reduced from 60 to 48 points."
 			}
 		],
-		"id": "uz"
+		"id": "uz",
+    "specialIssue" : "Imperial Remnant",
 	},
 	"va": {
 		"id": "va",
@@ -10642,7 +10642,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "heavy",
 		"cost": 190,
-		"faction": "rebels",
+		"faction": "fringe",
+    "affiliations":[],
 		"imageName": "Chewbacca3.jpeg",
 		"keywords": [
 			"Armor",
@@ -10670,7 +10671,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"rank": "corps",
 		"cost": 40,
-		"faction": "rebels",
+		"faction": "fringe",
+    "affiliations":['rebels'],
 		"imageName": "Ewok Skirmishers.jpeg",
 		"keywords": [
 			"Low Profile",
@@ -10837,7 +10839,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"rank": "special",
 		"cost": 35,
-		"faction": "rebels",
+		"faction": "fringe",
+    "affiliations":['rebels'],
 		"imageName": "Ewok Slingers.jpeg",
 		"keywords": [
 			"Independent",
@@ -10857,7 +10860,7 @@ const cards = JSON.parse(JSON.stringify({
 	"vv": {
 		"cardName": "C-3P0",
 		"title": "Golden God",
-		"faction": "rebels",
+		"faction": "fringe",
 		"isUnique": true,
 		"upgradeBar": [],
 		"cardType": "unit",
@@ -10974,7 +10977,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "commander",
 		"cost": 45,
-		"faction": "rebels",
+		"faction": "fringe",
 		"imageName": "Logray.jpeg",
 		"keywords": [
 			"Aid",
@@ -11407,4 +11410,17 @@ const cards = JSON.parse(JSON.stringify({
 	}
 }));
 
+
+const cardIdsByType = {
+};
+
+Object.keys(cards).forEach(id=>{
+  const type = cards[id].cardType;
+  if(!cardIdsByType[type]){
+    cardIdsByType[type] = [];
+  }
+  cardIdsByType[type].push(id);
+});
+
 export default cards;
+export {cardIdsByType};
