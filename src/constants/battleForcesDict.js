@@ -117,6 +117,34 @@ const battleForcesDict = {
       commOp: 2
     }
   },
+  'Tempest Force': {
+    name: 'Tempest Force',
+    faction: 'empire',
+    commander: ['ar'],
+    operative: [],
+    corps: ['ay'],
+    special: ['ba'],
+    support: ['bf'],
+    heavy: ['we', 'bg'],
+    ruleUrl: 'https://static1.squarespace.com/static/5ce432b1f9d2be000134d8ae/t/64b0298bd4a9711ae76ef8d6/1689266585321/SWL_TempestForce.pdf',
+    allowedUniqueUpgrades: [],
+    'standard mode': {
+      commander: [1, 2],
+      operative: [0, 0],
+      corps: [1, 3],
+      special: [2, 6],
+      support: [0, 3],
+      heavy: [0, 3]
+    },
+    '500-point mode': {
+      commander: [1, 2],
+      operative: [0, 0],
+      corps: [1, 2],
+      special: [1, 4],
+      support: [0, 2],
+      heavy: [0, 2]
+    }
+  },
   '501st Legion': {
       name: '501st Legion',
       faction: 'republic',

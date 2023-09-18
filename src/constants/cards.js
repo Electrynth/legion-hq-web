@@ -1963,7 +1963,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 5,
-		"faction": "",
 		"imageName": "Strict Orders.jpeg",
 		"keywords": [],
 		"requirements": [],
@@ -1975,7 +1974,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 2,
-		"faction": "",
 		"imageName": "Recon Intel.jpeg",
 		"keywords": ["Scout"],
 		"requirements": [],
@@ -3625,7 +3623,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 4,
-		"faction": "",
 		"imageName": "Overwatch.jpeg",
 		"keywords": ["Sentinel"],
 		"requirements": [],
@@ -4216,7 +4213,7 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "E-5C B1 Trooper.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "B1 Battle Droids"}],
-		"histoiry": [
+		"history": [
 			{
 				"date": "27 October 2021",
 				"description": "Cost reduced from 18 to 16 points."
@@ -4362,12 +4359,9 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": ["Target"],
 		"requirements": [
 			"OR",
-			[
-				"OR",
 				{"cardSubtype": "ground vehicle"},
-				{"cardSubtype": "repulsor vehicle"}
-			],
-			{"cardSubtype": "emplacement trooper"}
+				{"cardSubtype": "repulsor vehicle"},
+        {"cardSubtype": "emplacement trooper"}
 		],
 		"id": "hz"
 	},
@@ -5355,7 +5349,6 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"cardType": "upgrade",
 		"cost": 27,
-		"faction": "republic",
 		"imageName": "Z-6 Phase II Clone Trooper.jpeg",
 		"keywords": [],
 		"requirements": [{"cardName": "Phase II Clone Troopers"}],
@@ -6748,7 +6741,9 @@ const cards = JSON.parse(JSON.stringify({
 			"Djem So Mastery",
 			"Flawed",
 			"Immune",
-			"Tempted"
+			"Tempted",
+      "Impact",
+      "Pierce"
 		],
 		"upgradeBar": [
 			"force",
@@ -8654,8 +8649,7 @@ const cards = JSON.parse(JSON.stringify({
 			"Armor",
 			"Cover",
 			"Hover",
-			"Weak Point",
-			"Impact"
+			"Weak Point"
 		],
 		"upgradeBar": ["pilot", "hardpoint", "comms"],
 		"history": []
@@ -8893,7 +8887,9 @@ const cards = JSON.parse(JSON.stringify({
 			"Deflect",
 			"Immune",
 			"Juyo Mastery",
-			"Wound"
+			"Wound",
+      "Impact",
+      "Pierce"
 		],
 		"upgradeBar": [
 			"force",
@@ -9537,6 +9533,7 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost increased from 30 to 40 points."
 			}
 		],
+    "specialIssue": "Blizzard Force",
 		"id": "sr"
 	},
 	"ss": {
@@ -10467,7 +10464,9 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost reduced from 76 to 72 points."
 			}
 		],
-		"id": "uy"
+		"id": "uy",
+    "specialIssue" : "Imperial Remnant",
+
 	},
 	"uz": {
 		"cardType": "unit",
@@ -10497,7 +10496,8 @@ const cards = JSON.parse(JSON.stringify({
 				"description": "Cost reduced from 60 to 48 points."
 			}
 		],
-		"id": "uz"
+		"id": "uz",
+    "specialIssue" : "Imperial Remnant",
 	},
 	"va": {
 		"id": "va",
@@ -10648,7 +10648,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "heavy",
 		"cost": 190,
-		"faction": "rebels",
+		"faction": "fringe",
+    "affiliations":[],
 		"imageName": "Chewbacca3.jpeg",
 		"keywords": [
 			"Armor",
@@ -10676,7 +10677,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"rank": "corps",
 		"cost": 40,
-		"faction": "rebels",
+		"faction": "fringe",
+    "affiliations":['rebels'],
 		"imageName": "Ewok Skirmishers.jpeg",
 		"keywords": [
 			"Low Profile",
@@ -10843,7 +10845,8 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": false,
 		"rank": "special",
 		"cost": 35,
-		"faction": "rebels",
+		"faction": "fringe",
+    "affiliations":['rebels'],
 		"imageName": "Ewok Slingers.jpeg",
 		"keywords": [
 			"Independent",
@@ -10863,7 +10866,7 @@ const cards = JSON.parse(JSON.stringify({
 	"vv": {
 		"cardName": "C-3P0",
 		"title": "Golden God",
-		"faction": "rebels",
+		"faction": "fringe",
 		"isUnique": true,
 		"upgradeBar": [],
 		"cardType": "unit",
@@ -10980,7 +10983,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"rank": "commander",
 		"cost": 45,
-		"faction": "rebels",
+		"faction": "fringe",
 		"imageName": "Logray.jpeg",
 		"keywords": [
 			"Aid",
@@ -10998,6 +11001,418 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"history": [],
 		"id": "wd"
+	},
+	"we": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["hit", "block"],
+		"wounds": 11,
+		"resilience": 8,
+		"speed": 2,
+		"cardSubtype": "ground vehicle",
+		"cardName": "Major Marquand",
+		"title": "Tempest Scout 2",
+		"isUnique": true,
+		"rank": "heavy",
+		"cost": 190,
+		"faction": "empire",
+		"imageName": "Major Marquand.jpeg",
+		"keywords": [
+			"Vehicle",
+			"Armor",
+			"Arsenal",
+			"Direct",
+			"Weak Point",
+			"Special Issue",
+			"Fixed",
+			"Impact"
+		],
+		"upgradeBar": [],
+		"history": [],
+		"id": "we"
+	},
+	"wf": {
+		"id": "wf",
+		"cardName": "Drive Them Out",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Drive Them Out.jpeg",
+		"products": [],
+		"faction": "empire",
+		"battleForce": "Tempest Force",
+		"keywords": ["Demoralize"]
+	},
+	"wg": {
+		"id": "wg",
+		"cardName": "We Need Reinforcements",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "We Need Reinforcements.jpeg",
+		"products": [],
+		"faction": "empire",
+		"battleForce": "Tempest Force",
+		"keywords": ["Disengage"]
+	},
+	"wh": {
+		"id": "wh",
+		"cardName": "Constantly Alert",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "",
+		"imageName": "Constantly Alert.jpeg",
+		"products": [],
+		"faction": "empire",
+		"battleForce": "Tempest Force",
+		"keywords": []
+	},
+	"wi": {
+		"id": "wi",
+		"cardName": "Gunner, Infantry!",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Major Marquand",
+		"imageName": "Gunner, Infantry!.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": ["Tactical", "Suppressive"]
+	},
+	"wj": {
+		"id": "wj",
+		"cardName": "Squadron, On Me",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Major Marquand",
+		"imageName": "Squadron, On Me.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": []
+	},
+	"wk": {
+		"id": "wk",
+		"cardName": "Armored Cavalry",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Major Marquand",
+		"imageName": "Armored Cavalry.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": []
+	},
+	"wl": {
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["hit"],
+		"wounds": 6,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Fifth Brother",
+		"title": "The Kill is Mine",
+		"isUnique": true,
+		"rank": "operative",
+		"cost": 105,
+		"faction": "empire",
+		"imageName": "Fifth Brother.jpeg",
+		"keywords": [
+			"Dauntless",
+			"Block",
+			"Enrage",
+			"Immune",
+			"Ram",
+			"Impact",
+			"Pierce"
+		],
+		"upgradeBar": [
+			"training",
+			"training",
+			"force"
+		],
+		"history": [],
+		"id": "wl"
+	},
+	"wm": {
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["hit"],
+		"wounds": 5,
+		"courage": 3,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Seventh Sister",
+		"title": "Compelled to Inflict Pain",
+		"isUnique": true,
+		"rank": "operative",
+		"cost": 110,
+		"faction": "empire",
+		"imageName": "Seventh Sister.jpeg",
+		"keywords": [
+			"Associate",
+			"Block",
+			"Charge",
+			"Disciplined",
+			"Immune",
+			"Impact",
+			"Pierce"
+		],
+		"upgradeBar": [
+			"training",
+			"training",
+			"force"
+		],
+		"history": [],
+		"id": "wm"
+	},
+	"wn": {
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["hit"],
+		"wounds": 4,
+		"courage": 3,
+		"speed": 1,
+		"cardSubtype": "trooper",
+		"cardName": "Poggle the Lesser",
+		"title": "Public Leader of the Geonosians",
+		"isUnique": true,
+		"rank": "commander",
+		"cost": 85,
+		"faction": "separatists",
+		"imageName": "Poggle the Lesser.jpeg",
+		"keywords": [
+			"Jump",
+			"Compel",
+			"Entourage",
+			"Override",
+			"Weighed Down"
+		],
+		"upgradeBar": [
+			"command",
+			"command",
+			"comms",
+			"gear"
+		],
+		"history": [],
+		"id": "wn"
+	},
+	"wo": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["hit", "block"],
+		"wounds": 5,
+		"courage": 2,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Sun Fac",
+		"title": "Ruthless Lieutenant",
+		"isUnique": true,
+		"rank": "operative",
+		"cost": 90,
+		"faction": "separatists",
+		"imageName": "Sun Fac.jpeg",
+		"keywords": [
+			"Jump",
+			"Cover",
+			"Death From Above",
+			"Direct",
+			"Retinue",
+			"Scale",
+			"Weighed Down",
+			"Pierce",
+			"Suppressive"
+		],
+		"upgradeBar": [
+			"training",
+			"comms",
+			"gear"
+		],
+		"history": [],
+		"id": "wo"
+	},
+	"wp": {
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["block"],
+		"wounds": 1,
+		"courage": 1,
+		"speed": 2,
+		"cardSubtype": "trooper",
+		"cardName": "Geonosian Warriors",
+		"title": "Soldiers of the Hive",
+		"isUnique": false,
+		"rank": "corps",
+		"cost": 45,
+		"faction": "separatists",
+		"imageName": "Geonosian Warriors.jpeg",
+		"keywords": [
+			"Jump",
+			"Scale",
+			"Death From Above",
+			"Weighed Down"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"personnel"
+		],
+		"history": [],
+		"id": "wp"
+	},
+	"wq": {
+		"id": "wq",
+		"cardSubtype": "training",
+		"cardName": "Inquisitorius Training",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 5,
+		"imageName": "Inquisitorius Training.jpeg",
+		"keywords": [],
+		"requirements": [
+			"OR",
+			{"cardName": "Fifth Brother"},
+			{"cardName": "Seventh Sister"}
+		],
+		"history": []
+	},
+	"wr": {
+		"id": "wr",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Force Pike Warrior",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 15,
+		"imageName": "Force Pike Warrior.jpeg",
+		"keywords": ["Suppressive"],
+		"requirements": [
+			{"cardName": "Geonosian Warriors"}
+		],
+		"history": []
+	},
+	"ws": {
+		"id": "ws",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Sonic Cannon Warrior",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 25,
+		"imageName": "Sonic Cannon Warrior.jpeg",
+		"keywords": ["Scatter", "Impact"],
+		"requirements": [
+			{"cardName": "Geonosian Warriors"}
+		],
+		"history": []
+	},
+	"wt": {
+		"id": "wt",
+		"cardSubtype": "personnel",
+		"cardName": "Geonosian Warrior",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 11,
+		"imageName": "Geonosian Warrior.jpeg",
+		"keywords": [],
+		"requirements": [
+			{"cardName": "Geonosian Warriors"}
+		],
+		"history": []
+	},
+	"wu": {
+		"id": "wu",
+		"cardName": "You Would Question Me?",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Fifth Brother",
+		"imageName": "You Would Question Me%3F.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": ["Permanent"]
+	},
+	"wv": {
+		"id": "wv",
+		"cardName": "I Care Not For Your Struggles",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Fifth Brother",
+		"imageName": "I Care Not For Your Struggles.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": ["Dauntless"]
+	},
+	"ww": {
+		"id": "ww",
+		"cardName": "Come and Prove It",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Seventh Sister",
+		"imageName": "Come and Prove It.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": ["Indomitable"]
+	},
+	"wx": {
+		"id": "wx",
+		"cardName": "Unexpected, But Not Unwelcome",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Seventh Sister",
+		"imageName": "Unexpected, But Not Unwelcome.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": []
+	},
+	"wy": {
+		"id": "wy",
+		"cardName": "You Hide Your Fear Well",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Seventh Sister",
+		"imageName": "You Hide Your Fear Well.jpeg",
+		"products": [],
+		"faction": "empire",
+		"keywords": []
+	},
+	"wz": {
+		"id": "wz",
+		"cardName": "Brutal Enforcer",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Sun Fac",
+		"imageName": "Brutal Enforcer.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": ["Jump", "Demoralize"]
+	},
+	"xa": {
+		"id": "xa",
+		"cardName": "Let the Executions Begin!",
+		"cardSubtype": "1",
+		"cardType": "command",
+		"commander": "Poggle the Lesser",
+		"imageName": "Let the Executions Begin!.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": ["Fire Support"]
+	},
+	"xb": {
+		"id": "xb",
+		"cardName": "We Serve the Queen",
+		"cardSubtype": "2",
+		"cardType": "command",
+		"commander": "Poggle the Lesser",
+		"imageName": "We Serve the Queen.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": ["Direct", "Coordinate"]
+	},
+	"xc": {
+		"id": "xc",
+		"cardName": "We Make Weapons",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "Poggle the Lesser",
+		"imageName": "We Make Weapons.jpeg",
+		"products": [],
+		"faction": "separatists",
+		"keywords": []
 	}
 }));
 
@@ -11014,5 +11429,6 @@ Object.keys(cards).forEach(id=>{
   cardIdsByType[type].push(id);
 });
 
-export default cards;
 export {cardIdsByType as cardsIdsByType};
+export default cards;
+

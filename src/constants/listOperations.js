@@ -84,6 +84,12 @@ function rehashList(list) {
   return list;
 }
 
+/**
+ * Lots of various reduction and housekeeping things. 
+ * E.g. remove Contingencies deck if you no longer have
+ * @param {} list 
+ * @returns 
+ */
 function consolidate(list) {
   let hasContingencyKeyword = false;
   list.hasFieldCommander = false;
@@ -752,14 +758,14 @@ function changeListTitle(list, title) {
   return { ...list, title: title.substring(0, 30) };
 }
 
-function toggleListMode(list) {
-  const modes = Object.keys(legionModes);
-  let modeIndex = modes.indexOf(list.mode);
-  modeIndex += 1;
-  modeIndex %= modes.length;
-  list.mode = modes[modeIndex];
-  return list;
-}
+// function toggleListMode(list) {
+//   const modes = Object.keys(legionModes);
+//   let modeIndex = modes.indexOf(list.mode);
+//   modeIndex += 1;
+//   modeIndex %= modes.length;
+//   list.mode = modes[modeIndex];
+//   return list;
+// }
 
 function setListMode(list, mode) {
   if (legionModes[mode]) {
@@ -904,6 +910,8 @@ function addUnit(list, unitId, stackSize = 1) {
   const unitCard = cards[unitId];
   let unitIndex = findUnitHash(list, unitId);
 
+  // TODO TODO - this  will break stuff again if a list can have 2 units with Contingencies
+  // Should set list.contingencies=[] by default and let consolidate handle the show/no-show/emptying of it
   if (unitCard.keywords.includes('Contingencies')) {
     if (!list.contingencies) list.contingencies = [];
   }
@@ -944,10 +952,6 @@ function incrementUnit(list, index) {
 function decrementUnit(list, index) {
   const unitObject = list.units[index];
   if (unitObject.count === 1) {
-    const unitCard = cards[unitObject.unitId];
-    if (unitCard.keywords.includes('Contingencies')) {
-      list.contingencies = [];
-    }
     list.unitObjectStrings = deleteItem(list.unitObjectStrings, index);
     list.units = deleteItem(list.units, index);
   } else {
@@ -999,22 +1003,28 @@ function getEligibleUnitsToAdd(list, rank) {
   for (let i = 0; i < cardsById.length; i++) {
     const id = cardsById[i];
     const card = cards[id];
+
+    // if (card.cardType !== 'unit') continue;
+    if (card.rank !== rank) continue;
+
     if (list.mode.includes('storm tide') && id === 'AA') {
       continue;
     } else if (!list.mode.includes('storm tide') && id === 'AK') {
       continue;
     }
-    // if (card.cardType !== 'unit') continue;
-    if (card.rank !== rank) continue;
-    if (!list.faction.includes(card.faction) && !card.affiliations) continue;
-    if (!list.faction.includes(card.faction) && card.affiliations && !card.affiliations.includes(list.faction)) continue;
+
+
+    if(!list.battleForce)
+    {
+      if (!list.faction.includes(card.faction) && !card.affiliations) continue;
+      if (!list.faction.includes(card.faction) && card.affiliations && !card.affiliations.includes(list.faction)) continue;
+    } else {
+      if (!battleForcesDict[list.battleForce][rank].includes(id)) continue;
+    }
     if (list.uniques.includes(id)) continue;
     if (list.commanders.includes(card.cardName)) continue;
-    if (list.battleForce && !battleForcesDict[list.battleForce][rank].includes(id)) continue;
-    // TODO bf exclusivity should probably be in cards data rather than this tree
-    if (list.battleForce !== 'Blizzard Force' && id === 'sr') continue;
-    if (list.battleForce !== 'Imperial Remnant' && id === 'uy') continue;
-    if (list.battleForce !== 'Imperial Remnant' && id === 'uz') continue;
+    if (card.specialIssue && card.specialIssue !== list.battleForce)continue;
+
     if (card.detachment) {
       for (let i = 0; i < list.units.length; i++) {
         const unit = list.units[i];
@@ -1161,12 +1171,13 @@ function getEligibleBattlesToAdd(list, type) {
   const invalidIds = [];
   const scenarioMissionIds = ['Df', 'Oe'];
   const cardsById = cardIdsByType.battle; //Object.keys(cards);
+
   let currentCards;
   if (type === 'objective') currentCards = list.objectiveCards;
   else if (type === 'deployment') currentCards = list.deploymentCards;
   else if (type === 'condition') currentCards = list.conditionCards;
   else return;
-  cardsById.forEach(id => {
+  cardIdsByType['battle'].forEach(id => {
     const card = cards[id];
     // if (card.cardType !== 'battle') return;
     if (card.cardSubtype !== type) return;
@@ -1189,13 +1200,14 @@ if (!list.contingencies) list.contingencies = [];
 const validCommandIds = [];
 const invalidCommandIds = [];
 const cardsById = cardIdsByType.command; // Object.keys(cards);
+
 let numContingencies = 0;
 list.units.forEach((unit) => {
   const unitCard = cards[unit.unitId];
   if (unitCard.contingencies && unitCard.contingencies > 0)
     numContingencies += unitCard.contingencies
 });
-cardsById.forEach(id => {
+cardIdsByType['command'].forEach(id => {
   const card = cards[id];
   // if (card.cardType !== 'command') return;
   if (list.commandCards.includes(id)) return;
@@ -1231,12 +1243,13 @@ function getEligibleCommandsToAdd(list) {
   const validCommandIds = [];
   const invalidCommandIds = [];
   const cardsById = cardIdsByType.command; // Object.keys(cards);
+
   const pipCounts = { '1': 0, '2': 0, '3': 0 };
   list.commandCards.forEach(id => {
     const commandCard = cards[id];
     pipCounts[commandCard.cardSubtype] += 1;
   });
-  cardsById.forEach(id => {
+  cardIdsByType['command'].forEach(id => {
     const card = cards[id];
     // if (card.cardType !== 'command') return;
     if (list.commandCards.includes(id)) return;
@@ -1288,18 +1301,21 @@ function getEquippableUpgrades(
   const validUpgradeIds = [];
   const invalidUpgradeIds = [];
   const cardsById = cardIdsByType.upgrade; // Object.keys(cards);
+
   if (!id) return { validUpgradeIds: [], invalidUpgradeIds: [] };
   const unitCard = cards[id];
-  for (let i = 0; i < cardsById.length; i++) {
-    const id = cardsById[i];
+  for (let i = 0; i < cardIdsByType['upgrade'].length; i++) {
+    const id = cardIdsByType['upgrade'][i];
     const card = cards[id];
     if (id === 'nc') continue; // duplicate card
+
     // if (card.cardType !== 'upgrade') continue;
     if (card.cardSubtype !== upgradeType) continue;
+    if (card.faction && card.faction !== '' && list.faction !== card.faction) continue;
     if (list.uniques.includes(id)) continue;
     if (upgradesEquipped.includes(id)) continue;
-    if (card.faction && card.faction !== '' && list.faction !== card.faction) continue;
     if (card.isUnique && list.battleForce && !battleForcesDict[list.battleForce].allowedUniqueUpgrades.includes(id)) continue;
+    if (id === 'nc') continue; // duplicate card
 
     // dynamically add the force affinity
     const { faction } = unitCard;
@@ -1605,6 +1621,7 @@ function convertHashToList(faction, url) {
     else if (battleForceSegments[0].includes('sif')) list.battleForce = 'Separatist Invasion';
     else if (battleForceSegments[0].includes('sc')) list.battleForce = 'Shadow Collective';
     else if (battleForceSegments[0].includes('btv')) list.battleForce = 'Bright Tree Village';
+    else if (battleForceSegments[0].includes('tf')) list.battleForce = 'Tempest Force';
     segments = battleForceSegments[1].split(',');
   } else {
     list.battleForce = '';

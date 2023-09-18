@@ -48,6 +48,7 @@ function generateLink(list) {
     else if (list.battleForce === 'Separatist Invasion') bf = 'si';
     else if (list.battleForce === 'Shadow Collective') bf = 'sc';
     else if (list.battleForce === 'Bright Tree Village') bf = 'btv';
+    else if (list.battleForce === 'Tempest Force') bf = 'tf';
 
     return `${urls.listPath}/${list.faction}/${bf}:${urlStrings.join(',')}`;
   }

@@ -85,6 +85,16 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Geonosians and Inquisitors Added",
+    "date": "17 September 2023",
+    "body": "Added cards from Ministravaganza. New battle forces and improved card images will be implemented soon."
+  },
+  {
+    "title": "Tempest Force Added",
+    "date": "13 July 2023",
+    "body": "Added the new empire battleforce."
+  },
+  {
     "title": "Bright Tree Village Added",
     "date": "6 June 2023",
     "body": "Added the new ewok battleforce."

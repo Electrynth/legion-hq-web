@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 import {
   Menu,
   MenuItem,
-  Typography,
-  IconButton,
   Button,
   Dialog,
   DialogTitle,
@@ -12,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Clear as ClearIcon, Info as InfoIcon, Warning as WarningIcon } from '@material-ui/icons';
+
 import ListContext from 'context/ListContext';
 import legionModes from 'constants/legionModes';
 import battleForcesDict from 'constants/battleForcesDict';
@@ -77,6 +76,7 @@ function ListHeader() {
   var minValidationError = validationIssues.reduce((highest, e)=>{
     return e.level > highest ? e.level : highest;
   }, 0)
+
 
   return (
     <div id="list-header" className={classes.columnContainer}>
