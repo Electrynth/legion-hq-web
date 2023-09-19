@@ -9,7 +9,7 @@ const battleForcesDict = {
       support: ['an', 'he'],
       heavy: ['ap'],
       allowedUniqueUpgrades: ['fk'],
-      ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-EBD.pdf',
+      ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2022/10/StarWarsLegionBFRulesSheetEBD.pdf',
       'standard mode': {
         commander: [1, 4],
         operative: [0, 3],
@@ -68,7 +68,7 @@ const battleForcesDict = {
       special: [],
       support: ['bf', 'be'],
       heavy: ['bg'],
-      ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-BF.pdf',
+      ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2023/09/Star-Wars-Legion-BF-Rules-Sheet-BF2.1.pdf',
       allowedUniqueUpgrades: ['fl'],
       'standard mode': {
         commander: [1, 2],
@@ -96,7 +96,7 @@ const battleForcesDict = {
     special: [],
     support: ['bf', 'be'],
     heavy: ['tm'],
-    ruleUrl: 'https://www.atomicmassgames.com/s/Imperial-Remnant-Rules-Sheet.pdf',
+    ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2023/09/ImperialRemnantRulesSheet.pdf',
     allowedUniqueUpgrades: ['uj', 'gm'],
     'standard mode': {
       commander: [1, 2],
@@ -126,7 +126,7 @@ const battleForcesDict = {
     special: ['ba'],
     support: ['bf'],
     heavy: ['we', 'bg'],
-    ruleUrl: 'https://static1.squarespace.com/static/5ce432b1f9d2be000134d8ae/t/64b0298bd4a9711ae76ef8d6/1689266585321/SWL_TempestForce.pdf',
+    ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2023/07/SWL_TempestForce.pdf',
     allowedUniqueUpgrades: [],
     'standard mode': {
       commander: [1, 2],
@@ -154,7 +154,36 @@ const battleForcesDict = {
       special: ['kz', 'ky'],
       support: ['mb', 'ic'],
       heavy: ['oo'],
-      ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-501.pdf',
+      ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2022/10/StarWarsLegionBFRulesSheet501.pdf',
+      allowedUniqueUpgrades: ['lh', 'lg'],
+      'standard mode': {
+        commander: [1, 2],
+        operative: [0, 1],
+        corps: [1, 4],
+        special: [1, 4],
+        support: [1, 2],
+        heavy: [0, 1],
+        commOp: 2
+      },
+      '500-point mode': {
+        commander: [1, 1],
+        operative: [0, 1],
+        corps: [1, 4],
+        special: [1, 4],
+        support: [0, 2],
+        heavy: [0, 1]
+      }
+    },
+    'Wookiee Defenders': {
+      name: 'Wookiee Defenders',
+      faction: 'republic',
+      commander: ['ol', 'po', 'ph'],
+      operative: [],
+      corps: ['fz', 'xg'],
+      special: ['kz', 'pg'],
+      support: ['xf', 'ic'],
+      heavy: ['gb', 'qs'],
+      ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2023/09/SWL_WookieesDefenders-1.pdf',
       allowedUniqueUpgrades: ['lh', 'lg'],
       'standard mode': {
         commander: [1, 2],
@@ -183,7 +212,7 @@ const battleForcesDict = {
       special: ['px'],
       support: ['ie', 'mc'],
       heavy: ['gc'],
-      ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-SI.pdf',
+      ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2022/10/StarWarsLegionBFRulesSheetSI.pdf',
       allowedUniqueUpgrades: ['il'],
       'standard mode': {
         commander: [1, 1],
@@ -202,6 +231,34 @@ const battleForcesDict = {
         heavy: [1, 1]
       }
     },
+    'Experimental Droids': {
+      name: 'Experimental Droids',
+      faction: 'separatists',
+      commander: ['py', 'nr'],
+      operative: [],
+      corps: ['gx', 'ga', 'xd'],
+      special: ['la'],
+      support: ['ie'],
+      heavy: ['xe'],
+      ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2023/09/SWL_ExperimentalDroids-1.pdf',
+      allowedUniqueUpgrades: [],
+      'standard mode': {
+        commander: [1, 2],
+        operative: [0, 0],
+        corps: [3, 6],
+        special: [0, 3],
+        support: [0, 3],
+        heavy: [0, 2]
+      },
+      '500-point mode': {
+        commander: [1, 2],
+        operative: [0, 0],
+        corps: [2, 4],
+        special: [0, 3],
+        support: [0, 1],
+        heavy: [0, 1]
+      }
+    },
   'Shadow Collective': {
       name: 'Shadow Collective',
       faction: 'fringe',
@@ -212,7 +269,7 @@ const battleForcesDict = {
       special: ['re'],
       support: ['sq'],
       heavy: ['sm'],
-      ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-SC.pdf',
+      ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2022/10/StarWarsLegionBFRulesSheetSC.pdf',
       allowedUniqueUpgrades: ['rq', 'so', 'se', 'sp', 'sg', 'sh', 'si'],
       'standard mode': {
         commander: [1, 4],
