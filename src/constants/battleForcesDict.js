@@ -9,6 +9,9 @@ const battleForcesDict = {
       support: ['an', 'he'],
       heavy: ['ap'],
       allowedUniqueUpgrades: ['fk'],
+      rules: { 
+        noFieldComm: true
+      },
       ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2022/10/StarWarsLegionBFRulesSheetEBD.pdf',
       'standard mode': {
         commander: [1, 4],
@@ -39,6 +42,9 @@ const battleForcesDict = {
       support: [],
       heavy: ['vj'],
       allowedUniqueUpgrades: ['vq', 'wa', 'wb', 'wc'],
+      rules: {
+        countMercs: true
+      },
       ruleUrl: 'https://static1.squarespace.com/static/5ce432b1f9d2be000134d8ae/t/6480bd67c7a4c84f6c1bf2af/1686158697261/Star+Wars+Legion+BF+Rules+Sheet+Bright+Tree+Village+%281%29.pdf',
       'standard mode': {
         commander: [1, 5],
@@ -68,6 +74,9 @@ const battleForcesDict = {
       special: [],
       support: ['bf', 'be'],
       heavy: ['bg'],
+      rules: {
+        noFieldComm: true
+      },
       ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2023/09/Star-Wars-Legion-BF-Rules-Sheet-BF2.1.pdf',
       allowedUniqueUpgrades: ['fl'],
       'standard mode': {
@@ -211,6 +220,9 @@ const battleForcesDict = {
       special: ['px'],
       support: ['ie', 'mc'],
       heavy: ['gc'],
+      rules: {
+        noFieldComm: true
+      },
       ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2022/10/StarWarsLegionBFRulesSheetSI.pdf',
       allowedUniqueUpgrades: ['il'],
       'standard mode': {
@@ -268,6 +280,9 @@ const battleForcesDict = {
       special: ['re'],
       support: ['sq'],
       heavy: ['sm'],
+      rules: {
+        countMercs: true
+      },
       ruleUrl: 'https://cdn.svc.asmodee.net/production-amgcom/uploads/2022/10/StarWarsLegionBFRulesSheetSC.pdf',
       allowedUniqueUpgrades: ['rq', 'so', 'se', 'sp', 'sg', 'sh', 'si'],
       'standard mode': {

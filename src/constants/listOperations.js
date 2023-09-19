@@ -639,6 +639,8 @@ function generateMinimalText(list) {
     let line = '';
     if (unit.count > 1) line += `${unit.count}× `;
     line += `${unitCard.cardName} `;
+
+    // TODO this should be a flag to append the unit subtitle to the card display
     if (unit.unitId === 'pz') {
       line += '- Kraken ';
     } else if (unit.unitId === 'qa') {
@@ -1710,6 +1712,8 @@ function battleForceValidation(currentList){
 
   const validationIssues = [];
   // TODO is a switch against the code standard? ;)
+  // Should destroy this in favor of ading a 'rule' to apply for BzF in the object, e.g.
+  // rules:[... {type: 'unitLimit', min:0, max:1, types:['ay',' sr']}]
   switch(currentList.battleForce){
 
     case "Blizzard Force":
@@ -1744,7 +1748,7 @@ function mercValidation(currentList, rank, mercs){
     }
   });
 
-  if(currentList.battleForce !== "Shadow Collective" || currentList.battleForce !== "Bright Tree Village"){
+  if(currentList.battleForce?.rules?.countMercs) {
     Object.keys(ranks).forEach(t =>{
 
       if(mercs[t] > mercLimits[t]){
@@ -1766,7 +1770,8 @@ function rankValidation(currentList, ranks, mercs, rankReqs){
   const validationIssues = [];
 
   // TODO this is ugly - probably should be a BF flag
-  const countMercs = currentList.battleForce === "Shadow Collective" || currentList.battleForce == "Bright Tree Village"
+  const battleForce = battleForcesDict[currentList.battleForce];
+  const countMercs = battleForce?.rules?.countMercs;
   // const countMercs = currentList.battleForce.countsMercsForMin;
 
   // Flag for a bf's combined comm/op limits, only when comm/op already overrun individually
@@ -1789,6 +1794,13 @@ function rankValidation(currentList, ranks, mercs, rankReqs){
       validationIssues.push({level:2, text:"Too many " + t.toUpperCase() + " units! (maximum " + max + ")"});
     }
   });
+
+  // Warn user if it looks like they're trying to use a Field Comm on incompatible army
+  // level 1 since Comm miss itself is a level 2 already
+  if(ranks['commander'] < rankReqs['commander'][0] && currentList.hasFieldCommander && battleForce?.rules?.noFieldComm)
+  {
+    validationIssues.push({level:1, text:"This battleforce can't use the Field Commander keyword"});
+  }
 
   return validationIssues;
 }
@@ -1834,7 +1846,9 @@ function applyEntourage(currentList, rankReqs)
 }
 
 function applyFieldCommander(list, rankReqs){
-  if(list.hasFieldCommander){
+  const bf = battleForcesDict[list.battleForce];
+  if(list.hasFieldCommander && !bf?.rules?.noFieldComm)
+  {
     rankReqs.commander[0] = 0;
   }
 }
