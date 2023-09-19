@@ -187,19 +187,18 @@ const battleForcesDict = {
       allowedUniqueUpgrades: ['lh', 'lg'],
       'standard mode': {
         commander: [1, 2],
-        operative: [0, 1],
-        corps: [1, 4],
-        special: [1, 4],
-        support: [1, 2],
-        heavy: [0, 1],
-        commOp: 2
+        operative: [0, 0],
+        corps: [3, 6],
+        special: [0, 4],
+        support: [0, 3],
+        heavy: [0, 1]
       },
       '500-point mode': {
-        commander: [1, 1],
-        operative: [0, 1],
-        corps: [1, 4],
-        special: [1, 4],
-        support: [0, 2],
+        commander: [1, 2],
+        operative: [0, 0],
+        corps: [2, 4],
+        special: [0, 3],
+        support: [0, 1],
         heavy: [0, 1]
       }
     },
@@ -234,7 +233,7 @@ const battleForcesDict = {
     'Experimental Droids': {
       name: 'Experimental Droids',
       faction: 'separatists',
-      commander: ['py', 'nr'],
+      commander: ['py', 'nr', 'pz', 'qa'],
       operative: [],
       corps: ['gx', 'ga', 'xd'],
       special: ['la'],
