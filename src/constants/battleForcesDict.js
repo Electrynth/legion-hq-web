@@ -9,6 +9,9 @@ const battleForcesDict = {
       support: ['an', 'he'],
       heavy: ['ap'],
       allowedUniqueUpgrades: ['fk'],
+      rules:{
+        noFieldComm: true
+      },
       ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-EBD.pdf',
       'standard mode': {
         commander: [1, 4],
@@ -39,6 +42,9 @@ const battleForcesDict = {
       support: [],
       heavy: ['vj'],
       allowedUniqueUpgrades: ['vq', 'wa', 'wb', 'wc'],
+      rules:{
+        countMercs: true
+      },
       ruleUrl: 'https://static1.squarespace.com/static/5ce432b1f9d2be000134d8ae/t/6480bd67c7a4c84f6c1bf2af/1686158697261/Star+Wars+Legion+BF+Rules+Sheet+Bright+Tree+Village+%281%29.pdf',
       'standard mode': {
         commander: [1, 5],
@@ -68,6 +74,9 @@ const battleForcesDict = {
       special: [],
       support: ['bf', 'be'],
       heavy: ['bg'],
+      rules:{
+        noFieldComm: true
+      },
       ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-BF.pdf',
       allowedUniqueUpgrades: ['fl'],
       'standard mode': {
@@ -185,6 +194,9 @@ const battleForcesDict = {
       heavy: ['gc'],
       ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-SI.pdf',
       allowedUniqueUpgrades: ['il'],
+      rules:{
+        noFieldComm: true
+      },
       'standard mode': {
         commander: [1, 1],
         operative: [0, 1],
@@ -214,6 +226,9 @@ const battleForcesDict = {
       heavy: ['sm'],
       ruleUrl: 'https://atomicmassgames.com/s/Star-Wars-Legion-BF-Rules-Sheet-SC.pdf',
       allowedUniqueUpgrades: ['rq', 'so', 'se', 'sp', 'sg', 'sh', 'si'],
+      rules:{
+        countMercs: true
+      },
       'standard mode': {
         commander: [1, 4],
         operative: [0, 3],
