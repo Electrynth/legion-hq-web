@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Experimental List Validation",
+    "date": "17 September 2023",
+    "body": "Limited list validation has returned, it is still a work in progress so there may be bugs and other limitations. Bug reports can be sent to the contact email in the Info page. Credit to John Lueck for this new system. Thanks John!"
+  },
+  {
     "title": "Geonosians and Inquisitors Added",
     "date": "17 September 2023",
     "body": "Added cards from Ministravaganza. New battle forces and improved card images will be implemented soon."
