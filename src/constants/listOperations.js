@@ -1748,7 +1748,7 @@ function mercValidation(currentList, rank, mercs){
     }
   });
 
-  if(currentList.battleForce?.rules?.countMercs){
+  if(!battleForcesDict[currentList.battleForce]?.rules?.countMercs){
     Object.keys(ranks).forEach(t =>{
 
       if(mercs[t] > mercLimits[t]){
