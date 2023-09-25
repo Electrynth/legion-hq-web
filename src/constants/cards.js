@@ -4359,9 +4359,12 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": ["Target"],
 		"requirements": [
 			"OR",
+			[
+				"OR",
 				{"cardSubtype": "ground vehicle"},
-				{"cardSubtype": "repulsor vehicle"},
-        {"cardSubtype": "emplacement trooper"}
+				{"cardSubtype": "repulsor vehicle"}
+			],
+        	{"cardSubtype": "emplacement trooper"}
 		],
 		"id": "hz"
 	},
@@ -7965,6 +7968,7 @@ const cards = JSON.parse(JSON.stringify({
 		"surges": ["hit"],
 		"cardSubtype": "wookiee trooper",
 		"cardName": "Wookiee Warriors",
+		"title": "Noble Defenders",
 		"isUnique": false,
 		"rank": "special",
 		"cost": 69,
@@ -11413,6 +11417,124 @@ const cards = JSON.parse(JSON.stringify({
 		"products": [],
 		"faction": "separatists",
 		"keywords": []
+	},
+	"xd": {
+		"id": "xd",
+		"cardType": "unit",
+		"defense": "red",
+		"surges": ["hit"],
+		"wounds": 1,
+		"courage": 1,
+		"speed": 2,
+		"cardSubtype": "droid trooper",
+		"cardName": "IG-100 MagnaGuard",
+		"title": "Prototype Assassin Droids",
+		"isUnique": false,
+		"rank": "corps",
+		"cost": 60,
+		"faction": "separatists",
+		"imageName": "IG-100 MagnaGuard2.jpeg",
+		"keywords": [
+			"AI",
+			"Charge",
+			"Guardian",
+			"Unhindered",
+			"Special Issue"
+		],
+		"upgradeBar": ["heavy weapon", "training", "grenades"],
+		"history": [],
+		"specialIssue": "Experimental Droids"
+	},
+	"xe": {
+		"id": "xe",
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["block"],
+		"wounds": 11,
+		"resilience": 7,
+		"speed": 1,
+		"cardSubtype": "ground vehicle",
+		"displayName": "Snail Droid",
+		"cardName": "NR-N99 Persuader-class Tank Droid",
+		"title": "Prototype Tank Droid",
+		"isUnique": false,
+		"rank": "heavy",
+		"cost": 145,
+		"faction": "separatists",
+		"imageName": "NR-N99 Persuader-class Tank Droid2.jpeg",
+		"keywords": [
+			"Armor",
+			"Arsenal",
+			"Command Node",
+			"Programmed",
+			"Reposition",
+			"Weak Point",
+			"Ion",
+			"Fixed",
+			"Special Issue"
+		],
+		"upgradeBar": ["programming", "ordnance", "comms"],
+		"history": [],
+		"specialIssue": "Experimental Droids"
+	},
+	"xf": {
+		"id": "xf",
+		"cardType": "unit",
+		"defense": "white",
+		"surges": ["hit", "block"],
+		"wounds": 6,
+		"resilience": 3,
+		"speed": 2,
+		"cardSubtype": "repulsor vehicle",
+		"cardName": "Raddaugh Gnasp Fluttercraft",
+		"title": "Attack Craft",
+		"isUnique": false,
+		"rank": "support",
+		"cost": 57,
+		"faction": "republic",
+		"imageName": "Raddaugh Gnasp Fluttercraft2.jpeg",
+		"keywords": [
+			"Attack Run",
+			"Cover",
+			"Immune",
+			"Reposition",
+			"Speeder",
+			"Special Issue"
+		],
+		"upgradeBar": ["crew", "comms"],
+		"history": [],
+		"specialIssue": "Wookiee Defenders"
+	},
+	"xg": {
+		"cardType": "unit",
+		"wounds": 3,
+		"courage": 2,
+		"speed": 2,
+		"defense": "white",
+		"surges": ["hit"],
+		"cardSubtype": "wookiee trooper",
+		"cardName": "Wookiee Warriors",
+		"title": "Noble Fighters",
+		"isUnique": false,
+		"rank": "corps",
+		"cost": 69,
+		"faction": "republic",
+		"imageName": "Wookiee Warriors4.jpeg",
+		"keywords": [
+			"Charge",
+			"Duelist",
+			"Indomitable",
+			"Scale"
+		],
+		"upgradeBar": [
+			"heavy weapon",
+			"training",
+			"training",
+			"gear",
+			"grenades"
+		],
+		"id": "xg",
+		"specialIssue": "Wookiee Defenders"
 	}
 }));
 
