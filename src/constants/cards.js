@@ -4359,9 +4359,12 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": ["Target"],
 		"requirements": [
 			"OR",
+			[
+				"OR",
 				{"cardSubtype": "ground vehicle"},
-				{"cardSubtype": "repulsor vehicle"},
-        {"cardSubtype": "emplacement trooper"}
+				{"cardSubtype": "repulsor vehicle"}
+			],
+        	{"cardSubtype": "emplacement trooper"}
 		],
 		"id": "hz"
 	},
