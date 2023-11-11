@@ -1624,6 +1624,8 @@ function convertHashToList(faction, url) {
     else if (battleForceSegments[0].includes('sc')) list.battleForce = 'Shadow Collective';
     else if (battleForceSegments[0].includes('btv')) list.battleForce = 'Bright Tree Village';
     else if (battleForceSegments[0].includes('tf')) list.battleForce = 'Tempest Force';
+    else if (battleForceSegments[0].includes('ed')) list.battleForce = 'Experimental Droids';
+    else if (battleForceSegments[0].includes('wd')) list.battleForce = 'Wookiee Defenders';
     segments = battleForceSegments[1].split(',');
   } else {
     list.battleForce = '';
