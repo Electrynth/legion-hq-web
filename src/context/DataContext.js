@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Adepticon Reveals Added",
+    "date": "28 March 2024",
+    "body": "Added units reveals at Adepticon 2024."
+  },
+  {
     "title": "New Battle Forces & List Validation Returns",
     "date": "18 September 2023",
     "body": "Added the new Wookiee Defenders & Experimental Droids Battleforces from the Ministravaganza. Limited list validation has returned; it is a work in progress so it is NOT fully functional yet. Credit to John Lueck (Grabnar on the Legion Discord) for this new feature. Thanks John!"
