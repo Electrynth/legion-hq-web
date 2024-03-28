@@ -7968,7 +7968,6 @@ const cards = JSON.parse(JSON.stringify({
 		"surges": ["hit"],
 		"cardSubtype": "wookiee trooper",
 		"cardName": "Wookiee Warriors",
-		"title": "Noble Defenders",
 		"isUnique": false,
 		"rank": "special",
 		"cost": 69,
@@ -11535,7 +11534,101 @@ const cards = JSON.parse(JSON.stringify({
 		],
 		"id": "xg",
 		"specialIssue": "Wookiee Defenders"
-	}
+	},
+	"xh": {
+        "cardType": "unit",
+        "wounds": 1,
+        "courage": 2,
+        "speed": 1,
+        "defense": "red",
+        "surges": [
+        ],
+        "cardSubtype": "trooper",
+        "cardName": "Range Troopers",
+        "isUnique": false,
+        "rank": "support",
+        "cost": 60,
+        "faction": "empire",
+        "imageName": "Range Troopers.jpeg",
+        "keywords": [
+            "Advanced Targeting",
+            "Armor",
+            "Indomitable",
+            "Scale",
+            "Spur"
+        ],
+        "upgradeBar": [
+            "heavy weapon",
+            "personnel",
+            "grenades",
+            "comms"
+        ],
+        "id": "xh"
+    },
+    "xi": {
+        "cardType": "unit",
+        "wounds": 2,
+        "courage": 3,
+        "speed": 2,
+        "defense": "red",
+        "surges": [
+        ],
+        "cardSubtype": "clone trooper",
+        "cardName": "The Bad Batch",
+        "isUnique": true,
+        "rank": "operative",
+        "cost": 160,
+        "faction": "republic",
+        "imageName": "The Bad Batch.jpeg",
+        "keywords": [
+            "Equip",
+            "Impervious",
+            "Scale",
+            "Steady",
+            "Sharpshooter",
+            "We're Not Regs"
+        ],
+        "upgradeBar": [
+            "heavy weapon",
+            "heavy weapon",
+            "heavy weapon",
+            "heavy weapon",
+            "heavy weapon"
+        ],
+        "id": "xi"
+    },
+    "xj": {
+        "cardType": "unit",
+        "wounds": 1,
+        "courage": 2,
+        "speed": 2,
+        "defense": "red",
+        "surges": [
+        ],
+        "cardSubtype": "clone trooper",
+        "cardName": "Clone Commandos",
+        "isUnique": true,
+        "rank": "support",
+        "cost": 75,
+        "faction": "republic",
+        "imageName": "Clone Commandos.jpeg",
+        "keywords": [
+            "Complete the Mission",
+            "Equip",
+            "Infiltrate",
+            "Recharge",
+            "Target",
+            "Shielded"
+        ],
+        "upgradeBar": [
+            "training",
+            "gear",
+            "grenades",
+            "comms",
+            "armament"
+        ],
+        "id": "xj"
+    }
 }));
 
 
