@@ -49,6 +49,7 @@ function generateLink(list) {
     else if (list.battleForce === 'Shadow Collective') bf = 'sc';
     else if (list.battleForce === 'Bright Tree Village') bf = 'btv';
     else if (list.battleForce === 'Tempest Force') bf = 'tf';
+    else if (list.battleForce === 'Imperial Remnant') bf = 'ir';
 
     return `${urls.listPath}/${list.faction}/${bf}:${urlStrings.join(',')}`;
   }
