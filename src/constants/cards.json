@@ -13972,7 +13972,7 @@
         ],
         "cardSubtype": "clone trooper",
         "cardName": "Clone Commandos",
-        "isUnique": true,
+        "isUnique": false,
         "rank": "support",
         "cost": 75,
         "faction": "republic",
@@ -13993,5 +13993,28 @@
             "armament"
         ],
         "id": "xj"
-    }
+    },
+	"xk": {
+		"displayName": "DC-17m ICWS Config",
+		"cardSubtype": "armament",
+		"cardName": "DC-17m ICWS Configuration",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 0,
+		"imageName": "DC-17m ICWS Config.jpeg",
+		"keywords": ["Impact", "Scatter", "Lethal", "High Velocity", "Reconfigure"],
+		"requirements": [{"cardName": "Clone Commandos"}],
+		"id": "xk"
+	},
+	"xl": {
+		"cardSubtype": "gear",
+		"cardName": "Katarn Pattern Armor",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 0,
+		"imageName": "Katarn Pattern Armor.jpeg",
+		"keywords": [],
+		"requirements": [{"cardName": "Clone Commandos"}],
+		"id": "xl"
+	}
 }
