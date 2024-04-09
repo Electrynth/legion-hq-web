@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Range Trooper cards",
+    "date": "4 April 2024",
+    "body": "Revealed Range Trooper cards added."
+  },
+  {
     "title": "Adepticon Reveals Added",
     "date": "28 March 2024",
     "body": "Added units reveals at Adepticon 2024."

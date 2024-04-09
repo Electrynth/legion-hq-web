@@ -11651,6 +11651,39 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": [],
 		"requirements": [{"cardName": "Clone Commandos"}],
 		"id": "xl"
+	},
+	"xm": {
+		"cardSubtype": "personnel",
+		"cardName": "Range Trooper",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 15,
+		"imageName": "Range Trooper.jpeg",
+		"keywords": [],
+		"requirements": [{"cardName": "Range Troopers"}],
+		"id": "xm"
+	},
+	"xn": {
+		"cardSubtype": "heavy weapon",
+		"cardName": "DLT-20A Range Trooper",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 25,
+		"imageName": "DLT-20A Range Trooper.jpeg",
+		"keywords": [],
+		"requirements": [{"cardName": "Range Troopers"}],
+		"id": "xn"
+	},
+	"xo": {
+		"cardSubtype": "heavy weapon",
+		"cardName": "T-21A Range Trooper",
+		"isUnique": false,
+		"cardType": "upgrade",
+		"cost": 20,
+		"imageName": "DLT-20A Range Trooper.jpeg",
+		"keywords": ["Suppressive"],
+		"requirements": [{"cardName": "Range Troopers"}],
+		"id": "xo"
 	}
 }));
 
