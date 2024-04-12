@@ -11679,7 +11679,7 @@ const cards = JSON.parse(JSON.stringify({
 		"cardName": "T-21A Range Trooper",
 		"isUnique": false,
 		"cardType": "upgrade",
-		"cost": 20,
+		"cost": 28,
 		"imageName": "T-21A Range Trooper.jpeg",
 		"keywords": ["Suppressive"],
 		"requirements": [{"cardName": "Range Troopers"}],
