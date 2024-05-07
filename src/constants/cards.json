@@ -14049,5 +14049,41 @@
 		"keywords": ["Suppressive"],
 		"requirements": [{"cardName": "Range Troopers"}],
 		"id": "xo"
-	}
+	},
+    "xp": {
+        "cardType": "unit",
+        "wounds": 1,
+        "courage": 0,
+        "speed": 2,
+        "defense": "red",
+        "surges": [
+        ],
+        "cardSubtype": "clone trooper",
+        "cardName": "Clone Commandos",
+        "displayName": "Delta Squad",
+        "title": "Delta Squad",
+        "isUnique": true,
+        "rank": "support",
+        "cost": 100,
+        "faction": "republic",
+        "imageName": "Delta Squad.jpeg",
+        "keywords": [
+            "Complete the Mission",
+            "Equip",
+            "Infiltrate",
+            "Recharge",
+            "Target",
+            "Shielded",
+            "Suppressive"
+        ],
+        "upgradeBar": [
+            "training",
+            "training",
+            "gear",
+            "grenades",
+            "comms",
+            "armament"
+        ],
+        "id": "xp"
+    }
 }
