@@ -5939,7 +5939,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 40,
 		"imageName": "Fives.jpeg",
 		"keywords": [],
-		"requirements": [{"cardSubtype": "clone trooper"}],
+		"requirements": [
+			"AND",
+			{"rank": "corps"},
+			{"cardSubtype": "clone trooper"}
+		],
 		"history": [
 			{
 				"date": "27 October 2021",
@@ -5956,7 +5960,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 42,
 		"imageName": "Echo.jpeg",
 		"keywords": [],
-		"requirements": [{"cardSubtype": "clone trooper"}],
+		"requirements": [
+			"AND",
+			{"rank": "corps"},
+			{"cardSubtype": "clone trooper"}
+		],
 		"history": [
 			{
 				"date": "27 October 2021",
@@ -11638,7 +11646,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 0,
 		"imageName": "DC-17m ICWS Config.jpeg",
 		"keywords": ["Impact", "Scatter", "Lethal", "High Velocity", "Reconfigure"],
-		"requirements": [{"cardName": "Clone Commandos"}],
+		"requirements": [
+			"OR",
+			{"cardName": "Clone Commandos"},
+			{"cardName": "Clone Commandos Delta Squad"}
+		],
 		"id": "xk"
 	},
 	"xl": {
@@ -11649,7 +11661,11 @@ const cards = JSON.parse(JSON.stringify({
 		"cost": 0,
 		"imageName": "Katarn Pattern Armor.jpeg",
 		"keywords": [],
-		"requirements": [{"cardName": "Clone Commandos"}],
+		"requirements": [
+			"OR",
+			{"cardName": "Clone Commandos"},
+			{"cardName": "Clone Commandos Delta Squad"}
+		],
 		"id": "xl"
 	},
 	"xm": {
@@ -11694,7 +11710,7 @@ const cards = JSON.parse(JSON.stringify({
         "surges": [
         ],
         "cardSubtype": "clone trooper",
-        "cardName": "Clone Commandos",
+        "cardName": "Clone Commandos Delta Squad",
         "displayName": "Delta Squad",
         "title": "Delta Squad",
         "isUnique": true,
@@ -11720,7 +11736,125 @@ const cards = JSON.parse(JSON.stringify({
             "armament"
         ],
         "id": "xp"
-    }
+    },
+	"xq": {
+		"id": "xq",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Echo",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 0,
+		"imageName": "Echo2.jpeg",
+		"keywords": ["Reliable"],
+		"requirements": [{"cardName": "The Bad Batch"}],
+		"history": []
+	},
+	"xr": {
+		"id": "xr",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Hunter",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 0,
+		"imageName": "Hunter.jpeg",
+		"keywords": ["Leader"],
+		"requirements": [{"cardName": "The Bad Batch"}],
+		"history": []
+	},
+	"xs": {
+		"id": "xs",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Wrecker",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 0,
+		"imageName": "Wrecker.jpeg",
+		"keywords": [],
+		"requirements": [{"cardName": "The Bad Batch"}],
+		"history": []
+	},
+	"xt": {
+		"id": "xt",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Tech",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"cost": 0,
+		"imageName": "Tech.jpeg",
+		"keywords": ["Cache", "Tactical"],
+		"requirements": [{"cardName": "The Bad Batch"}],
+		"history": []
+	},
+	"xu": {
+		"id": "xu",
+		"cardSubtype": "heavy weapon",
+		"cardName": "Crosshair",
+		"isUnique": true,
+		"cardType": "upgrade",
+		"faction": "republic",
+		"cost": 0,
+		"imageName": "Crosshair.jpeg",
+		"keywords": ["Critical", "High Velocity", "Pierce", "Precise"],
+		"requirements": [{"cardName": "The Bad Batch"}],
+		"history": []
+	},
+	"xv": {
+		"surges": [],
+		"speed": 2,
+		"courage": 3,
+		"wounds": 2,
+		"defense": "red",
+		"cardName": "The Bad Batch",
+		"title": "Clone Force 99",
+		"cardSubtype": "clone trooper",
+		"isUnique": true,
+		"rank": "operative",
+		"cardType": "unit",
+		"cost": 140,
+		"faction": "fringe",
+		"affiliations": ["rebels"],
+		"counterpartId": "xw",
+		"imageName": "The Bad Batch2.jpeg",
+		"keywords": [
+			"Equip",
+			"Impervious",
+			"Scale",
+			"Steady",
+			"Sharpshooter",
+			"We're Not Regs",
+			"Fire Support"
+		],
+		"upgradeBar": ["heavy weapon", "heavy weapon", "heavy weapon", "heavy weapon"],
+		"history": [],
+		"id": "xv"
+	},
+	"xw": {
+		"cardName": "Omega",
+		"title": "Mascot of the 99th",
+		"faction": "fringe",
+		"affiliations": ["rebels"],
+		"isUnique": true,
+		"upgradeBar": [],
+		"cardType": "counterpart",
+		"cost": 10,
+		"surges": [],
+		"wounds": 1,
+		"imageName": "Omega.jpeg",
+		"keywords": ["Counterpart", "I'm Part of the Squad Too"],
+		"cardSubtype": "trooper",
+		"id": "xw"
+	},
+	"xx": {
+		"id": "xx",
+		"cardName": "We Do What We Do",
+		"cardSubtype": "3",
+		"cardType": "command",
+		"commander": "The Bad Batch",
+		"imageName": "We Do What We Do.jpeg",
+		"products": [],
+		"faction": "",
+		"keywords": ["Tactical", "Reliable", "Precise", "Inspire", "Suppressive"]
+	}
 }));
 
 

@@ -85,6 +85,11 @@ const routes = {
 
 const newsPosts = [
   {
+    "title": "Bad Batch cards",
+    "date": "5 June 2024",
+    "body": "Added revealed Bad Batch cards"
+  },
+  {
     "title": "Range Trooper cards",
     "date": "4 April 2024",
     "body": "Revealed Range Trooper cards added."
