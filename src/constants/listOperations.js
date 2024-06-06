@@ -500,7 +500,8 @@ function generateTTSJSONText(list) {
     "lw": "Iden's ID10 Seeker Droid",
     "sr": "Stormtroopers Heavy Response Unit",
     "uj": "The Darksaber (Gideon)",
-    "rq": "The Darksaber (Maul)"
+    "rq": "The Darksaber (Maul)",
+    "xw": "Echo (The Bad Batch)"
   };
 
   ttsJSON.points = list.pointTotal;

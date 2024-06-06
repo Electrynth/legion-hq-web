@@ -11756,7 +11756,7 @@ const cards = JSON.parse(JSON.stringify({
 		"isUnique": true,
 		"cardType": "upgrade",
 		"cost": 0,
-		"imageName": "Hunter.jpeg",
+		"imageName": "Hunter2.jpeg",
 		"keywords": ["Leader"],
 		"requirements": [{"cardName": "The Bad Batch"}],
 		"history": []
