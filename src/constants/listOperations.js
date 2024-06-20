@@ -504,6 +504,8 @@ function generateTTSJSONText(list) {
     "xw": "Echo (The Bad Batch)"
   };
 
+  ttsJSON.listname = list.title;
+
   ttsJSON.points = list.pointTotal;
 
   if (list.faction === 'rebels') ttsJSON.armyFaction = 'rebel';

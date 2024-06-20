@@ -5961,9 +5961,13 @@ const cards = JSON.parse(JSON.stringify({
 		"imageName": "Echo.jpeg",
 		"keywords": [],
 		"requirements": [
-			"AND",
-			{"rank": "corps"},
-			{"cardSubtype": "clone trooper"}
+			"OR",
+			{"cardName": "ARC Troopers"},
+			[
+				"AND",
+				{"rank": "corps"},
+				{"cardSubtype": "clone trooper"}
+			]
 		],
 		"history": [
 			{
