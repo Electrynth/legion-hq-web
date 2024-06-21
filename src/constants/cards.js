@@ -5962,7 +5962,11 @@ const cards = JSON.parse(JSON.stringify({
 		"keywords": [],
 		"requirements": [
 			"OR",
-			{"cardName": "ARC Troopers"},
+			[
+				"OR",
+				{"cardName": "ARC Troopers"},
+				{"cardName": "ARC Troopers Strike Team"}
+			],
 			[
 				"AND",
 				{"rank": "corps"},
